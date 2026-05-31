@@ -2,12 +2,21 @@
 
 ## Setup
 
-- [ ] Create repo or confirm existing repo.
-- [ ] Add this package to repo root.
-- [ ] Configure `.env.example` without secrets.
+- [x] Create repo or confirm existing repo. (git initialized; initial commit 1a720ab)
+- [x] Add this package to repo root.
+- [x] Configure `.env.example` without secrets.
 - [ ] Confirm package manager.
 - [ ] Confirm deployment target.
-- [ ] Configure git ignore for local Claude/settings/env files.
+- [x] Configure git ignore for local Claude/settings/env files. (+ raw media assets/, maureen/ — D006)
+
+## Pre-launch hardening (D006)
+
+- [x] Security headers in `next.config.ts` (CSP, HSTS, X-Frame-Options, nosniff, Referrer-Policy, Permissions-Policy) — verified at runtime.
+- [x] Per-IP rate limiting on inquiry + waitlist server actions (`lib/rate-limit.ts`).
+- [ ] Upgrade rate limiter to a shared store (Upstash via Vercel Marketplace) or Vercel BotID/WAF before high-traffic launch.
+- [ ] Gate `noindex` + sitemap entries for portfolio/reviews/coming-soon journal on the permission flags (audit finding #4).
+- [ ] Wire `aria-describedby` on the inquiry consent checkboxes (audit finding #5).
+- [ ] Optional: CI (`typecheck && lint && build`) + a Playwright smoke test; `public/llms.txt` for AI-search visibility.
 
 ## Content confirmation
 
