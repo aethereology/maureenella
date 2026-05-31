@@ -1,0 +1,11 @@
+{
+  "organization": {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Maureen Ella",
+    "url": "https://maureenella.com"
+  },
+  "localBusinessNote": "Add BeautySalon/LocalBusiness only after NAP details are confirmed.",
+  "faqNote": "FAQPage schema should match visible page content exactly.",
+  "articleNote": "Use Article schema for Journal posts with author Maureen Ella when confirmed."
+}

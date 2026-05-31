@@ -1,0 +1,66 @@
+[
+  {
+    "id": "charlotte-tilbury-pillow-talk",
+    "brand": "Charlotte Tilbury",
+    "title": "Pillow Talk Lipstick",
+    "category": "bridal-lip-color",
+    "status": "draft",
+    "disclosureRequired": true
+  },
+  {
+    "id": "nars-dolce-vita",
+    "brand": "NARS",
+    "title": "Dolce Vita",
+    "category": "bridal-lip-color",
+    "status": "draft",
+    "disclosureRequired": true
+  },
+  {
+    "id": "ysl-libre",
+    "brand": "Yves Saint Laurent",
+    "title": "Libre",
+    "category": "wedding-fragrance",
+    "status": "draft",
+    "disclosureRequired": true
+  },
+  {
+    "id": "color-wow-dream-coat",
+    "brand": "Color Wow",
+    "title": "Dream Coat Supernatural Spray",
+    "category": "hair-prep",
+    "status": "draft",
+    "disclosureRequired": true
+  },
+  {
+    "id": "color-wow-raise-root",
+    "brand": "Color Wow",
+    "title": "Raise the Root",
+    "category": "hair-prep",
+    "status": "draft",
+    "disclosureRequired": true
+  },
+  {
+    "id": "luxy-extensions",
+    "brand": "Luxy Hair",
+    "title": "Clip-In Extensions",
+    "category": "hair-extensions",
+    "status": "draft",
+    "disclosureRequired": true
+  },
+  {
+    "id": "dyson-supersonic",
+    "brand": "Dyson",
+    "title": "Supersonic Hair Dryer",
+    "category": "tools",
+    "status": "draft",
+    "disclosureRequired": true
+  },
+  {
+    "id": "honeybook",
+    "brand": "HoneyBook",
+    "title": "Clientflow / CRM",
+    "category": "business-tools",
+    "status": "draft",
+    "disclosureRequired": true
+  }
+]

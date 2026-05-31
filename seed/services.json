@@ -1,0 +1,81 @@
+[
+  {
+    "id": "date-reservation",
+    "title": "Date Reservation",
+    "category": "booking",
+    "price": "$250",
+    "priceStatus": "unconfirmed",
+    "notes": [
+      "Live/current-looking sources suggest $250; older PDFs show $100."
+    ]
+  },
+  {
+    "id": "bridal-hair",
+    "title": "Bridal Hair",
+    "category": "bridal",
+    "price": "$175",
+    "priceStatus": "unconfirmed",
+    "notes": [
+      "Confirm before publishing."
+    ]
+  },
+  {
+    "id": "bridal-makeup",
+    "title": "Bridal Makeup",
+    "category": "bridal",
+    "price": "$175",
+    "priceStatus": "unconfirmed",
+    "notes": [
+      "Includes airbrush/lashes in extracted materials; confirm."
+    ]
+  },
+  {
+    "id": "hair-preview",
+    "title": "Hair Preview",
+    "category": "bridal",
+    "price": "$100",
+    "priceStatus": "unconfirmed"
+  },
+  {
+    "id": "makeup-preview",
+    "title": "Makeup Preview",
+    "category": "bridal",
+    "price": "$100",
+    "priceStatus": "unconfirmed"
+  },
+  {
+    "id": "bridesmaid-guest-hair",
+    "title": "Bridesmaid + Guest Hair",
+    "category": "bridal-party",
+    "price": "$95",
+    "priceStatus": "unconfirmed"
+  },
+  {
+    "id": "bridesmaid-guest-makeup",
+    "title": "Bridesmaid + Guest Makeup",
+    "category": "bridal-party",
+    "price": "$95",
+    "priceStatus": "unconfirmed"
+  },
+  {
+    "id": "clip-in-extensions",
+    "title": "Clip-In Hair Extension Application",
+    "category": "add-on",
+    "price": "$50",
+    "priceStatus": "unconfirmed"
+  },
+  {
+    "id": "blowout",
+    "title": "Blowout Prior to Styling",
+    "category": "add-on",
+    "price": "$50",
+    "priceStatus": "unconfirmed"
+  },
+  {
+    "id": "add-on-artist",
+    "title": "Add-On Artist",
+    "category": "add-on",
+    "price": "$175",
+    "priceStatus": "unconfirmed"
+  }
+]

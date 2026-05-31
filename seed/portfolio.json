@@ -1,0 +1,115 @@
+[
+  {
+    "id": "angeline",
+    "brideName": "Angeline",
+    "serviceTypes": [
+      "hair",
+      "makeup"
+    ],
+    "photographer": "Daybreak Photo Co.",
+    "tags": [
+      "bridal",
+      "hair-and-makeup"
+    ],
+    "permissionStatus": "needs-confirmation"
+  },
+  {
+    "id": "erika",
+    "brideName": "Erika",
+    "serviceTypes": [
+      "hair",
+      "makeup"
+    ],
+    "photographer": "Daybreak Photo Co.",
+    "tags": [
+      "bridal",
+      "braid"
+    ],
+    "permissionStatus": "needs-confirmation"
+  },
+  {
+    "id": "april",
+    "brideName": "April",
+    "serviceTypes": [
+      "hair",
+      "makeup"
+    ],
+    "photographer": "Angelita Esparar Photography",
+    "tags": [
+      "st-augustine",
+      "bridal"
+    ],
+    "permissionStatus": "needs-confirmation"
+  },
+  {
+    "id": "haley",
+    "brideName": "Haley",
+    "serviceTypes": [
+      "hair",
+      "makeup"
+    ],
+    "photographer": "Meagan Gaines Photography",
+    "tags": [
+      "jacksonville",
+      "bridal"
+    ],
+    "permissionStatus": "needs-confirmation"
+  },
+  {
+    "id": "kim",
+    "brideName": "Kim",
+    "serviceTypes": [
+      "hair",
+      "makeup"
+    ],
+    "photographer": "Kristinaclicks",
+    "tags": [
+      "st-augustine-beach",
+      "bridal"
+    ],
+    "permissionStatus": "needs-confirmation"
+  },
+  {
+    "id": "rachel",
+    "brideName": "Rachel",
+    "serviceTypes": [
+      "hair",
+      "makeup"
+    ],
+    "photographer": "Sarah Cebulski Photography",
+    "tags": [
+      "curly-bridal-hair",
+      "st-augustine"
+    ],
+    "permissionStatus": "needs-confirmation"
+  },
+  {
+    "id": "kara",
+    "brideName": "Kara",
+    "serviceTypes": [
+      "hair"
+    ],
+    "photographer": "Erin Samples Photography",
+    "makeupCredit": "Makeup by Karah",
+    "tags": [
+      "jacksonville",
+      "glass-factory",
+      "braid"
+    ],
+    "permissionStatus": "needs-confirmation"
+  },
+  {
+    "id": "kristina",
+    "brideName": "Kristina",
+    "serviceTypes": [
+      "hair"
+    ],
+    "photographer": "The Capps Co.",
+    "makeupCredit": "Boss Makeup Artistry",
+    "tags": [
+      "bridal",
+      "braided-style"
+    ],
+    "permissionStatus": "needs-confirmation"
+  }
+]

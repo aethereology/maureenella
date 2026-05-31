@@ -1,0 +1,37 @@
+[
+  {
+    "id": "st-augustine",
+    "city": "St. Augustine",
+    "state": "FL",
+    "priority": "primary",
+    "plannedPage": "/bridal/st-augustine"
+  },
+  {
+    "id": "jacksonville",
+    "city": "Jacksonville",
+    "state": "FL",
+    "priority": "primary",
+    "plannedPage": "/bridal/jacksonville"
+  },
+  {
+    "id": "palm-coast",
+    "city": "Palm Coast",
+    "state": "FL",
+    "priority": "primary",
+    "plannedPage": "/bridal/palm-coast"
+  },
+  {
+    "id": "northeast-florida",
+    "city": "Northeast Florida",
+    "state": "FL",
+    "priority": "primary",
+    "plannedPage": "/bridal/destination-weddings"
+  },
+  {
+    "id": "destination-weddings",
+    "city": "Destination Weddings",
+    "state": "FL",
+    "priority": "secondary",
+    "plannedPage": "/bridal/destination-weddings"
+  }
+]

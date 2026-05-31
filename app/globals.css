@@ -1,0 +1,160 @@
+@import "tailwindcss";
+
+/*
+  Maureen Ella — "Editorial Atelier" design system.
+  A refined fashion-magazine bridal aesthetic: warm-neutral palette, oversized
+  Cormorant display type, hairline rules, numbered section indices, generous
+  negative space, subtle grain, and orchestrated reveals. See docs/UI_DIRECTION.md.
+*/
+@theme {
+  /* Warm neutral foundation (deepened for editorial contrast) */
+  --color-porcelain: #fbf8f3;
+  --color-ivory: #f6efe4;
+  --color-cream: #efe5d6;
+  --color-oatmeal: #e4d7c4;
+  --color-taupe: #b6a489;
+  --color-taupe-deep: #8a7459;
+  --color-espresso: #251d17;
+  --color-cocoa: #463830;
+  --color-rose: #c08579;
+  --color-rose-soft: #e4c4ba;
+  --color-champagne: #d8bf9c;
+  --color-hairline: #d8c9b3;
+
+  --color-background: var(--color-porcelain);
+  --color-foreground: var(--color-cocoa);
+
+  --font-serif: var(--font-cormorant), "Cormorant Garamond", Georgia, serif;
+  --font-sans: var(--font-jost), ui-sans-serif, system-ui, sans-serif;
+
+  /* Fluid editorial type scale */
+  --text-display: clamp(2.75rem, 7vw, 6rem);
+  --text-hero: clamp(2.5rem, 6vw, 5rem);
+
+  --radius-card: 0px;
+}
+
+:root {
+  --hairline: var(--color-hairline);
+}
+
+/*
+  Base element styles live in @layer base so Tailwind utility classes
+  (text-porcelain, border-espresso, group-hover:text-rose, …) reliably
+  override them. Un-layered CSS would otherwise beat layered utilities in v4.
+*/
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    /* Subtle paper grain for atmosphere (very low opacity, GPU-cheap). */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)' opacity='0.025'/%3E%3C/svg%3E");
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-serif);
+    font-weight: 500;
+    line-height: 1.05;
+    letter-spacing: -0.015em;
+    color: var(--color-espresso);
+  }
+
+  /* Default hairline border color for all elements. */
+  * {
+    border-color: var(--color-hairline);
+  }
+}
+
+/* Editorial labels — uppercase, tracked, small. */
+.eyebrow {
+  font-family: var(--font-sans);
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: var(--color-taupe-deep);
+}
+
+/* Numbered section index, e.g. "01 — ". */
+.index-mark {
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  letter-spacing: 0.25em;
+  font-weight: 500;
+  color: var(--color-rose);
+}
+
+/* Magazine drop cap for article bodies. */
+.dropcap::first-letter {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  float: left;
+  font-size: 3.6em;
+  line-height: 0.72;
+  padding: 0.06em 0.12em 0 0;
+  color: var(--color-espresso);
+}
+
+/* Pull quote. */
+.pullquote {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+}
+
+.hairline {
+  border-color: var(--color-hairline);
+}
+
+/* Visible keyboard focus. */
+:focus-visible {
+  outline: 2px solid var(--color-rose);
+  outline-offset: 3px;
+}
+
+/* ---- Orchestrated reveals (load + scroll) ----------------------------- */
+@keyframes rise {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+[data-reveal] {
+  opacity: 0;
+}
+[data-reveal].is-in {
+  animation: rise 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation-delay: var(--reveal-delay, 0ms);
+}
+
+/* Image hover zoom helper. */
+.img-zoom {
+  overflow: hidden;
+}
+.img-zoom img {
+  transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.group:hover .img-zoom img,
+.img-zoom:hover img {
+  transform: scale(1.04);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  [data-reveal] { opacity: 1; animation: none; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

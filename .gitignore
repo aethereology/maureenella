@@ -1,0 +1,21 @@
+.env
+.env.*
+!.env.example
+node_modules/
+.next/
+dist/
+build/
+.DS_Store
+CLAUDE.local.md
+.claude/settings.local.json
+.playwright-mcp/
+next-env.d.ts
+*.tsbuildinfo
+*.log
+
+# Raw source media (unconfirmed client photos/videos) — not served by the app.
+# The site reads only from public/. Keep these local / in a media store until
+# image permissions are confirmed (permissions.portfolioPublished). See
+# docs/CONFIRMATION_NEEDED.md.
+/assets/
+/maureen/

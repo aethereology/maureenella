@@ -1,0 +1,35 @@
+[
+  {
+    "id": "marina-oka",
+    "name": "Marina Oka",
+    "quote": "Hair and makeup stayed pretty even though it was windy on the beach. 10 out of 10 recommend.",
+    "proofPoint": [
+      "beach",
+      "wind",
+      "long-lasting"
+    ],
+    "permissionStatus": "needs-confirmation"
+  },
+  {
+    "id": "jamie-stiles",
+    "name": "Jamie Stiles",
+    "quote": "Maureen made me feel beautiful on my wedding day. Hair and makeup were better than dreamed and the bridal party looked stunning.",
+    "proofPoint": [
+      "felt beautiful",
+      "bridal party",
+      "organized"
+    ],
+    "permissionStatus": "needs-confirmation"
+  },
+  {
+    "id": "heather-broderick",
+    "name": "Heather Broderick",
+    "quote": "Maureen and her team were amazing. Everyone was ahead of schedule and Maureen made it easy to plan the day.",
+    "proofPoint": [
+      "ahead of schedule",
+      "team",
+      "planning"
+    ],
+    "permissionStatus": "needs-confirmation"
+  }
+]

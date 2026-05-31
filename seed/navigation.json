@@ -1,0 +1,54 @@
+{
+  "primary": [
+    {
+      "label": "Bridal",
+      "href": "/bridal"
+    },
+    {
+      "label": "Portfolio",
+      "href": "/bridal/portfolio"
+    },
+    {
+      "label": "Reviews",
+      "href": "/bridal/reviews"
+    },
+    {
+      "label": "Journal",
+      "href": "/journal"
+    },
+    {
+      "label": "Education",
+      "href": "/education"
+    },
+    {
+      "label": "About",
+      "href": "/about"
+    },
+    {
+      "label": "Contact",
+      "href": "/contact"
+    }
+  ],
+  "cta": {
+    "label": "Request Availability",
+    "href": "/contact"
+  },
+  "footer": [
+    {
+      "label": "Bridal Services",
+      "href": "/bridal/services"
+    },
+    {
+      "label": "FAQ",
+      "href": "/bridal/faq"
+    },
+    {
+      "label": "Prep Guides",
+      "href": "/bridal/prep-guides"
+    },
+    {
+      "label": "Favorites",
+      "href": "/favorites"
+    }
+  ]
+}

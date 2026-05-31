@@ -1,0 +1,27 @@
+[
+  {
+    "source": "/features",
+    "destination": "/bridal/portfolio",
+    "status": 301
+  },
+  {
+    "source": "/general-5",
+    "destination": "/bridal/faq",
+    "status": 301
+  },
+  {
+    "source": "/mrlblog",
+    "destination": "/journal",
+    "status": 301
+  },
+  {
+    "source": "/salonsuite",
+    "destination": "/about",
+    "status": 301
+  },
+  {
+    "source": "/contact",
+    "destination": "/contact",
+    "status": 301
+  }
+]

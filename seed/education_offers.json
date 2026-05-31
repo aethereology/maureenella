@@ -1,0 +1,38 @@
+[
+  {
+    "id": "bridal-business-checklist",
+    "title": "Bridal Beauty Business Starter Checklist",
+    "level": "free",
+    "status": "planned"
+  },
+  {
+    "id": "inquiry-email-templates",
+    "title": "Bridal Inquiry Email Templates",
+    "level": "low-ticket",
+    "status": "planned"
+  },
+  {
+    "id": "timeline-template",
+    "title": "Wedding Morning Timeline Template",
+    "level": "low-ticket",
+    "status": "planned"
+  },
+  {
+    "id": "pricing-calculator",
+    "title": "Bridal Pricing Calculator",
+    "level": "low-ticket",
+    "status": "planned"
+  },
+  {
+    "id": "book-more-brides-workshop",
+    "title": "Book More Brides Workshop",
+    "level": "workshop",
+    "status": "planned"
+  },
+  {
+    "id": "confident-bridal-business",
+    "title": "The Confident Bridal Beauty Business",
+    "level": "signature-program",
+    "status": "future"
+  }
+]

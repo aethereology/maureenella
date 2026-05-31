@@ -1,0 +1,38 @@
+[
+  {
+    "slug": "/",
+    "title": "Maureen Ella",
+    "primaryAudience": "brides",
+    "primaryCTA": "Request Availability"
+  },
+  {
+    "slug": "/bridal",
+    "title": "Maureen Ella Bridal",
+    "primaryAudience": "brides",
+    "primaryCTA": "Check My Date"
+  },
+  {
+    "slug": "/education",
+    "title": "Maureen Ella Education",
+    "primaryAudience": "beauty-professionals",
+    "primaryCTA": "Join the Waitlist"
+  },
+  {
+    "slug": "/favorites",
+    "title": "Maureen Ella Favorites",
+    "primaryAudience": "brides-and-pros",
+    "primaryCTA": "Explore Favorites"
+  },
+  {
+    "slug": "/journal",
+    "title": "Maureen Ella Journal",
+    "primaryAudience": "mixed",
+    "primaryCTA": "Read the Guides"
+  },
+  {
+    "slug": "/contact",
+    "title": "Request Availability",
+    "primaryAudience": "brides",
+    "primaryCTA": "Submit Inquiry"
+  }
+]

@@ -1,0 +1,44 @@
+[
+  {
+    "id": "booking-deposit",
+    "category": "booking",
+    "question": "How do I reserve my wedding date?",
+    "answer": "Start by sending your wedding date, location, service needs, and timeline details through the inquiry form. If your date is available, we will send next steps for reviewing services and reserving the date.",
+    "status": "public-safe"
+  },
+  {
+    "id": "service-minimum",
+    "category": "pricing",
+    "question": "Is there a service minimum?",
+    "answer": "Minimums can vary based on your date, location, service mix, timeline, and artist availability. Share your details in the inquiry form and we will let you know what is possible for your wedding.",
+    "status": "public-safe"
+  },
+  {
+    "id": "trial-timing",
+    "category": "trial",
+    "question": "When should I schedule my bridal preview?",
+    "answer": "Most brides schedule their preview after booking, once the wedding look, dress, accessories, and general style direction are coming together. We will guide timing based on your wedding date and availability.",
+    "status": "public-safe"
+  },
+  {
+    "id": "service-timing",
+    "category": "wedding-day",
+    "question": "How long does hair and makeup take?",
+    "answer": "Timing depends on the services requested, party size, getting-ready location, and photo schedule. Once your details are confirmed, we will help shape a beauty timeline that supports a calm wedding morning.",
+    "status": "public-safe"
+  },
+  {
+    "id": "touchups",
+    "category": "wedding-day",
+    "question": "Can the artist stay for touch-ups?",
+    "answer": "Touch-up coverage may be available by request and is subject to availability. Add your preferences to the inquiry form so we can include options in your next steps.",
+    "status": "public-safe"
+  },
+  {
+    "id": "travel",
+    "category": "travel",
+    "question": "Do you travel?",
+    "answer": "Yes, on-location service is available across the core service areas and for select destination weddings. Share the getting-ready location in your inquiry so travel details can be reviewed accurately.",
+    "status": "public-safe"
+  }
+]
