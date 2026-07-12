@@ -6,7 +6,8 @@
 - [x] Add this package to repo root.
 - [x] Configure `.env.example` without secrets.
 - [x] Confirm package manager. (npm)
-- [x] Confirm deployment target. (Vercel — project `sparkcreativesinc/maureenella`, GitHub-connected to aethereology/maureenella; live at maureenella.vercel.app since 2026-07-12. Custom domain attaches at cutover. ⚠️ RESEND_API_KEY still unset — forms won't deliver until a Resend key + verified sender domain exist.)
+- [x] Confirm deployment target. (Vercel — project `sparkcreativesinc/maureenella`, GitHub-connected to aethereology/maureenella; live at maureenella.vercel.app since 2026-07-12. Custom domain attaches at cutover.)
+- [x] Email delivery configured. (Resend: maureenella.com VERIFIED 2026-07-12 — DKIM/SPF records in Cloudflare DNS; sending key in Vercel prod+preview + .env.local; test send from inquiries@maureenella.com succeeded. Prod forms → maureen@theparlor.info, preview → kyle@.)
 - [x] Configure git ignore for local Claude/settings/env files. (+ raw media assets/, maureen/ — D006)
 
 ## Pre-launch hardening (D006)
