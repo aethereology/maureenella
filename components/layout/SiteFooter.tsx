@@ -1,6 +1,6 @@
 import Link from "next/link";
 import navigation from "@/seed/navigation.json";
-import { site } from "@/lib/site";
+import { site, phoneHref } from "@/lib/site";
 import { Container } from "@/components/ui/Container";
 import { locations } from "@/content/locations";
 
@@ -39,6 +39,28 @@ export function SiteFooter() {
               Serving {site.serviceAreas.slice(0, 4).join(" · ")} &amp;
               destination weddings.
             </p>
+            <div className="mt-6 space-y-1.5 text-sm">
+              {site.contact.email.confirmed && site.contact.email.value && (
+                <p>
+                  <a
+                    href={`mailto:${site.contact.email.value}`}
+                    className="text-cocoa transition-colors hover:text-rose"
+                  >
+                    {site.contact.email.value}
+                  </a>
+                </p>
+              )}
+              {site.contact.phone.confirmed && site.contact.phone.value && (
+                <p>
+                  <a href={phoneHref} className="text-cocoa transition-colors hover:text-rose">
+                    {site.contact.phone.value}
+                  </a>
+                </p>
+              )}
+              {site.contact.hours.confirmed && site.contact.hours.value && (
+                <p className="text-cocoa/70">{site.contact.hours.value}</p>
+              )}
+            </div>
           </div>
 
           <nav aria-label="Footer">

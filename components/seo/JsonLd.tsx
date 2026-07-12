@@ -21,8 +21,48 @@ export function OrganizationSchema() {
         url: site.baseUrl,
         description: site.description,
         areaServed: site.serviceAreas,
-        // NAP (phone/email/address) intentionally omitted until confirmed.
-        // LocalBusiness/BeautySalon schema added only after NAP is confirmed.
+        // Confirmed NAP lives in LocalBusinessSchema (BeautySalon) below.
+      }}
+    />
+  );
+}
+
+/**
+ * Service-area LocalBusiness markup. Renders only once phone + email are
+ * confirmed (D009). Street address intentionally omitted until confirmed —
+ * valid for a service-area business that travels to clients.
+ */
+export function LocalBusinessSchema() {
+  const { phone, email } = site.contact;
+  if (!phone.confirmed || !email.confirmed || !phone.value || !email.value) {
+    return null;
+  }
+  return (
+    <JsonLd
+      data={{
+        "@context": "https://schema.org",
+        "@type": "BeautySalon",
+        "@id": `${site.baseUrl}/#business`,
+        name: site.brand,
+        url: site.baseUrl,
+        description: site.description,
+        telephone: `+1${phone.value.replace(/\D/g, "")}`,
+        email: email.value,
+        areaServed: site.serviceAreas,
+        openingHoursSpecification: {
+          "@type": "OpeningHoursSpecification",
+          dayOfWeek: [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday",
+            "Sunday",
+          ],
+          opens: "06:00",
+          closes: "18:00",
+        },
       }}
     />
   );

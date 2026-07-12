@@ -3,7 +3,11 @@ import { Cormorant_Garamond, Jost } from "next/font/google";
 import { site } from "@/lib/site";
 import { SiteHeader } from "@/components/layout/SiteHeader";
 import { SiteFooter } from "@/components/layout/SiteFooter";
-import { OrganizationSchema, WebsiteSchema } from "@/components/seo/JsonLd";
+import {
+  LocalBusinessSchema,
+  OrganizationSchema,
+  WebsiteSchema,
+} from "@/components/seo/JsonLd";
 import { Analytics } from "@/components/Analytics";
 import "./globals.css";
 
@@ -51,6 +55,7 @@ export default function RootLayout({
         </a>
         <OrganizationSchema />
         <WebsiteSchema />
+        <LocalBusinessSchema />
         <SiteHeader />
         <main id="main">{children}</main>
         <SiteFooter />

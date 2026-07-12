@@ -117,11 +117,26 @@ Rationale: Saves ~$200–400/yr with zero capability loss. Guardrails: never
 cancel before the nameserver move is verified (the intact Wix zone is the
 rollback path), and never let the domain registration lapse.
 
+### D009 - Public contact info confirmed; pricing stays off-site
+
+Decision (founder, 2026-07-12): Public contact is **maureen@theparlor.info**,
+**(904) 881-5808**, hours **daily 6:00 AM–6:00 PM** — set as confirmed in
+`lib/site.ts` and rendered in the footer, the contact page, and a new
+`BeautySalon` LocalBusiness schema (`components/seo/JsonLd.tsx`), which the
+confirmed values unlock. Street address remains UNCONFIRMED — omitted from UI
+and schema (valid service-area-business markup) until Maureen confirms.
+**Pricing will not be shown on the site** — inquiry-only is now the standing
+policy (resolves the D004 pending question), consistent with industry practice
+for premium bridal beauty. Production form deliveries go to
+maureen@theparlor.info (preview/test deploys to the operator's inbox).
+
+Rationale: Confirmed NAP-minus-address enables LocalBusiness schema and gives
+brides direct contact paths without violating the D004 gating rule on the
+still-unconfirmed address and pricing details.
+
 ## Pending decisions
 
-- Preferred public phone number.
-- Preferred public email address.
-- Whether to show exact pricing publicly.
+- Preferred public street address / suite (blocks schema `address` + full NAP).
 - Confirm Education product offers + pricing before any are sold (D005).
 - Choose an ESP to run Education emails 2–4 as an automated drip.
 - Whether to launch Favorites/Affiliate in Phase 1 or Phase 2.

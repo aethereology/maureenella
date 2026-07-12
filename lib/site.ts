@@ -34,14 +34,15 @@ export const site = {
   ],
 
   /**
-   * Contact + identity — all UNCONFIRMED. Leave null until confirmed.
-   * When confirmed, set value and confirmed: true; UI will render automatically.
+   * Contact + identity. Confirmed by the founder on 2026-07-12 (D009):
+   * email, phone, hours. Address stays UNCONFIRMED (null) — never render it
+   * or add it to schema until Maureen confirms.
    */
   contact: {
-    phone: unconfirmed<string>(),
-    email: unconfirmed<string>(),
+    phone: { value: "(904) 881-5808", confirmed: true },
+    email: { value: "maureen@theparlor.info", confirmed: true },
     address: unconfirmed<string>(),
-    hours: unconfirmed<string>(),
+    hours: { value: "Daily, 6:00 AM–6:00 PM", confirmed: true },
   },
 
   social: {
@@ -71,3 +72,11 @@ export const site = {
 } as const;
 
 export type Site = typeof site;
+
+/**
+ * tel: href derived from the confirmed display phone — strips formatting so
+ * the link and the visible number can never drift apart.
+ */
+export const phoneHref = site.contact.phone.value
+  ? `tel:+1${site.contact.phone.value.replace(/\D/g, "")}`
+  : "";
