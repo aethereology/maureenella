@@ -118,17 +118,13 @@
 - [x] Point maureenella.com at Vercel via Cloudflare DNS. (**LIVE 2026-07-12**: A `76.76.21.21` + www CNAME `cname.vercel-dns.com` DNS-only; stale Namecheap parking A + www records removed; apex + www attached to the Vercel project; https://maureenella.com serving with all content, schema, redirects, headers verified. www TLS cert was still issuing at check time.)
 - [ ] Test production forms.
 - [ ] Snapshot the full Wix DNS zone for theparlor.info (Wix Domain DNS API) → save to docs/LEGACY_DNS_SNAPSHOT.md (rollback map).
-- [~] theparlor.info + www **added to the Vercel project** (2026-07-12). Still to do:
-  (a) set both to **Redirect to maureenella.com (308)** in Vercel dashboard → Project → Settings → Domains;
-  (b) create Vercel DNS records (operator must run — auto mode blocks email-affecting DNS):
-      `vercel dns add theparlor.info '@' MX aspmx.l.google.com 1`
-      `vercel dns add theparlor.info '@' TXT "v=spf1 include:_spf.google.com ~all"`
-      `vercel dns add theparlor.info '@' TXT "google.com, pub-7998908383565200, DIRECT, f08c47fec0942fa0"`
+- [x] theparlor.info + www added to the Vercel project as redirect domains; email DNS records created by operator (2026-07-12).
 - [ ] GSC: verify maureenella.com (TXT at Namecheap) and theparlor.info (TXT in Vercel DNS); export old-site query/page baseline first.
 - [x] Snapshot Wix DNS zone → docs/LEGACY_DNS_SNAPSHOT.md (done 2026-07-12; keep-list = Google MX/SPF/AdSense TXT; Ascend DKIM CNAMEs die with Wix).
-- [ ] **⚠️ DNSSEC:** disable DNSSEC / remove the DS record at Squarespace Domains BEFORE the nameserver change (snapshot shows dnssecEnabled: true — skipping this blacks out the domain).
-- [ ] **The one DNS change:** at Squarespace Domains switch theparlor.info nameservers Wix → `ns1/ns2.vercel-dns.com`. (Rollback = switch back to Wix + re-enable DNSSEC; the Wix zone stays intact until premium is cancelled.)
-- [ ] Verify live: redirect chains (`curl -I https://theparlor.info/features` → `/bridal/portfolio`; sample posts, categories, www + apex) **and email send/receive on maureen@theparlor.info** (+ `nslookup -type=MX`).
+- [x] **DNSSEC disabled + nameservers switched** at Squarespace (2026-07-12). Verified on 1.1.1.1/8.8.8.8: NS = ns1/ns2.vercel-dns.com, DS record gone, MX = aspmx.l.google.com, SPF + AdSense TXT present.
+- [x] Verify redirects at Vercel edge (2026-07-12): theparlor.info → 308 www.maureenella.com; www.theparlor.info → 308 maureenella.com; paths preserved (`/features` chain → `/bridal/portfolio`). Residual Wix responses during TTL expiry window are expected (~1h; Wix zone intact as rollback).
+- [ ] **Dashboard tidy-up (30s each):** (a) change theparlor.info's redirect target from www.maureenella.com → `maureenella.com` (saves a hop); (b) set `www.maureenella.com` → Redirect to maureenella.com (308) — it currently serves the site directly (canonicals mitigate, redirect is cleaner).
+- [ ] **Email inbound test:** send any email to maureen@theparlor.info and confirm receipt (MX verified resolving; live send blocked in auto mode).
 - [ ] GSC Change of Address: theparlor.info → maureenella.com.
 - [ ] Submit https://maureenella.com/sitemap.xml in GSC; request recrawl for key pages.
 - [ ] Update Google Business Profile website URL (only after redirects verified).
