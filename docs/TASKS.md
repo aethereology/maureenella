@@ -115,10 +115,15 @@
 
 - [ ] **NOW, not blocked:** confirm auto-renew + valid payment for theparlor.info at Squarespace Domains (expires 2026-10-18).
 - [ ] Content freeze on theparlor.info; re-fetch old sitemaps and re-sync `seed/redirects.json` + docs/REDIRECT_MAP.md.
-- [ ] Point maureenella.com at Vercel via **Cloudflare DNS** (zone moved to Cloudflare, 2026-07-12: randy/ines.ns.cloudflare.com) — A `76.76.21.21` apex + CNAME `cname.vercel-dns.com` www, **DNS-only (grey cloud), not proxied** (Vercel handles TLS/CDN); keep the Resend `send.*` records. Attach domain to the Vercel project. (App already deployed: maureenella.vercel.app.)
+- [x] Point maureenella.com at Vercel via Cloudflare DNS. (**LIVE 2026-07-12**: A `76.76.21.21` + www CNAME `cname.vercel-dns.com` DNS-only; stale Namecheap parking A + www records removed; apex + www attached to the Vercel project; https://maureenella.com serving with all content, schema, redirects, headers verified. www TLS cert was still issuing at check time.)
 - [ ] Test production forms.
 - [ ] Snapshot the full Wix DNS zone for theparlor.info (Wix Domain DNS API) → save to docs/LEGACY_DNS_SNAPSHOT.md (rollback map).
-- [ ] Add theparlor.info + www as **redirect domains → maureenella.com** on the Vercel project; in Vercel DNS re-create the non-web records from the snapshot: Google MX (`aspmx.l.google.com` set), SPF TXT (`v=spf1 include:_spf.google.com ~all`), AdSense TXT, any DKIM/verification records.
+- [~] theparlor.info + www **added to the Vercel project** (2026-07-12). Still to do:
+  (a) set both to **Redirect to maureenella.com (308)** in Vercel dashboard → Project → Settings → Domains;
+  (b) create Vercel DNS records (operator must run — auto mode blocks email-affecting DNS):
+      `vercel dns add theparlor.info '@' MX aspmx.l.google.com 1`
+      `vercel dns add theparlor.info '@' TXT "v=spf1 include:_spf.google.com ~all"`
+      `vercel dns add theparlor.info '@' TXT "google.com, pub-7998908383565200, DIRECT, f08c47fec0942fa0"`
 - [ ] GSC: verify maureenella.com (TXT at Namecheap) and theparlor.info (TXT in Vercel DNS); export old-site query/page baseline first.
 - [x] Snapshot Wix DNS zone → docs/LEGACY_DNS_SNAPSHOT.md (done 2026-07-12; keep-list = Google MX/SPF/AdSense TXT; Ascend DKIM CNAMEs die with Wix).
 - [ ] **⚠️ DNSSEC:** disable DNSSEC / remove the DS record at Squarespace Domains BEFORE the nameserver change (snapshot shows dnssecEnabled: true — skipping this blacks out the domain).
