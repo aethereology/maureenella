@@ -116,7 +116,7 @@
 - [ ] **NOW, not blocked:** confirm auto-renew + valid payment for theparlor.info at Squarespace Domains (expires 2026-10-18).
 - [ ] Content freeze on theparlor.info; re-fetch old sitemaps and re-sync `seed/redirects.json` + docs/REDIRECT_MAP.md.
 - [x] Point maureenella.com at Vercel via Cloudflare DNS. (**LIVE 2026-07-12**: A `76.76.21.21` + www CNAME `cname.vercel-dns.com` DNS-only; stale Namecheap parking A + www records removed; apex + www attached to the Vercel project; https://maureenella.com serving with all content, schema, redirects, headers verified. www TLS cert was still issuing at check time.)
-- [ ] Test production forms.
+- [x] Test production forms. (E2E via headless browser 2026-07-12: inquiry form success + Resend 'delivered' to maureen@theparlor.info. Note: submissions from tabs opened before a redeploy 404 — global error boundary added with refresh guidance.)
 - [ ] Snapshot the full Wix DNS zone for theparlor.info (Wix Domain DNS API) → save to docs/LEGACY_DNS_SNAPSHOT.md (rollback map).
 - [x] theparlor.info + www added to the Vercel project as redirect domains; email DNS records created by operator (2026-07-12).
 - [ ] GSC: verify maureenella.com (TXT at Namecheap) and theparlor.info (TXT in Vercel DNS); export old-site query/page baseline first.
@@ -124,7 +124,7 @@
 - [x] **DNSSEC disabled + nameservers switched** at Squarespace (2026-07-12). Verified on 1.1.1.1/8.8.8.8: NS = ns1/ns2.vercel-dns.com, DS record gone, MX = aspmx.l.google.com, SPF + AdSense TXT present.
 - [x] Verify redirects at Vercel edge (2026-07-12): theparlor.info → 308 www.maureenella.com; www.theparlor.info → 308 maureenella.com; paths preserved (`/features` chain → `/bridal/portfolio`). Residual Wix responses during TTL expiry window are expected (~1h; Wix zone intact as rollback).
 - [ ] **Dashboard tidy-up (30s each):** (a) change theparlor.info's redirect target from www.maureenella.com → `maureenella.com` (saves a hop); (b) set `www.maureenella.com` → Redirect to maureenella.com (308) — it currently serves the site directly (canonicals mitigate, redirect is cleaner).
-- [ ] **Email inbound test:** send any email to maureen@theparlor.info and confirm receipt (MX verified resolving; live send blocked in auto mode).
+- [x] **Email inbound test:** PASSED 2026-07-12 — live inquiry-form test delivered to maureen@theparlor.info through the new DNS (Resend status: delivered).
 - [ ] GSC Change of Address: theparlor.info → maureenella.com.
 - [ ] Submit https://maureenella.com/sitemap.xml in GSC; request recrawl for key pages.
 - [ ] Update Google Business Profile website URL (only after redirects verified).
