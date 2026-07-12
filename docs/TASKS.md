@@ -114,7 +114,7 @@
 
 - [ ] **NOW, not blocked:** confirm auto-renew + valid payment for theparlor.info at Squarespace Domains (expires 2026-10-18).
 - [ ] Content freeze on theparlor.info; re-fetch old sitemaps and re-sync `seed/redirects.json` + docs/REDIRECT_MAP.md.
-- [ ] Deploy production to Vercel; point maureenella.com via Namecheap DNS (A `76.76.21.21` apex, CNAME `cname.vercel-dns.com` www; keep Namecheap email-forward MX if used).
+- [ ] Point maureenella.com at Vercel via **Cloudflare DNS** (zone moved to Cloudflare, 2026-07-12: randy/ines.ns.cloudflare.com) — A `76.76.21.21` apex + CNAME `cname.vercel-dns.com` www, **DNS-only (grey cloud), not proxied** (Vercel handles TLS/CDN); keep the Resend `send.*` records. Attach domain to the Vercel project. (App already deployed: maureenella.vercel.app.)
 - [ ] Test production forms.
 - [ ] Snapshot the full Wix DNS zone for theparlor.info (Wix Domain DNS API) → save to docs/LEGACY_DNS_SNAPSHOT.md (rollback map).
 - [ ] Add theparlor.info + www as **redirect domains → maureenella.com** on the Vercel project; in Vercel DNS re-create the non-web records from the snapshot: Google MX (`aspmx.l.google.com` set), SPF TXT (`v=spf1 include:_spf.google.com ~all`), AdSense TXT, any DKIM/verification records.
