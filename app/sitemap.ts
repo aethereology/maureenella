@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { site } from "@/lib/site";
+import { permissions } from "@/lib/permissions";
 import { prepGuides } from "@/content/prepGuides";
 import { getArticles, isPublished } from "@/content/journal";
 import { locations } from "@/content/locations";
@@ -12,8 +13,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/",
     "/bridal",
     "/bridal/services",
-    "/bridal/portfolio",
-    "/bridal/reviews",
+    // Portfolio/reviews enter the sitemap only once their content is cleared
+    // to publish (they render placeholder copy + noindex until then).
+    ...(permissions.portfolioPublished ? ["/bridal/portfolio"] : []),
+    ...(permissions.testimonialsPublished ? ["/bridal/reviews"] : []),
     "/bridal/faq",
     "/bridal/prep-guides",
     "/journal",

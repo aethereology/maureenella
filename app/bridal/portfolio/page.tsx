@@ -6,12 +6,14 @@ import { PortfolioGrid } from "@/components/sections/PortfolioGrid";
 import { Section } from "@/components/ui/Section";
 import { CtaButton } from "@/components/ui/CtaButton";
 import { StickyMobileCta } from "@/components/sections/StickyMobileCta";
+import { permissions } from "@/lib/permissions";
 
 export const metadata = pageMetadata({
   title: "Bridal Portfolio",
   description:
     "Real bridal hair and makeup work by Maureen Ella — soft updos, romantic waves, braids, curly bridal hair, beach elopements, and glowing bridal makeup.",
   path: "/bridal/portfolio",
+  noindex: !permissions.portfolioPublished,
 });
 
 export default function PortfolioPage() {

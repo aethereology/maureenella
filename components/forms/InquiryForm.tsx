@@ -230,12 +230,24 @@ export function InquiryForm() {
       <fieldset className="space-y-3">
         <legend className="sr-only">Consent</legend>
         <label className="flex items-start gap-3 text-sm text-cocoa">
-          <input type="checkbox" name="consentNotReserved" className="mt-1" aria-invalid={!!err.consentNotReserved} />
+          <input
+            type="checkbox"
+            name="consentNotReserved"
+            className="mt-1"
+            aria-invalid={!!err.consentNotReserved}
+            aria-describedby={err.consentNotReserved ? "consentNotReserved-error" : undefined}
+          />
           <span>I understand this inquiry does not reserve my date.</span>
         </label>
         <FieldError id="consentNotReserved-error" message={err.consentNotReserved} />
         <label className="flex items-start gap-3 text-sm text-cocoa">
-          <input type="checkbox" name="consentContact" className="mt-1" aria-invalid={!!err.consentContact} />
+          <input
+            type="checkbox"
+            name="consentContact"
+            className="mt-1"
+            aria-invalid={!!err.consentContact}
+            aria-describedby={err.consentContact ? "consentContact-error" : undefined}
+          />
           <span>I agree to be contacted about my inquiry.</span>
         </label>
         <FieldError id="consentContact-error" message={err.consentContact} />

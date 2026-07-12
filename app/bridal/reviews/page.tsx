@@ -13,6 +13,7 @@ export const metadata = pageMetadata({
   description:
     "What brides say about their wedding-day hair and makeup experience with Maureen Ella.",
   path: "/bridal/reviews",
+  noindex: !permissions.testimonialsPublished,
 });
 
 export default function ReviewsPage() {

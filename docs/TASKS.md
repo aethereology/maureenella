@@ -14,13 +14,14 @@
 - [x] Security headers in `next.config.ts` (CSP, HSTS, X-Frame-Options, nosniff, Referrer-Policy, Permissions-Policy) — verified at runtime.
 - [x] Per-IP rate limiting on inquiry + waitlist server actions (`lib/rate-limit.ts`).
 - [ ] Upgrade rate limiter to a shared store (Upstash via Vercel Marketplace) or Vercel BotID/WAF before high-traffic launch.
-- [ ] Gate `noindex` + sitemap entries for portfolio/reviews/coming-soon journal on the permission flags (audit finding #4).
-- [ ] Wire `aria-describedby` on the inquiry consent checkboxes (audit finding #5).
-- [ ] Optional: CI (`typecheck && lint && build`) + a Playwright smoke test; `public/llms.txt` for AI-search visibility.
+- [x] Gate `noindex` + sitemap entries for portfolio/reviews on the permission flags (audit finding #4). (Coming-soon journal posts already 404 + excluded from sitemap.)
+- [x] Wire `aria-describedby` on the inquiry consent checkboxes (audit finding #5).
+- [x] `public/llms.txt` for AI-search visibility.
+- [ ] Optional: CI (`typecheck && lint && build`) + a Playwright smoke test.
 
 ## Content confirmation
 
-- [ ] Confirm current pricing.
+- [x] Confirm current pricing. (D009: pricing stays OFF the site — inquiry-only is the standing policy; no numbers to publish.)
 - [ ] Confirm deposit/date reservation terms.
 - [ ] Confirm whether deposit applies to final total.
 - [ ] Confirm minimum service policy.
@@ -29,8 +30,8 @@
 - [ ] Confirm touch-up hourly rate.
 - [ ] Confirm gratuity policy.
 - [ ] Confirm payment methods and deadlines.
-- [ ] Confirm phone/address/hours.
-- [ ] Confirm image permissions and photographer credits.
+- [x] Confirm phone/hours + public email. (D009: (904) 881-5808, daily 6 AM–6 PM, maureen@theparlor.info — wired in lib/site.ts, footer, contact page, LocalBusiness schema.) Street address still unconfirmed.
+- [ ] Confirm image permissions and photographer credits. (assets/ verified as local archive of old-site media — NOT publish clearance.)
 
 ## Build foundation
 
@@ -80,7 +81,7 @@
 - [x] Add robots. (app/robots.ts)
 - [x] Add canonical URLs. (per-route via pageMetadata)
 - [x] Add OG images. (default OG + per-page images)
-- [ ] Add LocalBusiness schema. (BLOCKED — needs confirmed NAP)
+- [x] Add LocalBusiness schema. (BeautySalon with confirmed phone/email/hours + areaServed; street address omitted until confirmed — D009)
 - [x] Add Article schema.
 - [x] Add Breadcrumb schema.
 - [x] Add FAQ schema where eligible.
@@ -130,7 +131,7 @@
 
 ## Wix exit (D008 — after cutover verified + 2–4 weeks stable; saves ~$200–400/yr)
 
-- [ ] Archive old-site media: download all page/blog images (wixstatic URLs from docs/BLOG_AND_CONTENT_EXTRACTION_FULL.md + crawl of the 24 posts) into gitignored `assets/` (D006). Optional: PDF/HTML snapshots of the 17 pages.
+- [x] Archive old-site media. (Verified 2026-07-12: already local in gitignored `assets/` — Wix `~mv2` files, old-brand images, IG scrapes, price-sheet PDFs. No download crawl needed.) Optional: PDF/HTML snapshots of the 17 pages before cancellation.
 - [ ] Wix housekeeping: remove stale maureenella.com connected-domain entry; disconnect theparlor.info from the Wix site.
 - [ ] Safety check on manage.wix.com Billing/subscriptions: confirm nothing else rides on the premium plan (Workspace is Google-direct per founder).
 - [ ] **Unpublish the old Wix site** so it can't resurface at `*.wixsite.com` as duplicate content after downgrade.
