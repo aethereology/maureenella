@@ -61,5 +61,135 @@
     "title": "Wedding Morning Hair Prep Guide",
     "category": "bridal-prep",
     "priority": "high"
+  },
+  {
+    "slug": "yulee-florida-elopement-angeline-shane",
+    "title": "Yulee, Florida Elopement: Angeline and Shane's Courthouse Wedding Day",
+    "category": "real-weddings",
+    "legacyTitles": [
+      "They Simply Eloped: Angeline & Shane's Intimate Union in Yulee, Florida",
+      "Eloped to Tie the Knot in Florida: An Interview with Angeline and Shane"
+    ],
+    "priority": "medium"
+  },
+  {
+    "slug": "filipino-inspired-wedding-shane-angeline",
+    "title": "Where Heritage Meets Home: Shane and Angeline's Filipino-Inspired Wedding",
+    "category": "real-weddings",
+    "legacyTitles": [
+      "Where Culture Meets Home: A Filipino-American Wedding at Old Spanish Quarter",
+      "Where Heritage Meets Home: Shane & Angeline's Filipino-Inspired Wedding"
+    ],
+    "priority": "medium"
+  },
+  {
+    "slug": "bridal-hair-accessories-veil-heirlooms",
+    "title": "Veils, Hair Accessories, and Heirloom Pieces: How to Choose Yours",
+    "category": "bridal-prep",
+    "legacyTitles": [
+      "Wedding Veil: Bringing Tradition to Modern Elegance",
+      "Elevating Your Bridal Look: Exploring Bridal Hair Accessories and the Sentimental Touch of Heirloom Pieces"
+    ],
+    "priority": "medium"
+  },
+  {
+    "slug": "sunless-tanning-before-wedding",
+    "title": "Sunless Tanning Before Your Wedding: How to Get It Right",
+    "category": "bridal-prep",
+    "legacyTitles": [
+      "Achieve Bridal Radiance: The Ultimate Guide to Sunless Tanning Lotion"
+    ],
+    "priority": "medium"
+  },
+  {
+    "slug": "bridal-makeup-sensitive-skin",
+    "title": "Bridal Makeup for Sensitive Skin: Gentle Products I Reach For",
+    "category": "beauty-favorites",
+    "legacyTitles": [
+      "Discover Beauty and Honesty with The Honest Company: Beauty & Makeup Products for Sensitive Skin"
+    ],
+    "priority": "medium"
+  },
+  {
+    "slug": "personalized-bridal-beauty-gifts",
+    "title": "Personalized Beauty Gifts for Brides and Bridesmaids",
+    "category": "beauty-favorites",
+    "legacyTitles": [
+      "YSL Beauty: Elevate Your Elegance with Personalized Engravings for Brides"
+    ],
+    "priority": "medium"
+  },
+  {
+    "slug": "best-blow-dryers-bridal-hair-prep",
+    "title": "Blow Dryers Worth Owning for Your Bridal Hair Prep",
+    "category": "beauty-favorites",
+    "legacyTitles": [
+      "Unveiling the Hottest Trends: The Top 10 Trending Blow Dryers You Need to Know"
+    ],
+    "priority": "medium"
+  },
+  {
+    "slug": "color-wow-bridal-hair-prep",
+    "title": "Color Wow: The Blow-Dry Products I Trust for Bridal Hair",
+    "category": "beauty-favorites",
+    "legacyTitles": [
+      "Bridal Beauty Essential: Color Wow's Holy Grail Blow-Drying Products for Perfect Hairstyling"
+    ],
+    "priority": "medium"
+  },
+  {
+    "slug": "where-it-all-began-lola-nails-to-the-parlor",
+    "title": "Where It All Began: From Painting My Lola's Nails to The Parlor",
+    "category": "business-mentorship",
+    "legacyTitles": [
+      "Where It All Began: From Painting My Lola's Nails to Creating The Parlor",
+      "Navigating Entrepreneurship and All Things Beauty: My Personal Journey with Maureen at The Parlor"
+    ],
+    "priority": "medium"
+  },
+  {
+    "slug": "from-salon-chair-to-salon-suite",
+    "title": "From Salon Chair to Salon Suite: My Path to Working for Myself",
+    "category": "business-mentorship",
+    "legacyTitles": [
+      "From Salon Chair to My Own Private Salon Suite: A Journey of Bridal Beauty and Entrepreneurship"
+    ],
+    "priority": "medium"
+  },
+  {
+    "slug": "pinterest-for-bridal-beauty-artists",
+    "title": "Pinterest for Bridal Beauty Artists: Getting Found Where Brides Plan",
+    "category": "business-mentorship",
+    "legacyTitles": [
+      "Optimizing Your Bridal Hair and Makeup Pinterest Account for Success"
+    ],
+    "priority": "medium"
+  },
+  {
+    "slug": "instagram-for-bridal-beauty-artists",
+    "title": "Instagram for Bridal Beauty Artists: A Portfolio That Books Weddings",
+    "category": "business-mentorship",
+    "legacyTitles": [
+      "Mastering Instagram: A Complete Guide to Elevating Your Bridal Hair and Makeup Business"
+    ],
+    "priority": "medium"
+  },
+  {
+    "slug": "honeybook-for-bridal-beauty-business",
+    "title": "Why I Use HoneyBook in My Bridal Beauty Business",
+    "category": "business-mentorship",
+    "legacyTitles": [
+      "Why I Personally Love HoneyBook and the Benefits it Brought to My Bridal Beauty Business"
+    ],
+    "priority": "medium"
+  },
+  {
+    "slug": "website-basics-for-bridal-beauty-artists",
+    "title": "Website Basics for Bridal Beauty Artists: What Actually Books Brides",
+    "category": "business-mentorship",
+    "legacyTitles": [
+      "Boost Your Bridal Beauty Business: Create and Manage Your Website with Wix"
+    ],
+    "priority": "medium"
   }
 ]
