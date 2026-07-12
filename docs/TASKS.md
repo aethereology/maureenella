@@ -70,8 +70,8 @@
 - [ ] Merge duplicate fragrance and lip posts.
 - [ ] Merge curly hair posts.
 - [ ] Merge hair extension posts.
-- [ ] Rewrite real weddings as case studies.
-- [ ] Build redirect map.
+- [ ] Rewrite real weddings as case studies. (incl. new "Shane & Angeline Filipino wedding" post published on old site 2026-07-11 — retarget its redirect after migration)
+- [x] Build redirect map. (verified against live theparlor.info sitemaps 2026-07-12 — 17 pages, 24 posts, 4 categories; implemented in `seed/redirects.json`; see docs/REDIRECT_MAP.md + D007)
 - [ ] Add internal links.
 
 ## SEO
@@ -109,13 +109,32 @@
 - [ ] Cross-browser QA.
 - [ ] Content accuracy QA.
 
-## Launch
+## Launch — domain cutover (ordered, per D007/D008: one DNS move, straight to Vercel DNS)
 
-- [ ] Confirm DNS.
-- [ ] Deploy production.
+- [ ] **NOW, not blocked:** confirm auto-renew + valid payment for theparlor.info at Squarespace Domains (expires 2026-10-18).
+- [ ] Content freeze on theparlor.info; re-fetch old sitemaps and re-sync `seed/redirects.json` + docs/REDIRECT_MAP.md.
+- [ ] Deploy production to Vercel; point maureenella.com via Namecheap DNS (A `76.76.21.21` apex, CNAME `cname.vercel-dns.com` www; keep Namecheap email-forward MX if used).
 - [ ] Test production forms.
-- [ ] Submit sitemap.
-- [ ] Request Google recrawl for key pages.
-- [ ] Update Google Business Profile website URL if needed.
-- [ ] Update social links.
-- [ ] Monitor 404s and form submissions for 2 weeks.
+- [ ] Snapshot the full Wix DNS zone for theparlor.info (Wix Domain DNS API) → save to docs/LEGACY_DNS_SNAPSHOT.md (rollback map).
+- [ ] Add theparlor.info + www as **redirect domains → maureenella.com** on the Vercel project; in Vercel DNS re-create the non-web records from the snapshot: Google MX (`aspmx.l.google.com` set), SPF TXT (`v=spf1 include:_spf.google.com ~all`), AdSense TXT, any DKIM/verification records.
+- [ ] GSC: verify maureenella.com (TXT at Namecheap) and theparlor.info (TXT in Vercel DNS); export old-site query/page baseline first.
+- [ ] **The one DNS change:** at Squarespace Domains switch theparlor.info nameservers Wix → `ns1/ns2.vercel-dns.com`. (Rollback = switch back to Wix; the Wix zone stays intact until premium is cancelled.)
+- [ ] Verify live: redirect chains (`curl -I https://theparlor.info/features` → `/bridal/portfolio`; sample posts, categories, www + apex) **and email send/receive on maureen@theparlor.info** (+ `nslookup -type=MX`).
+- [ ] GSC Change of Address: theparlor.info → maureenella.com.
+- [ ] Submit https://maureenella.com/sitemap.xml in GSC; request recrawl for key pages.
+- [ ] Update Google Business Profile website URL (only after redirects verified).
+- [ ] Update social links (Instagram/Pinterest/Facebook bios).
+- [ ] Backlink outreach: old GSC Links report + local wedding directories/vendor lists → ask for updated links.
+- [ ] Keep theparlor.info registered + redirecting 12+ months minimum.
+- [ ] Monitor GSC 404s/coverage on both properties + form submissions for 2–4 weeks; patch redirect map as needed.
+
+## Wix exit (D008 — after cutover verified + 2–4 weeks stable; saves ~$200–400/yr)
+
+- [ ] Archive old-site media: download all page/blog images (wixstatic URLs from docs/BLOG_AND_CONTENT_EXTRACTION_FULL.md + crawl of the 24 posts) into gitignored `assets/` (D006). Optional: PDF/HTML snapshots of the 17 pages.
+- [ ] Wix housekeeping: remove stale maureenella.com connected-domain entry; disconnect theparlor.info from the Wix site.
+- [ ] Safety check on manage.wix.com Billing/subscriptions: confirm nothing else rides on the premium plan (Workspace is Google-direct per founder).
+- [ ] **Unpublish the old Wix site** so it can't resurface at `*.wixsite.com` as duplicate content after downgrade.
+- [ ] Turn off auto-renew / cancel Wix premium. Keep the free Wix account as dormant archive (The Parlor editor content + old MaureenElla wixsite — still a content-migrator source).
+- [ ] One week later: re-verify redirects + email still working; spot-check media archive against the extraction doc.
+
+⚠️ Guardrails: never cancel Wix premium before the nameserver move is verified (the Wix zone is the rollback); never let theparlor.info registration lapse (2026-10-18); email MX/SPF/DKIM must exist in Vercel DNS **before** the nameserver switch.

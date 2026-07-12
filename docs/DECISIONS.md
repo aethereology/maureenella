@@ -61,6 +61,62 @@ Marketplace) or Vercel BotID/WAF if stricter global limits are needed. Excluding
 unconfirmed client media from git history avoids an irreversible privacy exposure
 and keeps the repo light (consistent with D004 and the permissions gating).
 
+### D007 - theparlor.info redirects to maureenella.com (SEO migration)
+
+Decision: The old domain **will** 301/308-redirect to maureenella.com, preserving
+paths. Mechanism: (1) host level — theparlor.info + www.theparlor.info become
+redirect domains on the Vercel project; (2) path level — the verified legacy-URL
+map in `seed/redirects.json` (via `lib/seo/redirects.ts` → `next.config.ts`)
+maps each old path to its new page, with a `/post/:slug` catch-all → `/journal`.
+Content freeze on the old site happens at cutover (re-fetch old sitemaps and
+re-sync the map as the final pre-cutover step), followed by GSC Change of
+Address and the GBP website update.
+
+Verified facts (2026-07-12): full old-site URL inventory fetched from live
+sitemaps (17 pages, 24 posts, 4 categories); theparlor.info is registered at
+Squarespace Domains (**expires 2026-10-18 — confirm auto-renew now**) with DNS
+hosted on Wix nameservers. maureenella.com is registered at Namecheap
+(to 2027-05-31) on parking DNS, plus a stale failed Wix connection to remove.
+The old domain stays registered and redirecting for 12+ months minimum after
+cutover.
+
+DNS mechanics (amended per D008): cutover is **one nameserver change** —
+theparlor.info moves from Wix nameservers straight to Vercel DNS
+(`ns1/ns2.vercel-dns.com`) at Squarespace, after the zone's non-web records
+(Google Workspace MX/SPF, AdSense TXT, any DKIM) are re-created in Vercel DNS
+from a snapshot of the Wix zone. Rollback = revert nameservers to Wix (the Wix
+zone survives until the premium plan is cancelled).
+
+Rationale: The old site ranks well locally and is linked from the Google
+Business Profile; permanent redirects plus GSC Change of Address are the
+standard mechanism to carry that authority to the new domain. Ranking legacy
+posts are never redirected to bodiless "coming soon" stubs (soft-404 risk) —
+they point to the closest live page until the replacement article ships.
+
+### D008 - Wix exit after cutover
+
+Decision: Cancel the Wix premium plan once the D007 cutover is verified and
+stable for 2–4 weeks. After cutover, theparlor.info has no website — its content
+is rebuilt on maureenella.com and the domain is a Vercel-served redirect shell —
+so Wix's only remaining role (DNS hosting) moves to Vercel DNS in the cutover
+itself. Sequence before cancelling: archive all old-site media into gitignored
+`assets/` (text already captured in docs/BLOG_AND_CONTENT_EXTRACTION_FULL.md),
+remove the stale maureenella.com connected domain, confirm nothing else is
+billed through the plan, and **unpublish the old Wix site** so it cannot
+resurface at `*.wixsite.com` as duplicate content. The free Wix account is kept
+as a dormant archive (editor content + the old MaureenElla wixsite, still a
+content-migrator source). Full checklist in TASKS.md ("Wix exit").
+
+Verified dependencies (2026-07-12): `maureen@theparlor.info` is Google Workspace
+**billed directly by Google** (per founder) — independent of Wix; the DNS zone
+also carries an AdSense verification TXT. Both record sets must exist in Vercel
+DNS before the nameserver switch, with an email send/receive test immediately
+after.
+
+Rationale: Saves ~$200–400/yr with zero capability loss. Guardrails: never
+cancel before the nameserver move is verified (the intact Wix zone is the
+rollback path), and never let the domain registration lapse.
+
 ## Pending decisions
 
 - Preferred public phone number.
@@ -71,4 +127,3 @@ and keeps the repo light (consistent with D004 and the permissions gating).
 - Whether to launch Favorites/Affiliate in Phase 1 or Phase 2.
 - Which CRM/email tools to integrate.
 - Whether to use CMS immediately or local MDX/JSON first.
-- Whether old theparlor.info will redirect to maureenella.com.
