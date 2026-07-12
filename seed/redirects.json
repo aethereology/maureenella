@@ -1,50 +1,207 @@
 [
-  { "source": "/bridal-hair-and-makeup", "destination": "/bridal", "status": 301 },
-  { "source": "/wedding-makeup-artist", "destination": "/bridal/services", "status": 301 },
-  { "source": "/wedding-hair-stylist-near-me", "destination": "/bridal/services", "status": 301 },
-  { "source": "/services-4", "destination": "/bridal/services", "status": 301 },
-  { "source": "/services-9", "destination": "/bridal/services", "status": 301 },
-  { "source": "/features", "destination": "/bridal/portfolio", "status": 301 },
-  { "source": "/general-5", "destination": "/bridal/faq", "status": 301 },
-  { "source": "/prepguide", "destination": "/bridal/prep-guides", "status": 301 },
-  { "source": "/weddingdayguide", "destination": "/bridal/prep-guides", "status": 301 },
-  { "source": "/salonsuite", "destination": "/about", "status": 301 },
-  { "source": "/maureenella", "destination": "/about", "status": 301 },
-  { "source": "/courses", "destination": "/education", "status": 301 },
-  { "source": "/mrlblog", "destination": "/journal", "status": 301 },
-  { "source": "/news", "destination": "/journal", "status": 301 },
-  { "source": "/contact", "destination": "/contact", "status": 301 },
-
-  { "source": "/post/how-securing-a-parking-space-for-your-hair-and-makeup-vendor-saves-time-on-your-wedding-morning", "destination": "/journal/wedding-morning-parking-hair-makeup-vendor", "status": 301 },
-  { "source": "/post/lash-extensions-vs-false-lashes-key-differences", "destination": "/journal/lash-extensions-vs-false-lashes-wedding", "status": 301 },
-  { "source": "/post/wedding-day-elegance-top-lip-colors-to-perfect-your-bridal-look", "destination": "/journal/wedding-day-lip-colors", "status": 301 },
-  { "source": "/post/captivating-fragrances-for-your-special-day-top-perfumes-to-elevate-your-wedding-aura", "destination": "/journal/wedding-day-fragrance", "status": 301 },
-  { "source": "/post/luxy-hair-extensions-elevate-your-hair-game-with-quality-and-style", "destination": "/journal/wedding-hair-extensions", "status": 301 },
-  { "source": "/post/best-hair-extensions", "destination": "/journal/wedding-hair-extensions", "status": 301 },
-
-  { "source": "/post/bridal-hair-prep-guide", "destination": "/bridal/prep-guides/hair-prep", "status": 301 },
-  { "source": "/post/bridal-hair-preparation-guide-to-your-dream-hairstyle", "destination": "/bridal/prep-guides/hair-prep", "status": 301 },
-  { "source": "/post/bridal-makeup-prep-a-guide-for-brides-on-their-wedding-morning", "destination": "/bridal/prep-guides/makeup-prep", "status": 301 },
-
-  { "source": "/post/st-augustine-beach-elopement-mcklevey-and-ryan-s-love-story", "destination": "/bridal/st-augustine", "status": 301 },
-  { "source": "/post/keely-s-wedding-day-prep-at-bowing-oaks-a-tale-of-love-laughter-and-vows", "destination": "/bridal/jacksonville", "status": 301 },
-  { "source": "/post/they-simply-eloped-angeline-shane-s-intimate-union-in-yulee-florida", "destination": "/bridal/portfolio", "status": 301 },
-  { "source": "/post/floridaelopementt", "destination": "/bridal/portfolio", "status": 301 },
-
-  { "source": "/post/from-salon-chair-to-my-own-private-salon-suite-a-journey-of-bridal-beauty-and-entrepreneurship", "destination": "/about", "status": 301 },
-  { "source": "/post/where-is-all-began-maureen-at-the-parlor-bridal-hair-and-makeup", "destination": "/about", "status": 301 },
-
-  { "source": "/post/wedding-veil-bringing-tradition-to-modern-elegance", "destination": "/favorites", "status": 301 },
-  { "source": "/post/discover-beauty-and-honesty-with-the-honest-company-beauty-makeup-products-for-sensitive-skin", "destination": "/favorites", "status": 301 },
-  { "source": "/post/achieve-bridal-radiance-the-ultimate-guide-to-sunless-tanning-lotion", "destination": "/favorites", "status": 301 },
-  { "source": "/post/ysl-beauty-elevate-your-elegance-with-personalized-engravings-for-bride", "destination": "/favorites", "status": 301 },
-  { "source": "/post/unveiling-the-hottest-trends-the-top-10-trending-blow-dryers-you-need-to-know", "destination": "/favorites", "status": 301 },
-  { "source": "/post/bridal-beauty-essential-color-wow-s-holy-grail-blow-drying-products-for-perfect-hairstyling", "destination": "/favorites", "status": 301 },
-  { "source": "/post/elevating-your-bridal-look-exploring-bridal-hair-accessories-and-the-sentimental-touch-of-heirloom", "destination": "/favorites", "status": 301 },
-
-  { "source": "/post/where-heritage-meets-home-shane-angeline-s-filipino-inspired-wedding", "destination": "/journal", "status": 301 },
-  { "source": "/post/template-how-to-write-a-tips-blog-post-2", "destination": "/journal", "status": 301 },
-
-  { "source": "/mrlblog/categories/:category", "destination": "/journal", "status": 301 },
-  { "source": "/post/:slug", "destination": "/journal", "status": 301 }
+  {
+    "source": "/bridal-hair-and-makeup",
+    "destination": "/bridal",
+    "status": 301
+  },
+  {
+    "source": "/wedding-makeup-artist",
+    "destination": "/bridal/services",
+    "status": 301
+  },
+  {
+    "source": "/wedding-hair-stylist-near-me",
+    "destination": "/bridal/services",
+    "status": 301
+  },
+  {
+    "source": "/services-4",
+    "destination": "/bridal/services",
+    "status": 301
+  },
+  {
+    "source": "/services-9",
+    "destination": "/bridal/services",
+    "status": 301
+  },
+  {
+    "source": "/features",
+    "destination": "/bridal/portfolio",
+    "status": 301
+  },
+  {
+    "source": "/general-5",
+    "destination": "/bridal/faq",
+    "status": 301
+  },
+  {
+    "source": "/prepguide",
+    "destination": "/bridal/prep-guides",
+    "status": 301
+  },
+  {
+    "source": "/weddingdayguide",
+    "destination": "/bridal/prep-guides",
+    "status": 301
+  },
+  {
+    "source": "/salonsuite",
+    "destination": "/about",
+    "status": 301
+  },
+  {
+    "source": "/maureenella",
+    "destination": "/about",
+    "status": 301
+  },
+  {
+    "source": "/courses",
+    "destination": "/education",
+    "status": 301
+  },
+  {
+    "source": "/mrlblog",
+    "destination": "/journal",
+    "status": 301
+  },
+  {
+    "source": "/news",
+    "destination": "/journal",
+    "status": 301
+  },
+  {
+    "source": "/contact",
+    "destination": "/contact",
+    "status": 301
+  },
+  {
+    "source": "/post/how-securing-a-parking-space-for-your-hair-and-makeup-vendor-saves-time-on-your-wedding-morning",
+    "destination": "/journal/wedding-morning-parking-hair-makeup-vendor",
+    "status": 301
+  },
+  {
+    "source": "/post/lash-extensions-vs-false-lashes-key-differences",
+    "destination": "/journal/lash-extensions-vs-false-lashes-wedding",
+    "status": 301
+  },
+  {
+    "source": "/post/wedding-day-elegance-top-lip-colors-to-perfect-your-bridal-look",
+    "destination": "/journal/wedding-day-lip-colors",
+    "status": 301
+  },
+  {
+    "source": "/post/captivating-fragrances-for-your-special-day-top-perfumes-to-elevate-your-wedding-aura",
+    "destination": "/journal/wedding-day-fragrance",
+    "status": 301
+  },
+  {
+    "source": "/post/luxy-hair-extensions-elevate-your-hair-game-with-quality-and-style",
+    "destination": "/journal/wedding-hair-extensions",
+    "status": 301
+  },
+  {
+    "source": "/post/best-hair-extensions",
+    "destination": "/journal/wedding-hair-extensions",
+    "status": 301
+  },
+  {
+    "source": "/post/bridal-hair-prep-guide",
+    "destination": "/journal/bridal-hair-prep-guide",
+    "status": 301
+  },
+  {
+    "source": "/post/bridal-hair-preparation-guide-to-your-dream-hairstyle",
+    "destination": "/journal/bridal-hair-prep-guide",
+    "status": 301
+  },
+  {
+    "source": "/post/bridal-makeup-prep-a-guide-for-brides-on-their-wedding-morning",
+    "destination": "/journal/bridal-makeup-prep-guide",
+    "status": 301
+  },
+  {
+    "source": "/post/st-augustine-beach-elopement-mcklevey-and-ryan-s-love-story",
+    "destination": "/journal/st-augustine-beach-elopement-hair-makeup",
+    "status": 301
+  },
+  {
+    "source": "/post/keely-s-wedding-day-prep-at-bowing-oaks-a-tale-of-love-laughter-and-vows",
+    "destination": "/journal/bowing-oaks-wedding-hair-makeup",
+    "status": 301
+  },
+  {
+    "source": "/post/they-simply-eloped-angeline-shane-s-intimate-union-in-yulee-florida",
+    "destination": "/journal/yulee-florida-elopement-angeline-shane",
+    "status": 301
+  },
+  {
+    "source": "/post/floridaelopementt",
+    "destination": "/journal/yulee-florida-elopement-angeline-shane",
+    "status": 301
+  },
+  {
+    "source": "/post/from-salon-chair-to-my-own-private-salon-suite-a-journey-of-bridal-beauty-and-entrepreneurship",
+    "destination": "/journal/from-salon-chair-to-salon-suite",
+    "status": 301
+  },
+  {
+    "source": "/post/where-is-all-began-maureen-at-the-parlor-bridal-hair-and-makeup",
+    "destination": "/journal/where-it-all-began-lola-nails-to-the-parlor",
+    "status": 301
+  },
+  {
+    "source": "/post/wedding-veil-bringing-tradition-to-modern-elegance",
+    "destination": "/journal/bridal-hair-accessories-veil-heirlooms",
+    "status": 301
+  },
+  {
+    "source": "/post/discover-beauty-and-honesty-with-the-honest-company-beauty-makeup-products-for-sensitive-skin",
+    "destination": "/journal/bridal-makeup-sensitive-skin",
+    "status": 301
+  },
+  {
+    "source": "/post/achieve-bridal-radiance-the-ultimate-guide-to-sunless-tanning-lotion",
+    "destination": "/journal/sunless-tanning-before-wedding",
+    "status": 301
+  },
+  {
+    "source": "/post/ysl-beauty-elevate-your-elegance-with-personalized-engravings-for-bride",
+    "destination": "/journal/personalized-bridal-beauty-gifts",
+    "status": 301
+  },
+  {
+    "source": "/post/unveiling-the-hottest-trends-the-top-10-trending-blow-dryers-you-need-to-know",
+    "destination": "/journal/best-blow-dryers-bridal-hair-prep",
+    "status": 301
+  },
+  {
+    "source": "/post/bridal-beauty-essential-color-wow-s-holy-grail-blow-drying-products-for-perfect-hairstyling",
+    "destination": "/journal/color-wow-bridal-hair-prep",
+    "status": 301
+  },
+  {
+    "source": "/post/elevating-your-bridal-look-exploring-bridal-hair-accessories-and-the-sentimental-touch-of-heirloom",
+    "destination": "/journal/bridal-hair-accessories-veil-heirlooms",
+    "status": 301
+  },
+  {
+    "source": "/post/where-heritage-meets-home-shane-angeline-s-filipino-inspired-wedding",
+    "destination": "/journal/filipino-inspired-wedding-shane-angeline",
+    "status": 301
+  },
+  {
+    "source": "/post/template-how-to-write-a-tips-blog-post-2",
+    "destination": "/journal",
+    "status": 301
+  },
+  {
+    "source": "/mrlblog/categories/:category",
+    "destination": "/journal",
+    "status": 301
+  },
+  {
+    "source": "/post/:slug",
+    "destination": "/journal",
+    "status": 301
+  }
 ]

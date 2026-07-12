@@ -156,6 +156,33 @@ Note: the placeholder testimonial names in the old seed (e.g. "Jamie Stiles")
 were incorrect — real GBP names verified (e.g. Jaimie Harris). GBP hours show
 "Opens 9 AM Mon" vs confirmed 6 AM–6 PM daily — Maureen should align GBP hours.
 
+### D011 - Full content migration + full portfolio publish
+
+Decision (founder, 2026-07-12, on Maureen's request): migrate **all blog content
+from both Wix sites** into the Journal and publish **all approved portfolio
+photos**. Executed:
+- **Journal 6 → 24 published articles.** Filled the 4 stubs and added 14 new
+  articles across real-weddings (Mcklevey & Ryan at Ocean Hammock Park; Keely at
+  Bowing Oaks — Maureen credited for hair only, per source; Angeline & Shane's
+  Yulee courthouse elopement; their Filipino-American wedding at Old Spanish
+  Quarter), bridal-prep, beauty-favorites, and business-mentorship (6 posts from
+  the old maureenlamban.wixsite.com blog incl. the Lola origin story). All
+  rewritten (never verbatim) per the content-migrator skill; vendor credits only
+  as named in sources; merged duplicates (veil+heirloom; both hair-prep posts;
+  floridaelopementt interview folded into the Yulee article; "navigating
+  entrepreneurship" folded into the origin story); skipped junk template post
+  and stale 2023 Sephora-sale variants. The Wix-promoting website post was
+  rewritten platform-neutral.
+- **Portfolio 16 → 91 images.** All 87 approved assets optimized (490MB source →
+  26MB served); perceptual-hash dedupe removed 12 exact duplicates of
+  already-published images; 75 unique new gallery entries with alt text, tags
+  (new filters: Bridal Party, Getting Ready), and credits. Credit correction:
+  the Mcklevey & Ryan beach images were previously credited "Kristinaclicks" —
+  the source post names **My Nguyen Photography**; fixed on all three affected
+  entries.
+- **Redirects:** 17 legacy `/post/*` URLs retargeted from interim destinations
+  to their 1:1 articles; catch-alls unchanged.
+
 ## Pending decisions
 
 - Confirm Education product offers + pricing before any are sold (D005).

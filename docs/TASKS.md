@@ -67,14 +67,14 @@
 
 ## Content migration
 
-- [ ] Migrate current theparlor.info blog posts.
-- [ ] Migrate old Wix blog posts.
-- [ ] Merge duplicate fragrance and lip posts.
-- [ ] Merge curly hair posts.
-- [ ] Merge hair extension posts.
-- [ ] Rewrite real weddings as case studies. (incl. new "Shane & Angeline Filipino wedding" post published on old site 2026-07-11 — retarget its redirect after migration)
-- [x] Build redirect map. (verified against live theparlor.info sitemaps 2026-07-12 — 17 pages, 24 posts, 4 categories; implemented in `seed/redirects.json`; see docs/REDIRECT_MAP.md + D007)
-- [ ] Add internal links.
+- [x] Migrate current theparlor.info blog posts. (D011 — all 24 accounted for: rewritten, merged, or skipped-with-rationale)
+- [x] Migrate old Wix blog posts. (D011 — 6 business-mentorship articles incl. Lola origin story; dupes skipped)
+- [x] Merge duplicate fragrance and lip posts. (covered by existing articles; Sephora-sale variants folded in)
+- [x] Merge curly hair posts. (covered by curly-bridal-hair-prep)
+- [x] Merge hair extension posts. (covered by wedding-hair-extensions)
+- [x] Rewrite real weddings as case studies. (D011 — 4 published incl. Shane & Angeline Filipino wedding; redirects retargeted)
+- [x] Build redirect map. (verified against live theparlor.info sitemaps 2026-07-12 — 17 pages, 24 posts, 4 categories; implemented in `seed/redirects.json`; see docs/REDIRECT_MAP.md + D007. Retargeted to 1:1 articles in D011.)
+- [ ] Add internal links. (body block model has no inline links — future enhancement)
 
 ## SEO
 
