@@ -120,7 +120,9 @@
 - [ ] Snapshot the full Wix DNS zone for theparlor.info (Wix Domain DNS API) → save to docs/LEGACY_DNS_SNAPSHOT.md (rollback map).
 - [ ] Add theparlor.info + www as **redirect domains → maureenella.com** on the Vercel project; in Vercel DNS re-create the non-web records from the snapshot: Google MX (`aspmx.l.google.com` set), SPF TXT (`v=spf1 include:_spf.google.com ~all`), AdSense TXT, any DKIM/verification records.
 - [ ] GSC: verify maureenella.com (TXT at Namecheap) and theparlor.info (TXT in Vercel DNS); export old-site query/page baseline first.
-- [ ] **The one DNS change:** at Squarespace Domains switch theparlor.info nameservers Wix → `ns1/ns2.vercel-dns.com`. (Rollback = switch back to Wix; the Wix zone stays intact until premium is cancelled.)
+- [x] Snapshot Wix DNS zone → docs/LEGACY_DNS_SNAPSHOT.md (done 2026-07-12; keep-list = Google MX/SPF/AdSense TXT; Ascend DKIM CNAMEs die with Wix).
+- [ ] **⚠️ DNSSEC:** disable DNSSEC / remove the DS record at Squarespace Domains BEFORE the nameserver change (snapshot shows dnssecEnabled: true — skipping this blacks out the domain).
+- [ ] **The one DNS change:** at Squarespace Domains switch theparlor.info nameservers Wix → `ns1/ns2.vercel-dns.com`. (Rollback = switch back to Wix + re-enable DNSSEC; the Wix zone stays intact until premium is cancelled.)
 - [ ] Verify live: redirect chains (`curl -I https://theparlor.info/features` → `/bridal/portfolio`; sample posts, categories, www + apex) **and email send/receive on maureen@theparlor.info** (+ `nslookup -type=MX`).
 - [ ] GSC Change of Address: theparlor.info → maureenella.com.
 - [ ] Submit https://maureenella.com/sitemap.xml in GSC; request recrawl for key pages.
