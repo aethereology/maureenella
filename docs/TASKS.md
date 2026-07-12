@@ -5,8 +5,8 @@
 - [x] Create repo or confirm existing repo. (git initialized; initial commit 1a720ab)
 - [x] Add this package to repo root.
 - [x] Configure `.env.example` without secrets.
-- [ ] Confirm package manager.
-- [ ] Confirm deployment target.
+- [x] Confirm package manager. (npm)
+- [x] Confirm deployment target. (Vercel — project `sparkcreativesinc/maureenella`, GitHub-connected to aethereology/maureenella; live at maureenella.vercel.app since 2026-07-12. Custom domain attaches at cutover. ⚠️ RESEND_API_KEY still unset — forms won't deliver until a Resend key + verified sender domain exist.)
 - [x] Configure git ignore for local Claude/settings/env files. (+ raw media assets/, maureen/ — D006)
 
 ## Pre-launch hardening (D006)

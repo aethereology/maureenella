@@ -1,0 +1,8 @@
+# Raw client media archives — never deployed (D006: gitignored, permission-gated)
+/assets
+/maureen
+
+# Local-only
+.env*.local
+.claude
+/prompts
