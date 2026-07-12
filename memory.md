@@ -3,6 +3,12 @@
 > Stored lowercase (`memory.md`); on this Windows repo it is what loads for
 > `MEMORY.md`. Read this and `CLAUDE.md` first each session.
 
+This file is updated at the end of every Claude Code session so future sessions can resume intelligently.
+
+A running snapshot for humans. Complements (does not replace) the agent memory
+in `~/.claude/.../memory/` which Aethera reads automatically each session.
+Update the "Current state" line whenever it changes.
+
 ## What this is
 
 **maureenella.com** — premium bridal hair & makeup brand for **Maureen Ella**

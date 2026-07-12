@@ -5,26 +5,53 @@ import { redirects } from "./lib/seo/redirects";
 
 const projectRoot = dirname(fileURLToPath(import.meta.url));
 
+const isDev = process.env.NODE_ENV !== "production";
+
 /**
- * Content Security Policy. The site is fully static (SSG), so per-request
- * nonces aren't available; inline scripts (JSON-LD + the GA4 init snippet) and
- * Tailwind/Next inline styles require 'unsafe-inline'. The remaining directives
- * (frame-ancestors, object-src, base-uri, form-action, HTTPS upgrade) still
- * provide meaningful protection. Allowed external origins are limited to GA4.
+ * Content Security Policy. The production site is fully static (SSG), so
+ * per-request nonces aren't available; inline scripts (JSON-LD + the GA4 init
+ * snippet) and Tailwind/Next inline styles require 'unsafe-inline'. Development
+ * also needs 'unsafe-eval' and websocket connections for React Refresh/HMR.
  */
+const scriptSrc = [
+  "'self'",
+  "'unsafe-inline'",
+  isDev ? "'unsafe-eval'" : null,
+  "https://www.googletagmanager.com",
+  "https://www.google-analytics.com",
+]
+  .filter(Boolean)
+  .join(" ");
+
+const connectSrc = [
+  "'self'",
+  "https://www.google-analytics.com",
+  "https://region1.google-analytics.com",
+  "https://www.googletagmanager.com",
+  isDev ? "ws://localhost:*" : null,
+  isDev ? "ws://127.0.0.1:*" : null,
+  isDev ? "http://localhost:*" : null,
+  isDev ? "http://127.0.0.1:*" : null,
+]
+  .filter(Boolean)
+  .join(" ");
+
 const csp = [
   "default-src 'self'",
-  "script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com",
+  `script-src ${scriptSrc}`,
   "style-src 'self' 'unsafe-inline'",
   "img-src 'self' data: https://www.googletagmanager.com https://www.google-analytics.com",
   "font-src 'self'",
-  "connect-src 'self' https://www.google-analytics.com https://region1.google-analytics.com https://www.googletagmanager.com",
+  `connect-src ${connectSrc}`,
+  "worker-src 'self' blob:",
   "frame-ancestors 'none'",
   "base-uri 'self'",
   "form-action 'self'",
   "object-src 'none'",
-  "upgrade-insecure-requests",
-].join("; ");
+  isDev ? null : "upgrade-insecure-requests",
+]
+  .filter(Boolean)
+  .join("; ");
 
 const securityHeaders = [
   { key: "Content-Security-Policy", value: csp },
