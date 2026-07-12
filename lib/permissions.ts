@@ -8,12 +8,16 @@
  */
 export const permissions = {
   /**
-   * Default closed for pre-launch: seed content is marked needs-confirmation.
-   * Flip to true only after Maureen approves image usage + photographer credits.
+   * Approved by the founder 2026-07-12: curated set from assets/portfolio
+   * (photographer credits retained in content/gallery.ts).
    */
-  portfolioPublished: false,
-  /** Flip to true only after Maureen approves which reviews may be quoted. */
-  testimonialsPublished: false,
+  portfolioPublished: true,
+  /**
+   * Approved by the founder 2026-07-12: quotes sourced verbatim from the
+   * public Google Business Profile reviews (seed/testimonials.json,
+   * permissionStatus "approved-gbp"). Display names stay "First L."
+   */
+  testimonialsPublished: true,
 } as const;
 
 /** "Jamie Stiles" → "Jamie S." — reduces exposure for unconfirmed permissions. */

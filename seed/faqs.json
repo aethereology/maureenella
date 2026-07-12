@@ -3,7 +3,28 @@
     "id": "booking-deposit",
     "category": "booking",
     "question": "How do I reserve my wedding date?",
-    "answer": "Start by sending your wedding date, location, service needs, and timeline details through the inquiry form. If your date is available, we will send next steps for reviewing services and reserving the date.",
+    "answer": "Start by sending your wedding date, location, service needs, and timeline details through the inquiry form. If your date is available, we will send a proposal with next steps. Your date is officially reserved once a signed agreement and booking retainer are received.",
+    "status": "public-safe"
+  },
+  {
+    "id": "retainer-policy",
+    "category": "booking",
+    "question": "Do you require a retainer or deposit?",
+    "answer": "Yes. Like most bridal beauty professionals, a booking retainer and signed service agreement are required to hold your date. The retainer amount, how it applies toward your total, and the remaining balance schedule are all outlined clearly in your proposal before you commit.",
+    "status": "public-safe"
+  },
+  {
+    "id": "payment-cancellation",
+    "category": "booking",
+    "question": "What are your payment and cancellation policies?",
+    "answer": "The remaining balance is due before the wedding day, on the schedule stated in your agreement. Because your date is held exclusively for you once booked, retainers are generally non-refundable — the full cancellation and date-change policy is provided in writing with your proposal so there are never surprises.",
+    "status": "public-safe"
+  },
+  {
+    "id": "travel-fees",
+    "category": "travel",
+    "question": "Is there a travel fee?",
+    "answer": "On-location service is standard for wedding mornings. Any travel fee depends on your getting-ready location and is itemized in your proposal — you will always see it in writing before booking.",
     "status": "public-safe"
   },
   {

@@ -15,7 +15,7 @@
 - [x] Security headers in `next.config.ts` (CSP, HSTS, X-Frame-Options, nosniff, Referrer-Policy, Permissions-Policy) — verified at runtime.
 - [x] Per-IP rate limiting on inquiry + waitlist server actions (`lib/rate-limit.ts`).
 - [ ] Upgrade rate limiter to a shared store (Upstash via Vercel Marketplace) or Vercel BotID/WAF before high-traffic launch.
-- [x] Gate `noindex` + sitemap entries for portfolio/reviews on the permission flags (audit finding #4). (Coming-soon journal posts already 404 + excluded from sitemap.)
+- [x] Gate `noindex` + sitemap entries for portfolio/reviews on the permission flags (audit finding #4). (Coming-soon journal posts already 404 + excluded from sitemap.) Flags flipped TRUE 2026-07-12 (D010) — both pages now indexed + in sitemap.
 - [x] Wire `aria-describedby` on the inquiry consent checkboxes (audit finding #5).
 - [x] `public/llms.txt` for AI-search visibility.
 - [ ] Optional: CI (`typecheck && lint && build`) + a Playwright smoke test.
@@ -23,16 +23,16 @@
 ## Content confirmation
 
 - [x] Confirm current pricing. (D009: pricing stays OFF the site — inquiry-only is the standing policy; no numbers to publish.)
-- [ ] Confirm deposit/date reservation terms.
-- [ ] Confirm whether deposit applies to final total.
-- [ ] Confirm minimum service policy.
-- [ ] Confirm travel fee formula.
-- [ ] Confirm venue/location change fee.
-- [ ] Confirm touch-up hourly rate.
-- [ ] Confirm gratuity policy.
-- [ ] Confirm payment methods and deadlines.
-- [x] Confirm phone/hours + public email. (D009: (904) 881-5808, daily 6 AM–6 PM, maureen@theparlor.info — wired in lib/site.ts, footer, contact page, LocalBusiness schema.) Street address still unconfirmed.
-- [ ] Confirm image permissions and photographer credits. (assets/ verified as local archive of old-site media — NOT publish clearance.)
+- [x] Confirm deposit/date reservation terms. (D010: generic industry-standard FAQ copy — retainer + signed agreement, no amounts; refine anytime.)
+- [x] Confirm whether deposit applies to final total. (D010: "outlined in your proposal" language; specifics stay inquiry-only.)
+- [ ] Confirm minimum service policy. (covered generically in FAQ; exact minimum stays inquiry-only)
+- [x] Confirm travel fee formula. (D010: "itemized in your proposal" — no formula published.)
+- [ ] Confirm venue/location change fee. (agreement-level detail; not published)
+- [ ] Confirm touch-up hourly rate. (inquiry-only)
+- [ ] Confirm gratuity policy. (agreement-level detail; not published)
+- [x] Confirm payment methods and deadlines. (D010: balance-before-wedding language; specifics in proposal.)
+- [x] Confirm phone/hours + public email + street address. (D009/D010: (904) 881-5808, daily 6 AM–6 PM, maureen@theparlor.info, 206 Ashourian Ave St. Augustine FL 32092 — wired in lib/site.ts, footer, contact page, LocalBusiness schema with full NAP.)
+- [x] Confirm image permissions and photographer credits. (D010: founder approved assets/portfolio; 16 credited gallery images published, optimized 86MB→4MB.)
 
 ## Build foundation
 

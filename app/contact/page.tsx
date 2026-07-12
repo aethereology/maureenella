@@ -47,6 +47,9 @@ export default function ContactPage() {
               {site.contact.hours.confirmed && site.contact.hours.value && (
                 <p className="text-cocoa/70">{site.contact.hours.value}</p>
               )}
+              {site.contact.address.confirmed && site.contact.address.value && (
+                <p className="text-cocoa/70">{site.contact.address.value}</p>
+              )}
             </div>
           </div>
         )}

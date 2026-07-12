@@ -134,9 +134,30 @@ Rationale: Confirmed NAP-minus-address enables LocalBusiness schema and gives
 brides direct contact paths without violating the D004 gating rule on the
 still-unconfirmed address and pricing details.
 
+### D010 - Content publish approvals + full NAP (launch content complete)
+
+Decision (founder, 2026-07-12): (1) **Street address confirmed** — 206 Ashourian
+Ave, St. Augustine, FL 32092 — added to `lib/site.ts`, the contact page, and the
+LocalBusiness schema (full NAP now live, matching the GBP). (2) **Reviews
+approved** — quotes sourced verbatim from the public Google Business Profile
+(29 reviews, 5.0★); nine wedding-relevant reviews imported to
+`seed/testimonials.json` with real reviewer names (displayed as "First L."),
+`permissionStatus: "approved-gbp"`; `testimonialsPublished: true`.
+(3) **Portfolio approved** — founder-curated set (`assets/portfolio`, 87 files);
+the 16 pre-curated, credited gallery images in `public/images/portfolio` were
+optimized (86MB → 4MB, max 2000px q82) and published; `portfolioPublished: true`.
+Sitemap/noindex gates flipped open automatically. (4) **Booking policies** —
+generic industry-standard FAQ answers added (retainer + signed agreement,
+balance-before-wedding, non-refundable retainer language, travel-fee-in-proposal)
+with **no specific amounts** — numbers stay inquiry-only per D004/D009; copy is
+editable as Maureen refines policy.
+
+Note: the placeholder testimonial names in the old seed (e.g. "Jamie Stiles")
+were incorrect — real GBP names verified (e.g. Jaimie Harris). GBP hours show
+"Opens 9 AM Mon" vs confirmed 6 AM–6 PM daily — Maureen should align GBP hours.
+
 ## Pending decisions
 
-- Preferred public street address / suite (blocks schema `address` + full NAP).
 - Confirm Education product offers + pricing before any are sold (D005).
 - Choose an ESP to run Education emails 2–4 as an automated drip.
 - Whether to launch Favorites/Affiliate in Phase 1 or Phase 2.

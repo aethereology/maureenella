@@ -1,35 +1,65 @@
 [
   {
-    "id": "marina-oka",
-    "name": "Marina Oka",
-    "quote": "Hair and makeup stayed pretty even though it was windy on the beach. 10 out of 10 recommend.",
-    "proofPoint": [
-      "beach",
-      "wind",
-      "long-lasting"
-    ],
-    "permissionStatus": "needs-confirmation"
+    "id": "jaimie-h",
+    "name": "Jaimie Harris",
+    "quote": "Maureen is the absolute best!! I am still in awe of how beautiful she made me feel on my wedding day. Both my hair and makeup were better than I could have dreamed of and the rest of my bridal party also looked so stunning! She is so sweet and organized, and I'm so thankful I found her!",
+    "proofPoint": ["bridal party", "organized", "hair and makeup"],
+    "permissionStatus": "approved-gbp"
   },
   {
-    "id": "jamie-stiles",
-    "name": "Jamie Stiles",
-    "quote": "Maureen made me feel beautiful on my wedding day. Hair and makeup were better than dreamed and the bridal party looked stunning.",
-    "proofPoint": [
-      "felt beautiful",
-      "bridal party",
-      "organized"
-    ],
-    "permissionStatus": "needs-confirmation"
+    "id": "stephanie-s",
+    "name": "Stephanie Schroyer",
+    "quote": "Maureen made my wedding day absolutely perfect. She did my hair and makeup for my wedding day and exceeded my expectations! I wouldn't hesitate to reach out to her if I had another formal event.",
+    "proofPoint": ["exceeded expectations", "wedding day"],
+    "permissionStatus": "approved-gbp"
   },
   {
-    "id": "heather-broderick",
-    "name": "Heather Broderick",
-    "quote": "Maureen and her team were amazing. Everyone was ahead of schedule and Maureen made it easy to plan the day.",
-    "proofPoint": [
-      "ahead of schedule",
-      "team",
-      "planning"
-    ],
-    "permissionStatus": "needs-confirmation"
+    "id": "heather-sd",
+    "name": "Heather Sands Dutton",
+    "quote": "Maureen is an absolute dream to work with! My hair on my wedding day was a work of art, and I received SO many compliments on how great it looked. I opted for an updo so I could freely dance all night, and it stayed put all night.",
+    "proofPoint": ["long-lasting", "updo", "compliments"],
+    "permissionStatus": "approved-gbp"
+  },
+  {
+    "id": "katie-p",
+    "name": "Katie Pharr",
+    "quote": "Maureen came to my hotel for my hair and makeup on my wedding day! She was very courteous and punctual! She made me look amazing all while offering skin care education and giving me a boost of confidence! I'd use her again for any event requiring hair and makeup!",
+    "proofPoint": ["on-location", "punctual", "confidence"],
+    "permissionStatus": "approved-gbp"
+  },
+  {
+    "id": "alex-t",
+    "name": "Alex Timmer",
+    "quote": "Maureen was AMAZING! She heard all my requests and delivered beautiful hair and makeup styles for our elopement wedding. She's so easy to communicate with and I loved every moment of my experience with her.",
+    "proofPoint": ["elopement", "communication"],
+    "permissionStatus": "approved-gbp"
+  },
+  {
+    "id": "elaine-w",
+    "name": "Elaine Witte",
+    "quote": "My wedding day look was everything I dreamed of and more! I wanted a timeless, classic look that still felt like me, and that's exactly what I got.",
+    "proofPoint": ["timeless", "felt like me"],
+    "permissionStatus": "approved-gbp"
+  },
+  {
+    "id": "kolbi-c",
+    "name": "Kolbi C",
+    "quote": "I cannot recommend Maureen enough! After my wedding date was unexpectedly moved up, I found myself scrambling to find a hair and makeup artist. Not only did Maureen accommodate my late booking, but she made the entire process feel effortless and stress-free.",
+    "proofPoint": ["late booking", "stress-free"],
+    "permissionStatus": "approved-gbp"
+  },
+  {
+    "id": "samantha-t",
+    "name": "Samantha Tiller",
+    "quote": "Maureen is so talented. This was my first time getting my hair and makeup done professionally and I was admittedly very nervous but she is AMAZING at what she does.",
+    "proofPoint": ["first-timer friendly", "talented"],
+    "permissionStatus": "approved-gbp"
+  },
+  {
+    "id": "erika-m",
+    "name": "Erika Mejia",
+    "quote": "Maureen is an artist who listens to you and works with great professionalism. She cares about the condition of your hair, which is something almost no one does anymore. You restored my confidence. THANK YOU.",
+    "proofPoint": ["hair health", "professionalism"],
+    "permissionStatus": "approved-gbp"
   }
 ]

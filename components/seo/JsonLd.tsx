@@ -28,12 +28,11 @@ export function OrganizationSchema() {
 }
 
 /**
- * Service-area LocalBusiness markup. Renders only once phone + email are
- * confirmed (D009). Street address intentionally omitted until confirmed —
- * valid for a service-area business that travels to clients.
+ * LocalBusiness markup. Renders only once phone + email are confirmed (D009);
+ * the street address joins the payload once it is confirmed too.
  */
 export function LocalBusinessSchema() {
-  const { phone, email } = site.contact;
+  const { phone, email, address } = site.contact;
   if (!phone.confirmed || !email.confirmed || !phone.value || !email.value) {
     return null;
   }
@@ -48,6 +47,18 @@ export function LocalBusinessSchema() {
         description: site.description,
         telephone: `+1${phone.value.replace(/\D/g, "")}`,
         email: email.value,
+        ...(address.confirmed && address.value
+          ? {
+              address: {
+                "@type": "PostalAddress",
+                streetAddress: "206 Ashourian Ave",
+                addressLocality: "St. Augustine",
+                addressRegion: "FL",
+                postalCode: "32092",
+                addressCountry: "US",
+              },
+            }
+          : {}),
         areaServed: site.serviceAreas,
         openingHoursSpecification: {
           "@type": "OpeningHoursSpecification",

@@ -34,14 +34,13 @@ export const site = {
   ],
 
   /**
-   * Contact + identity. Confirmed by the founder on 2026-07-12 (D009):
-   * email, phone, hours. Address stays UNCONFIRMED (null) — never render it
-   * or add it to schema until Maureen confirms.
+   * Contact + identity. Confirmed by the founder (D009, updated 2026-07-12):
+   * email, phone, hours, and street address.
    */
   contact: {
     phone: { value: "(904) 881-5808", confirmed: true },
     email: { value: "maureen@theparlor.info", confirmed: true },
-    address: unconfirmed<string>(),
+    address: { value: "206 Ashourian Ave, St. Augustine, FL 32092", confirmed: true },
     hours: { value: "Daily, 6:00 AM–6:00 PM", confirmed: true },
   },
 
