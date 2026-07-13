@@ -29,6 +29,60 @@ export const PORTFOLIO_FILTERS: { key: string; label: string }[] = [
 ];
 
 export const gallery: GalleryItem[] = [
+  // --- Featured picks, bumped to the top of the grid (2026-07-12) ---
+  {
+    src: "/images/portfolio/curly.jpg",
+    alt: "Bride with a natural curly bridal hairstyle",
+    tags: ["hair", "curly"],
+    featured: true,
+  },
+  {
+    src: "/images/portfolio/pf-16.jpg",
+    alt: "Bride with timeless bridal hair and makeup in Northeast Florida",
+    tags: ["hair-makeup"],
+  },
+  {
+    src: "/images/portfolio/pf-20.jpg",
+    alt: "Finished bridal look with polished hair and photo-ready makeup",
+    tags: ["hair-makeup"],
+  },
+  {
+    src: "/images/portfolio/pf-30.jpg",
+    alt: "Romantic bridal waves and soft glam makeup on the wedding day",
+    tags: ["hair-makeup"],
+  },
+  {
+    src: "/images/portfolio/pf-angela.jpg",
+    alt: "Bride Angela with a soft, polished bridal beauty look",
+    tags: ["hair-makeup"],
+  },
+  {
+    src: "/images/portfolio/pf-caleigh-eric-wedding-party-54.jpg",
+    alt: "Caleigh and her wedding party with finished hair and makeup",
+    tags: ["bridesmaids", "hair-makeup"],
+  },
+  {
+    src: "/images/portfolio/pf-curly-blond-hairstyle-2.jpg",
+    alt: "Bride embracing natural curls in a styled curly bridal look",
+    tags: ["hair", "curly"],
+  },
+  {
+    src: "/images/portfolio/pf-elopement-48.jpg",
+    alt: "Close-up of the bride's finished bridal hair and makeup during a quiet moment at the reception",
+    tags: ["elopement", "hair-makeup"],
+  },
+  {
+    src: "/images/portfolio/pf-lolulamore-tuscanrosevineyard-042821-taylor-tyler-7731.jpg",
+    alt: "Bride Taylor at Tuscan Rose Vineyard with romantic bridal hair and makeup",
+    credit: "Lolulamore",
+    tags: ["hair-makeup"],
+  },
+  {
+    src: "/images/portfolio/taylor.jpg",
+    alt: "Bride Taylor with vineyard wedding bridal hair and makeup",
+    tags: ["hair-makeup"],
+  },
+
   {
     src: "/images/portfolio/angeline.jpg",
     alt: "Bride Angeline with soft romantic bridal hair and glowing makeup",
@@ -44,17 +98,6 @@ export const gallery: GalleryItem[] = [
     featured: true,
   },
   {
-    src: "/images/portfolio/jennifer.jpg",
-    alt: "Bride Jennifer with timeless bridal hair and makeup",
-    tags: ["hair-makeup"],
-    featured: true,
-  },
-  {
-    src: "/images/portfolio/caleigh.jpg",
-    alt: "Bride Caleigh getting ready on the wedding morning",
-    tags: ["hair-makeup", "updo"],
-  },
-  {
     src: "/images/portfolio/kloe.jpg",
     alt: "Bride Kloe with a romantic styled look at Tuscan Rose Vineyard",
     tags: ["hair-makeup"],
@@ -65,22 +108,11 @@ export const gallery: GalleryItem[] = [
     tags: ["hair-makeup"],
   },
   {
-    src: "/images/portfolio/taylor.jpg",
-    alt: "Bride Taylor with vineyard wedding bridal hair and makeup",
-    tags: ["hair-makeup"],
-  },
-  {
-    src: "/images/portfolio/beach-elopement.jpg",
-    alt: "Bride with windproof beach elopement hair and makeup in St. Augustine",
-    credit: "My Nguyen Photography",
-    tags: ["hair-makeup", "beach", "elopement", "st-augustine"],
-    featured: true,
-  },
-  {
     src: "/images/portfolio/kristina.jpg",
     alt: "Bride Kristina with a braided bridal style",
     credit: "The Capps Co.",
     tags: ["hair", "updo"],
+    featured: true,
   },
   {
     src: "/images/portfolio/huong.jpg",
@@ -94,30 +126,9 @@ export const gallery: GalleryItem[] = [
     tags: ["hair", "updo"],
   },
   {
-    src: "/images/portfolio/curly.jpg",
-    alt: "Bride with a natural curly bridal hairstyle",
-    tags: ["hair", "curly"],
-    featured: true,
-  },
-  {
-    src: "/images/portfolio/bridal-01.jpg",
-    alt: "Romantic bridal hair and makeup portrait",
-    tags: ["hair-makeup"],
-  },
-  {
-    src: "/images/portfolio/bridal-02.jpg",
-    alt: "Editorial bridal beauty portrait",
-    tags: ["hair-makeup"],
-  },
-  {
     src: "/images/portfolio/bridal-03.jpg",
     alt: "Bride with polished updo and glowing makeup",
     tags: ["hair-makeup", "updo"],
-  },
-  {
-    src: "/images/portfolio/bridal-04.jpg",
-    alt: "Soft bridal waves and natural bridal makeup",
-    tags: ["hair-makeup"],
   },
 
   // --- Full portfolio publish (D011, 2026-07-12): 75 additional approved images ---
@@ -139,11 +150,6 @@ export const gallery: GalleryItem[] = [
   {
     src: "/images/portfolio/pf-15.jpg",
     alt: "Romantic bridal waves and soft glam makeup on the wedding day",
-    tags: ["hair-makeup"],
-  },
-  {
-    src: "/images/portfolio/pf-16.jpg",
-    alt: "Bride with timeless bridal hair and makeup in Northeast Florida",
     tags: ["hair-makeup"],
   },
   {
@@ -174,11 +180,6 @@ export const gallery: GalleryItem[] = [
   {
     src: "/images/portfolio/pf-2.jpg",
     alt: "Bride with soft, romantic bridal hair and glowing natural makeup",
-    tags: ["hair-makeup"],
-  },
-  {
-    src: "/images/portfolio/pf-20.jpg",
-    alt: "Finished bridal look with polished hair and photo-ready makeup",
     tags: ["hair-makeup"],
   },
   {
@@ -224,11 +225,6 @@ export const gallery: GalleryItem[] = [
   {
     src: "/images/portfolio/pf-29.jpg",
     alt: "Bride with an elegant styled updo and radiant wedding makeup",
-    tags: ["hair-makeup"],
-  },
-  {
-    src: "/images/portfolio/pf-30.jpg",
-    alt: "Romantic bridal waves and soft glam makeup on the wedding day",
     tags: ["hair-makeup"],
   },
   {
@@ -282,11 +278,6 @@ export const gallery: GalleryItem[] = [
     tags: ["hair-makeup"],
   },
   {
-    src: "/images/portfolio/pf-angela.jpg",
-    alt: "Bride Angela with a soft, polished bridal beauty look",
-    tags: ["hair-makeup"],
-  },
-  {
     src: "/images/portfolio/pf-beach-1.jpg",
     alt: "Beach bride with wind-ready hair and long-wear bridal makeup",
     tags: ["beach", "hair-makeup"],
@@ -327,19 +318,9 @@ export const gallery: GalleryItem[] = [
     tags: ["getting-ready", "hair-makeup"],
   },
   {
-    src: "/images/portfolio/pf-caleigh-eric-wedding-party-54.jpg",
-    alt: "Caleigh and her wedding party with finished hair and makeup",
-    tags: ["bridesmaids", "hair-makeup"],
-  },
-  {
     src: "/images/portfolio/pf-caleigh-eric-wedding-party-bridesmaids.jpg",
     alt: "Caleigh and her wedding party with finished hair and makeup",
     tags: ["bridesmaids", "hair-makeup"],
-  },
-  {
-    src: "/images/portfolio/pf-curly-blond-hairstyle-2.jpg",
-    alt: "Bride embracing natural curls in a styled curly bridal look",
-    tags: ["hair", "curly"],
   },
   {
     src: "/images/portfolio/pf-curly-blonde-hair-style-1.jpg",
@@ -427,16 +408,11 @@ export const gallery: GalleryItem[] = [
     tags: ["elopement", "hair-makeup"],
   },
   {
-    src: "/images/portfolio/pf-florida-saintaugustine-kckelveyryan-181.jpg",
-    alt: "McKelvey and Ryan's St. Augustine beach elopement, bridal beauty by Maureen Ella",
-    credit: "My Nguyen Photography",
-    tags: ["beach", "elopement", "st-augustine", "hair-makeup"],
-  },
-  {
     src: "/images/portfolio/pf-florida-saintaugustine-kckelveyryan.jpg",
     alt: "McKelvey and Ryan's St. Augustine beach elopement, bridal beauty by Maureen Ella",
     credit: "My Nguyen Photography",
     tags: ["beach", "elopement", "st-augustine", "hair-makeup"],
+    featured: true,
   },
   {
     src: "/images/portfolio/pf-getting-ready-1.jpg",
@@ -479,18 +455,7 @@ export const gallery: GalleryItem[] = [
     tags: ["hair-makeup"],
   },
   {
-    src: "/images/portfolio/pf-jennifer-robert-married-47.jpg",
-    alt: "Bride Jennifer with timeless wedding-day hair and makeup",
-    tags: ["hair-makeup"],
-  },
-  {
     src: "/images/portfolio/pf-lolulamore-tuscanrosevineyard-042821-taylor-tyler-2763.jpg",
-    alt: "Bride Taylor at Tuscan Rose Vineyard with romantic bridal hair and makeup",
-    credit: "Lolulamore",
-    tags: ["hair-makeup"],
-  },
-  {
-    src: "/images/portfolio/pf-lolulamore-tuscanrosevineyard-042821-taylor-tyler-7731.jpg",
     alt: "Bride Taylor at Tuscan Rose Vineyard with romantic bridal hair and makeup",
     credit: "Lolulamore",
     tags: ["hair-makeup"],
@@ -550,11 +515,6 @@ export const gallery: GalleryItem[] = [
   {
     src: "/images/portfolio/pf-elopement-47.jpg",
     alt: "Bride and groom embracing at the reception bar, her hair and makeup holding through the celebration",
-    tags: ["elopement", "hair-makeup"],
-  },
-  {
-    src: "/images/portfolio/pf-elopement-48.jpg",
-    alt: "Close-up of the bride's finished bridal hair and makeup during a quiet moment at the reception",
     tags: ["elopement", "hair-makeup"],
   },
   {
