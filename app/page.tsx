@@ -19,7 +19,7 @@ export const metadata = pageMetadata({
   title: "St. Augustine Bridal Hair & Makeup",
   description: site.description,
   path: "/",
-  image: "/images/hero/home-hero.jpg",
+  image: "/images/hero/home-hero-final-2.jpg",
 });
 
 export default function HomePage() {
@@ -34,8 +34,8 @@ export default function HomePage() {
         eyebrow="Maureen Ella Bridal"
         title="Bridal hair & makeup for a calm, beautiful wedding morning"
         subtitle="Romantic, polished, long-lasting bridal beauty for weddings, elopements, and destination celebrations across St. Augustine, Jacksonville, Palm Coast, and Northeast Florida."
-        image="/images/hero/home-hero.jpg"
-        imageAlt="Bride in an open-back gown with a romantic braided updo, glancing over her shoulder"
+        image="/images/hero/home-hero-final-2.jpg"
+        imageAlt="Bride and groom embracing beside a vintage car outside their wedding venue"
         primaryCta={site.cta.primary}
         secondaryCta={{ label: "View the portfolio", href: "/bridal/portfolio" }}
         reviewCta={
