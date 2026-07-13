@@ -123,7 +123,7 @@
 - [x] Snapshot Wix DNS zone → docs/LEGACY_DNS_SNAPSHOT.md (done 2026-07-12; keep-list = Google MX/SPF/AdSense TXT; Ascend DKIM CNAMEs die with Wix).
 - [x] **DNSSEC disabled + nameservers switched** at Squarespace (2026-07-12). Verified on 1.1.1.1/8.8.8.8: NS = ns1/ns2.vercel-dns.com, DS record gone, MX = aspmx.l.google.com, SPF + AdSense TXT present.
 - [x] Verify redirects at Vercel edge (2026-07-12): theparlor.info → 308 www.maureenella.com; www.theparlor.info → 308 maureenella.com; paths preserved (`/features` chain → `/bridal/portfolio`). Residual Wix responses during TTL expiry window are expected (~1h; Wix zone intact as rollback).
-- [ ] **Dashboard tidy-up (30s each):** (a) change theparlor.info's redirect target from www.maureenella.com → `maureenella.com` (saves a hop); (b) set `www.maureenella.com` → Redirect to maureenella.com (308) — it currently serves the site directly (canonicals mitigate, redirect is cleaner).
+- [x] Redirect targets normalized via Vercel API (2026-07-12): theparlor.info, www.theparlor.info, and www.maureenella.com all 308 → maureenella.com (apex). Old-domain deep paths reach final articles in 2 hops.
 - [x] **Email inbound test:** PASSED 2026-07-12 — live inquiry-form test delivered to maureen@theparlor.info through the new DNS (Resend status: delivered).
 - [ ] GSC Change of Address: theparlor.info → maureenella.com.
 - [ ] Submit https://maureenella.com/sitemap.xml in GSC; request recrawl for key pages.
