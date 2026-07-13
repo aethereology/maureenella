@@ -10,7 +10,7 @@ export const metadata = pageMetadata({
   description:
     "Meet Maureen Ella — the bridal hair and makeup artist behind calm, beautifully organized wedding mornings across Northeast Florida.",
   path: "/about",
-  image: "/images/about/ML2023-full-res-12.webp",
+  image: "/images/about/aboutmefinal-1.jpg",
 });
 
 export default function AboutPage() {
@@ -22,7 +22,7 @@ export default function AboutPage() {
         <Container className="grid items-center gap-10 py-14 lg:grid-cols-2">
           <div className="relative order-1 aspect-[4/5] overflow-hidden rounded-card lg:order-none">
             <Image
-              src="/images/about/ML2023-full-res-12.webp"
+              src="/images/about/aboutmefinal-1.jpg"
               alt="Maureen Ella, bridal hair and makeup artist"
               fill
               priority

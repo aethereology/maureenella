@@ -19,3 +19,6 @@ next-env.d.ts
 # docs/CONFIRMATION_NEEDED.md.
 /assets/
 /maureen/
+
+.vercel
+.env*
