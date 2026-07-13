@@ -500,6 +500,88 @@ export const gallery: GalleryItem[] = [
     alt: "Editorial bridal hair and makeup look",
     tags: ["hair-makeup"],
   },
+
+  // --- Additional portfolio batch (2026-07-12): ceremony + reception, 16 images ---
+  {
+    src: "/images/portfolio/pf-41.jpg",
+    alt: "Bride walking down the aisle to her groom, romantic updo and veil in place for the ceremony",
+    tags: ["hair-makeup"],
+  },
+  {
+    src: "/images/portfolio/pf-42.jpg",
+    alt: "Bride with a soft updo and glowing makeup holding her bouquet in front of a floral ceremony arch",
+    tags: ["hair-makeup"],
+  },
+  {
+    src: "/images/portfolio/pf-43.jpg",
+    alt: "Bride and groom dancing together, her wedding-day hair and makeup holding through the celebration",
+    tags: ["hair-makeup"],
+  },
+  {
+    src: "/images/portfolio/pf-elopement-41.jpg",
+    alt: "Bride reclining at the reception bar with her veil cascading behind her, long-wear bridal makeup intact",
+    tags: ["elopement", "hair-makeup"],
+  },
+  {
+    src: "/images/portfolio/pf-elopement-42.jpg",
+    alt: "Bride with a polished updo and veil, hair and makeup still fresh hours into the reception",
+    tags: ["elopement", "hair-makeup"],
+  },
+  {
+    src: "/images/portfolio/pf-elopement-43.jpg",
+    alt: "Bride laughing at the reception bar, wedding-day hair and makeup holding up through the celebration",
+    tags: ["elopement", "hair-makeup"],
+  },
+  {
+    src: "/images/portfolio/pf-elopement-44.jpg",
+    alt: "Bride seated at the bar in her reception look, soft updo and veil framing her face",
+    tags: ["elopement", "hair-makeup"],
+  },
+  {
+    src: "/images/portfolio/pf-elopement-45.jpg",
+    alt: "Bride laughing at the bar in her reception dress, hair and makeup styled to last the full day",
+    tags: ["elopement", "hair-makeup"],
+  },
+  {
+    src: "/images/portfolio/pf-elopement-46.jpg",
+    alt: "Bride and groom sharing a kiss on the dance floor at their reception",
+    tags: ["elopement", "hair-makeup"],
+  },
+  {
+    src: "/images/portfolio/pf-elopement-47.jpg",
+    alt: "Bride and groom embracing at the reception bar, her hair and makeup holding through the celebration",
+    tags: ["elopement", "hair-makeup"],
+  },
+  {
+    src: "/images/portfolio/pf-elopement-48.jpg",
+    alt: "Close-up of the bride's finished bridal hair and makeup during a quiet moment at the reception",
+    tags: ["elopement", "hair-makeup"],
+  },
+  {
+    src: "/images/portfolio/pf-elopement-49.jpg",
+    alt: "Bride and groom embracing at their reception bar, her wedding-day beauty look intact",
+    tags: ["elopement", "hair-makeup"],
+  },
+  {
+    src: "/images/portfolio/pf-elopement-50.jpg",
+    alt: "Groom kissing the bride's cheek at the reception, her wedding-day hair and makeup still fresh",
+    tags: ["elopement", "hair-makeup"],
+  },
+  {
+    src: "/images/portfolio/pf-elopement-51.jpg",
+    alt: "Bride in a monogrammed 'Mrs.' jacket walking with her groom after the reception",
+    tags: ["elopement", "hair-makeup"],
+  },
+  {
+    src: "/images/portfolio/pf-elopement-52.jpg",
+    alt: "Bride and groom celebrating on the venue steps after their wedding",
+    tags: ["elopement", "hair-makeup"],
+  },
+  {
+    src: "/images/portfolio/pf-elopement-53.jpg",
+    alt: "Bride and groom walking hand in hand after their wedding celebration",
+    tags: ["elopement", "hair-makeup"],
+  },
 ];
 
 export const featuredGallery = gallery.filter((g) => g.featured);
