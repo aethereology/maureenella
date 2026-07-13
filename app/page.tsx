@@ -3,7 +3,7 @@ import Link from "next/link";
 import { site } from "@/lib/site";
 import { pageMetadata } from "@/lib/seo/metadata";
 import { Hero } from "@/components/sections/Hero";
-import { ReviewStrip } from "@/components/sections/ReviewStrip";
+import { HomeReviews } from "@/components/sections/HomeReviews";
 import { ServiceCards } from "@/components/sections/ServiceCards";
 import { ProcessSteps } from "@/components/sections/ProcessSteps";
 import { Section, SectionHeading } from "@/components/ui/Section";
@@ -38,10 +38,18 @@ export default function HomePage() {
         imageAlt="Bride in an open-back gown with a romantic braided updo, glancing over her shoulder"
         primaryCta={site.cta.primary}
         secondaryCta={{ label: "View the portfolio", href: "/bridal/portfolio" }}
+        reviewCta={
+          site.reviews.google.confirmed
+            ? {
+                label: "Already a Maureen Ella bride? Leave a Google review",
+                href: site.reviews.google.value,
+              }
+            : undefined
+        }
         priority
       />
 
-      <ReviewStrip />
+      <HomeReviews />
 
       {/* Manifesto intro */}
       <Section size="narrow" className="text-center">
@@ -52,7 +60,7 @@ export default function HomePage() {
             moments you want to remember.
           </p>
           <p className="mx-auto mt-7 max-w-xl text-cocoa/80">
-            Maureen Ella creates bridal hair and makeup with a calm presence, an
+            Maureen creates bridal hair and makeup with a calm presence, an
             editorial eye, and the timeline awareness needed to help your day flow
             beautifully — from your preview to the final touch-up.
           </p>

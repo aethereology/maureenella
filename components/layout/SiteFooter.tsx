@@ -61,6 +61,28 @@ export function SiteFooter() {
                 <p className="text-cocoa/70">{site.contact.hours.value}</p>
               )}
             </div>
+            {site.social.instagram.confirmed && site.social.instagram.value && (
+              <a
+                href={site.social.instagram.value}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Follow Maureen Ella on Instagram"
+                className="mt-6 inline-flex h-10 w-10 items-center justify-center rounded-full border border-hairline text-espresso transition-colors duration-300 hover:border-rose hover:bg-rose hover:text-porcelain focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-rose"
+              >
+                <svg
+                  aria-hidden="true"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.7"
+                  className="h-[18px] w-[18px]"
+                >
+                  <rect x="3" y="3" width="18" height="18" rx="5" />
+                  <circle cx="12" cy="12" r="4.25" />
+                  <circle cx="17.4" cy="6.7" r="1" fill="currentColor" stroke="none" />
+                </svg>
+              </a>
+            )}
           </div>
 
           <nav aria-label="Footer">

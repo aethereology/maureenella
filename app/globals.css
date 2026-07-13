@@ -150,9 +150,26 @@
   transform: scale(1.04);
 }
 
+/* A quiet transition for the homepage testimonial carousel. */
+@keyframes review-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.review-fade {
+  animation: review-fade-in 0.45s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   [data-reveal] { opacity: 1; animation: none; }
+  .review-fade { animation: none; }
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
     transition-duration: 0.01ms !important;

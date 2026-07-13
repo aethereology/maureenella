@@ -9,13 +9,6 @@
 
 export const CONFIRM = "__CONFIRM__" as const;
 
-type Confirmable<T> = {
-  value: T | null;
-  confirmed: boolean;
-};
-
-const unconfirmed = <T>(): Confirmable<T> => ({ value: null, confirmed: false });
-
 export const site = {
   brand: "Maureen Ella",
   brandLong: "Maureen Ella Bridal",
@@ -45,7 +38,17 @@ export const site = {
   },
 
   social: {
-    instagram: unconfirmed<string>(),
+    instagram: {
+      value: "https://www.instagram.com/maureenattheparlor/",
+      confirmed: true,
+    },
+  },
+
+  reviews: {
+    google: {
+      value: "https://g.page/r/CTv0fdbbAi-FEAI/review",
+      confirmed: true,
+    },
   },
 
   /**

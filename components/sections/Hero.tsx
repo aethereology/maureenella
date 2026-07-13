@@ -12,6 +12,7 @@ export function Hero({
   imageAlt,
   primaryCta,
   secondaryCta,
+  reviewCta,
   priority = false,
 }: {
   eyebrow?: string;
@@ -21,6 +22,7 @@ export function Hero({
   imageAlt: string;
   primaryCta: { label: string; href: string };
   secondaryCta?: { label: string; href: string };
+  reviewCta?: { label: string; href: string };
   priority?: boolean;
 }) {
   return (
@@ -51,6 +53,32 @@ export function Hero({
               </ButtonLink>
             )}
           </Reveal>
+          {reviewCta && (
+            <Reveal delay={330} className="mt-7">
+              <a
+                href={reviewCta.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group/review inline-flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-cocoa/75 transition-colors hover:text-espresso focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-rose"
+              >
+                <span
+                  aria-hidden
+                  className="text-[0.68rem] tracking-[0.18em] text-rose"
+                >
+                  ★★★★★
+                </span>
+                <span className="border-b border-hairline pb-0.5 transition-colors group-hover/review:border-rose">
+                  {reviewCta.label}
+                </span>
+                <span
+                  aria-hidden
+                  className="transition-transform duration-300 group-hover/review:-translate-y-0.5 group-hover/review:translate-x-0.5"
+                >
+                  ↗
+                </span>
+              </a>
+            </Reveal>
+          )}
         </div>
 
         <Reveal delay={120} className="order-1 lg:order-2">
