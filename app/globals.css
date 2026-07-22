@@ -166,10 +166,37 @@
   animation: review-fade-in 0.45s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
+/* Seamless recognition ribbon in the homepage hero. */
+@keyframes awards-marquee-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.awards-marquee {
+  -webkit-mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent);
+  mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent);
+}
+
+.awards-marquee-track {
+  animation: awards-marquee-scroll 30s linear infinite;
+  will-change: transform;
+}
+
+.awards-marquee:hover .awards-marquee-track {
+  animation-play-state: paused;
+}
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   [data-reveal] { opacity: 1; animation: none; }
   .review-fade { animation: none; }
+  .awards-marquee {
+    overflow-x: auto;
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+  .awards-marquee-track { animation: none; transform: none; }
+  .awards-marquee-copy { display: none; }
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
     transition-duration: 0.01ms !important;

@@ -25,7 +25,7 @@ weddings). Umbrella brand with four arms: **Bridal** (revenue engine, primary),
 - Voice: warm, editorial, calm, premium — not salon-generic, not hypey.
 - Service areas: St. Augustine, Jacksonville, Palm Coast, NE Florida, destination.
 
-## Build status (2026-05-30)
+## Build status (2026-07-22)
 
 - **Phase 1 (Bridal MVP):** done. **Phase 2 (Local SEO):** done.
   **Phase 3 (Education launch):** done (landing + free checklist + waitlist +
@@ -33,6 +33,25 @@ weddings). Umbrella brand with four arms: **Bridal** (revenue engine, primary),
 - App: Next.js 15 App Router + React 19 + TS + Tailwind v4, ~35 static routes.
 - Source of truth for detail: `docs/BUILD_NOTES.md`, `docs/ROADMAP.md`,
   `docs/TASKS.md`, `docs/DECISIONS.md`.
+- Live at maureenella.com (Vercel, GitHub-connected — push to `main` auto-deploys
+  to production).
+
+## Last session (2026-07-22)
+
+- **Journal: 24 → 27 published articles.** Added 3 new original (non-migration)
+  bridal-prep posts, authored fresh (not sourced from theparlor.info/Wix):
+  `wedding-hair-makeup-timeline-st-augustine`, `bridal-hair-makeup-preview-what-to-expect`,
+  `how-to-choose-a-bridal-hairstylist`. Entries in `seed/blog_posts.json`, bodies
+  in `content/journal.ts`, hero images copied into `public/images/journal/` from
+  `assets/portfolio/blog25.jpg` and `assets/maureen/*.jpg`. Sitemap/metadata/schema
+  picked these up automatically (no template changes needed).
+- Also shipped in this push (pre-existing uncommitted work, verified and folded
+  in): a homepage/reviews-page **awards recognition marquee**
+  (`components/sections/RecognitionMarquee.tsx`, real badge images in
+  `public/images/badges/`) and an **`icon.png` → `icon.svg`** favicon swap.
+- Verified with `npm run typecheck` + `npm run build` (56 routes, all static/SSG
+  where expected) before commit. No unconfirmed facts introduced — still
+  inquiry-only pricing, still gated per D004/D005.
 
 ## Hard rule — confirmation gating (D004 / D005)
 

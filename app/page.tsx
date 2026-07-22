@@ -46,6 +46,7 @@ export default function HomePage() {
               }
             : undefined
         }
+        showAwards
         priority
       />
 

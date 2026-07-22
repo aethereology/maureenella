@@ -3,6 +3,7 @@ import { Container } from "@/components/ui/Container";
 import { CtaButton } from "@/components/ui/CtaButton";
 import { ButtonLink } from "@/components/ui/Button";
 import { Reveal } from "@/components/ui/Reveal";
+import { RecognitionMarquee } from "@/components/sections/RecognitionMarquee";
 
 export function Hero({
   eyebrow,
@@ -13,6 +14,7 @@ export function Hero({
   primaryCta,
   secondaryCta,
   reviewCta,
+  showAwards = false,
   priority = false,
 }: {
   eyebrow?: string;
@@ -23,6 +25,7 @@ export function Hero({
   primaryCta: { label: string; href: string };
   secondaryCta?: { label: string; href: string };
   reviewCta?: { label: string; href: string };
+  showAwards?: boolean;
   priority?: boolean;
 }) {
   return (
@@ -101,6 +104,7 @@ export function Hero({
           </div>
         </Reveal>
       </Container>
+      {showAwards && <RecognitionMarquee />}
     </section>
   );
 }

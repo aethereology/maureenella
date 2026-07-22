@@ -1024,6 +1024,676 @@ const BODIES: Record<
     },
   ],
 },
+
+  // --- 2026-07 additions: bridal-prep ---
+  "wedding-hair-makeup-timeline-st-augustine": {
+  image: "/images/journal/wedding-hair-makeup-timeline-st-augustine.jpg",
+  excerpt:
+    "A calm wedding morning starts with a well-planned beauty timeline. Here is how to schedule hair and makeup for a St. Augustine wedding — from your ready-by time to Florida humidity.",
+  datePublished: "2026-07-18",
+  body: [
+    {
+      type: "p",
+      text: "Your wedding morning should feel exciting, meaningful, and calm — not rushed or overwhelming.",
+    },
+    {
+      type: "p",
+      text: "After years of providing bridal hair and makeup for weddings throughout St. Augustine, Jacksonville, Palm Coast, and Northeast Florida, I have learned that one of the most important parts of a peaceful wedding morning is having a thoughtfully planned beauty timeline.",
+    },
+    {
+      type: "p",
+      text: "A beautiful hairstyle and makeup look require more than simply choosing an appointment time. Your schedule must also account for photography, getting dressed, travel to the venue, bridal party services, final touch-ups, and all the meaningful little moments that happen throughout the morning. Here is what every bride should know when planning her wedding hair and makeup timeline.",
+    },
+    { type: "h2", text: "Begin with the time you need to be completely ready" },
+    {
+      type: "p",
+      text: "One of the most common misunderstandings when planning a bridal beauty schedule is using the ceremony time as the deadline. Your hair and makeup should usually be completed well before the ceremony begins.",
+    },
+    {
+      type: "p",
+      text: "Before creating your timeline, speak with your wedding planner and photographer to determine your official “ready-by” time. This is the time when your hair and makeup should be finished, your wedding dress should be on, and you should be prepared to begin photography or leave for the ceremony. Your photographer may want time to capture:",
+    },
+    {
+      type: "ul",
+      items: [
+        "Final hair and makeup details",
+        "Bridal portraits",
+        "Your wedding dress and accessories",
+        "Getting into your dress",
+        "A first look with your partner",
+        "A first look with your parents or bridal party",
+        "Family or wedding party portraits",
+        "Travel to the ceremony location",
+      ],
+    },
+    {
+      type: "p",
+      text: "For example, a bride with a 5:00 p.m. ceremony may need to be completely ready by 2:30 or 3:00 p.m. depending on the photography schedule, venue layout, and travel time. Once we know your ready-by time, we can work backward to determine when beauty services should begin.",
+    },
+    { type: "h2", text: "Know how many hair and makeup services are needed" },
+    {
+      type: "p",
+      text: "Your beauty timeline will depend heavily on the total number of services being provided. This may include:",
+    },
+    {
+      type: "ul",
+      items: [
+        "Bridal hair",
+        "Bridal makeup",
+        "Bridesmaid hair",
+        "Bridesmaid makeup",
+        "Mother-of-the-bride services",
+        "Mother-of-the-groom services",
+        "Flower girl styling",
+        "Additional family members or honored guests",
+      ],
+    },
+    {
+      type: "p",
+      text: "It is helpful to confirm the final number of services as early as possible. Adding multiple services close to the wedding day may require an earlier start time or an additional artist. When planning your schedule, count hair and makeup as separate services — a bridesmaid receiving both hair and makeup will need two appointment spaces within the timeline.",
+    },
+    { type: "h2", text: "How long does wedding hair and makeup take?" },
+    {
+      type: "p",
+      text: "Every wedding and every client is different, but the following time ranges can be helpful when beginning your plans. Bridal hair may take approximately 60 to 90 minutes depending on the style, hair length, texture, extensions, and accessories. Bridal makeup may also take approximately 60 to 90 minutes, allowing time for skin preparation, careful application, lashes, detailing, and final adjustments. Bridesmaid, mother, and guest services commonly require approximately 45 to 60 minutes per service. More intricate hairstyles, thick or very long hair, individual lash applications, or specific beauty requests may require additional time.",
+    },
+    {
+      type: "p",
+      text: "Your final schedule should never be created by simply multiplying the number of people by one estimated service time. An experienced bridal artist considers the complete flow of the morning, including artist setup, transitions, final touch-ups, photography, and unexpected interruptions.",
+    },
+    { type: "h2", text: "The bride should not always be scheduled last" },
+    {
+      type: "p",
+      text: "Many brides assume they should be the final person receiving services. However, being completely last can create unnecessary stress — if the morning falls behind, the bride has no remaining time to spare.",
+    },
+    {
+      type: "p",
+      text: "Depending on the size of the wedding party, I may recommend scheduling the bride somewhere in the middle or toward the later portion of the timeline — but not necessarily in the final appointment. This gives the bride time to:",
+    },
+    {
+      type: "ul",
+      items: [
+        "Step away for a snack or water",
+        "Take getting-ready photographs",
+        "Receive final touch-ups",
+        "Put on her dress without feeling rushed",
+        "Enjoy a quiet moment before the ceremony",
+      ],
+    },
+    {
+      type: "p",
+      text: "Your bridal look will still be refreshed before you leave the getting-ready space.",
+    },
+    { type: "h2", text: "When is an additional artist needed?" },
+    {
+      type: "p",
+      text: "For larger wedding parties, early photography schedules, or ceremonies requiring travel, an additional hair or makeup artist may be necessary. Adding another professional allows multiple services to take place at the same time, which can prevent the day from beginning extremely early and helps keep the morning comfortable for everyone. An additional artist may be recommended when:",
+    },
+    {
+      type: "ul",
+      items: [
+        "Several people are receiving both hair and makeup",
+        "The bridal party must be ready early",
+        "The wedding includes a first look",
+        "The getting-ready location is far from the ceremony venue",
+        "The venue limits access to the bridal suite",
+        "The bride wants a relaxed morning without a very early start",
+      ],
+    },
+    {
+      type: "p",
+      text: "The goal is not to fit as many services as possible into the shortest amount of time. The goal is to create a realistic schedule that supports a calm experience and beautiful results.",
+    },
+    { type: "h2", text: "Build extra time into the schedule" },
+    {
+      type: "p",
+      text: "Wedding mornings are full of activity. Family members arrive, flowers are delivered, the photographer begins styling details, someone searches for earrings, and the bride may be pulled away for a special moment. Even the most organized wedding morning can experience small delays. Your timeline should include extra time for:",
+    },
+    {
+      type: "ul",
+      items: [
+        "Artist setup",
+        "Bathroom and meal breaks",
+        "Changing into robes or getting-ready outfits",
+        "Photography interruptions",
+        "Flower deliveries",
+        "Hair accessories and veil placement",
+        "Final lipstick and powder touch-ups",
+        "Getting dressed",
+        "Unexpected delays",
+      ],
+    },
+    {
+      type: "p",
+      text: "A timeline with no breathing room can quickly become stressful. A carefully planned buffer protects the bride and the rest of the wedding party from feeling rushed.",
+    },
+    { type: "h2", text: "Prepare your getting-ready space" },
+    {
+      type: "p",
+      text: "The environment where hair and makeup services take place can make a significant difference in how smoothly the morning flows. When possible, choose a space with:",
+    },
+    {
+      type: "ul",
+      items: [
+        "Plenty of natural light",
+        "Electrical outlets",
+        "Comfortable chairs",
+        "Table or counter space",
+        "Climate control",
+        "Enough room for the beauty team",
+        "A separate area for food, drinks, and personal belongings",
+        "Extra bathrooms",
+      ],
+    },
+    {
+      type: "p",
+      text: "Natural light is especially helpful for makeup application. However, your artist will also bring professional lighting when necessary. Try to keep the beauty area free from large bags, food containers, and unnecessary traffic — a clean and organized workspace allows your artists to remain focused and efficient.",
+    },
+    {
+      type: "p",
+      text: "For hotel weddings or historic venues in St. Augustine, it is also important to consider parking, elevators, staircases, room access, and the distance between the getting-ready suite and ceremony location.",
+    },
+    { type: "h2", text: "Consider Florida heat and humidity" },
+    {
+      type: "p",
+      text: "Weddings in Northeast Florida require thoughtful beauty preparation. St. Augustine and Jacksonville can be warm and humid throughout much of the year. Outdoor ceremonies, coastal venues, summer weddings, and garden portraits may expose your hair and makeup to heat, wind, and moisture. Your bridal beauty plan may include:",
+    },
+    {
+      type: "ul",
+      items: [
+        "Humidity-resistant hairstyling products",
+        "Waterproof or water-resistant makeup",
+        "Proper skin preparation",
+        "Strategic powder application",
+        "Secure placement of pins and accessories",
+        "A small touch-up kit",
+        "Planning outdoor photographs around the weather",
+      ],
+    },
+    {
+      type: "p",
+      text: "During your bridal preview, we can discuss how your preferred hairstyle and makeup look will perform in your venue and season. A loose, romantic hairstyle may need to be adjusted for a windy coastal ceremony. A bride with naturally textured hair may prefer a style that works with her natural movement instead of fighting against the humidity.",
+    },
+    {
+      type: "p",
+      text: "The goal is to preserve the feeling of your inspiration while creating a look that works for you, your hair, your skin, and your wedding environment.",
+    },
+    { type: "h2", text: "Complete your bridal preview before finalizing the timeline" },
+    {
+      type: "p",
+      text: "Your bridal hair and makeup preview is an important part of the planning process. During your preview, we can determine:",
+    },
+    {
+      type: "ul",
+      items: [
+        "How long your chosen hairstyle takes",
+        "Whether extensions are recommended",
+        "How your veil or accessories will be secured",
+        "Which makeup products work best for your skin",
+        "Whether adjustments are needed for the wedding day",
+        "How much preparation time should be included",
+      ],
+    },
+    {
+      type: "p",
+      text: "The preview gives us the opportunity to refine your look without the pressure of the wedding-day schedule. It also allows you to see how your hair and makeup wear throughout the day. Take photographs in natural light, notice how the makeup feels after several hours, and observe how well the hairstyle holds. This information helps create an even more accurate wedding-day plan.",
+    },
+    { type: "h2", text: "Prepare your bridal party in advance" },
+    {
+      type: "p",
+      text: "A smooth wedding morning begins before the artists arrive. Share the beauty schedule with your bridal party ahead of time and remind everyone to be present before their scheduled service.",
+    },
+    {
+      type: "p",
+      text: "For hair services, members of the bridal party should generally arrive with clean, completely dry hair unless instructed otherwise. For makeup services, they should arrive with a clean face and appropriate moisturizer already applied. Each person should have inspiration photos ready and should communicate any allergies, sensitivities, or specific concerns before services begin.",
+    },
+    {
+      type: "p",
+      text: "Bridesmaids should also avoid leaving the getting-ready location during the beauty schedule — a missing client can delay every service that follows.",
+    },
+    { type: "h2", text: "Eat, hydrate, and enjoy the morning" },
+    {
+      type: "p",
+      text: "Brides often become so focused on the schedule that they forget to eat or drink water. Plan a simple breakfast or lunch that is easy to enjoy while getting ready — choose foods that are filling but not overly messy, greasy, or difficult to eat. Keep water nearby and assign someone to help manage phone calls, questions, and deliveries.",
+    },
+    {
+      type: "p",
+      text: "Your wedding morning is part of your celebration. Allow yourself to be present. Listen to music, spend time with your closest friends and family, and enjoy watching your vision come together.",
+    },
+    { type: "h2", text: "Your wedding morning should feel like you" },
+    {
+      type: "p",
+      text: "A well-planned bridal beauty timeline is about more than staying on schedule. It creates space for you to breathe. It gives your photographer time to capture meaningful moments, allows your bridal party to enjoy the morning, and gives your beauty team the time needed to provide careful, personalized services without rushing. Most importantly, it allows you to begin your wedding day feeling confident, cared for, and completely present.",
+    },
+    {
+      type: "p",
+      text: "When you work with Maureen Ella Bridal, your beauty schedule is thoughtfully planned around your wedding details, service count, photography needs, venue, and desired ready-by time. Every wedding morning is different, and your timeline should be created specifically for you.",
+    },
+    { type: "h2", text: "Planning your wedding in Northeast Florida?" },
+    {
+      type: "p",
+      text: "Maureen Ella provides bridal hair and makeup services for weddings in St. Augustine, Jacksonville, Palm Coast, and surrounding Northeast Florida locations. When submitting your inquiry, please include your wedding date, venue, number of hair and makeup services, and the time you need to be completely ready.",
+    },
+    {
+      type: "p",
+      text: "Together, we can create a beauty experience that feels organized, personal, and beautifully calm from the first brushstroke to the final touch-up. A natural next read: what to expect at your bridal hair and makeup preview.",
+    },
+  ],
+},
+
+"bridal-hair-makeup-preview-what-to-expect": {
+  image: "/images/journal/bridal-hair-makeup-preview-what-to-expect.jpg",
+  excerpt:
+    "Your bridal preview turns inspiration photos into a plan. Here is exactly how to prepare — your hair, your skin, and your accessories — for the best possible result.",
+  datePublished: "2026-07-20",
+  body: [
+    {
+      type: "p",
+      text: "Your bridal hair and makeup preview is one of the most exciting steps in preparing for your wedding day. It is the moment when the inspiration photos you have been saving begin to take shape. More importantly, it gives us the opportunity to create a look that feels beautiful, comfortable, and completely personal to you.",
+    },
+    {
+      type: "p",
+      text: "A bridal preview is not simply a practice appointment. It is a collaborative experience where we explore your ideas, consider the details of your wedding, and make thoughtful adjustments before the wedding morning arrives. Whether you are planning a romantic St. Augustine wedding, a coastal celebration in Jacksonville, or an intimate elopement in Northeast Florida, your bridal preview helps create confidence and clarity before your special day. Here is what you can expect — and how to prepare for the best possible experience.",
+    },
+    { type: "h2", text: "What is a bridal hair and makeup preview?" },
+    {
+      type: "p",
+      text: "A bridal hair and makeup preview is a dedicated appointment where we create and refine your wedding-day beauty look. During the appointment, we will discuss your vision, review your inspiration photos, and consider how your preferred look complements your natural features, wedding dress, accessories, venue, and overall wedding style. Your preview allows us to determine:",
+    },
+    {
+      type: "ul",
+      items: [
+        "Your preferred bridal hairstyle",
+        "Your desired makeup style",
+        "The right level of coverage and finish",
+        "How your hair responds to the selected style",
+        "Whether extensions may be helpful",
+        "Where your veil or hair accessories should be placed",
+        "Which products work best for your skin",
+        "How much time your services may require on the wedding day",
+        "Any adjustments you would like before the final look",
+      ],
+    },
+    {
+      type: "p",
+      text: "The goal is not to transform you into someone else. The goal is to help you look like the most polished, confident, and beautiful version of yourself.",
+    },
+    { type: "h2", text: "When should you schedule your bridal preview?" },
+    {
+      type: "p",
+      text: "Your bridal preview should be scheduled far enough in advance to allow time for thoughtful adjustments, but close enough to your wedding that your hair length, color, skin condition, and personal preferences are unlikely to change significantly. Many brides schedule their preview a few months before the wedding.",
+    },
+    {
+      type: "p",
+      text: "It can be especially helpful to schedule the appointment after you have chosen your wedding dress, veil, jewelry, and general wedding style, since these details can influence your final hair and makeup decisions. For example, a high neckline may pair beautifully with an updo, while a strapless or open-back gown may inspire a softer hairstyle with movement around the shoulders.",
+    },
+    {
+      type: "p",
+      text: "Your preview may also be scheduled the same day as your engagement session, bridal shower, dress fitting, or another special date so you can enjoy your finished look afterward. However, remember that the appointment is primarily for planning and refining your wedding-day beauty look.",
+    },
+    { type: "h2", text: "Send your inspiration before the appointment" },
+    {
+      type: "p",
+      text: "Before your preview, please send two to three hair inspiration photos and two to three makeup inspiration photos. Choose images that clearly show what you are drawn to — they do not all need to feature the exact same style. One photo may show the shape of a hairstyle you love, while another shows the softness around the face or the placement of the bun. Your makeup inspiration may include a complexion finish from one photo and an eye look or lip color from another.",
+    },
+    {
+      type: "p",
+      text: "When choosing inspiration, consider models with features similar to yours, including hair color, hair length, hair thickness, hair texture, skin tone, eye shape, and face shape.",
+    },
+    {
+      type: "p",
+      text: "Inspiration photos are helpful, but they are a starting point rather than a guaranteed exact copy. Lighting, editing, extensions, filters, hair density, and facial features can all affect how a look appears. My role is to understand what you love about the image and adapt those details into a look that works beautifully for you.",
+    },
+    { type: "h2", text: "Send photos of your current hair" },
+    {
+      type: "p",
+      text: "Before your appointment, please send clear photographs of your hair from the front and back. These photos help me see your current hair length, texture, thickness, layers, and color before we meet. They are especially helpful when determining whether your desired hairstyle may require:",
+    },
+    {
+      type: "ul",
+      items: [
+        "Clip-in extensions",
+        "Additional padding",
+        "Hair pieces",
+        "A different placement",
+        "More preparation time",
+        "A slight adjustment to the inspiration",
+      ],
+    },
+    {
+      type: "p",
+      text: "Extensions are not always used only for added length. They can also provide fullness, structure, and support for updos, ponytails, braids, and soft waves. Knowing your hair condition ahead of time allows us to begin the appointment with a more realistic and personalized plan.",
+    },
+    { type: "h2", text: "How to prepare your hair" },
+    {
+      type: "p",
+      text: "For your bridal preview, arrive with freshly washed and fully blow-dried hair unless I have given you different instructions. Your hair should be completely dry before the appointment begins. Avoid arriving with wet or damp hair, as this can take away from the time reserved for styling and may affect the final result.",
+    },
+    {
+      type: "p",
+      text: "Use your normal shampoo and conditioner, but avoid applying excessive oils, heavy masks, or styling products that may weigh the hair down. Your hair should feel clean, light, and manageable. Please do not straighten or curl your hair before the appointment unless specifically requested — blow-dried hair gives us a clean foundation and allows me to prepare it according to the needs of your selected style.",
+    },
+    {
+      type: "p",
+      text: "If you have naturally curly or textured hair and would like to incorporate your natural texture into the wedding-day style, let me know before the preview so we can discuss the best preparation method.",
+    },
+    { type: "h2", text: "How to prepare your skin" },
+    {
+      type: "p",
+      text: "Arrive with a clean, makeup-free face. Please complete your normal skincare routine before the appointment, including cleansing and applying an appropriate moisturizer. Avoid trying unfamiliar skincare products, facial treatments, peels, waxing, or strong exfoliants immediately before your preview — these treatments can sometimes cause redness, dryness, irritation, or sensitivity.",
+    },
+    {
+      type: "p",
+      text: "Healthy bridal makeup begins with well-cared-for skin. In the weeks before your preview and wedding, focus on consistency rather than experimenting with multiple new products. Drink water, moisturize regularly, and follow the guidance of a licensed skin care professional if you are addressing a specific concern. Please let me know about any allergies, skin sensitivities, reactions, or medical concerns that may affect the products used during your appointment.",
+    },
+    { type: "h2", text: "Wear a white dress or blouse" },
+    {
+      type: "p",
+      text: "Wear a white, ivory, blouse or dress to your bridal preview when possible. Choose a neckline that is similar to your wedding dress — for example, if your gown has a strapless, off-the-shoulder, high-neck, or V-neck design, wearing a similar neckline will help you visualize how your hair and makeup will look with your dress. A button-down shirt, robe, or top that is easy to remove without disturbing your hairstyle is also a helpful choice.",
+    },
+    {
+      type: "p",
+      text: "Wearing white or ivory can affect how your makeup appears and allows you to see the overall bridal effect more clearly than a dark or brightly colored shirt.",
+    },
+    { type: "h2", text: "Bring your bridal accessories" },
+    {
+      type: "p",
+      text: "Bring any accessories you are considering for your wedding day. This may include:",
+    },
+    {
+      type: "ul",
+      items: [
+        "Your veil",
+        "Hair comb",
+        "Hair pins",
+        "Tiara",
+        "Headband",
+        "Flowers",
+        "Earrings",
+        "Necklace",
+        "Hair extensions",
+        "Wedding jewelry",
+      ],
+    },
+    {
+      type: "p",
+      text: "Seeing the accessories with the completed hairstyle helps us determine the most flattering and secure placement. If your veil has not yet arrived, bring a photo that clearly shows its length, comb, and design. The weight and style of a veil may influence the structure of the hairstyle — a long cathedral veil may need more support than a lightweight fingertip veil.",
+    },
+    {
+      type: "p",
+      text: "If you are still deciding between accessories, bring the options with you. We can see how each one works with the hairstyle and your overall bridal vision.",
+    },
+    { type: "h2", text: "Be prepared to discuss your wedding details" },
+    {
+      type: "p",
+      text: "Your beauty look should feel connected to the rest of your wedding. During the preview, we may discuss your wedding venue, ceremony time, indoor or outdoor setting, wedding season, dress style, veil and accessories, wedding colors, photography style, overall level of formality, your usual beauty routine, and the way you want to feel on your wedding day.",
+    },
+    {
+      type: "p",
+      text: "A soft and romantic garden wedding may inspire a different look than a formal ballroom celebration. A coastal ceremony may require additional consideration for wind and humidity, while a historic St. Augustine venue may complement a timeless and elegant style. These details help me understand the full picture rather than viewing your hair and makeup separately from the wedding.",
+    },
+    { type: "h2", text: "Expect a conversation, not just an application" },
+    {
+      type: "p",
+      text: "Your preview is a collaborative appointment. At the beginning, we will talk through your inspiration and priorities. I may ask what you normally wear, what makes you feel most confident, and whether there are any styles or makeup details you strongly dislike.",
+    },
+    {
+      type: "p",
+      text: "For makeup, we may discuss natural, soft glam, or full glam; matte, satin, or radiant skin; light or fuller coverage; neutral or defined eyes; individual or strip lashes; brow shape and definition; blush and contour preferences; and lip color and finish. For hair, we may discuss updo, half-up, waves, or ponytail; sleek or textured finish; volume at the crown; face-framing pieces; part placement; hair accessories; veil placement; and concerns about humidity or hold.",
+    },
+    {
+      type: "p",
+      text: "Please communicate openly throughout the appointment. You will not hurt my feelings by asking for an adjustment — the preview is the right time to make changes and explore your preferences.",
+    },
+    { type: "h2", text: "Trust the process" },
+    {
+      type: "p",
+      text: "Hair and makeup often come together in stages. The first curl, the first section of an updo, or the beginning of foundation application will not look like the finished result. Try to allow the process to develop before making a final judgment.",
+    },
+    {
+      type: "p",
+      text: "Once the complete hairstyle and makeup look are finished, we will evaluate the overall balance and can then soften, define, add, remove, or reposition details as needed. Sometimes a bride arrives believing she wants a specific look but discovers that she prefers a slightly different direction once she sees it on herself. That is one of the most valuable parts of a preview — it allows us to learn what feels right before the wedding day.",
+    },
+    { type: "h2", text: "Take photos in different lighting" },
+    {
+      type: "p",
+      text: "Once your preview is complete, take photographs from several angles — from the front, from both sides, from the back, in natural light, indoors, with and without your veil, and smiling and with a relaxed expression.",
+    },
+    {
+      type: "p",
+      text: "Makeup can appear different in person, in professional photography, and on a phone camera. Natural light photos are especially helpful when evaluating the complexion, blush, eye makeup, and overall balance. Hair should also be photographed from every angle, particularly if the style includes detailed twists, braids, curls, or accessories. I may take reference photos and notes so the final look can be recreated accurately on your wedding day.",
+    },
+    { type: "h2", text: "Wear the look for several hours" },
+    {
+      type: "p",
+      text: "After your preview, pay attention to how your hair and makeup wear throughout the day. Notice how your skin feels, whether the foundation remains comfortable, how the makeup looks in different lighting, whether the lashes feel secure, how the lip color wears, whether the hairstyle remains comfortable, how well the curls or updo hold, whether any pins feel tight, and how the look photographs.",
+    },
+    {
+      type: "p",
+      text: "Avoid intentionally testing the look through extreme conditions, but enjoy your day normally. The goal is to understand how the style performs and whether you would like any adjustments for the wedding. Keep in mind that the wedding-day application may include additional finishing details based on the weather, location, and final schedule.",
+    },
+    { type: "h2", text: "Limit the number of opinions" },
+    {
+      type: "p",
+      text: "You are welcome to bring a trusted person to your preview if space allows, but choose your guest carefully. Bring someone who understands your personal style, supports your decisions, and can offer calm and constructive feedback. Too many opinions can make it difficult to recognize what you truly love.",
+    },
+    {
+      type: "p",
+      text: "Your bridal beauty look should reflect you — not the preferences of every friend or family member. Ask yourself: do I feel comfortable, do I feel confident, does this look and feel like me, and will I still love this look when I see my wedding photographs years from now? The most important opinion is yours.",
+    },
+    { type: "h2", text: "What happens after the preview?" },
+    {
+      type: "p",
+      text: "After your preview, your final hair and makeup selections will be documented. Any important notes may include products used, complexion finish, lash style, lip color, hairstyle structure, part placement, accessories, veil placement, extension needs, requested adjustments, and estimated service timing.",
+    },
+    {
+      type: "p",
+      text: "If you think of a small change after the appointment, make a note and communicate it before the wedding day. It is common for brides to request slight refinements, such as a softer lip, less volume, more face-framing pieces, or a little additional definition around the eyes. The preview gives us a strong foundation, while the final wedding-day look brings every detail together.",
+    },
+    { type: "h2", text: "A preview creates confidence" },
+    {
+      type: "p",
+      text: "Your bridal preview should leave you feeling excited and reassured. It removes uncertainty from the wedding morning and gives you the confidence of knowing that your look has already been thoughtfully designed. When your wedding day arrives, you will not be meeting your artist for the first time or wondering whether your ideas will work — we will already understand your preferences, your features, your accessories, and the look we are creating together. That familiarity allows the wedding morning to feel more relaxed, organized, and personal.",
+    },
+    { type: "h2", text: "Preparing for your bridal preview" },
+    {
+      type: "p",
+      text: "Before your appointment, please remember to:",
+    },
+    {
+      type: "ul",
+      items: [
+        "Send clear front and back photos of your current hair",
+        "Send two to three hair inspiration photos",
+        "Send two to three makeup inspiration photos",
+        "Arrive with freshly washed and fully blow-dried hair",
+        "Arrive with a clean, makeup-free, moisturized face",
+        "Wear a white or light-colored top",
+        "Choose a neckline similar to your wedding dress",
+        "Bring your veil, hair accessories, extensions, and jewelry",
+        "Share any allergies, sensitivities, or beauty concerns",
+        "Come ready to collaborate and enjoy the experience",
+      ],
+    },
+    {
+      type: "p",
+      text: "Your bridal preview is a special part of your wedding journey. It is where your vision becomes more personal, your questions begin to feel settled, and you get your first glimpse of how you may look and feel as a bride.",
+    },
+    { type: "h2", text: "Planning your wedding in Northeast Florida?" },
+    {
+      type: "p",
+      text: "Maureen Ella provides bridal hair and makeup services for weddings, elopements, and special celebrations throughout St. Augustine, Jacksonville, Palm Coast, and surrounding Northeast Florida locations. Every bridal look is created with thoughtful attention to your natural features, personal style, wedding details, and the way you want to feel when you walk down the aisle.",
+    },
+    {
+      type: "p",
+      text: "Your wedding beauty experience should feel calm, personal, and beautifully yours — from the bridal preview to the final touch before the ceremony.",
+    },
+  ],
+},
+
+"how-to-choose-a-bridal-hairstylist": {
+  image: "/images/journal/how-to-choose-a-bridal-hairstylist.jpg",
+  excerpt:
+    "Your bridal hairstyle should complement your dress, venue, and wedding style. Here is how to choose a bridal hairstylist whose portfolio, experience, and process truly fit your day.",
+  datePublished: "2026-07-22",
+  body: [
+    {
+      type: "p",
+      text: "Choosing your bridal hairstylist is about more than finding someone who can create a beautiful updo or soft waves. Your wedding hairstyle becomes part of your complete bridal look — it should complement your dress, veil, accessories, venue, season, and the overall feeling of your celebration.",
+    },
+    {
+      type: "p",
+      text: "The right bridal hairstylist will not simply copy an inspiration photo. They will take the time to understand your vision and create a hairstyle that feels personal, flattering, and connected to the rest of your wedding. Whether you are planning a romantic garden wedding, an elegant ballroom celebration, a coastal ceremony, or an intimate elopement in St. Augustine, choosing an artist whose work aligns with your wedding style can make the entire beauty experience feel more intentional. Here is what to consider when choosing the best bridal hairstylist for your wedding day.",
+    },
+    { type: "h2", text: "Begin with the overall feeling of your wedding" },
+    {
+      type: "p",
+      text: "Before searching for a hairstylist, think about how you want your wedding to feel. Your wedding may be romantic and soft, timeless and elegant, modern and minimal, coastal and relaxed, glamorous and formal, bohemian and organic, vintage-inspired, or classic and traditional.",
+    },
+    {
+      type: "p",
+      text: "The feeling of your wedding can help guide your hairstyle. A soft garden wedding may pair beautifully with textured waves, delicate face-framing pieces, or a romantic low bun. A formal ballroom celebration may inspire a more polished chignon, sculpted waves, or a sleek and structured style. A coastal wedding may call for a hairstyle that feels effortless while still being secure enough to withstand wind and humidity.",
+    },
+    {
+      type: "p",
+      text: "Your hairstyle does not have to match every decorative detail. However, it should feel like it belongs within the full visual story of your wedding.",
+    },
+    { type: "h2", text: "Look for a portfolio that reflects your style" },
+    {
+      type: "p",
+      text: "When reviewing a bridal hairstylist's work, ask yourself whether you can imagine yourself in their portfolio. Every artist develops a certain style, even when they are capable of creating many different looks. Some artists may specialize in soft, romantic texture; sleek and polished updos; Hollywood waves; bohemian braids; natural curls and textured hair; modern buns and ponytails; classic bridal styling; or editorial and high-glamour looks.",
+    },
+    {
+      type: "p",
+      text: "A portfolio filled with beautiful work does not automatically mean the artist is the right fit for your wedding. Look for consistency in the types of hairstyles you are naturally drawn to. If you want an airy, romantic style but the artist's portfolio is primarily sleek and structured, their work may not fully reflect your vision. Likewise, if you prefer a smooth, refined finish, an artist known mainly for loose and undone texture may not be the best stylistic match. The goal is to find someone whose work already feels connected to the look you want.",
+    },
+    { type: "h2", text: "Pay attention to real wedding photographs" },
+    {
+      type: "p",
+      text: "Social media can be helpful when searching for a hairstylist, but it is important to look beyond close-up photographs taken immediately after styling. Real wedding photos can show how a hairstyle looks in motion, from different angles, and alongside the bride's dress, veil, makeup, and venue. Look for photographs that show the front of the hairstyle, both side profiles, the back of the hairstyle, the veil placement, the style after the bride is dressed, outdoor portraits, candid moments, and the hairstyle later in the celebration.",
+    },
+    {
+      type: "p",
+      text: "A hairstyle may look beautiful from the back but may not flatter the bride from the front. An experienced bridal hairstylist understands that the style must photograph well from every angle. Real wedding galleries also help you see whether the artist's work complements different bridal styles rather than appearing separate from the rest of the wedding.",
+    },
+    { type: "h2", text: "Consider your wedding dress" },
+    {
+      type: "p",
+      text: "Your wedding dress is one of the most important details to consider when choosing your hairstyle. The neckline, back design, fabric, silhouette, and overall style of your gown can influence whether your hair looks best up, down, or somewhere in between.",
+    },
+    {
+      type: "p",
+      text: "Strapless and sweetheart necklines offer flexibility — soft waves, half-up styles, ponytails, and updos can all work beautifully. Wearing the hair down may create a romantic effect, while an updo can highlight the shoulders and neckline. High-neck or detailed gowns often pair well with a polished bun, textured updo, or sleek ponytail, so the hair does not compete with an intricate neckline and lace, beading, or embroidery can remain visible.",
+    },
+    {
+      type: "p",
+      text: "Open-back dresses often call for an updo or side-swept style that can showcase the back of the gown; if you prefer wearing your hair down, consider a style that can be placed over one shoulder so the dress details are still visible. Off-the-shoulder gowns pair beautifully with soft updos, romantic waves, and face-framing pieces that complement rather than hide the neckline. A minimalist gown may pair well with a clean, sleek bun or polished ponytail, or a more textured hairstyle can create intentional contrast.",
+    },
+    {
+      type: "p",
+      text: "Your hairstylist should consider the complete silhouette rather than viewing the hairstyle separately from the gown.",
+    },
+    { type: "h2", text: "Think about your veil and accessories" },
+    {
+      type: "p",
+      text: "Your veil, hairpiece, flowers, tiara, pins, or comb should feel naturally incorporated into your hairstyle. Different accessories require different types of support — a long cathedral veil may need a secure foundation, while a lightweight fingertip veil may work with a wider variety of hairstyles. A delicate comb may sit beautifully above a low bun, while a tiara may require volume and structure around the crown.",
+    },
+    {
+      type: "p",
+      text: "When reviewing a hairstylist's portfolio, look for examples of veils placed securely, hair combs incorporated naturally, floral accents, pearls or decorative pins, tiaras and headbands, and accessory placement that does not overwhelm the hairstyle. Your accessories should enhance the style rather than look like they were added as an afterthought. A bridal preview is the best time to test the placement of your veil and accessories before the wedding day.",
+    },
+    { type: "h2", text: "Choose an artist with experience in your hair type" },
+    {
+      type: "p",
+      text: "A beautiful inspiration photo does not always translate exactly to every hair type. Hair texture, density, length, color, layering, and condition all affect the final result. Look for an artist who has experience working with hair similar to yours — this is especially important for brides with naturally curly hair, coily or textured hair, fine hair, very thick hair, short hair, long or heavy hair, hair extensions, or bangs and face-framing layers.",
+    },
+    {
+      type: "p",
+      text: "An experienced stylist will know how to adapt the inspiration while protecting the health and integrity of your hair. They should also be honest about whether your desired style may require extensions, padding, additional preparation, or a modified shape. Extensions are not only used for length — they can also add volume, fullness, structure, and support. The right stylist will explain what is realistically possible and offer solutions that preserve the feeling of your inspiration.",
+    },
+    { type: "h2", text: "Consider your venue and wedding season" },
+    {
+      type: "p",
+      text: "Your wedding environment should influence your hairstyle. A style that works beautifully in a climate-controlled ballroom may need adjustments for an outdoor ceremony in Florida. For weddings in St. Augustine, Jacksonville, Palm Coast, and throughout Northeast Florida, brides should consider heat, humidity, wind, coastal moisture, outdoor portraits, rain, and travel between locations.",
+    },
+    {
+      type: "p",
+      text: "A loose hairstyle may need additional support for a beach ceremony. Soft waves may need to be adjusted depending on your natural texture and the expected humidity. An updo may be a more comfortable choice for a warm summer wedding, especially if the ceremony and portraits are outdoors. This does not mean you must give up the style you love — a skilled bridal hairstylist will help you choose a version of the look that is both beautiful and realistic for your venue and season.",
+    },
+    { type: "h2", text: "Look for consistency, not just one perfect photo" },
+    {
+      type: "p",
+      text: "Many brides find a hairstylist after seeing one beautiful image online. While that photograph can be inspiring, it is important to review the artist's full body of work. Ask yourself: are the hairstyles consistently polished, do the styles look secure, are the pins well hidden, does the texture look intentional, are the front and side views flattering, do the hairstyles suit the individual brides, does the work appear consistent across different hair types, and are there real brides as well as styled shoots?",
+    },
+    {
+      type: "p",
+      text: "One exceptional photograph does not always reflect the artist's everyday work. Consistency shows that the stylist has a reliable process and can produce beautiful results across different wedding days, hair types, and environments.",
+    },
+    { type: "h2", text: "Read reviews about the full experience" },
+    {
+      type: "p",
+      text: "Technical skill is important, but your bridal beauty experience also depends on professionalism, communication, and personality. Read reviews to learn how the stylist makes brides feel — look for comments about clear communication, punctuality, organization, calmness, listening skills, attention to detail, flexibility, professionalism, how well the hairstyle lasted, and how the artist handled changes or unexpected situations.",
+    },
+    {
+      type: "p",
+      text: "Your hairstylist will be one of the people with you during the most personal hours of your wedding morning. You should feel comfortable asking questions, expressing concerns, and requesting adjustments. The right stylist should make you feel heard and supported — not rushed, intimidated, or dismissed.",
+    },
+    { type: "h2", text: "Ask about their wedding-day process" },
+    {
+      type: "p",
+      text: "A professional bridal hairstylist should have a clear process for preparing for your wedding. This may include a bridal contract, a retainer or booking fee, a bridal preview, a final service count, a personalized beauty timeline, arrival and setup details, travel policies, additional artist arrangements, hair preparation instructions, accessory and veil planning, and final payment information.",
+    },
+    {
+      type: "p",
+      text: "A structured process protects both the bride and the artist, and helps prevent confusion as the wedding approaches. Ask how the stylist determines the start time, how many services they can complete, and when an additional artist may be needed. A beautiful hairstyle matters, but so does having a wedding morning that runs smoothly.",
+    },
+    { type: "h2", text: "Schedule a bridal preview" },
+    {
+      type: "p",
+      text: "A bridal preview allows you to experience the stylist's work before the wedding day. During the appointment, you can discuss your dress, venue, wedding style, hair inspiration, veil and accessories, hair texture, extensions, desired level of volume, face-framing pieces, part placement, and comfort and hold.",
+    },
+    {
+      type: "p",
+      text: "The preview is also an opportunity to see how well you communicate with the artist. Do they listen carefully? Do they explain their recommendations? Do they ask thoughtful questions? Do you feel comfortable requesting an adjustment? The preview should feel collaborative — you should leave with greater confidence in both your hairstyle and the person creating it.",
+    },
+    { type: "h2", text: "Do not choose based on price alone" },
+    {
+      type: "p",
+      text: "Wedding budgets are important, and every couple must make choices based on their priorities. However, bridal hair is not only about the time spent styling on the wedding morning — you are also investing in experience, professional products, sanitation, tools and equipment, communication, scheduling, timeline planning, travel, reliability, knowledge of different hair types, experience with veils and accessories, and the ability to work calmly under pressure.",
+    },
+    {
+      type: "p",
+      text: "The least expensive option may not provide the experience, service, or peace of mind you need. The most expensive option is not automatically the best fit either. Choose the artist whose work, professionalism, and approach provide the strongest overall value for your wedding.",
+    },
+    { type: "h2", text: "Choose someone who understands you" },
+    {
+      type: "p",
+      text: "Your bridal hairstyle should not feel like a costume — it should feel like an elevated version of you. Some brides feel most beautiful in polished waves. Others feel more confident with their hair pulled back. Some want soft movement around the face, while others prefer a clean and refined finish.",
+    },
+    {
+      type: "p",
+      text: "A good hairstylist will not pressure you into a trend that does not feel authentic. They will help you understand which details are most flattering while still respecting your personal style. Your inspiration photos are important, but so is the way you normally wear your hair, how much volume you enjoy, whether you like your ears covered, and how comfortable you feel with pieces around your face. The best result comes from combining professional guidance with your individual preferences.",
+    },
+    { type: "h2", text: "Your hairstylist should complement the entire wedding vision" },
+    {
+      type: "p",
+      text: "The best bridal hairstylist is not simply the artist with the most beautiful portfolio. It is the artist whose work, experience, communication, and approach align with the way you want to look and feel on your wedding day. Your hairstyle should complement your wedding dress, your veil, your accessories, your makeup, your venue, your season, your wedding style, and your personality.",
+    },
+    {
+      type: "p",
+      text: "When all of these details work together, your bridal look feels thoughtful and complete. You should be able to look back at your wedding photographs and recognize yourself — not only in the way you look, but in the feeling the hairstyle helped create.",
+    },
+    { type: "h2", text: "Bridal hair and makeup in Northeast Florida" },
+    {
+      type: "p",
+      text: "Maureen Ella provides bridal hair and makeup services for weddings, elopements, and special celebrations throughout St. Augustine, Jacksonville, Palm Coast, and surrounding Northeast Florida locations. Each bridal look is created with careful attention to your natural features, personal preferences, wedding dress, accessories, venue, and overall wedding style.",
+    },
+    {
+      type: "p",
+      text: "The goal is not simply to create beautiful hair. It is to create a bridal look that feels connected, intentional, and completely yours.",
+    },
+  ],
+},
 };
 
 export function getArticles(): Article[] {

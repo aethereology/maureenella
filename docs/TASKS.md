@@ -75,6 +75,9 @@
 - [x] Rewrite real weddings as case studies. (D011 — 4 published incl. Shane & Angeline Filipino wedding; redirects retargeted)
 - [x] Build redirect map. (verified against live theparlor.info sitemaps 2026-07-12 — 17 pages, 24 posts, 4 categories; implemented in `seed/redirects.json`; see docs/REDIRECT_MAP.md + D007. Retargeted to 1:1 articles in D011.)
 - [ ] Add internal links. (body block model has no inline links — future enhancement)
+- [x] Add 3 new original (non-migration) bridal-prep posts (2026-07-22): wedding
+  hair/makeup timeline, bridal preview what-to-expect, choosing a bridal
+  hairstylist. Journal now 27 published articles.
 
 ## SEO
 

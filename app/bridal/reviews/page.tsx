@@ -9,6 +9,7 @@ import { ButtonLink } from "@/components/ui/Button";
 import { Reveal } from "@/components/ui/Reveal";
 import { StickyMobileCta } from "@/components/sections/StickyMobileCta";
 import { ReviewCollection } from "@/components/sections/ReviewCollection";
+import { RecognitionMarquee } from "@/components/sections/RecognitionMarquee";
 import { testimonials } from "@/lib/content";
 import { permissions } from "@/lib/permissions";
 import { site } from "@/lib/site";
@@ -93,6 +94,8 @@ export default function ReviewsPage() {
             )}
           </Reveal>
         </Container>
+
+        <RecognitionMarquee />
       </section>
 
       {reviews.length > 0 && (
