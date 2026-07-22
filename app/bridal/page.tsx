@@ -5,7 +5,7 @@ import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { Section, SectionHeading } from "@/components/ui/Section";
 import { ServiceCards } from "@/components/sections/ServiceCards";
 import { ProcessSteps } from "@/components/sections/ProcessSteps";
-import { ReviewStrip } from "@/components/sections/ReviewStrip";
+import { HomeReviews } from "@/components/sections/HomeReviews";
 import { StickyMobileCta } from "@/components/sections/StickyMobileCta";
 import { CtaButton } from "@/components/ui/CtaButton";
 import { ButtonLink } from "@/components/ui/Button";
@@ -85,7 +85,7 @@ export default function BridalPage() {
         </p>
       </Section>
 
-      <ReviewStrip />
+      <HomeReviews />
 
       {/* Services */}
       <Section tone="cream">

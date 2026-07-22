@@ -75,6 +75,7 @@ export default async function ArticlePage({
                 fill
                 priority
                 sizes="(max-width: 768px) 100vw, 768px"
+                style={{ objectPosition: article.imagePosition }}
                 className="object-cover"
               />
             </div>

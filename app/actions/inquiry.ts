@@ -85,7 +85,6 @@ export async function submitInquiry(
   const makeupCount = str(form, "makeupCount");
   const previewInterest = str(form, "previewInterest");
   const howFound = str(form, "howFound");
-  const vision = str(form, "vision");
   const allergies = str(form, "allergies");
   const consentNotReserved = form.get("consentNotReserved") != null;
   const consentContact = form.get("consentContact") != null;
@@ -99,6 +98,10 @@ export async function submitInquiry(
   if (!weddingDate) errors.weddingDate = "Please enter your wedding date.";
   if (!cityState) errors.cityState = "Please enter your wedding city and state.";
   if (!interestedIn) errors.interestedIn = "Please choose a service.";
+  if (!gettingReadyLocation)
+    errors.gettingReadyLocation = "Please enter your getting-ready location.";
+  if (!hairCount) errors.hairCount = "Please enter estimated hair services.";
+  if (!makeupCount) errors.makeupCount = "Please enter estimated makeup services.";
   if (!consentNotReserved)
     errors.consentNotReserved =
       "Please acknowledge this inquiry does not reserve your date.";
@@ -126,7 +129,6 @@ export async function submitInquiry(
   checkMax(errors, "makeupCount", "Estimated makeup services", makeupCount, 20);
   checkMax(errors, "previewInterest", "Preview interest", previewInterest, 80);
   checkMax(errors, "howFound", "How you found us", howFound, 120);
-  checkMax(errors, "vision", "Vision", vision, 2000);
   checkMax(errors, "allergies", "Allergies or sensitivities", allergies, 800);
 
   if (Object.keys(errors).length > 0) {
@@ -154,7 +156,6 @@ export async function submitInquiry(
     "Makeup services (est.)": makeupCount,
     "Interested in preview": previewInterest,
     "How they found us": howFound,
-    Vision: vision,
     "Allergies / sensitivities": allergies,
   };
 

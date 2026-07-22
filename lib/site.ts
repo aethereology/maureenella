@@ -46,7 +46,7 @@ export const site = {
 
   reviews: {
     google: {
-      value: "https://g.page/r/CTv0fdbbAi-FEAI/review",
+      value: "https://share.google/KeWMapjz8Hra9zcVK",
       confirmed: true,
     },
   },

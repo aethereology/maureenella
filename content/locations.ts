@@ -106,9 +106,9 @@ export const locations: Location[] = [
     metaTitle: "Florida Destination Wedding Hair & Makeup Artist",
     metaDescription:
       "On-location bridal hair and makeup for destination weddings and elopements across Northeast Florida. Calm, organized, photo-ready bridal beauty wherever you marry.",
-    image: "/images/portfolio/beach-elopement.jpg",
+    image: "/images/portfolio/pf-15.jpg",
     imageAlt:
-      "Destination bride with windproof beach elopement hair and makeup",
+      "Bride wearing a braided updo and veil embracing the groom at an outdoor wedding",
     intro:
       "Marrying away from home? Maureen Ella serves destination weddings and elopements across Northeast Florida — bringing a calm, organized bridal beauty experience to wherever your day takes place.",
     body: [

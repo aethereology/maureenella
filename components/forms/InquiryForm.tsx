@@ -153,8 +153,9 @@ export function InquiryForm() {
             <input id="venue" name="venue" className={fieldClass} />
           </div>
           <div>
-            <Label htmlFor="gettingReadyLocation">Getting-ready location</Label>
-            <input id="gettingReadyLocation" name="gettingReadyLocation" className={fieldClass} />
+            <Label htmlFor="gettingReadyLocation" required>Getting-ready location</Label>
+            <input id="gettingReadyLocation" name="gettingReadyLocation" className={fieldClass} aria-invalid={!!err.gettingReadyLocation} aria-describedby={err.gettingReadyLocation ? "gettingReadyLocation-error" : undefined} />
+            <FieldError id="gettingReadyLocation-error" message={err.gettingReadyLocation} />
           </div>
           <div>
             <Label htmlFor="readyBy">Desired ready-by time</Label>
@@ -188,24 +189,22 @@ export function InquiryForm() {
             </select>
           </div>
           <div>
-            <Label htmlFor="hairCount">Estimated hair services</Label>
-            <input id="hairCount" name="hairCount" type="number" min={0} className={fieldClass} placeholder="e.g. 4" />
+            <Label htmlFor="hairCount" required>Estimated hair services</Label>
+            <input id="hairCount" name="hairCount" type="number" min={0} className={fieldClass} placeholder="e.g. 4" aria-invalid={!!err.hairCount} aria-describedby={err.hairCount ? "hairCount-error" : undefined} />
+            <FieldError id="hairCount-error" message={err.hairCount} />
           </div>
           <div>
-            <Label htmlFor="makeupCount">Estimated makeup services</Label>
-            <input id="makeupCount" name="makeupCount" type="number" min={0} className={fieldClass} placeholder="e.g. 4" />
+            <Label htmlFor="makeupCount" required>Estimated makeup services</Label>
+            <input id="makeupCount" name="makeupCount" type="number" min={0} className={fieldClass} placeholder="e.g. 4" aria-invalid={!!err.makeupCount} aria-describedby={err.makeupCount ? "makeupCount-error" : undefined} />
+            <FieldError id="makeupCount-error" message={err.makeupCount} />
           </div>
         </div>
       </fieldset>
 
-      {/* Vision + attribution */}
+      {/* Additional details + attribution */}
       <fieldset className="space-y-4">
-        <legend className="font-serif text-xl text-espresso">Your vision</legend>
+        <legend className="font-serif text-xl text-espresso">Additional details</legend>
         <div className="space-y-4">
-          <div>
-            <Label htmlFor="vision">Describe your bridal beauty vision</Label>
-            <textarea id="vision" name="vision" rows={4} className={fieldClass} />
-          </div>
           <div>
             <Label htmlFor="allergies">Any allergies or sensitivities?</Label>
             <input id="allergies" name="allergies" className={fieldClass} />

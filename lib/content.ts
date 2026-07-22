@@ -35,6 +35,12 @@ export type Testimonial = {
   name: string;
   displayName: string;
   quote: string;
+  excerpt?: boolean;
+  rating: number;
+  dateLabel?: string;
+  reviewerMeta?: string;
+  priceLevel?: string;
+  ownerResponse?: string;
   proofPoint: string[];
   permissionStatus: string;
 };

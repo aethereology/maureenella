@@ -7,7 +7,7 @@ import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { Section, SectionHeading } from "@/components/ui/Section";
 import { ServiceCards } from "@/components/sections/ServiceCards";
 import { ProcessSteps } from "@/components/sections/ProcessSteps";
-import { ReviewStrip } from "@/components/sections/ReviewStrip";
+import { HomeReviews } from "@/components/sections/HomeReviews";
 import { FaqAccordion } from "@/components/ui/FaqAccordion";
 import { StickyMobileCta } from "@/components/sections/StickyMobileCta";
 import { CtaButton } from "@/components/ui/CtaButton";
@@ -130,7 +130,7 @@ export default async function AreaPage({
         </div>
       </Section>
 
-      <ReviewStrip />
+      <HomeReviews />
 
       {/* Portfolio */}
       {showPortfolioImages && (

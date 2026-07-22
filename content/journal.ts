@@ -15,6 +15,8 @@ export type Article = BlogPostMeta & {
   excerpt: string;
   /** Hero image under /public/images/journal; optional. */
   image?: string;
+  /** CSS object-position for the hero image crop; defaults to center. */
+  imagePosition?: string;
   /** Authored body. Empty array → treated as "coming soon". */
   body: Block[];
   /** ISO date if known. */
@@ -23,12 +25,19 @@ export type Article = BlogPostMeta & {
 
 const BODIES: Record<
   string,
-  { excerpt: string; image?: string; body: Block[]; datePublished?: string }
+  {
+    excerpt: string;
+    image?: string;
+    imagePosition?: string;
+    body: Block[];
+    datePublished?: string;
+  }
 > = {
   "curly-bridal-hair-prep": {
     excerpt:
       "Curly hair can hold beautiful, romantic bridal styles — the secret is preparation, not fighting your texture.",
     image: "/images/journal/curly-bridal-hair-prep.jpg",
+    imagePosition: "top",
     body: [
       {
         type: "p",
@@ -62,6 +71,7 @@ const BODIES: Record<
     excerpt:
       "Extensions are a tool, not a requirement. Here is how to tell whether they will help your wedding hairstyle.",
     image: "/images/journal/wedding-hair-extensions.jpg",
+    imagePosition: "top",
     body: [
       {
         type: "p",
@@ -209,6 +219,7 @@ const BODIES: Record<
 
   // --- D011 migration: bridal prep + beauty favorites (Batch B) ---
   "bridal-hair-prep-guide": {
+  image: "/images/journal/bridal-hair-prep-guide.jpg",
   excerpt:
     "Your wedding hairstyle starts long before the first pin goes in. Here is how I think about hair prep — and why arriving prepared changes everything.",
   datePublished: "2023-08-14",
@@ -250,6 +261,7 @@ const BODIES: Record<
 },
 
 "bridal-makeup-prep-guide": {
+  image: "/images/journal/bridal-makeup-prep-guide.jpg",
   excerpt:
     "Flawless wedding makeup begins with calm skin and a calm morning. My advice on skincare, hydration, and setting up a wedding morning that works in your favor.",
   datePublished: "2023-08-01",
@@ -291,6 +303,7 @@ const BODIES: Record<
 },
 
 "bridal-hair-accessories-veil-heirlooms": {
+  image: "/images/journal/bridal-hair-accessories-veil-heirlooms.jpg",
   excerpt:
     "From cathedral veils to a grandmother's comb, the right accessory finishes a bridal look. How to choose pieces that feel like you — and carry meaning.",
   datePublished: "2023-09-01",
@@ -327,6 +340,7 @@ const BODIES: Record<
 },
 
 "sunless-tanning-before-wedding": {
+  image: "/images/journal/sunless-tanning-before-wedding.jpg",
   excerpt:
     "A sunless tan can give you a warm, even glow without the sun damage — but timing and testing are everything. Here is how to do it safely before your wedding.",
   datePublished: "2023-08-14",
@@ -369,6 +383,7 @@ const BODIES: Record<
 },
 
 "bridal-makeup-sensitive-skin": {
+  image: "/images/journal/bridal-makeup-sensitive-skin.jpg",
   excerpt:
     "Sensitive skin does not have to limit your bridal look. Gentle formulas — like Honest Beauty's — plus patch testing and smart timing keep reactive skin calm and camera-ready.",
   datePublished: "2023-09-11",
@@ -412,6 +427,7 @@ const BODIES: Record<
 },
 
 "personalized-bridal-beauty-gifts": {
+  image: "/images/journal/personalized-bridal-beauty-gifts.jpg",
   excerpt:
     "An engraved lipstick or fragrance turns a beauty product into a keepsake. Why personalized pieces — like YSL Beauty's engravings — make my favorite bridal gifts.",
   datePublished: "2023-08-31",
@@ -452,6 +468,7 @@ const BODIES: Record<
 },
 
 "best-blow-dryers-bridal-hair-prep": {
+  image: "/images/journal/best-blow-dryers-bridal-hair-prep.jpg",
   excerpt:
     "The right blow dryer makes wedding hair prep faster, smoother, and kinder to your hair. The dryers I recommend to brides, from professional workhorses to smart budget picks.",
   datePublished: "2023-08-14",
@@ -494,6 +511,7 @@ const BODIES: Record<
 },
 
 "color-wow-bridal-hair-prep": {
+  image: "/images/journal/color-wow-bridal-hair-prep.jpg",
   excerpt:
     "Humidity is the great enemy of Florida wedding hair. The Color Wow blow-dry products I trust to keep bridal styles smooth, glossy, and weatherproof.",
   datePublished: "2023-10-29",
@@ -534,6 +552,7 @@ const BODIES: Record<
 
   // --- D011 migration: business mentorship (Batch C) ---
   "where-it-all-began-lola-nails-to-the-parlor": {
+  image: "/images/journal/where-it-all-began-lola-nails-to-the-parlor.jpg",
   excerpt:
     "The story behind the business: painting my Lola's nails as a little girl in the Philippines, the long road through beauty school and a nursing detour, and what the journey taught me.",
   datePublished: "2023-09-06",
@@ -575,6 +594,7 @@ const BODIES: Record<
 },
 
 "from-salon-chair-to-salon-suite": {
+  image: "/images/journal/from-salon-chair-to-salon-suite.jpg",
   excerpt:
     "From salon employee to independent contractor to booth renter to private salon suite owner — the stages of my journey and what each one taught me about running a bridal beauty business.",
   datePublished: "2023-08-14",
@@ -619,6 +639,8 @@ const BODIES: Record<
 },
 
 "pinterest-for-bridal-beauty-artists": {
+  image: "/images/journal/pinterest-for-bridal-beauty-artists.jpg",
+  imagePosition: "top",
   excerpt:
     "Brides plan their wedding look on Pinterest long before they inquire. Here's how to set up your profile, boards, and pin descriptions so your work is what they find.",
   datePublished: "2023-10-29",
@@ -667,6 +689,7 @@ const BODIES: Record<
 },
 
 "instagram-for-bridal-beauty-artists": {
+  image: "/images/journal/instagram-for-bridal-beauty-artists.jpg",
   excerpt:
     "Instagram is more than an online portfolio — it's where brides decide whether they trust you with their wedding morning. A practical guide for bridal hair and makeup artists.",
   datePublished: "2023-10-29",
@@ -715,6 +738,7 @@ const BODIES: Record<
 },
 
 "honeybook-for-bridal-beauty-business": {
+  image: "/images/journal/honeybook-for-bridal-beauty-business.jpg",
   excerpt:
     "The admin side of a bridal beauty business can swallow your week. Here's my honest experience with HoneyBook — what it handles for me and how to think about whether a CRM fits your business.",
   datePublished: "2023-08-02",
@@ -755,6 +779,7 @@ const BODIES: Record<
 },
 
 "website-basics-for-bridal-beauty-artists": {
+  image: "/images/journal/website-basics-for-bridal-beauty-artists.jpg",
   excerpt:
     "Whatever platform you build on, the fundamentals are the same: a clear services page, a gallery that sells, an easy inquiry form, and a site that works on the phone in a bride's hand.",
   datePublished: "2023-10-28",
@@ -804,7 +829,8 @@ const BODIES: Record<
 
   // --- D011 migration: real weddings (Batch A) ---
   "st-augustine-beach-elopement-hair-makeup": {
-  image: "/images/portfolio/pf-florida-saintaugustine-kckelveyryan-181.jpg",
+  image: "/images/portfolio/pf-florida-saintaugustine-kckelveyryan.jpg",
+  imagePosition: "top",
   excerpt:
     "A 5 a.m. start, a bronzed no-makeup look, and vows at low tide — Mcklevey and Ryan's intimate elopement at Ocean Hammock Park in St. Augustine Beach.",
   datePublished: "2023-10-09",
@@ -851,6 +877,7 @@ const BODIES: Record<
   ],
 },
 "bowing-oaks-wedding-hair-makeup": {
+  image: "/images/journal/bowing-oaks-wedding-hair-makeup.jpg",
   excerpt:
     "Inside Keely's wedding morning at Bowing Oaks — a preview that set the tone, a joyful getting-ready with her bridesmaids, and vows beneath the oaks.",
   datePublished: "2023-08-21",
@@ -948,6 +975,7 @@ const BODIES: Record<
   ],
 },
 "filipino-inspired-wedding-shane-angeline": {
+  image: "/images/journal/filipino-inspired-wedding-shane-angeline.jpg",
   excerpt:
     "Shane and Angeline honored their Filipino heritage at Old Spanish Quarter in Jacksonville — a Filipiniana gown with butterfly sleeves, a Barong Tagalog, and a timeless bridal look.",
   datePublished: "2026-07-11",
@@ -1007,6 +1035,7 @@ export function getArticles(): Article[] {
         authored?.excerpt ??
         "This story is being written. Check back soon for the full post.",
       image: authored?.image,
+      imagePosition: authored?.imagePosition,
       body: authored?.body ?? [],
       datePublished: authored?.datePublished,
     };
