@@ -1,8 +1,32 @@
 import Link from "next/link";
+import Image from "next/image";
 import navigation from "@/seed/navigation.json";
 import { site, phoneHref } from "@/lib/site";
 import { Container } from "@/components/ui/Container";
 import { locations } from "@/content/locations";
+
+const footerBadges = [
+  {
+    src: "/images/badges/maureenbadge1.png",
+    alt: "Premier Bride Top 3 Best Wedding Pro",
+  },
+  {
+    src: "/images/badges/maureenbadge2.png",
+    alt: "Southern Bride recognition",
+  },
+  {
+    src: "/images/badges/maureenbadge3.png",
+    alt: "Styled Challenge Trendsetter Award",
+  },
+  {
+    src: "/images/badges/maureenbadge4.png",
+    alt: "Styled Challenge Best Design Award",
+  },
+  {
+    src: "/images/badges/maureenbadge5.png",
+    alt: "Simply Eloped Top Vendor",
+  },
+];
 
 export function SiteFooter() {
   const year = 2026; // static build; update annually or derive at request time
@@ -109,6 +133,29 @@ export function SiteFooter() {
                 </li>
               ))}
             </ul>
+
+            <div className="mt-7 border-t border-hairline pt-5">
+              <p className="mb-3 text-[0.6rem] uppercase tracking-[0.18em] text-taupe-deep">
+                Recognition
+              </p>
+              <div className="grid grid-cols-5 gap-2" aria-label="Awards and recognition">
+                {footerBadges.map((badge) => (
+                  <figure
+                    key={badge.src}
+                    className="group flex h-16 items-center justify-center"
+                  >
+                    <Image
+                      src={badge.src}
+                      alt={badge.alt}
+                      width={64}
+                      height={64}
+                      sizes="64px"
+                      className="h-auto max-h-14 w-auto max-w-full object-contain mix-blend-multiply opacity-85 transition duration-300 group-hover:scale-105 group-hover:opacity-100"
+                    />
+                  </figure>
+                ))}
+              </div>
+            </div>
           </nav>
         </div>
 

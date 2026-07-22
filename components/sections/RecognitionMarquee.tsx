@@ -46,7 +46,11 @@ export function RecognitionMarquee() {
   );
 }
 
-function BadgeGroup({ duplicate = false }: { duplicate?: boolean }) {
+function BadgeGroup({
+  duplicate = false,
+}: {
+  duplicate?: boolean;
+}) {
   return (
     <div
       aria-hidden={duplicate || undefined}
@@ -64,7 +68,9 @@ function BadgeGroup({ duplicate = false }: { duplicate?: boolean }) {
             height={160}
             sizes="(max-width: 640px) 120px, 145px"
             className={`h-auto w-auto object-contain mix-blend-multiply ${
-              index === 1 ? "max-h-24 max-w-36 sm:max-h-28 sm:max-w-40" : "max-h-20 max-w-24 sm:max-h-24 sm:max-w-28"
+              index === 1
+                ? "max-h-24 max-w-36 sm:max-h-28 sm:max-w-40"
+                : "max-h-20 max-w-24 sm:max-h-24 sm:max-w-28"
             }`}
           />
         </figure>

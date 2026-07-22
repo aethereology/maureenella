@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import navigation from "@/seed/navigation.json";
 import { clsx } from "@/lib/clsx";
+import { site } from "@/lib/site";
 
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
@@ -53,19 +54,43 @@ export function SiteHeader() {
           </Link>
         </nav>
 
-        {/* Mobile toggle */}
-        <button
-          type="button"
-          className="inline-flex flex-col gap-[5px] p-2 lg:hidden"
-          aria-expanded={open}
-          aria-controls="mobile-nav"
-          aria-label={open ? "Close menu" : "Open menu"}
-          onClick={() => setOpen((v) => !v)}
-        >
-          <span className={clsx("block h-px w-6 bg-espresso transition-transform", open && "translate-y-[6px] rotate-45")} />
-          <span className={clsx("block h-px w-6 bg-espresso transition-opacity", open && "opacity-0")} />
-          <span className={clsx("block h-px w-6 bg-espresso transition-transform", open && "-translate-y-[6px] -rotate-45")} />
-        </button>
+        {/* Mobile social link + toggle */}
+        <div className="flex items-center gap-1 lg:hidden">
+          {site.social.instagram.confirmed && site.social.instagram.value && (
+            <a
+              href={site.social.instagram.value}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Follow Maureen Ella on Instagram"
+              className="inline-flex h-10 w-10 items-center justify-center text-espresso transition-colors hover:text-rose focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-rose"
+            >
+              <svg
+                aria-hidden="true"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.7"
+                className="h-5 w-5"
+              >
+                <rect x="3" y="3" width="18" height="18" rx="5" />
+                <circle cx="12" cy="12" r="4.25" />
+                <circle cx="17.4" cy="6.7" r="1" fill="currentColor" stroke="none" />
+              </svg>
+            </a>
+          )}
+          <button
+            type="button"
+            className="inline-flex h-10 w-10 flex-col items-center justify-center gap-[5px]"
+            aria-expanded={open}
+            aria-controls="mobile-nav"
+            aria-label={open ? "Close menu" : "Open menu"}
+            onClick={() => setOpen((v) => !v)}
+          >
+            <span className={clsx("block h-px w-6 bg-espresso transition-transform", open && "translate-y-[6px] rotate-45")} />
+            <span className={clsx("block h-px w-6 bg-espresso transition-opacity", open && "opacity-0")} />
+            <span className={clsx("block h-px w-6 bg-espresso transition-transform", open && "-translate-y-[6px] -rotate-45")} />
+          </button>
+        </div>
       </div>
 
       {/* Mobile nav */}
