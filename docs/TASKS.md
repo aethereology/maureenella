@@ -39,6 +39,10 @@
 - [x] Create route structure.
 - [x] Create design tokens. (app/globals.css, Tailwind v4 @theme)
 - [x] Create layout components.
+- [x] Add the premium motion system. (2026-07-22 — Motion 12, shared-layout
+  navigation/filter indicators, spring interactions, scroll progress + hero
+  parallax, in-view/staggered reveals, gallery/review presence transitions,
+  route transitions, reduced-motion support, and desktop/mobile visual QA.)
 - [x] Create navigation and footer.
 - [x] Add SEO metadata helpers. (lib/seo/metadata.ts)
 - [x] Add schema helpers. (components/seo/JsonLd.tsx)

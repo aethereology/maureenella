@@ -36,6 +36,7 @@
 
 :root {
   --hairline: var(--color-hairline);
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 /*
@@ -47,6 +48,7 @@
   html {
     scroll-behavior: smooth;
     -webkit-text-size-adjust: 100%;
+    scrollbar-color: var(--color-taupe) var(--color-ivory);
   }
 
   body {
@@ -58,6 +60,7 @@
     line-height: 1.75;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
+    overflow-x: clip;
     /* Subtle paper grain for atmosphere (very low opacity, GPU-cheap). */
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)' opacity='0.025'/%3E%3C/svg%3E");
   }
@@ -73,6 +76,23 @@
   /* Default hairline border color for all elements. */
   * {
     border-color: var(--color-hairline);
+  }
+
+  ::selection {
+    background: var(--color-rose-soft);
+    color: var(--color-espresso);
+  }
+
+  input,
+  select,
+  textarea {
+    transition: border-color 220ms ease, box-shadow 220ms ease, background-color 220ms ease;
+  }
+
+  input:hover,
+  select:hover,
+  textarea:hover {
+    border-color: var(--color-taupe-deep);
   }
 }
 
@@ -124,30 +144,16 @@
   outline-offset: 3px;
 }
 
-/* ---- Orchestrated entrance reveals ------------------------------------ */
-@keyframes rise {
-  from { opacity: 0; transform: translateY(18px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-
-[data-reveal] {
-  opacity: 0;
-}
-[data-reveal].is-in {
-  animation: rise 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-  animation-delay: var(--reveal-delay, 0ms);
-}
-
 /* Image hover zoom helper. */
 .img-zoom {
   overflow: hidden;
 }
 .img-zoom img {
-  transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  transition: transform 1s var(--ease-out-expo), filter 700ms ease;
 }
 .group:hover .img-zoom img,
 .img-zoom:hover img {
-  transform: scale(1.04);
+  transform: scale(1.035);
 }
 
 /* A quiet transition for the homepage testimonial carousel. */
@@ -188,7 +194,7 @@
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  [data-reveal] { opacity: 1; animation: none; }
+  [data-reveal] { opacity: 1; animation: none; transform: none; }
   .review-fade { animation: none; }
   .awards-marquee {
     overflow-x: auto;

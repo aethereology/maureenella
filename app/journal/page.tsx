@@ -56,7 +56,7 @@ export default async function JournalPage({ searchParams }: JournalPageProps) {
             <span className="index-mark">◦</span>
             <span className="eyebrow">Notes from the beauty chair</span>
           </div>
-          <h1 className="mt-8 max-w-6xl text-[clamp(4rem,11vw,9rem)] leading-[0.78] tracking-[-0.055em]">
+          <h1 className="mt-8 max-w-5xl text-[clamp(3.25rem,6vw,5.75rem)] leading-[0.9] tracking-[-0.04em]">
             The Journal<span className="text-rose">.</span>
           </h1>
           <div className="mt-10 grid gap-6 border-t border-hairline pt-6 md:grid-cols-2">

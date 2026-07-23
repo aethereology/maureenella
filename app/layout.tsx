@@ -9,6 +9,8 @@ import {
   WebsiteSchema,
 } from "@/components/seo/JsonLd";
 import { Analytics } from "@/components/Analytics";
+import { MotionProvider } from "@/components/motion/MotionProvider";
+import { RouteTransition } from "@/components/motion/RouteTransition";
 import "./globals.css";
 
 const cormorant = Cormorant_Garamond({
@@ -49,7 +51,7 @@ export default function RootLayout({
       <body>
         {/* No-JS / crawler fallback: never hide reveal-wrapped content. */}
         <noscript>
-          <style>{`[data-reveal]{opacity:1 !important}`}</style>
+          <style>{`[data-reveal]{opacity:1 !important;transform:none !important}`}</style>
         </noscript>
         <a
           href="#main"
@@ -57,13 +59,15 @@ export default function RootLayout({
         >
           Skip to content
         </a>
-        <OrganizationSchema />
-        <WebsiteSchema />
-        <LocalBusinessSchema />
-        <SiteHeader />
-        <main id="main">{children}</main>
-        <SiteFooter />
-        <Analytics />
+        <MotionProvider>
+          <OrganizationSchema />
+          <WebsiteSchema />
+          <LocalBusinessSchema />
+          <SiteHeader />
+          <RouteTransition>{children}</RouteTransition>
+          <SiteFooter />
+          <Analytics />
+        </MotionProvider>
       </body>
     </html>
   );

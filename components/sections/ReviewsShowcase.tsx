@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { AnimatePresence, m } from "motion/react";
 import { Container } from "@/components/ui/Container";
 import { Reveal } from "@/components/ui/Reveal";
 import { clsx } from "@/lib/clsx";
@@ -13,9 +14,11 @@ type ReviewItem = {
 
 export function ReviewsShowcase({ items }: { items: ReviewItem[] }) {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [direction, setDirection] = useState(1);
   const activeReview = items[activeIndex];
 
   function move(delta: number) {
+    setDirection(delta);
     setActiveIndex((current) => (current + delta + items.length) % items.length);
   }
 
@@ -47,25 +50,40 @@ export function ReviewsShowcase({ items }: { items: ReviewItem[] }) {
             <Reveal delay={100}>
               <div className="border-y border-hairline">
                 <article className="flex min-h-[23rem] flex-col justify-between py-7 sm:min-h-[20rem] sm:py-9">
-                  <div
-                    key={activeReview.id}
-                    className="review-fade"
-                    aria-live="polite"
-                    aria-atomic="true"
-                  >
-                    <blockquote className="pullquote max-w-3xl text-[1.45rem] leading-[1.35] text-espresso sm:text-[1.8rem] lg:text-[2rem]">
-                      &ldquo;{activeReview.quote}&rdquo;
-                    </blockquote>
-                    <span className="sr-only">Review by {activeReview.displayName}.</span>
+                  <div className="relative min-h-52 overflow-hidden sm:min-h-48" aria-live="polite" aria-atomic="true">
+                    <AnimatePresence mode="wait" initial={false} custom={direction}>
+                      <m.div
+                        key={activeReview.id}
+                        custom={direction}
+                        initial={{ opacity: 0, x: direction * 18 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        exit={{ opacity: 0, x: direction * -12 }}
+                        transition={{ duration: 0.42, ease: [0.22, 1, 0.36, 1] }}
+                      >
+                        <blockquote className="pullquote max-w-3xl text-[1.45rem] leading-[1.35] text-espresso sm:text-[1.8rem] lg:text-[2rem]">
+                          &ldquo;{activeReview.quote}&rdquo;
+                        </blockquote>
+                        <span className="sr-only">Review by {activeReview.displayName}.</span>
+                      </m.div>
+                    </AnimatePresence>
                   </div>
 
                   <footer className="mt-10 flex flex-wrap items-end justify-between gap-5 border-t border-hairline pt-5">
-                    <cite key={activeReview.id} className="review-fade not-italic">
-                      <span className="block font-serif text-xl text-espresso">
-                        {activeReview.displayName}
-                      </span>
-                      <span className="eyebrow mt-1 block">Maureen Ella bride</span>
-                    </cite>
+                    <AnimatePresence mode="wait" initial={false}>
+                      <m.cite
+                        key={activeReview.id}
+                        className="not-italic"
+                        initial={{ opacity: 0, y: 6 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0 }}
+                        transition={{ duration: 0.3 }}
+                      >
+                        <span className="block font-serif text-xl text-espresso">
+                          {activeReview.displayName}
+                        </span>
+                        <span className="eyebrow mt-1 block">Maureen Ella bride</span>
+                      </m.cite>
+                    </AnimatePresence>
 
                     <div className="flex items-center gap-4">
                       <span className="text-xs tabular-nums text-taupe-deep">
@@ -99,11 +117,14 @@ function ArrowButton({
   const isPrevious = direction === "previous";
 
   return (
-    <button
+    <m.button
       type="button"
       aria-label={`${isPrevious ? "Previous" : "Next"} bride review`}
       onClick={onClick}
       className="group grid h-11 w-11 place-items-center border border-hairline bg-transparent text-espresso transition-colors duration-300 hover:border-rose hover:text-rose"
+      whileHover={{ scale: 1.04 }}
+      whileTap={{ scale: 0.9 }}
+      transition={{ type: "spring", stiffness: 480, damping: 28 }}
     >
       <svg
         aria-hidden="true"
@@ -122,6 +143,6 @@ function ArrowButton({
           strokeLinejoin="round"
         />
       </svg>
-    </button>
+    </m.button>
   );
 }

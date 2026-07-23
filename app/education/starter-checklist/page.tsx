@@ -33,7 +33,7 @@ export default function StarterChecklistPage() {
         <div className="bg-cream">
           <Container size="narrow" className="py-12">
             <p className="eyebrow">Free for bridal beauty pros</p>
-            <h1 className="mt-3 text-4xl sm:text-5xl">
+            <h1 className="mt-3 text-3xl leading-[1.03] sm:text-4xl lg:text-[2.75rem]">
               {starterChecklist.title}
             </h1>
             <p className="mt-5 text-lg text-cocoa/80">

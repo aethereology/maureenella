@@ -16,6 +16,7 @@ import { faqsByCategory } from "@/lib/content";
 import { FaqAccordion } from "@/components/ui/FaqAccordion";
 import { locations } from "@/content/locations";
 import { permissions } from "@/lib/permissions";
+import { Hero } from "@/components/sections/Hero";
 
 export const metadata = pageMetadata({
   title: "Bridal Hair & Makeup",
@@ -38,41 +39,16 @@ export default function BridalPage() {
       />
       <Breadcrumbs items={[{ name: "Bridal", path: "/bridal" }]} />
 
-      {/* Bridal hero */}
-      <section className="bg-cream">
-        <div className="mx-auto grid max-w-6xl items-center gap-10 px-5 py-14 sm:px-8 lg:grid-cols-2">
-          <div>
-            <p className="eyebrow">Maureen Ella Bridal</p>
-            <h1 className="mt-4 text-4xl leading-tight sm:text-5xl">
-              Wedding-day hair &amp; makeup, beautifully organized
-            </h1>
-            <p className="mt-6 max-w-xl text-lg text-cocoa/85">
-              Whether you are getting ready in a St. Augustine bridal suite, a
-              Jacksonville venue, a Palm Coast resort, or a private home, the
-              experience is designed to be organized, warm, and beautifully
-              personal.
-            </p>
-            <div className="mt-8 flex flex-wrap gap-3">
-              <CtaButton href={site.cta.primary.href}>
-                {site.cta.primary.label}
-              </CtaButton>
-              <ButtonLink href="/bridal/portfolio" variant="secondary">
-                View Portfolio
-              </ButtonLink>
-            </div>
-          </div>
-          <div className="relative aspect-[4/5] overflow-hidden rounded-card">
-            <Image
-              src="/images/hero/bridal-hero.jpg"
-              alt="Bride with romantic bridal hair and makeup on her wedding morning"
-              fill
-              priority
-              sizes="(max-width: 1024px) 100vw, 50vw"
-              className="object-cover"
-            />
-          </div>
-        </div>
-      </section>
+      <Hero
+        eyebrow="Maureen Ella Bridal"
+        title="Wedding-day hair & makeup, beautifully organized"
+        subtitle="Whether you are getting ready in a St. Augustine bridal suite, a Jacksonville venue, a Palm Coast resort, or a private home, the experience is designed to be organized, warm, and beautifully personal."
+        image="/images/hero/bridal-hero.jpg"
+        imageAlt="Bride with romantic bridal hair and makeup on her wedding morning"
+        primaryCta={site.cta.primary}
+        secondaryCta={{ label: "View the portfolio", href: "/bridal/portfolio" }}
+        priority
+      />
 
       {/* Service area */}
       <Section size="narrow" className="text-center">

@@ -13,7 +13,7 @@ export default function ThankYouPage() {
   return (
     <Section size="narrow" className="text-center">
       <p className="eyebrow">Inquiry received</p>
-      <h1 className="mt-3 text-4xl sm:text-5xl">Thank you</h1>
+      <h1 className="mt-3 text-3xl sm:text-4xl">Thank you</h1>
       <p className="mx-auto mt-5 max-w-xl text-cocoa/80">
         Your details have been received. We&apos;ll review your date, service
         count, location, and timeline needs before sending next steps. In the

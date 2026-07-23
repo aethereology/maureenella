@@ -51,7 +51,7 @@ export default async function PrepGuidePage({
         <div className="bg-cream">
           <Container size="narrow" className="py-12">
             <p className="eyebrow">Bridal prep guide</p>
-            <h1 className="mt-3 text-4xl sm:text-5xl">{guide.title}</h1>
+            <h1 className="mt-3 text-3xl leading-[1.03] sm:text-4xl lg:text-[2.75rem]">{guide.title}</h1>
             <p className="mt-5 text-lg text-cocoa/80">{guide.intro}</p>
           </Container>
         </div>

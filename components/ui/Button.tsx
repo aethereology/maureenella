@@ -1,16 +1,19 @@
+"use client";
+
 import Link from "next/link";
+import { m, type HTMLMotionProps } from "motion/react";
 import { clsx } from "@/lib/clsx";
 
 type Variant = "primary" | "secondary" | "ghost";
 
 const base =
-  "group/btn inline-flex items-center justify-center gap-2.5 font-sans text-[0.72rem] uppercase tracking-[0.18em] transition-colors duration-300 focus-visible:outline-2 focus-visible:outline-offset-2 disabled:cursor-not-allowed disabled:opacity-50";
+  "group/btn relative inline-flex items-center justify-center gap-2.5 overflow-hidden font-sans text-[0.68rem] uppercase tracking-[0.2em] transition-colors duration-300 focus-visible:outline-2 focus-visible:outline-offset-2 disabled:cursor-not-allowed disabled:opacity-50";
 
 const variants: Record<Variant, string> = {
   primary:
-    "bg-espresso px-7 py-3.5 text-porcelain hover:bg-cocoa focus-visible:outline-rose",
+    "bg-espresso px-7 py-4 text-porcelain shadow-[0_12px_30px_rgba(37,29,23,0.12)] hover:bg-cocoa focus-visible:outline-rose",
   secondary:
-    "border border-espresso px-7 py-3.5 text-espresso hover:bg-espresso hover:text-porcelain focus-visible:outline-rose",
+    "border border-espresso px-7 py-4 text-espresso hover:bg-espresso hover:text-porcelain focus-visible:outline-rose",
   ghost: "text-espresso focus-visible:outline-rose",
 };
 
@@ -40,9 +43,24 @@ export function ButtonLink({
   className?: string;
 } & Omit<React.ComponentProps<typeof Link>, "href" | "className">) {
   return (
-    <Link href={href} className={clsx(base, variants[variant], className)} {...rest}>
-      {variant === "ghost" ? <GhostInner>{children}</GhostInner> : children}
-    </Link>
+    <m.span
+      className="inline-flex"
+      whileHover={{ y: -2, scale: 1.01 }}
+      whileTap={{ y: 0, scale: 0.965 }}
+      transition={{ type: "spring", stiffness: 480, damping: 28, mass: 0.45 }}
+    >
+      <Link href={href} className={clsx(base, variants[variant], className)} {...rest}>
+        {variant !== "ghost" && (
+          <span
+            aria-hidden
+            className="absolute inset-y-0 -left-1/3 w-1/4 -skew-x-12 bg-white/10 opacity-0 blur-sm transition-all duration-700 group-hover/btn:left-[115%] group-hover/btn:opacity-100"
+          />
+        )}
+        <span className="relative">
+          {variant === "ghost" ? <GhostInner>{children}</GhostInner> : children}
+        </span>
+      </Link>
+    </m.span>
   );
 }
 
@@ -53,10 +71,18 @@ export function Button({
   ...rest
 }: {
   variant?: Variant;
-} & React.ButtonHTMLAttributes<HTMLButtonElement>) {
+  children: React.ReactNode;
+  className?: string;
+} & Omit<HTMLMotionProps<"button">, "children" | "className">) {
   return (
-    <button className={clsx(base, variants[variant], className)} {...rest}>
+    <m.button
+      className={clsx(base, variants[variant], className)}
+      whileHover={{ y: -2, scale: 1.01 }}
+      whileTap={{ y: 0, scale: 0.965 }}
+      transition={{ type: "spring", stiffness: 480, damping: 28, mass: 0.45 }}
+      {...rest}
+    >
       {variant === "ghost" ? <GhostInner>{children}</GhostInner> : children}
-    </button>
+    </m.button>
   );
 }

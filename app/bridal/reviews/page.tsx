@@ -44,7 +44,7 @@ export default function ReviewsPage() {
               <span className="index-mark">01</span>
               <span className="eyebrow">Love notes from our brides</span>
             </div>
-            <h1 className="mt-7 max-w-xl text-5xl leading-[0.94] sm:text-6xl lg:text-[5.3rem]">
+            <h1 className="mt-7 max-w-xl text-[clamp(3rem,5vw,4.75rem)] leading-[0.96] tracking-[-0.035em]">
               Beautiful is the look.
               <span className="block font-normal italic text-rose">Calm is the feeling.</span>
             </h1>

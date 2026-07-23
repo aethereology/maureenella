@@ -1,4 +1,4 @@
-import { Reveal } from "@/components/ui/Reveal";
+import { Stagger, StaggerItem } from "@/components/motion/Stagger";
 
 type Step = { title: string; description: string };
 
@@ -13,16 +13,16 @@ const STEPS: Step[] = [
 
 export function ProcessSteps() {
   return (
-    <ol className="grid gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-5">
+    <Stagger as="ol" stagger={0.1} className="grid gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-5">
       {STEPS.map((step, i) => (
-        <Reveal as="li" key={step.title} delay={i * 80} className="border-t border-hairline pt-5">
-          <span className="block font-serif text-5xl leading-none text-rose/70">
+        <StaggerItem as="li" key={step.title} className="group border-t border-hairline pt-5">
+          <span className="block font-serif text-5xl leading-none text-rose/60 transition-colors duration-500 group-hover:text-rose">
             {String(i + 1).padStart(2, "0")}
           </span>
-          <h3 className="mt-5 font-serif text-xl text-espresso">{step.title}</h3>
+          <h3 className="mt-5 font-serif text-xl text-espresso transition-transform duration-500 group-hover:translate-x-1">{step.title}</h3>
           <p className="mt-2.5 text-sm leading-relaxed text-cocoa/75">{step.description}</p>
-        </Reveal>
+        </StaggerItem>
       ))}
-    </ol>
+    </Stagger>
   );
 }

@@ -3,6 +3,22 @@
 Status as of 2026-05-30. This documents the implemented Next.js application that
 now lives alongside the planning docs in this repo.
 
+## Premium motion and interaction refresh (2026-07-22)
+
+- Added Motion 12 with a global reduced-motion-aware configuration and lazy
+  `domAnimation` feature bundle.
+- Rebuilt the persistent header with a shared-layout active indicator, tactile
+  CTA/menu controls, staged mobile navigation, and a spring-smoothed scroll
+  progress hairline.
+- Added restrained route hand-offs, viewport-triggered reveals, real
+  `staggerChildren` orchestration, hero parallax, and physics-based buttons.
+- Portfolio and review filters now glide between active states; filtered items
+  and testimonial changes enter, exit, and reflow through `AnimatePresence`.
+- Expanded the editorial hero and page-header systems across Home, Bridal,
+  About, Contact, Portfolio, Education, and other shared-template pages.
+- Verified desktop and mobile presentation, then passed typecheck, lint, and a
+  clean production build of all 56 routes on Next.js 15.5.21.
+
 ## Phase 3 — Education launch (added 2026-05-30)
 
 Turned the Education teaser into a real, conversion-ready launch for bridal

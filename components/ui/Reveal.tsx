@@ -1,27 +1,49 @@
-import type { CSSProperties, ReactNode } from "react";
+"use client";
+
+import type { ReactNode } from "react";
+import { m } from "motion/react";
+
+type RevealTag = "div" | "section" | "li" | "article" | "figure";
+
+const motionTags = {
+  div: m.div,
+  section: m.section,
+  li: m.li,
+  article: m.article,
+  figure: m.figure,
+};
 
 /**
- * Lightweight reveal wrapper. It renders visible server HTML and lets CSS add
- * the entrance motion, so content never depends on client hydration to appear.
+ * Scroll-aware editorial reveal. MotionConfig handles reduced-motion visitors
+ * globally, while the noscript rule in the root layout keeps content resilient.
  */
 export function Reveal({
   children,
   delay = 0,
-  as: Tag = "div",
+  as = "div",
   className,
 }: {
   children: ReactNode;
   delay?: number;
-  as?: "div" | "section" | "li" | "article" | "figure";
+  as?: RevealTag;
   className?: string;
 }) {
+  const MotionTag = motionTags[as] as typeof m.div;
+
   return (
-    <Tag
+    <MotionTag
       data-reveal=""
-      className={`is-in${className ? ` ${className}` : ""}`}
-      style={{ "--reveal-delay": `${delay}ms` } as CSSProperties}
+      className={className}
+      initial={{ opacity: 0, y: 24 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.14, margin: "0px 0px -6% 0px" }}
+      transition={{
+        duration: 0.72,
+        delay: delay / 1000,
+        ease: [0.22, 1, 0.36, 1],
+      }}
     >
       {children}
-    </Tag>
+    </MotionTag>
   );
 }

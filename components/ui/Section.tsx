@@ -19,7 +19,7 @@ export function Section({
     <section
       id={id}
       className={clsx(
-        "py-20 sm:py-28",
+        "relative py-24 sm:py-32",
         tone === "ivory" && "bg-ivory",
         tone === "cream" && "bg-cream",
         tone === "espresso" && "bg-espresso text-porcelain",
@@ -68,7 +68,7 @@ export function SectionHeading({
       )}
       <h2
         className={clsx(
-          "mt-5 text-4xl sm:text-5xl",
+          "mt-6 text-[clamp(2.8rem,5vw,5.25rem)] leading-[0.95] tracking-[-0.035em]",
           invert ? "text-porcelain" : "text-espresso",
         )}
       >

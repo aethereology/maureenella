@@ -3,6 +3,7 @@
 import { useMemo, useState } from "react";
 import type { Testimonial } from "@/lib/content";
 import { clsx } from "@/lib/clsx";
+import { AnimatePresence, LayoutGroup, m } from "motion/react";
 
 const filters = [
   { id: "all", label: "All reviews" },
@@ -40,26 +41,34 @@ export function ReviewCollection({ items }: { items: Testimonial[] }) {
   }, [activeFilter, items]);
 
   return (
-    <div>
+    <LayoutGroup id="review-collection">
       <div className="flex flex-col gap-6 border-y border-hairline py-5 sm:flex-row sm:items-center sm:justify-between">
         <div className="flex flex-wrap gap-2" aria-label="Filter reviews by theme">
           {filters.map((filter) => {
             const active = activeFilter === filter.id;
             return (
-              <button
+              <m.button
                 key={filter.id}
                 type="button"
                 aria-pressed={active}
                 onClick={() => setActiveFilter(filter.id)}
                 className={clsx(
-                  "border px-4 py-2 text-[0.67rem] uppercase tracking-[0.16em] transition-colors duration-300",
+                  "relative isolate border px-4 py-2 text-[0.67rem] uppercase tracking-[0.16em] transition-colors duration-300",
                   active
-                    ? "border-espresso bg-espresso text-porcelain"
+                    ? "border-transparent text-porcelain"
                     : "border-hairline bg-transparent text-cocoa hover:border-rose hover:text-espresso",
                 )}
+                whileTap={{ scale: 0.96 }}
               >
+                {active && (
+                  <m.span
+                    layoutId="review-filter-active"
+                    className="absolute inset-0 -z-10 bg-espresso"
+                    transition={{ type: "spring", stiffness: 420, damping: 34, mass: 0.65 }}
+                  />
+                )}
                 {filter.label}
-              </button>
+              </m.button>
             );
           })}
         </div>
@@ -69,14 +78,20 @@ export function ReviewCollection({ items }: { items: Testimonial[] }) {
       </div>
 
       <div className="mt-10 columns-1 gap-5 md:columns-2 lg:gap-7">
-        {visibleItems.map((review, index) => (
-          <article
-            key={review.id}
-            className={clsx(
-              "group mb-5 break-inside-avoid border border-hairline p-6 transition-colors duration-500 hover:border-taupe sm:p-8 lg:mb-7",
-              index % 3 === 1 ? "bg-cream" : "bg-porcelain",
-            )}
-          >
+        <AnimatePresence mode="popLayout" initial={false}>
+          {visibleItems.map((review, index) => (
+            <m.article
+              layout
+              key={review.id}
+              className={clsx(
+                "group mb-5 break-inside-avoid border border-hairline p-6 transition-colors duration-500 hover:border-taupe sm:p-8 lg:mb-7",
+                index % 3 === 1 ? "bg-cream" : "bg-porcelain",
+              )}
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.98 }}
+              transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1], layout: { type: "spring", stiffness: 250, damping: 30 } }}
+            >
             <div className="flex items-start justify-between gap-5">
               <span aria-label={`${review.rating} out of 5 stars`} className="text-[0.72rem] tracking-[0.16em] text-rose">
                 {"★".repeat(review.rating)}
@@ -122,9 +137,10 @@ export function ReviewCollection({ items }: { items: Testimonial[] }) {
                 </details>
               )}
             </footer>
-          </article>
-        ))}
+            </m.article>
+          ))}
+        </AnimatePresence>
       </div>
-    </div>
+    </LayoutGroup>
   );
 }

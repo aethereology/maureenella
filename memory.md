@@ -38,6 +38,15 @@ weddings). Umbrella brand with four arms: **Bridal** (revenue engine, primary),
 
 ## Last session (2026-07-22)
 
+- **Premium motion refresh:** added Motion 12 and a site-wide interaction
+  system (shared-layout navigation and filters, spring buttons, scroll progress,
+  hero parallax, viewport reveals, staggered groups, gallery/review presence
+  transitions, route hand-offs, and reduced-motion handling). Reworked the
+  global hero/page-header treatment and unified Home, Bridal, and About around
+  the stronger editorial composition. Desktop/mobile visual QA passed.
+- Updated Next.js 15.5.18 → 15.5.21 while verifying dependencies. Final checks:
+  `npm run typecheck`, `npm run lint`, and `npm run build` (56 routes) all pass.
+
 - **Journal: 24 → 27 published articles.** Added 3 new original (non-migration)
   bridal-prep posts, authored fresh (not sourced from theparlor.info/Wix):
   `wedding-hair-makeup-timeline-st-augustine`, `bridal-hair-makeup-preview-what-to-expect`,

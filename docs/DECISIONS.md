@@ -183,6 +183,22 @@ photos**. Executed:
 - **Redirects:** 17 legacy `/post/*` URLs retargeted from interim destinations
   to their 1:1 articles; catch-alls unchanged.
 
+### D012 - One restrained motion language across the site
+
+Decision (2026-07-22): Use Motion for React as the site's interaction layer,
+with a single global configuration and the lightweight `domAnimation` feature
+bundle. Motion is applied to purposeful state changes only: shared active
+navigation/filter treatments, spring feedback on controls, scroll progress and
+hero image drift, staggered content entrances, filtered-gallery/review changes,
+and page hand-offs. Decorative marquee movement remains CSS-based and pauses
+for reduced-motion users. `MotionConfig reducedMotion="user"` is the global
+policy; custom fallbacks also keep parallax and transforms still when requested.
+
+Rationale: This creates a tactile, app-like experience without turning the
+bridal brand into an animation showcase. It preserves the editorial design,
+semantic HTML, crawler-visible content, no-JS reveal fallback, and conversion
+flow while consolidating previously isolated CSS animation behavior.
+
 ## Pending decisions
 
 - Confirm Education product offers + pricing before any are sold (D005).

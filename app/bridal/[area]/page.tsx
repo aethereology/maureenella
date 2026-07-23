@@ -78,7 +78,7 @@ export default async function AreaPage({
         }`}>
           <div>
             <p className="eyebrow">Maureen Ella Bridal</p>
-            <h1 className="mt-4 text-4xl leading-tight sm:text-5xl">
+            <h1 className="mt-4 text-4xl leading-[1.02] sm:text-[3.25rem]">
               {loc.heading}
             </h1>
             <p className="mt-6 max-w-xl text-lg text-cocoa/85">{loc.intro}</p>

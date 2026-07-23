@@ -1,5 +1,6 @@
 import { site } from "@/lib/site";
 import { Reveal } from "@/components/ui/Reveal";
+import { Stagger, StaggerItem } from "@/components/motion/Stagger";
 
 type ServiceCard = { title: string; description: string };
 
@@ -34,20 +35,20 @@ const CARDS: ServiceCard[] = [
 
 export function ServiceCards() {
   return (
-    <div className="border-t border-hairline">
+    <Stagger className="border-t border-hairline">
       {CARDS.map((card, i) => (
-        <Reveal
+        <StaggerItem
           as="article"
           key={card.title}
-          delay={i * 60}
-          className="group grid grid-cols-1 items-baseline gap-3 border-b border-hairline py-7 transition-colors sm:grid-cols-[auto_1fr_1.4fr] sm:gap-8"
+          className="group relative grid grid-cols-1 items-baseline gap-3 overflow-hidden border-b border-hairline py-8 transition-colors sm:grid-cols-[auto_1fr_1.4fr] sm:gap-8 sm:px-3"
         >
-          <span className="index-mark">{String(i + 1).padStart(2, "0")}</span>
-          <h3 className="font-serif text-2xl text-espresso transition-colors group-hover:text-rose sm:text-3xl">
+          <span aria-hidden className="absolute inset-0 -z-10 origin-left scale-x-0 bg-porcelain/70 transition-transform duration-500 ease-out group-hover:scale-x-100" />
+          <span className="index-mark transition-transform duration-500 group-hover:translate-x-1">{String(i + 1).padStart(2, "0")}</span>
+          <h3 className="font-serif text-2xl text-espresso transition-colors duration-500 group-hover:text-rose sm:text-3xl">
             {card.title}
           </h3>
           <p className="text-cocoa/80">{card.description}</p>
-        </Reveal>
+        </StaggerItem>
       ))}
 
       {!site.pricing.published && (
@@ -60,6 +61,6 @@ export function ServiceCards() {
           </p>
         </Reveal>
       )}
-    </div>
+    </Stagger>
   );
 }

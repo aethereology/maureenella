@@ -4,6 +4,7 @@ import { CtaButton } from "@/components/ui/CtaButton";
 import { ButtonLink } from "@/components/ui/Button";
 import { Reveal } from "@/components/ui/Reveal";
 import { RecognitionMarquee } from "@/components/sections/RecognitionMarquee";
+import { ParallaxFrame } from "@/components/motion/ParallaxFrame";
 
 export function Hero({
   eyebrow,
@@ -30,7 +31,8 @@ export function Hero({
 }) {
   return (
     <section className="relative overflow-hidden border-b border-hairline bg-porcelain">
-      <Container className="grid items-center gap-12 py-16 sm:py-20 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
+      <div aria-hidden className="pointer-events-none absolute -left-32 top-24 h-80 w-80 rounded-full bg-rose-soft/20 blur-3xl" />
+      <Container className="relative grid min-h-[calc(100svh-5.25rem)] items-center gap-12 py-12 sm:py-16 lg:grid-cols-[1.08fr_0.92fr] lg:gap-20 lg:py-20">
         <div className="order-2 lg:order-1">
           {eyebrow && (
             <Reveal className="flex items-center gap-4">
@@ -39,12 +41,12 @@ export function Hero({
             </Reveal>
           )}
           <Reveal delay={90}>
-            <h1 className="mt-6 text-[var(--text-hero)] leading-[1.02] text-espresso">
+            <h1 className="mt-7 max-w-3xl text-[clamp(2.85rem,4.8vw,5.2rem)] leading-[0.96] tracking-[-0.035em] text-espresso">
               {title}
             </h1>
           </Reveal>
           <Reveal delay={180}>
-            <p className="mt-7 max-w-md text-lg leading-relaxed text-cocoa/85">
+            <p className="mt-8 max-w-xl text-[1.05rem] leading-[1.8] text-cocoa/78 sm:text-lg">
               {subtitle}
             </p>
           </Reveal>
@@ -85,13 +87,13 @@ export function Hero({
         </div>
 
         <Reveal delay={120} className="order-1 lg:order-2">
-          <div className="relative">
+            <div className="relative mx-auto max-w-[34rem] lg:mr-0">
             {/* Offset accent frame for editorial depth */}
             <div
               aria-hidden
               className="absolute -right-3 -top-3 hidden h-full w-full border border-rose/40 sm:block"
             />
-            <div className="img-zoom relative aspect-[4/5] w-full overflow-hidden">
+            <ParallaxFrame className="img-zoom aspect-[4/3] w-full shadow-[0_30px_80px_rgba(70,56,48,0.12)] sm:aspect-[4/5]">
               <Image
                 src={image}
                 alt={imageAlt}
@@ -100,7 +102,8 @@ export function Hero({
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover"
               />
-            </div>
+            </ParallaxFrame>
+            <div aria-hidden className="absolute -bottom-5 -left-5 h-24 w-px bg-rose/55" />
           </div>
         </Reveal>
       </Container>
