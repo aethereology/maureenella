@@ -1,5 +1,6 @@
 import test from "node:test";
 import assert from "node:assert/strict";
+import crypto from "node:crypto";
 import {
   createPricingToken,
   verifyPricingToken,
@@ -58,10 +59,22 @@ test("rejects a tampered payload", () => {
 });
 
 test("rejects an unknown schema version", () => {
-  const forged = Buffer.from(
-    JSON.stringify({ v: 2, x: Math.floor(Date.now() / 1000) + 999 }),
-  ).toString("base64url");
-  assert.deepEqual(verifyPricingToken(`${forged}.anything`), { ok: false });
+  const original = process.env.PRICING_LINK_SECRET;
+  try {
+    process.env.PRICING_LINK_SECRET = "schema-version-test-secret";
+    const payloadB64 = Buffer.from(
+      JSON.stringify({ v: 2, x: Math.floor(Date.now() / 1000) + 999 }),
+    ).toString("base64url");
+    const signature = crypto
+      .createHmac("sha256", process.env.PRICING_LINK_SECRET)
+      .update(payloadB64)
+      .digest("base64url");
+    // Validly signed with the secret in effect at verification time, so the
+    // signature check passes and verification is rejected only because v !== 1.
+    assert.deepEqual(verifyPricingToken(`${payloadB64}.${signature}`), { ok: false });
+  } finally {
+    process.env.PRICING_LINK_SECRET = original;
+  }
 });
 
 test("rejects malformed input without throwing", () => {
@@ -72,11 +85,14 @@ test("rejects malformed input without throwing", () => {
 
 test("rejects a token signed with a different secret", () => {
   const original = process.env.PRICING_LINK_SECRET;
-  process.env.PRICING_LINK_SECRET = "secret-one";
-  const token = createPricingToken({ firstName: "Sarah" });
-  process.env.PRICING_LINK_SECRET = "secret-two";
-  assert.deepEqual(verifyPricingToken(token), { ok: false });
-  process.env.PRICING_LINK_SECRET = original;
+  try {
+    process.env.PRICING_LINK_SECRET = "secret-one";
+    const token = createPricingToken({ firstName: "Sarah" });
+    process.env.PRICING_LINK_SECRET = "secret-two";
+    assert.deepEqual(verifyPricingToken(token), { ok: false });
+  } finally {
+    process.env.PRICING_LINK_SECRET = original;
+  }
 });
 
 test("trims and caps an overlong first name", () => {
