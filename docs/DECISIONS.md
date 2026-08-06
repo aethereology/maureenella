@@ -199,6 +199,40 @@ bridal brand into an animation showcase. It preserves the editorial design,
 semantic HTML, crawler-visible content, no-JS reveal fallback, and conversion
 flow while consolidating previously isolated CSS animation behavior.
 
+### D013 - Pricing delivered privately after inquiry
+
+Decision (founder, 2026-08-06): amends D009. Pricing stays off the **public**
+site — `site.pricing.published` remains `false` and no price appears on any
+indexable page. Confirmed collection and à la carte pricing is delivered
+privately after inquiry through a signed, expiring link (`/pricing/[token]`,
+noindex + robots-disallowed, 90-day lifetime, HMAC-SHA256, no database).
+
+Confirmed and now published behind that link: Signature Bride Collection from
+$450; Bridal Party Collection from $1,050 (badged "Most Popular"); Luxe Wedding
+Collection from $1,850; bridal hair $250; bridal makeup $250; bridal hair and
+makeup $450; bridal party hair $125/person; bridal party makeup $125/person.
+Consultation booking is https://calendly.com/maureenella/30min.
+
+Still unconfirmed and therefore excluded: travel, retainer, service-minimum,
+touch-up-stay, and venue-change amounts. The guide carries generic policy
+language only, matching D010.
+
+Every inquiry now triggers a branded React Email auto-responder to the bride
+carrying her pricing link and the Calendly link; the owner notification carries
+a forwardable copy of the same link. `/pricing/new` (guarded by
+`PRICING_OWNER_KEY`) mints links for brides who phone or DM instead of using
+the form.
+
+Rationale: collections anchor brides toward larger bookings, but publishing
+prices invites comparison shopping and dates the site every time they change. A
+private post-inquiry link keeps the anchoring benefit while preserving the
+inquiry-first funnel.
+
+Accepted risks: the generator key travels in a query string (worst case, a
+stranger sees prices already emailed to strangers); the auto-responder makes
+the contact form a minor outbound-mail amplifier, mitigated by the honeypot,
+the timing check, and the 5-per-10-minutes IP rate limit — do not loosen it.
+
 ## Pending decisions
 
 - Confirm Education product offers + pricing before any are sold (D005).

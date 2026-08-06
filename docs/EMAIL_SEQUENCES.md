@@ -2,20 +2,19 @@
 
 ## Bridal inquiry autoresponder
 
-Subject: We received your Maureen Ella bridal inquiry
+**Implemented** (D013) — `emails/InquiryAutoresponder.tsx`, sent by
+`lib/email.tsx` from `app/actions/inquiry.ts`. Not a draft; edit the component.
 
-Hi {{first_name}},
+Subject: Your bridal pricing guide — Maureen Ella
+From: Maureen Ella <inquiries@maureenella.com> · Reply-to: maureen@theparlor.info
 
-Thank you for reaching out about your wedding day. We received your inquiry and will review your date, location, service count, and timing details before sending next steps.
+Contents: greeting by first name; confirmation of what she submitted (date,
+location, services); a private pricing-guide link valid 90 days; a Calendly
+booking button; a note that the inquiry does not reserve her date; portfolio and
+prep-guide links; contact details; the recognition badges.
 
-In the meantime, you can explore the bridal prep guides and portfolio here:
-
-- Bridal Portfolio
-- Hair Prep Guide
-- Makeup Prep Guide
-
-Warmly,
-Maureen Ella
+Degraded mode: when `PRICING_LINK_SECRET` is unset the pricing block is omitted
+and the Calendly button still sends.
 
 ## Bridal nurture after availability confirmation
 

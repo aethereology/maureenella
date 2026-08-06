@@ -3,6 +3,30 @@
 Status as of 2026-05-30. This documents the implemented Next.js application that
 now lives alongside the planning docs in this repo.
 
+## Private pricing guide (added 2026-08-06)
+
+Bridal pricing is now confirmed, but it stays off the **public** site (D013,
+which amends D009). Brides receive it privately after inquiry through a
+signed, expiring link.
+
+- `lib/pricing-link.ts` — dependency-free HMAC-SHA256 signed tokens (no
+  database, no session; imports only `node:crypto` so its test can run under
+  bare `node --test`). 90-day default lifetime.
+- `/pricing/[token]` — the guide page (three collections, à la carte table,
+  policy notes). Expired, tampered, or malformed tokens all render an
+  identical "link expired" page at HTTP 200 — never a 404. `noindex, nofollow`
+  and `force-dynamic` (expiry must be evaluated per request, not cached).
+- `/pricing/new` — an owner-key-guarded generator (`PRICING_OWNER_KEY`) for
+  brides who phone or DM instead of using the form; also `force-dynamic`.
+- `emails/InquiryAutoresponder.tsx` — a branded React Email template, sent by
+  `lib/email.tsx` from `app/actions/inquiry.ts` on every inquiry, carrying the
+  bride's pricing link and a Calendly booking link. Degrades gracefully (link
+  omitted, error logged) when `PRICING_LINK_SECRET` is unset.
+- Pricing content lives in `content/pricing.ts` — confirmed collection and à
+  la carte figures only; travel, retainer, service-minimum, touch-up-stay, and
+  venue-change amounts remain unconfirmed and excluded (D004/D009).
+- Decision record: D013 in `docs/DECISIONS.md`.
+
 ## Premium motion and interaction refresh (2026-07-22)
 
 - Added Motion 12 with a global reduced-motion-aware configuration and lazy
@@ -67,15 +91,27 @@ confirmed NAP.
 - **Tailwind CSS v4** (CSS-first config in `app/globals.css`)
 - Local JSON/TS content (CMS-ready data access layer in `lib/content.ts`)
 - Deploy target: **Vercel**
+- **Email:** `@react-email/components` + `@react-email/render` (runtime
+  dependencies, used by `emails/InquiryAutoresponder.tsx` and `lib/email.tsx`).
+  `react-email` (the CLI/preview server, `npm run email`) is a devDependency;
+  `@react-email/ui` is also a devDependency, required only because
+  `react-email@6.9.1`'s preview server hard-requires a matching-version copy
+  of it with no non-interactive skip.
+- **Tests:** `npm test` runs `node --test --experimental-strip-types` directly
+  against `lib/**/*.test.ts` — no test framework, no new dependency. Requires
+  `allowImportingTsExtensions: true` in `tsconfig.json`; without it, `tsc`
+  fails with TS5097.
 
 ## Run
 
 ```bash
 npm install
 npm run dev      # http://localhost:3000
-npm run build    # production build (all routes static/SSG)
+npm run build    # production build (mostly static/SSG; /pricing/[token] and
+                 # /pricing/new are force-dynamic per D013)
 npm run start    # serve production build
 npm run typecheck
+npm test         # node --test against lib/**/*.test.ts
 ```
 
 ## What's built (Phase 1)
