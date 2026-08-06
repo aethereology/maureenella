@@ -165,13 +165,17 @@ export function ArticleSchema({
   path,
   image,
   datePublished,
+  dateModified,
 }: {
   title: string;
   description: string;
   path: string;
   image?: string;
   datePublished?: string;
+  dateModified?: string;
 }) {
+  const url = new URL(path, site.baseUrl).toString();
+
   return (
     <JsonLd
       data={{
@@ -179,11 +183,19 @@ export function ArticleSchema({
         "@type": "Article",
         headline: title,
         description,
-        url: new URL(path, site.baseUrl).toString(),
+        url,
+        mainEntityOfPage: { "@type": "WebPage", "@id": url },
+        inLanguage: "en-US",
         ...(image ? { image: new URL(image, site.baseUrl).toString() } : {}),
         ...(datePublished ? { datePublished } : {}),
-        author: { "@type": "Organization", name: site.brand },
-        publisher: { "@type": "Organization", name: site.brand },
+        ...(dateModified ? { dateModified } : {}),
+        author: { "@type": "Person", name: "Maureen Ella" },
+        publisher: {
+          "@type": "Organization",
+          "@id": `${site.baseUrl}/#organization`,
+          name: site.brand,
+          url: site.baseUrl,
+        },
       }}
     />
   );

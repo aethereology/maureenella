@@ -32,13 +32,26 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const areaPaths = locations.map((l) => `/bridal/${l.slug}`);
   const guidePaths = prepGuides.map((g) => `/bridal/prep-guides/${g.slug}`);
-  const articlePaths = getArticles()
-    .filter(isPublished)
-    .map((a) => `/journal/${a.slug}`);
+  const articles = getArticles().filter(isPublished);
 
-  return [...staticPaths, ...areaPaths, ...guidePaths, ...articlePaths].map((path) => ({
-    url: url(path),
-    changeFrequency: path === "/" ? "weekly" : "monthly",
-    priority: path === "/" ? 1 : path.startsWith("/bridal") ? 0.8 : 0.6,
+  const pages: MetadataRoute.Sitemap = [
+    ...staticPaths,
+    ...areaPaths,
+    ...guidePaths,
+  ].map((path) => ({
+      url: url(path),
+      changeFrequency: path === "/" ? "weekly" : "monthly",
+      priority: path === "/" ? 1 : path.startsWith("/bridal") ? 0.8 : 0.6,
+    }));
+
+  const articlePages: MetadataRoute.Sitemap = articles.map((article) => ({
+    url: url(`/journal/${article.slug}`),
+    changeFrequency: "monthly",
+    priority: article.priority === "high" ? 0.7 : 0.6,
+    ...(article.dateModified || article.datePublished
+      ? { lastModified: article.dateModified ?? article.datePublished }
+      : {}),
   }));
+
+  return [...pages, ...articlePages];
 }

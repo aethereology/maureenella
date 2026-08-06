@@ -13,24 +13,39 @@ export type Block =
 
 export type Article = BlogPostMeta & {
   excerpt: string;
+  /** Optional shorter search/social title; the on-page H1 remains `title`. */
+  metaTitle?: string;
   /** Hero image under /public/images/journal; optional. */
   image?: string;
+  /** Descriptive alt text for the editorial image. */
+  imageAlt?: string;
   /** CSS object-position for the hero image crop; defaults to center. */
   imagePosition?: string;
   /** Authored body. Empty array → treated as "coming soon". */
   body: Block[];
   /** ISO date if known. */
   datePublished?: string;
+  /** ISO date for a substantive revision. */
+  dateModified?: string;
+  /** Visible FAQ content that may also be used for structured data. */
+  faqs?: { question: string; answer: string }[];
+  /** Curated internal links that help readers continue their planning. */
+  relatedLinks?: { href: string; title: string; description: string }[];
 };
 
 const BODIES: Record<
   string,
   {
     excerpt: string;
+    metaTitle?: string;
     image?: string;
+    imageAlt?: string;
     imagePosition?: string;
     body: Block[];
     datePublished?: string;
+    dateModified?: string;
+    faqs?: { question: string; answer: string }[];
+    relatedLinks?: { href: string; title: string; description: string }[];
   }
 > = {
   "curly-bridal-hair-prep": {
@@ -1694,6 +1709,309 @@ const BODIES: Record<
     },
   ],
 },
+
+"when-to-book-wedding-hair-makeup": {
+  metaTitle: "When to Book Wedding Hair & Makeup",
+  image: "/images/journal/when-to-book-wedding-hair-makeup.jpg",
+  imageAlt:
+    "Maureen Ella applying makeup during a bridal beauty appointment",
+  imagePosition: "center",
+  excerpt:
+    "Learn when to book wedding hair and makeup, when to schedule your bridal preview, and what to plan at each stage before your wedding day.",
+  datePublished: "2026-08-06",
+  body: [
+    {
+      type: "p",
+      text: "The best time to book wedding hair and makeup is usually soon after your date and venue are confirmed. For many couples, that means beginning the search about nine to twelve months before the wedding. Saturdays in popular wedding seasons and dates with large bridal parties may fill earlier, while a weekday, intimate wedding, or shorter engagement can leave more flexibility. The useful answer is not a single deadline: inquire early enough to choose an artist whose work and process feel right, instead of choosing only from whoever still has the date open.",
+    },
+    {
+      type: "p",
+      text: "Your beauty artist affects more than your final look. They help shape the wedding-morning schedule, coordinate services for the people getting ready with you, and prepare hair and makeup for the weather, photography, ceremony, and hours ahead. Reserving that relationship early gives you time to make thoughtful decisions without turning beauty planning into a last-minute project.",
+    },
+    { type: "h2", text: "The short answer: start once your date and venue are set" },
+    {
+      type: "p",
+      text: "You do not need every hairstyle selected or every bridesmaid confirmed before you inquire. You do need the essentials: your wedding date, venue or getting-ready area, an estimated number of hair and makeup services, and a general idea of when you need to be ready. With that information, an artist can confirm availability, explain the booking process, and flag whether the service count may require another artist.",
+    },
+    {
+      type: "ul",
+      items: [
+        "Nine to twelve months before: a comfortable inquiry window for many weddings.",
+        "Twelve months or more: worth considering for a popular Saturday, a destination weekend, or a larger group.",
+        "Less than six months: still inquire. Availability changes, and a weekday or intimate celebration may be easier to place.",
+        "As soon as possible: the right approach when your wedding is only a few weeks or months away.",
+      ],
+    },
+    {
+      type: "p",
+      text: "These windows are planning guidance, not rules. Northeast Florida has weddings throughout the year, and every artist manages availability differently. A clear inquiry is always more useful than assuming you are either too early or too late.",
+    },
+    { type: "h2", text: "Twelve to nine months before: research and reserve" },
+    {
+      type: "p",
+      text: "Begin with real wedding work, not a single perfect image. Look for consistent hair from the front, sides, and back; makeup photographed in daylight and flash; and finished looks across different features, skin tones, hair textures, and ages. Then read reviews for the parts a portfolio cannot show: communication, punctuality, organization, calmness, and how well the look lasted.",
+    },
+    {
+      type: "p",
+      text: "When you find a strong fit, review the agreement carefully. Confirm what reserves the date, what services are included, whether travel applies, how the final service count is handled, and what happens if the schedule requires an additional artist. A professional booking process should make expectations clearer for both sides. Your date is generally not reserved by an inquiry alone, so complete the artist's stated agreement and retainer steps if you decide to move forward.",
+    },
+    { type: "h2", text: "Eight to six months before: shape the beauty plan" },
+    {
+      type: "p",
+      text: "Once booked, start collecting inspiration with a purpose. Save images that show the full hairstyle, the amount of face-framing you like, your preferred makeup intensity, and examples on people with features or hair qualities similar to yours. Also note what you do not like. A clear dislike can be just as informative as an inspiration photo.",
+    },
+    {
+      type: "p",
+      text: "This is also a good time to think about veil placement, hair accessories, extensions, and any skin or scalp sensitivities. If you are considering a meaningful haircut, color change, facial, or new skincare routine, give yourself enough time to test it and settle into it. Your wedding should not be the first day you discover how your skin or hair responds.",
+    },
+    { type: "h2", text: "Four to two months before: schedule your bridal preview" },
+    {
+      type: "p",
+      text: "A bridal preview and booking are two different milestones. Booking secures your wedding date; the preview is the working session where you refine the look. Many brides prefer the preview a few months before the wedding: close enough that hair length, color, skin, and preferences are likely to remain similar, but early enough to adjust accessories, extensions, or the beauty plan without pressure.",
+    },
+    {
+      type: "ul",
+      items: [
+        "Bring your veil, comb, pins, or other hair accessories if you have them.",
+        "Wear a top close to the color and neckline of your wedding attire when possible.",
+        "Bring inspiration and be ready to explain what you like about each image.",
+        "Take note of how the look feels and wears after you leave, not only how it photographs in the chair.",
+        "Share honest feedback. Small changes are the purpose of the preview, not a sign that it failed.",
+      ],
+    },
+    { type: "h2", text: "Six to four weeks before: confirm people, places, and timing" },
+    {
+      type: "p",
+      text: "As the photographer and planner finalize the broader schedule, your artist can build the beauty timeline backward from the time everyone must be completely ready. That deadline is often earlier than the ceremony time because getting dressed, detail photographs, travel, and a first look may all happen afterward.",
+    },
+    {
+      type: "p",
+      text: "Confirm the final hair and makeup service count, getting-ready address, room or suite details, access instructions, parking, and the names of everyone receiving a service. Tell your artist about thick, long, curly, or extension-enhanced hair and any accessibility or sensitivity needs that could affect timing. Good scheduling depends on accurate information, and a little detail now protects the calm of the wedding morning.",
+    },
+    { type: "h2", text: "The final week: prepare, do not experiment" },
+    {
+      type: "p",
+      text: "Follow the preparation instructions your own artist provides, since they may differ by hair type, skin needs, and planned style. In general, keep your routine familiar, avoid aggressive last-minute treatments, gather your accessories, and make sure the getting-ready group has the beauty schedule. Choose a clean, comfortable space with useful light, outlets, surfaces, and room for the team to work.",
+    },
+    {
+      type: "p",
+      text: "The goal of booking early is not to spend a year worrying about hair and makeup. It is the opposite. Once the right artist and process are in place, each decision has a natural time, and the wedding morning can feel guided rather than managed by you.",
+    },
+    { type: "h2", text: "What to include in your first inquiry" },
+    {
+      type: "ul",
+      items: [
+        "Wedding date and ceremony location.",
+        "Getting-ready location, if it is different or already known.",
+        "Estimated number of hair services and makeup services.",
+        "Your target ready time, first-look time, or ceremony time.",
+        "Whether you are planning a wedding, elopement, or destination celebration.",
+        "Any important hair, skin, accessibility, or timing details you already know.",
+      ],
+    },
+    {
+      type: "p",
+      text: "A thoughtful inquiry makes it easier to receive an accurate answer and begin a real conversation. If your date is set and you are planning in St. Augustine, Jacksonville, Palm Coast, or elsewhere in Northeast Florida, you do not need to wait until every beauty detail is decided. Start with what you know; the rest can be planned together.",
+    },
+  ],
+  faqs: [
+    {
+      question: "How far in advance should I book wedding hair and makeup?",
+      answer:
+        "For many weddings, beginning your search about nine to twelve months ahead provides a comfortable planning window. Popular Saturdays, destination dates, and larger groups may benefit from an earlier inquiry, but shorter timelines can still work when an artist has availability.",
+    },
+    {
+      question: "Should I book hair and makeup before I know my final service count?",
+      answer:
+        "You can usually begin with a realistic estimate. Ask the artist how additions, reductions, minimums, and extra-artist needs are handled, then confirm the final count by the deadline in your agreement.",
+    },
+    {
+      question: "When should I schedule my bridal hair and makeup preview?",
+      answer:
+        "Many brides schedule a preview two to four months before the wedding. Your artist may recommend a different window based on availability, hair changes, travel, or the complexity of your look.",
+    },
+    {
+      question: "Do I need a hairstyle picked before I book?",
+      answer:
+        "No. A general sense of the artist's style and the services you need is enough to inquire. Your preview is designed to test and refine the specific look.",
+    },
+  ],
+  relatedLinks: [
+    {
+      href: "/bridal/services",
+      title: "Explore Bridal Services",
+      description: "See how on-location bridal hair and makeup are planned.",
+    },
+    {
+      href: "/journal/bridal-hair-makeup-preview-what-to-expect",
+      title: "What to Expect at Your Preview",
+      description: "Prepare for the session where your wedding-day look takes shape.",
+    },
+    {
+      href: "/journal/wedding-hair-makeup-timeline-st-augustine",
+      title: "Build Your Beauty Timeline",
+      description: "Plan a calm, on-time wedding morning in St. Augustine.",
+    },
+  ],
+},
+
+"florida-wedding-hair-makeup-humidity": {
+  metaTitle: "Florida Wedding Hair & Makeup for Humidity",
+  image: "/images/journal/florida-wedding-hair-makeup-humidity.jpg",
+  imageAlt:
+    "Bridal artist finishing a textured updo for a Florida wedding morning",
+  imagePosition: "center",
+  excerpt:
+    "Planning a Florida wedding? Learn how thoughtful hair, makeup, prep, and timing help bridal beauty hold through heat, humidity, and coastal air.",
+  datePublished: "2026-08-06",
+  body: [
+    {
+      type: "p",
+      text: "Florida wedding hair and makeup should be planned for the real environment, not only the inspiration photo. In St. Augustine, Jacksonville, Palm Coast, and along the Northeast Florida coast, warmth, humidity, wind, and quick moves between air-conditioning and outdoor air can all influence how hair and makeup wear. The answer is not to make your bridal look stiff or heavy. It is to choose the right structure, preparation, products, and timeline for you.",
+    },
+    {
+      type: "p",
+      text: "No responsible artist can promise that weather will never touch a single hair or that makeup will look entirely unchanged after hours of happy tears, hugs, heat, and dancing. What an experienced bridal artist can do is reduce avoidable problems, explain the tradeoffs in each style, and build a look that wears gracefully. Long-lasting beauty begins with an honest plan.",
+    },
+    { type: "h2", text: "Why Florida humidity changes the beauty plan" },
+    {
+      type: "p",
+      text: "Humidity adds moisture to the air. Hair may return toward its natural texture, fine curls can relax, smooth strands can frizz, and skin can become warmer or shinier. Coastal wind and a veil add movement, while perspiration and frequent touching can disturb even well-set makeup. Your natural hair pattern, density, skin type, ceremony setting, and time outdoors matter more than a season label alone.",
+    },
+    {
+      type: "p",
+      text: "That is why two brides at the same venue may need different approaches. One may feel most secure in a textured low bun with controlled face-framing pieces; another may happily accept movement in soft waves because wearing her hair down feels most like herself. The goal is not one so-called humidity-proof style. It is a look whose beauty and maintenance match your priorities.",
+    },
+    { type: "h2", text: "Choose a hairstyle with informed tradeoffs" },
+    {
+      type: "p",
+      text: "Updos generally keep hair away from the neck and give the stylist more places to anchor the shape, which can be helpful for an outdoor ceremony or a long, warm day. Half-up styles provide structure around the crown while preserving romantic length. Hair worn fully down can be beautiful, but loose curls have more exposure to humidity, wind, shoulders, and constant movement.",
+    },
+    {
+      type: "ul",
+      items: [
+        "For maximum structure: consider a bun, twist, braid, or pinned textured updo.",
+        "For softness with support: consider a half-up style with intentional volume and secure anchoring.",
+        "For hair worn down: choose a shape you still love when the curl relaxes and allow time for strategic touch-ups.",
+        "For naturally curly hair: decide whether you want to feature, refine, stretch, or reshape your texture; each choice needs different prep.",
+        "For fine or shorter hair: ask whether clip-in extensions would add useful density or support, not only length.",
+      ],
+    },
+    {
+      type: "p",
+      text: "A polished style does not have to look rigid. Texture can be romantic and touchable while the hidden foundation stays secure. During your preview, ask what will happen if the curl softens, the wind lifts the front pieces, or you remove the veil after the ceremony. A good style has a plan for those transitions.",
+    },
+    { type: "h2", text: "Hair preparation matters as much as hairspray" },
+    {
+      type: "p",
+      text: "Long-lasting wedding hair is built in layers. Clean, completely dry hair gives your stylist a predictable canvas. The right prep products add grip or smoothness where needed; controlled heat reshapes the hair; pins and internal structure support the design; finishing products help manage moisture and movement. Simply coating an unprepared style with more hairspray does not create the same result.",
+    },
+    {
+      type: "ul",
+      items: [
+        "Follow your artist's wash-day instructions rather than relying on the idea that dirty hair always styles better.",
+        "Arrive with hair fully dry unless your artist specifically requests another preparation method.",
+        "Avoid untested masks, oils, smoothing treatments, or heavy products immediately before the wedding.",
+        "Bring your veil, extensions, and accessories to the preview so their weight and placement can be tested.",
+        "Share your hair's real behavior: where it frizzes, what falls first, and how it responds to heat and moisture.",
+      ],
+    },
+    { type: "h2", text: "Long-wearing makeup starts before foundation" },
+    {
+      type: "p",
+      text: "In humid weather, more makeup is not automatically longer-lasting makeup. Thoughtful skin preparation, compatible formulas, thin layers, and targeted setting often wear better than a thick base. Your artist may use different preparation on a dry cheek than on an oil-prone forehead, then balance powders and setting products so the finish remains dimensional in photographs.",
+    },
+    {
+      type: "p",
+      text: "Keep skincare consistent in the weeks before the wedding and avoid first-time treatments close to the date. Tell your artist about sensitivities, allergies, excessive dryness, oiliness, or medications that affect your skin. Arrive with a clean face prepared according to their instructions. Skin does not need to be perfect to look beautiful; it needs to be treated with care and realistic expectations.",
+    },
+    { type: "h2", text: "Airbrush versus traditional makeup in humidity" },
+    {
+      type: "p",
+      text: "Both airbrush and traditionally applied makeup can be suitable for a Florida wedding. Airbrush describes an application method, not an automatic guarantee of durability, and traditional complexion products range widely in finish and wear. The better question is which formula, finish, and application suit your skin, desired coverage, photography, and comfort. Your preview is the place to compare how a recommended approach looks and feels on you.",
+    },
+    { type: "h2", text: "Protect the look with a realistic timeline" },
+    {
+      type: "p",
+      text: "Even excellent hair and makeup can be undermined by avoidable exposure. If possible, get dressed in a cool room, limit unnecessary outdoor waiting before portraits, and coordinate transportation so you are not standing in direct sun while a car arrives. Ask your photographer and planner where portraits will happen and how long the first look may keep you outside.",
+    },
+    {
+      type: "p",
+      text: "Your beauty completion time should leave space for getting dressed, photographs, travel, and small delays without forcing everyone to rush. Finishing too early may create hours of extra wear before the ceremony; finishing too late creates stress and perspiration just when you want to feel composed. The best schedule balances both.",
+    },
+    { type: "h2", text: "Build a small, useful touch-up kit" },
+    {
+      type: "p",
+      text: "Touch-ups are normal maintenance, not evidence that your makeup failed. Keep a few purposeful items with a trusted person so you do not have to carry a full beauty bag. Blot before adding powder, press rather than wipe, and avoid running your fingers through finished hair. If your artist provides different instructions, follow the plan created for your look.",
+    },
+    {
+      type: "ul",
+      items: [
+        "Your exact lip color and a small mirror.",
+        "Blotting papers or clean tissue for perspiration and shine.",
+        "A light pressed powder if your artist recommends one.",
+        "A few hairpins that match your hair color.",
+        "A small amount of the finishing product recommended by your stylist.",
+        "Tissues, cotton swabs, and a clean handkerchief for happy tears.",
+      ],
+    },
+    { type: "h2", text: "Questions to ask at your Florida bridal preview" },
+    {
+      type: "ul",
+      items: [
+        "How is this hairstyle likely to change after several hours outside?",
+        "Which face-framing pieces can stay soft without becoming distracting in wind?",
+        "How will my veil be secured and removed without disturbing the style?",
+        "What should I use for makeup touch-ups, and what should I avoid?",
+        "Would another hairstyle or finish better match my comfort level and venue conditions?",
+        "Should the timeline include a planned touch-up before the ceremony or after portraits?",
+      ],
+    },
+    {
+      type: "p",
+      text: "The strongest Florida wedding beauty plan respects both the climate and the person wearing it. You should understand the tradeoffs, recognize yourself in the mirror, and feel confident that the look was designed for your actual day. With a thoughtful preview, honest preparation, and a timeline built around Northeast Florida conditions, romantic bridal hair and makeup can remain polished without losing its softness.",
+    },
+  ],
+  faqs: [
+    {
+      question: "What wedding hairstyle holds best in Florida humidity?",
+      answer:
+        "Pinned styles such as buns, twists, braids, and textured updos often provide the most structure, but the best choice depends on your natural texture, density, comfort, accessories, and time outdoors. A preview helps you compare durability with the look you love.",
+    },
+    {
+      question: "Can I wear my hair down for a Florida wedding?",
+      answer:
+        "Yes, as long as you are comfortable with natural movement and possible curl relaxation. Ask your stylist how your hair typically responds to moisture, whether added density would help, and what touch-up plan makes sense.",
+    },
+    {
+      question: "Is airbrush makeup better for humid weather?",
+      answer:
+        "Not automatically. Airbrush is an application method, and both airbrush and traditional formulas can wear beautifully. Skin preparation, formula compatibility, thin layers, setting, and your individual skin are more useful factors to discuss with your artist.",
+    },
+    {
+      question: "How do I keep bridal makeup fresh in Florida heat?",
+      answer:
+        "Begin with consistent skincare and professional preparation, then limit unnecessary heat exposure and carry a small touch-up kit. Blot moisture before adding powder and use the exact lip and complexion products your artist recommends.",
+    },
+  ],
+  relatedLinks: [
+    {
+      href: "/bridal/st-augustine",
+      title: "St. Augustine Bridal Hair & Makeup",
+      description: "Explore on-location beauty for historic, coastal, and beach weddings.",
+    },
+    {
+      href: "/bridal/prep-guides/hair-prep",
+      title: "Bridal Hair Prep Guide",
+      description: "Follow the practical steps that give your style a strong foundation.",
+    },
+    {
+      href: "/bridal/prep-guides/makeup-prep",
+      title: "Bridal Makeup Prep Guide",
+      description: "Prepare your skin and wedding-morning space with confidence.",
+    },
+  ],
+},
 };
 
 export function getArticles(): Article[] {
@@ -1704,10 +2022,15 @@ export function getArticles(): Article[] {
       excerpt:
         authored?.excerpt ??
         "This story is being written. Check back soon for the full post.",
+      metaTitle: authored?.metaTitle,
       image: authored?.image,
+      imageAlt: authored?.imageAlt,
       imagePosition: authored?.imagePosition,
       body: authored?.body ?? [],
       datePublished: authored?.datePublished,
+      dateModified: authored?.dateModified,
+      faqs: authored?.faqs,
+      relatedLinks: authored?.relatedLinks,
     };
   });
 }

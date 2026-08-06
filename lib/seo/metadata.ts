@@ -8,6 +8,8 @@ type PageMetaInput = {
   path: string;
   /** Optional absolute or /public-relative OG image. */
   image?: string;
+  /** Describes the social image when it carries editorial meaning. */
+  imageAlt?: string;
   noindex?: boolean;
 };
 
@@ -20,6 +22,7 @@ export function pageMetadata({
   description,
   path,
   image = "/images/og-default.jpg",
+  imageAlt,
   noindex = false,
 }: PageMetaInput): Metadata {
   const url = new URL(path, site.baseUrl).toString();
@@ -40,7 +43,7 @@ export function pageMetadata({
       title: fullTitle,
       description,
       url,
-      images: [{ url: image, width: 1200, height: 630, alt: site.brand }],
+      images: [{ url: image, width: 1200, height: 630, alt: imageAlt ?? title }],
     },
     twitter: {
       card: "summary_large_image",
