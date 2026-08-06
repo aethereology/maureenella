@@ -52,12 +52,21 @@ export const site = {
   },
 
   /**
-   * Pricing policy for the MVP: inquiry-only. Do not surface numbers even
-   * if seed/services.json contains extracted (unconfirmed) values.
+   * Pricing is delivered privately after inquiry via a signed expiring link
+   * (D013). `published` stays false: no price may appear on any public,
+   * indexable page. Consumers of `published` render inquiry-only copy.
    */
   pricing: {
-    mode: "inquiry-only" as "inquiry-only" | "exact" | "starting-at",
+    mode: "private-link" as "inquiry-only" | "private-link" | "exact" | "starting-at",
     published: false,
+  },
+
+  /** Consultation booking. Confirmed by the founder 2026-08-06 (D013). */
+  booking: {
+    calendly: {
+      value: "https://calendly.com/maureenella/30min",
+      confirmed: true,
+    },
   },
 
   /** Section visibility. Education launched (Phase 3) as a full offer. */
