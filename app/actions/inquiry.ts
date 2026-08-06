@@ -167,8 +167,9 @@ export async function submitInquiry(
     .join("\n");
 
   // --- Deliver -------------------------------------------------------------
+  let autoresponderSent = false;
   try {
-    await deliver(fields, summaryText);
+    ({ autoresponderSent } = await deliver(fields, summaryText));
   } catch (err) {
     console.error("Inquiry delivery failed:", err);
     return {
@@ -178,11 +179,25 @@ export async function submitInquiry(
     };
   }
 
-  return { status: "success", message: SUCCESS_MESSAGE };
+  return {
+    status: "success",
+    message: autoresponderSent ? SUCCESS_MESSAGE : SUCCESS_MESSAGE_NO_AUTORESPONDER,
+  };
 }
 
+// Shown when the bride's auto-responder is confirmed sent (see `deliver`'s
+// `autoresponderSent` flag). Never shown unless the send actually succeeded —
+// a promise to "check your inbox" must not go out unless something is in it.
 const SUCCESS_MESSAGE =
   "Thank you for your inquiry. Your details have been received — check your inbox for your pricing guide and a link to book a call. We'll review your date, service count, location, and timeline needs before sending next steps.";
+
+// Shown for the honeypot/timing decoy paths (no delivery attempted at all)
+// and whenever the bride's auto-responder wasn't confirmed sent — email not
+// configured, or the best-effort send failed. Reads exactly like a normal
+// successful inquiry; it must not hint that anything went wrong, because
+// from the bride's side nothing did.
+const SUCCESS_MESSAGE_NO_AUTORESPONDER =
+  "Thank you for your inquiry. Your details have been received, and we will review your date, service count, location, and timeline needs before sending next steps.";
 
 /**
  * Absolute pricing-guide URL for a bride, or `undefined` when link signing is
@@ -204,7 +219,7 @@ function pricingUrlFor(firstName: string): string | undefined {
 async function deliver(
   fields: Record<string, string>,
   summaryText: string,
-): Promise<void> {
+): Promise<{ autoresponderSent: boolean }> {
   const apiKey = process.env.RESEND_API_KEY;
   const to = process.env.FORM_TO_EMAIL;
   const crmWebhook = process.env.CRM_WEBHOOK_URL;
@@ -241,7 +256,7 @@ async function deliver(
         `[inquiry] Email not configured (set RESEND_API_KEY + FORM_TO_EMAIL).\n${summaryText}`,
       );
     }
-    return;
+    return { autoresponderSent: false };
   }
 
   const configuredApiKey = apiKey as string;
@@ -250,7 +265,9 @@ async function deliver(
   const pricingUrl = pricingUrlFor(fields["First name"]);
 
   const pricingRow = pricingUrl
-    ? `<p style="margin-top:16px"><strong>Pricing link (forwardable):</strong><br><a href="${pricingUrl}">${pricingUrl}</a></p>`
+    ? `<p style="margin-top:16px"><strong>Pricing link (forwardable):</strong><br><a href="${escapeHtml(
+        pricingUrl,
+      )}">${escapeHtml(pricingUrl)}</a></p>`
     : `<p style="margin-top:16px"><strong>Pricing link:</strong> unavailable — PRICING_LINK_SECRET is not set.</p>`;
 
   const html = `<h2>New wedding inquiry — ${site.brand}</h2><table cellpadding="6">${Object.entries(
@@ -290,8 +307,9 @@ async function deliver(
   }
 
   // Best-effort: the owner has already been notified, so a failure here must
-  // never fail the bride's submission.
-  await sendInquiryAutoresponder({
+  // never fail the bride's submission — but we still capture the outcome so
+  // `submitInquiry` can avoid promising an email that never arrived.
+  const autoresponderSent = await sendInquiryAutoresponder({
     apiKey: configuredApiKey,
     to: fields.Email,
     firstName: fields["First name"],
@@ -300,5 +318,12 @@ async function deliver(
     interestedIn: fields["Interested in"],
     pricingUrl,
     calendlyUrl: site.booking.calendly.value,
-  }).catch((err) => console.error("Inquiry auto-responder failed:", err));
+  })
+    .then(() => true)
+    .catch((err) => {
+      console.error("Inquiry auto-responder failed:", err);
+      return false;
+    });
+
+  return { autoresponderSent };
 }
