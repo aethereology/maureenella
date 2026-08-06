@@ -6,6 +6,7 @@ import { verifyPricingToken } from "@/lib/pricing-link";
 import { collections, pricingIntro, goodToKnow } from "@/content/pricing";
 import { Section, SectionHeading } from "@/components/ui/Section";
 import { ButtonLink } from "@/components/ui/Button";
+import { CtaButton } from "@/components/ui/CtaButton";
 import { CollectionCard } from "@/components/pricing/CollectionCard";
 import { ALaCarteTable } from "@/components/pricing/ALaCarteTable";
 
@@ -113,9 +114,9 @@ function ExpiredLink() {
       </p>
       <div className="mt-10 flex flex-wrap gap-4">
         <ButtonLink href={site.booking.calendly.value}>Book a 30-Minute Call</ButtonLink>
-        <ButtonLink href="/contact" variant="secondary">
+        <CtaButton href="/contact" variant="secondary">
           Request Availability
-        </ButtonLink>
+        </CtaButton>
       </div>
       <p className="mt-10 border-t border-hairline pt-6 text-sm text-cocoa/70">
         <Link href={`mailto:${site.contact.email.value}`} className="hover:text-espresso">
