@@ -45,7 +45,10 @@ export function pageMetadata({
       siteName: site.brand,
       title: fullTitle,
       description,
-      url,
+      // Same reasoning as the canonical above: for /pricing/[token] this
+      // would be the un-tokened "/pricing" path, which 404s — omit it rather
+      // than advertise a dead URL.
+      ...(noindex ? {} : { url }),
       images: [{ url: image, width: 1200, height: 630, alt: imageAlt ?? title }],
     },
     twitter: {

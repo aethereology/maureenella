@@ -4,6 +4,7 @@ import { site } from "@/lib/site";
 import { hit, clientIp } from "@/lib/rate-limit";
 import { createPricingToken, pricingPath } from "@/lib/pricing-link";
 import { sendInquiryAutoresponder } from "@/lib/email";
+import { pickSuccessMessage, SUCCESS_MESSAGE_NO_AUTORESPONDER } from "@/lib/inquiry-messages";
 
 export type InquiryState = {
   status: "idle" | "success" | "error";
@@ -35,7 +36,9 @@ function escapeHtml(s: string): string {
   return s
     .replace(/&/g, "&amp;")
     .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;");
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
 }
 
 /**
@@ -62,13 +65,14 @@ export async function submitInquiry(
   // --- Spam protection -----------------------------------------------------
   // Hidden honeypot field; real users never fill it.
   if (str(form, "company")) {
-    // Pretend success to the bot.
-    return { status: "success", message: SUCCESS_MESSAGE };
+    // Pretend success to the bot. Nothing was ever sent, so the message must
+    // not promise an inbox with anything in it.
+    return { status: "success", message: SUCCESS_MESSAGE_NO_AUTORESPONDER };
   }
   // Reject submissions faster than a human could plausibly complete.
   const startedAt = Number(str(form, "started_at"));
   if (startedAt && Date.now() - startedAt < 2500) {
-    return { status: "success", message: SUCCESS_MESSAGE };
+    return { status: "success", message: SUCCESS_MESSAGE_NO_AUTORESPONDER };
   }
 
   // --- Validation ----------------------------------------------------------
@@ -181,23 +185,9 @@ export async function submitInquiry(
 
   return {
     status: "success",
-    message: autoresponderSent ? SUCCESS_MESSAGE : SUCCESS_MESSAGE_NO_AUTORESPONDER,
+    message: pickSuccessMessage({ autoresponderSent }),
   };
 }
-
-// Shown when the bride's auto-responder is confirmed sent (see `deliver`'s
-// `autoresponderSent` flag). Never shown unless the send actually succeeded —
-// a promise to "check your inbox" must not go out unless something is in it.
-const SUCCESS_MESSAGE =
-  "Thank you for your inquiry. Your details have been received — check your inbox for your pricing guide and a link to book a call. We'll review your date, service count, location, and timeline needs before sending next steps.";
-
-// Shown for the honeypot/timing decoy paths (no delivery attempted at all)
-// and whenever the bride's auto-responder wasn't confirmed sent — email not
-// configured, or the best-effort send failed. Reads exactly like a normal
-// successful inquiry; it must not hint that anything went wrong, because
-// from the bride's side nothing did.
-const SUCCESS_MESSAGE_NO_AUTORESPONDER =
-  "Thank you for your inquiry. Your details have been received, and we will review your date, service count, location, and timeline needs before sending next steps.";
 
 /**
  * Absolute pricing-guide URL for a bride, or `undefined` when link signing is
@@ -325,5 +315,9 @@ async function deliver(
       return false;
     });
 
-  return { autoresponderSent };
+  // The send can succeed while carrying no pricing link (PRICING_LINK_SECRET
+  // unset) — SUCCESS_MESSAGE promises "check your inbox for your pricing
+  // guide", which would be false in that case. Only count it as fully sent
+  // when the pricing link actually made it into the email.
+  return { autoresponderSent: autoresponderSent && Boolean(pricingUrl) };
 }

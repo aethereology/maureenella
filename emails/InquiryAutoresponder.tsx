@@ -15,6 +15,7 @@ import {
   Text,
 } from "@react-email/components";
 import { site, phoneHref } from "@/lib/site";
+import { PRICING_TOKEN_TTL_DAYS } from "@/lib/pricing-link";
 import { brand, fonts, badges, emailAssetUrl } from "./theme";
 
 export type InquiryAutoresponderProps = {
@@ -44,7 +45,7 @@ const body = {
   margin: "0 0 16px",
 };
 
-const rule = { borderColor: brand.hairline, borderStyle: "solid", margin: "32px 0" };
+const rule = { border: "none", borderTop: `1px solid ${brand.hairline}`, margin: "32px 0" };
 
 export function InquiryAutoresponder({
   firstName,
@@ -70,7 +71,11 @@ export function InquiryAutoresponder({
         <meta name="supported-color-schemes" content="light" />
       </Head>
       <Body style={{ backgroundColor: brand.ivory, margin: 0, padding: "24px 0" }}>
-        <Preview>Your collections, à la carte pricing, and a link to book a call.</Preview>
+        <Preview>
+          {pricingUrl
+            ? "Your collections, à la carte pricing, and a link to book a call."
+            : "We've received your inquiry — a link to book a call."}
+        </Preview>
 
         <Container
           style={{
@@ -121,7 +126,6 @@ export function InquiryAutoresponder({
                 borderBottom: `1px solid ${brand.hairline}`,
                 borderLeft: "none",
                 borderRight: "none",
-                borderStyle: "solid",
                 padding: "18px 0",
                 margin: "0 0 24px",
               }}
@@ -178,7 +182,7 @@ export function InquiryAutoresponder({
                   textAlign: "center",
                 }}
               >
-                This link is just for you and stays active for 90 days.
+                This link is just for you and stays active for {PRICING_TOKEN_TTL_DAYS} days.
               </Text>
             </>
           )}

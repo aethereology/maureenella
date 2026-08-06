@@ -33,6 +33,12 @@
 
 ## Private pricing guide (D013)
 
+- [ ] Confirm `https://maureenella.com` (`site.baseUrl`, hardcoded) actually
+      resolves to this deployment *before* the contact form can fire in
+      production. Every emailed pricing link is built from that base URL — if
+      production is live on a `*.vercel.app` host during DNS cutover, every
+      link mailed in the interim 404s, and the bride has no way to tell that
+      apart from a normally expired link.
 - [ ] `PRICING_LINK_SECRET` set in Vercel production **and** preview
 - [ ] `PRICING_OWNER_KEY` set in Vercel production
 - [ ] `EMAIL_ASSET_BASE_URL` left unset in production (it defaults to the live site)

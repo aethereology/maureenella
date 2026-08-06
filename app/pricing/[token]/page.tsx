@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { pageMetadata } from "@/lib/seo/metadata";
 import { site, phoneHref } from "@/lib/site";
-import { verifyPricingToken } from "@/lib/pricing-link";
+import { verifyPricingToken, PRICING_TOKEN_TTL_DAYS } from "@/lib/pricing-link";
 import { collections, pricingIntro, goodToKnow } from "@/content/pricing";
 import { Section, SectionHeading } from "@/components/ui/Section";
 import { ButtonLink } from "@/components/ui/Button";
@@ -109,7 +109,7 @@ function ExpiredLink() {
         This pricing link has expired
       </h1>
       <p className="mt-6 text-lg leading-relaxed text-cocoa/80">
-        Pricing links stay active for 90 days. Book a call and Maureen will send you a
+        Pricing links stay active for {PRICING_TOKEN_TTL_DAYS} days. Book a call and Maureen will send you a
         current guide, or reach out directly and she&apos;ll get a fresh link over to you.
       </p>
       <div className="mt-10 flex flex-wrap gap-4">

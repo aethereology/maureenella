@@ -230,8 +230,15 @@ inquiry-first funnel.
 
 Accepted risks: the generator key travels in a query string (worst case, a
 stranger sees prices already emailed to strangers); the auto-responder makes
-the contact form a minor outbound-mail amplifier, mitigated by the honeypot,
-the timing check, and the 5-per-10-minutes IP rate limit — do not loosen it.
+the contact form a minor outbound-mail amplifier. The honeypot and timing
+check stop naive bots outright. The IP rate limit (`lib/rate-limit.ts`) is a
+per-instance, in-memory fixed window, not a globally consistent one — on
+Vercel each warm instance keeps its own bucket, and a flood spread across
+rotating IPs bypasses it entirely. Treat it as slowing a single-source flood,
+nothing more. Escalation: add Cloudflare Turnstile (keys already stubbed in
+`.env.example`) the first time this is tested for real — a Resend bounce-rate
+warning, or an unexplained spike in daily inquiries, either one is the
+trigger, not a calendar date.
 
 ## Pending decisions
 

@@ -8,7 +8,8 @@ const projectRoot = dirname(fileURLToPath(import.meta.url));
 const isDev = process.env.NODE_ENV !== "production";
 
 /**
- * Content Security Policy. The production site is fully static (SSG), so
+ * Content Security Policy. The production build is mostly static/SSG — only
+ * `/pricing/[token]` and `/pricing/new` are `force-dynamic` (D013) — so
  * per-request nonces aren't available; inline scripts (JSON-LD + the GA4 init
  * snippet) and Tailwind/Next inline styles require 'unsafe-inline'. Development
  * also needs 'unsafe-eval' and websocket connections for React Refresh/HMR.
