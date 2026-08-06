@@ -2,6 +2,8 @@
 
 import { site } from "@/lib/site";
 import { hit, clientIp } from "@/lib/rate-limit";
+import { createPricingToken, pricingPath } from "@/lib/pricing-link";
+import { sendInquiryAutoresponder } from "@/lib/email";
 
 export type InquiryState = {
   status: "idle" | "success" | "error";
@@ -180,7 +182,24 @@ export async function submitInquiry(
 }
 
 const SUCCESS_MESSAGE =
-  "Thank you for your inquiry. Your details have been received, and we will review your date, service count, location, and timeline needs before sending next steps.";
+  "Thank you for your inquiry. Your details have been received — check your inbox for your pricing guide and a link to book a call. We'll review your date, service count, location, and timeline needs before sending next steps.";
+
+/**
+ * Absolute pricing-guide URL for a bride, or `undefined` when link signing is
+ * unavailable. Returning undefined degrades the email gracefully rather than
+ * shipping a dead link.
+ */
+function pricingUrlFor(firstName: string): string | undefined {
+  try {
+    return new URL(pricingPath(createPricingToken({ firstName })), site.baseUrl).toString();
+  } catch (err) {
+    console.error(
+      "Could not mint a pricing link (is PRICING_LINK_SECRET set?):",
+      err,
+    );
+    return undefined;
+  }
+}
 
 async function deliver(
   fields: Record<string, string>,
@@ -228,6 +247,12 @@ async function deliver(
   const configuredApiKey = apiKey as string;
   const configuredTo = to as string;
 
+  const pricingUrl = pricingUrlFor(fields["First name"]);
+
+  const pricingRow = pricingUrl
+    ? `<p style="margin-top:16px"><strong>Pricing link (forwardable):</strong><br><a href="${pricingUrl}">${pricingUrl}</a></p>`
+    : `<p style="margin-top:16px"><strong>Pricing link:</strong> unavailable — PRICING_LINK_SECRET is not set.</p>`;
+
   const html = `<h2>New wedding inquiry — ${site.brand}</h2><table cellpadding="6">${Object.entries(
     fields,
   )
@@ -238,7 +263,11 @@ async function deliver(
           v,
         )}</td></tr>`,
     )
-    .join("")}</table>`;
+    .join("")}</table>${pricingRow}`;
+
+  const ownerText = pricingUrl
+    ? `${summaryText}\n\nPricing link (forwardable): ${pricingUrl}`
+    : `${summaryText}\n\nPricing link: unavailable — PRICING_LINK_SECRET is not set.`;
 
   const res = await fetch("https://api.resend.com/emails", {
     method: "POST",
@@ -252,11 +281,24 @@ async function deliver(
       reply_to: fields.Email,
       subject: `New wedding inquiry — ${fields["First name"]} ${fields["Last name"]} (${fields["Wedding date"]})`,
       html,
-      text: summaryText,
+      text: ownerText,
     }),
   });
 
   if (!res.ok) {
     throw new Error(`Resend responded ${res.status}: ${await res.text()}`);
   }
+
+  // Best-effort: the owner has already been notified, so a failure here must
+  // never fail the bride's submission.
+  await sendInquiryAutoresponder({
+    apiKey: configuredApiKey,
+    to: fields.Email,
+    firstName: fields["First name"],
+    cityState: fields["City / State"],
+    weddingDate: fields["Wedding date"],
+    interestedIn: fields["Interested in"],
+    pricingUrl,
+    calendlyUrl: site.booking.calendly.value,
+  }).catch((err) => console.error("Inquiry auto-responder failed:", err));
 }
