@@ -75,3 +75,17 @@
 - Sitemap submitted.
 - 404 page works.
 - Redirect map tested.
+
+## Private pricing guide (D013)
+
+- `npm test` — 13 pricing-link tests pass.
+- Valid link renders "Prepared for <name>", three collections, "Most Popular" on Bridal Party, five à la carte rows.
+- Expired link (`ttlDays: -1`), tampered signature, and `/pricing/nonsense` all render the expired page at HTTP 200 — never a 404.
+- Page source contains `noindex, nofollow`; `/robots.txt` disallows `/pricing`; `/sitemap.xml` contains no `pricing`.
+- 375px viewport: cards stack, no horizontal scroll, badge does not clip.
+- `/pricing/new` 404s with no key and with a wrong key; renders and copies with the right key.
+- Form submission (take >3s) delivers both emails.
+- Bride's email: badges render, both buttons work, Reply goes to maureen@theparlor.info.
+- Bride's email in Gmail web + phone: no dark-mode inversion, no horizontal scroll.
+- Degraded path: with `PRICING_LINK_SECRET` unset the submission still succeeds and the email sends without the pricing block. **Test this against a production build (`npm run build && npm run start`) — not `npm run dev`.** `lib/pricing-link.ts` only throws on a missing secret when `NODE_ENV === "production"`; under `npm run dev`, `NODE_ENV` is `development`, so it silently falls back to a dev-only constant, the pricing link still renders, and the tester gets a false pass.
+- No unconfirmed amount (travel, retainer, minimum, venue change) appears anywhere.

@@ -8,7 +8,8 @@ const projectRoot = dirname(fileURLToPath(import.meta.url));
 const isDev = process.env.NODE_ENV !== "production";
 
 /**
- * Content Security Policy. The production site is fully static (SSG), so
+ * Content Security Policy. The production build is mostly static/SSG — only
+ * `/pricing/[token]` and `/pricing/new` are `force-dynamic` (D013) — so
  * per-request nonces aren't available; inline scripts (JSON-LD + the GA4 init
  * snippet) and Tailwind/Next inline styles require 'unsafe-inline'. Development
  * also needs 'unsafe-eval' and websocket connections for React Refresh/HMR.
@@ -78,7 +79,23 @@ const nextConfig: NextConfig = {
     return redirects;
   },
   async headers() {
-    return [{ source: "/:path*", headers: securityHeaders }];
+    return [
+      { source: "/:path*", headers: securityHeaders },
+      // `/pricing/[token]` URLs are bearer credentials — the signed token in
+      // the path IS the authorization for a bride's private pricing. The
+      // site-wide `strict-origin-when-cross-origin` policy above still sends
+      // the full URL as `document.referrer` on same-origin hard navigations
+      // (e.g. a bride ctrl/middle-clicking a link to the portfolio), which
+      // would hand the token to any analytics loaded on that destination
+      // page. This entry is declared after the site-wide one, so per
+      // Next.js's header-merging rules it wins for this single key on
+      // matching paths — no pricing URL is ever sent as a referrer, to any
+      // destination, first-party or third-party.
+      {
+        source: "/pricing/:path*",
+        headers: [{ key: "Referrer-Policy", value: "no-referrer" }],
+      },
+    ];
   },
 };
 

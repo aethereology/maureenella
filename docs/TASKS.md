@@ -107,6 +107,16 @@
 - [x] Track CTA clicks.
 - [ ] Track affiliate clicks if Favorites launches. (event wired; activates with products)
 
+## Private pricing guide (D013)
+
+- [x] Signed, expiring pricing-link infrastructure (`lib/pricing-link.ts`, HMAC-SHA256, no database) + 13 unit tests.
+- [x] `/pricing/[token]` guide page — collections, à la carte, expired/tampered-link fallback at HTTP 200, noindex + robots-disallowed, force-dynamic.
+- [x] `/pricing/new` owner-key-guarded link generator for phone/DM inquiries.
+- [x] Branded `InquiryAutoresponder` React Email template wired into `submitInquiry`, degrading gracefully (Calendly link only) when `PRICING_LINK_SECRET` is unset.
+- [x] Live end-to-end send verified through Resend — 4 emails, both the happy and degraded paths — 2026-08-06.
+- [x] Docs recorded (D013 in `DECISIONS.md`; env vars, test plan, launch checklist updated).
+- [ ] **Only remaining production step:** set `PRICING_LINK_SECRET` (production + preview) and `PRICING_OWNER_KEY` (production) in Vercel, then run the post-deploy smoke test in `docs/LAUNCH_CHECKLIST.md`.
+
 ## QA
 
 - [ ] Mobile QA.

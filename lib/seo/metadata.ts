@@ -35,14 +35,20 @@ export function pageMetadata({
     // suffix isn't applied twice.
     title: { absolute: fullTitle },
     description,
-    alternates: { canonical: url },
+    // A canonical for a page crawlers are told to ignore is meaningless —
+    // and for /pricing/[token] it would point at the un-tokened "/pricing"
+    // path, which 404s. Omit it whenever the page is noindex.
+    alternates: noindex ? undefined : { canonical: url },
     robots: noindex ? { index: false, follow: false } : undefined,
     openGraph: {
       type: "website",
       siteName: site.brand,
       title: fullTitle,
       description,
-      url,
+      // Same reasoning as the canonical above: for /pricing/[token] this
+      // would be the un-tokened "/pricing" path, which 404s — omit it rather
+      // than advertise a dead URL.
+      ...(noindex ? {} : { url }),
       images: [{ url: image, width: 1200, height: 630, alt: imageAlt ?? title }],
     },
     twitter: {
