@@ -28,12 +28,14 @@ function keyMatches(provided: string | undefined): boolean {
 export default async function NewPricingLinkPage({
   searchParams,
 }: {
-  searchParams: Promise<{ key?: string; name?: string }>;
+  searchParams: Promise<{ key?: string | string[]; name?: string | string[] }>;
 }) {
   const { key, name } = await searchParams;
-  if (!keyMatches(key)) notFound();
+  const rawKey = Array.isArray(key) ? key[0] : key;
+  const rawName = Array.isArray(name) ? name[0] : name;
+  if (!keyMatches(rawKey)) notFound();
 
-  const firstName = name?.trim() ?? "";
+  const firstName = rawName?.trim() ?? "";
   const url = new URL(
     pricingPath(createPricingToken({ firstName })),
     site.baseUrl,
@@ -48,7 +50,7 @@ export default async function NewPricingLinkPage({
       </p>
 
       <form method="get" className="mt-10 flex flex-wrap items-end gap-4 border-t border-hairline pt-8">
-        <input type="hidden" name="key" value={key} />
+        <input type="hidden" name="key" value={rawKey} />
         <div className="flex-1">
           <label htmlFor="name" className="eyebrow block">
             Bride&apos;s first name (optional)
