@@ -25,6 +25,14 @@ signed, expiring link.
 - Pricing content lives in `content/pricing.ts` — confirmed collection and à
   la carte figures only; travel, retainer, service-minimum, touch-up-stay, and
   venue-change amounts remain unconfirmed and excluded (D004/D009).
+- `/pricing/[token]` URLs are bearer credentials, so the token must never be
+  transmitted anywhere. `components/Analytics.tsx` is route-aware and never
+  loads GA4 on `/pricing/*` (blocks `page_location`); `next.config.ts` sets
+  `Referrer-Policy: no-referrer` for `/pricing/:path*` (overriding the
+  site-wide `strict-origin-when-cross-origin`) so a same-origin hard
+  navigation off a pricing page — e.g. a bride ctrl-clicking a portfolio
+  link — never hands the token to a destination page as `document.referrer`
+  (blocks `page_referrer`).
 - Decision record: D013 in `docs/DECISIONS.md`.
 
 ## Premium motion and interaction refresh (2026-07-22)
