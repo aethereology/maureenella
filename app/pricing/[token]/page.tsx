@@ -86,8 +86,14 @@ export default async function PricingGuidePage({
           invert
         />
         <div className="mt-10 flex flex-wrap gap-4">
-          <ButtonLink href={site.booking.calendly.value}>Book a 30-Minute Call</ButtonLink>
-          <ButtonLink href={`mailto:${site.contact.email.value}`} variant="ghost">
+          <ButtonLink href={site.booking.calendly.value} variant="ghostInverse">
+            Book a 30-Minute Call
+          </ButtonLink>
+          <ButtonLink
+            href={`mailto:${site.contact.email.value}`}
+            variant="ghostInverse"
+            className="opacity-70 hover:opacity-100"
+          >
             Or reply by email
           </ButtonLink>
         </div>
