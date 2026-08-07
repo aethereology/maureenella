@@ -81,7 +81,7 @@ export default async function PricingGuidePage({
         <SectionHeading
           index="04"
           eyebrow="Next step"
-          title="Let's talk through your day"
+          title="Tell me more about your day"
           intro="Book a 30-minute consultation and we'll walk through your timeline, your party, and the collection that fits."
           invert
         />
