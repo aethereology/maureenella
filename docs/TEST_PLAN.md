@@ -79,7 +79,7 @@
 ## Private pricing guide (D013)
 
 - `npm test` — 13 pricing-link tests pass.
-- Valid link renders "Prepared for <name>", three collections, "Most Popular" on Bridal Party, five à la carte rows.
+- Valid link renders "Prepared for <name>", three collections (Gold / Diamond / Platinum, D014), "Highly Requested" on Diamond, "Travel fee may apply." on all three, five à la carte rows.
 - Expired link (`ttlDays: -1`), tampered signature, and `/pricing/nonsense` all render the expired page at HTTP 200 — never a 404.
 - Page source contains `noindex, nofollow`; `/robots.txt` disallows `/pricing`; `/sitemap.xml` contains no `pricing`.
 - 375px viewport: cards stack, no horizontal scroll, badge does not clip.

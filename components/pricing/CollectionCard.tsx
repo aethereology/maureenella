@@ -8,7 +8,8 @@ export function CollectionCard({
   collection: Collection;
   index: number;
 }) {
-  const { name, price, positioning, includes, featured, featuredLabel } = collection;
+  const { name, price, positioning, includes, note, featured, featuredLabel } =
+    collection;
 
   return (
     <article
@@ -36,6 +37,13 @@ export function CollectionCard({
           </li>
         ))}
       </ul>
+      {/* mt-auto pins the note to the card's foot so it lines up across all
+          three tiers even though their inclusion lists differ in length. */}
+      {note && (
+        <p className="mt-auto pt-6 text-xs uppercase tracking-[0.15em] text-taupe-deep">
+          {note}
+        </p>
+      )}
     </article>
   );
 }

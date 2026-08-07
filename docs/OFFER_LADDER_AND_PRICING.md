@@ -52,6 +52,13 @@ Extracted likely current add-ons:
 
 ### Premium bridal packages
 
+> **Superseded — historical only.** Maureen chose packaging and confirmed the
+> real tiers: **The Gold Experience** ($650), **The Diamond Experience** ($1,050,
+> "Highly Requested") and **The Platinum Experience** ($1,850). The live
+> definitions are `content/pricing.ts`; the decision record is D013 + D014. The
+> sketches below are the pre-decision brainstorm and are kept only as a record
+> of what was considered.
+
 Recommended package architecture if Maureen wants packaging instead of pure a la carte:
 
 #### The Preview

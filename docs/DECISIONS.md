@@ -207,11 +207,16 @@ indexable page. Confirmed collection and à la carte pricing is delivered
 privately after inquiry through a signed, expiring link (`/pricing/[token]`,
 noindex + robots-disallowed, 90-day lifetime, HMAC-SHA256, no database).
 
-Confirmed and now published behind that link: Signature Bride Collection from
-$450; Bridal Party Collection from $1,050 (badged "Most Popular"); Luxe Wedding
-Collection from $1,850; bridal hair $250; bridal makeup $250; bridal hair and
-makeup $450; bridal party hair $125/person; bridal party makeup $125/person.
-Consultation booking is https://calendly.com/maureenella/30min.
+Confirmed and published behind that link at the time of this decision:
+Signature Bride Collection from $450; Bridal Party Collection from $1,050
+(badged "Most Popular"); Luxe Wedding Collection from $1,850; bridal hair $250;
+bridal makeup $250; bridal hair and makeup $450; bridal party hair $125/person;
+bridal party makeup $125/person. Consultation booking is
+https://calendly.com/maureenella/30min.
+
+> **Superseded in part by D014** (same day): the three collections were renamed
+> and revised, and the entry tier rose to $650. The à la carte figures, the
+> delivery mechanism, and everything else in this decision still stand.
 
 Still unconfirmed and therefore excluded: travel, retainer, service-minimum,
 touch-up-stay, and venue-change amounts. The guide carries generic policy
@@ -239,6 +244,44 @@ nothing more. Escalation: add Cloudflare Turnstile (keys already stubbed in
 `.env.example`) the first time this is tested for real — a Resend bounce-rate
 warning, or an unexplained spike in daily inquiries, either one is the
 trigger, not a calendar date.
+
+### D014 - Collections revised to the Gold/Diamond/Platinum tiers
+
+Decision (founder, 2026-08-06, superseding the collection block of D013): the
+three bridal collections are renamed and revised. Delivery is unchanged — still
+private, still behind a signed expiring link, still absent from the public site.
+
+- **The Gold Experience — starting at $650** (was Signature Bride, $450).
+  Luxury bridal hairstyle; luxury bridal makeup (airbrush); bridal hair and
+  makeup preview; custom lashes; hair touch-up kit; makeup touch-up kit; wedding
+  day timeline; on-location services.
+- **The Diamond Experience — starting at $1,050**, badged **"Highly Requested"**
+  (was Bridal Party, badged "Most Popular"). Bridal hairstyle; bridal makeup;
+  hair and makeup for 3 bridal party members or guests; custom lashes; hair and
+  makeup touch-up kit; wedding morning timeline; on-location services.
+- **The Platinum Experience — starting at $1,850** (was Luxe Wedding). As
+  Diamond but for 6, plus additional artist(s) and optional touch-ups before the
+  ceremony.
+
+Substantive changes beyond naming: the entry tier rose **$200** and now includes
+a hair and makeup **preview**; airbrush is stated explicitly; Gold carries two
+separate touch-up kits; "luxury lashes" became "custom lashes"; **veil placement
+was dropped** from the entry tier; and every collection now carries
+"Travel fee may apply."
+
+That travel line is a qualitative policy note with **no figure**, so it is
+compatible with the D004/D009 gate — travel, retainer, service-minimum,
+touch-up-stay, and venue-change **amounts** remain unconfirmed and absent.
+
+The badge wording moved to Maureen's own phrasing: "Highly Requested" is a claim
+she can defend if a bride asks, where "Most Popular" would imply booking data we
+do not publish.
+
+**Open item for Maureen:** the à la carte list is deliberately unchanged, so
+"Bridal Hair and Makeup — starting at $450" now sits $200 below the Gold
+Experience. That is defensible (Gold adds the preview, lashes and kits), but it
+was not addressed in her revision and may be unintentional. Do not change it
+without her.
 
 ## Pending decisions
 

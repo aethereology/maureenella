@@ -1,12 +1,18 @@
 /**
  * Bridal pricing, delivered privately after inquiry (D013).
  *
- * Founder-confirmed 2026-08-06. These figures MUST NOT reach any public,
- * indexable page — they render only inside /pricing/[token], which is noindex
- * and robots-disallowed. Travel, retainer, service-minimum, touch-up-stay, and
- * venue-change AMOUNTS remain unconfirmed and are deliberately absent
- * (D004/D009). Follows the content/education.ts pattern: components read these
- * typed structures rather than importing seed JSON.
+ * Collections revised by the founder 2026-08-06 (D014): renamed to the
+ * Gold/Diamond/Platinum "Experience" tiers, entry tier raised to $650 with a
+ * preview added, and a per-collection travel note. À la carte is unchanged and
+ * still awaiting Maureen's review against the new $650 entry tier.
+ *
+ * These figures MUST NOT reach any public, indexable page — they render only
+ * inside /pricing/[token], which is noindex and robots-disallowed. Travel,
+ * retainer, service-minimum, touch-up-stay, and venue-change AMOUNTS remain
+ * unconfirmed and are deliberately absent (D004/D009): `note` below says a
+ * travel fee *may apply* without ever quoting one. Follows the
+ * content/education.ts pattern: components read these typed structures rather
+ * than importing seed JSON.
  */
 
 export type Collection = {
@@ -16,6 +22,8 @@ export type Collection = {
   price: string;
   positioning: string;
   includes: string[];
+  /** Qualifier shown under the inclusions. Policy language only — no amounts. */
+  note?: string;
   featured?: boolean;
   featuredLabel?: string;
 };
@@ -24,54 +32,61 @@ export type ALaCarteItem = { service: string; price: string };
 
 export const collections: Collection[] = [
   {
-    slug: "signature-bride",
-    name: "Signature Bride Collection",
-    price: "Starting at $450",
+    slug: "gold-experience",
+    name: "The Gold Experience",
+    price: "Starting at $650",
     positioning:
       "For the bride who wants a flawless, stress-free wedding morning.",
     includes: [
-      "Bridal hair",
-      "Bridal makeup",
-      "Luxury lashes",
-      "Bridal touch-up kit",
-      "Veil placement",
-      "Wedding morning timeline assistance",
+      "Luxury bridal hairstyle",
+      "Luxury bridal makeup (airbrush)",
+      "Bridal hair and makeup preview",
+      "Custom lashes",
+      "Hair touch-up kit",
+      "Makeup touch-up kit",
+      "Wedding day timeline",
+      "On-location services",
     ],
+    note: "Travel fee may apply.",
   },
   {
-    slug: "bridal-party",
-    name: "Bridal Party Collection",
+    slug: "diamond-experience",
+    name: "The Diamond Experience",
     price: "Starting at $1,050",
     positioning: "For the bride and her closest loved ones.",
     featured: true,
-    featuredLabel: "Most Popular",
+    featuredLabel: "Highly Requested",
     includes: [
-      "Bridal hair and makeup",
-      "Hair for 3 bridal party members",
-      "Makeup for 3 bridal party members",
-      "Luxury lashes",
-      "Bridal touch-up kit",
+      "Bridal hairstyle",
+      "Bridal makeup",
+      "Hair for 3 bridal party members or guests",
+      "Makeup for 3 bridal party members or guests",
+      "Custom lashes",
+      "Hair and makeup touch-up kit",
       "Wedding morning timeline",
-      "On-location service",
+      "On-location services",
     ],
+    note: "Travel fee may apply.",
   },
   {
-    slug: "luxe-wedding",
-    name: "Luxe Wedding Collection",
+    slug: "platinum-experience",
+    name: "The Platinum Experience",
     price: "Starting at $1,850",
     positioning:
       "The complete luxury beauty experience for larger wedding parties.",
     includes: [
-      "Bridal hair and makeup",
-      "Hair for 6 bridal party members",
-      "Makeup for 6 bridal party members",
-      "Luxury lashes",
-      "Bridal touch-up kit",
+      "Bridal hairstyle",
+      "Bridal makeup",
+      "Hair for 6 bridal party members or guests",
+      "Makeup for 6 bridal party members or guests",
+      "Custom lashes",
+      "Hair and makeup touch-up kit",
       "Wedding morning timeline",
-      "Additional artist(s) as needed",
-      "On-location service",
+      "Additional artist(s)",
+      "On-location services",
       "Touch-ups before the ceremony (optional)",
     ],
+    note: "Travel fee may apply.",
   },
 ];
 
