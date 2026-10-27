@@ -2,18 +2,18 @@ name: CI
 on:
   pull_request:
   push:
-    branches: [main, fix/production-hardening-2026-10-27]
+    branches: [main]
   workflow_dispatch:
 permissions:
   contents: read
 concurrency:
-  group: ci-${{ github.ref }}
+  group: ci-${{ github.event.pull_request.number || github.ref }}
   cancel-in-progress: true
 env:
   NEXT_TELEMETRY_DISABLED: '1'
 jobs:
   quality:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 20
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
@@ -27,7 +27,7 @@ jobs:
       - run: npm run verify
       - run: npm audit --audit-level=high
   browser:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 20
     env:
       NEXT_PUBLIC_GA_MEASUREMENT_ID: G-TEST123456
@@ -41,7 +41,10 @@ jobs:
           cache: npm
       - run: npm ci --ignore-scripts
       - run: npm run build
-      - run: npx playwright install --with-deps chromium
+      # The hosted Ubuntu image already includes Chromium runtime libraries.
+      # Install the matching browser without upgrading unrelated OS packages.
+      - run: npx playwright install chromium
+        timeout-minutes: 5
       - run: npm run test:e2e
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
         if: always()
@@ -52,7 +55,7 @@ jobs:
             test-results/
           retention-days: 7
   database:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 10
     services:
       postgres:
