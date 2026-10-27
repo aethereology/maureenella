@@ -1,0 +1,43 @@
+\set ON_ERROR_STOP on
+begin;
+do $$
+declare a jsonb; b jsonb; sid uuid; j public.website_delivery_jobs; n integer;
+begin
+  assert not has_table_privilege('anon','public.website_submissions','SELECT'), 'anon can read leads';
+  assert not has_table_privilege('authenticated','public.website_subscribers','SELECT'), 'authenticated can read subscribers';
+  assert not has_function_privilege('anon','public.website_accept_submission(text,text,jsonb,jsonb)','EXECUTE'), 'anon can write leads';
+  assert not has_function_privilege('authenticated','public.website_claim_jobs(uuid,integer)','EXECUTE'), 'browser can claim jobs';
+  assert public.website_rate_limit(repeat('a',64),2,600);
+  assert public.website_rate_limit(repeat('a',64),2,600);
+  assert not public.website_rate_limit(repeat('a',64),2,600), 'rate limit not enforced';
+  a:=public.website_accept_submission(repeat('b',64),'inquiry','{"email":"example@example.com"}', '[{"channel":"owner","body":{"text":"stable"}},{"channel":"crm","body":{"text":"stable"}}]');
+  b:=public.website_accept_submission(repeat('b',64),'inquiry','{"email":"example@example.com"}', '[{"channel":"owner","body":{"text":"changed retry must be ignored"}}]');
+  assert a->>'id'=b->>'id', 'duplicate submission created';
+  assert (b->>'duplicate')::boolean, 'duplicate not identified';
+  sid:=(a->>'id')::uuid;
+  select count(*) into n from public.website_delivery_jobs where submission_id=sid;
+  assert n=2, 'duplicate jobs created';
+  select * into j from public.website_claim_jobs(sid,1);
+  assert j.body->>'text'='stable', 'provider payload changed on retry';
+  assert not public.website_finish_job(j.id,gen_random_uuid(),true), 'wrong lease accepted';
+  assert public.website_finish_job(j.id,j.lease_token,true), 'valid completion failed';
+  assert not public.website_finish_job(j.id,j.lease_token,true), 'completion replay accepted';
+  select * into j from public.website_claim_jobs(sid,1);
+  assert public.website_finish_job(j.id,j.lease_token,false,'DELIVERY_HTTP_503');
+  select count(*) into n from public.website_claim_jobs(sid,10);
+  assert n=0, 'retry did not back off';
+  update public.website_delivery_jobs set available_at=now()-interval '1 minute' where submission_id=sid and status='pending';
+  select count(*) into n from public.website_claim_jobs(sid,10);
+  assert n=1, 'successful channel was retried or failed channel was lost';
+  a:=public.website_accept_submission(repeat('c',64),'waitlist','{"email":"reader@example.com","name":"Reader","list":"education-waitlist","consentContact":"on","consentText":"Agreed"}', '[{"channel":"welcome","body":{"to":["reader@example.com"]}}]');
+  assert exists(select 1 from public.website_subscribers where email='reader@example.com' and status='subscribed');
+  perform public.website_unsubscribe('reader@example.com');
+  assert exists(select 1 from public.website_subscribers where email='reader@example.com' and status='unsubscribed');
+  assert exists(select 1 from public.website_delivery_jobs where submission_id=(a->>'id')::uuid and status='cancelled');
+  update public.website_delivery_jobs set status='pending',lease_until=null,created_at=now()-interval '23 hours' where submission_id=sid and status='processing';
+  perform public.website_claim_jobs(null,10);
+  assert exists(select 1 from public.website_delivery_jobs where submission_id=sid and status='needs_review'), 'old possibly-sent job replayed';
+  raise notice 'Database integration assertions passed';
+end;
+$$;
+rollback;

@@ -20,12 +20,14 @@ const scriptSrc = [
   isDev ? "'unsafe-eval'" : null,
   "https://www.googletagmanager.com",
   "https://www.google-analytics.com",
+  "https://challenges.cloudflare.com",
 ]
   .filter(Boolean)
   .join(" ");
 
 const connectSrc = [
   "'self'",
+  "https://challenges.cloudflare.com",
   "https://www.google-analytics.com",
   "https://region1.google-analytics.com",
   "https://www.googletagmanager.com",
@@ -46,6 +48,7 @@ const csp = [
   `connect-src ${connectSrc}`,
   "worker-src 'self' blob:",
   "frame-ancestors 'none'",
+  "frame-src https://challenges.cloudflare.com",
   "base-uri 'self'",
   "form-action 'self'",
   "object-src 'none'",
@@ -71,6 +74,8 @@ const securityHeaders = [
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
+  poweredByHeader: false,
+  experimental: { serverActions: { bodySizeLimit: "64kb" } },
   outputFileTracingRoot: projectRoot,
   images: {
     formats: ["image/avif", "image/webp"],
@@ -92,8 +97,8 @@ const nextConfig: NextConfig = {
       // matching paths — no pricing URL is ever sent as a referrer, to any
       // destination, first-party or third-party.
       {
-        source: "/pricing/:path*",
-        headers: [{ key: "Referrer-Policy", value: "no-referrer" }],
+        source: "/:section(pricing|unsubscribe)/:path*",
+        headers: [{ key: "Referrer-Policy", value: "no-referrer" }, { key: "X-Robots-Tag", value: "noindex, nofollow" }],
       },
     ];
   },

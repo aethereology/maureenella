@@ -2,8 +2,10 @@
   "name": "maureenella",
   "version": "0.1.0",
   "private": true,
-  "description": "maureenella.com — premium bridal hair & makeup brand site",
-  "engines": { "node": ">=22.16.0 <23" },
+  "description": "maureenella.com \u2014 premium bridal hair & makeup brand site",
+  "engines": {
+    "node": ">=22.16.0 <23"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -13,7 +15,8 @@
     "email": "email dev --dir emails --port 3001",
     "test": "node --test --experimental-strip-types --disable-warning=ExperimentalWarning --disable-warning=MODULE_TYPELESS_PACKAGE_JSON \"lib/**/*.test.ts\"",
     "test:e2e": "playwright test",
-    "verify": "npm run lint && npm run typecheck && npm test && npm run build"
+    "verify": "npm run lint && npm run typecheck && npm test && npm run build",
+    "preflight": "node --experimental-strip-types scripts/check-production-config.mjs"
   },
   "dependencies": {
     "@react-email/components": "^1.0.12",
@@ -37,5 +40,19 @@
     "tailwindcss": "^4.3.0",
     "typescript": "5.7.3"
   },
-  "overrides": { "sharp": "$sharp" }
+  "overrides": {
+    "sharp": "$sharp",
+    "@react-email/ui": {
+      "next": "16.4.3"
+    },
+    "postcss": "8.5.23",
+    "source-map-js": "1.2.2",
+    "nanoid@<3.3.18": "3.3.18",
+    "js-yaml@^4": "4.3.2",
+    "fast-uri@^3": "3.1.9",
+    "engine.io@^6": "6.6.10",
+    "brace-expansion@^1": "1.1.21",
+    "brace-expansion@^4": "5.0.12",
+    "brace-expansion@^5": "5.0.12"
+  }
 }

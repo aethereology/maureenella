@@ -26,7 +26,10 @@ export type PricingTokenResult =
 /** Throws in production when unset, so a missing secret is never silent. */
 function secret(): string {
   const configured = process.env.PRICING_LINK_SECRET;
-  if (configured) return configured;
+  if (configured) {
+    if (configured.length < 32 && process.env.NODE_ENV === "production") throw new Error("PRICING_LINK_SECRET must be at least 32 characters.");
+    return configured;
+  }
   if (process.env.NODE_ENV === "production") {
     throw new Error("PRICING_LINK_SECRET is required in production.");
   }
@@ -58,7 +61,7 @@ export function createPricingToken(
  */
 export function verifyPricingToken(token: string): PricingTokenResult {
   const fail = { ok: false } as const;
-  if (typeof token !== "string") return fail;
+  if (typeof token !== "string" || token.length > 2048) return fail;
 
   const parts = token.split(".");
   if (parts.length !== 2) return fail;

@@ -1,0 +1,12 @@
+import test from "node:test";
+import assert from "node:assert/strict";
+import {createOwnerSession,verifyOwnerSession,secretEqual,OWNER_SESSION_SECONDS} from "./owner-session.ts";
+const password="owner-test-secret-".repeat(3);const secret="session-test-secret-".repeat(3);const now=1800000000000;
+test("owner session round-trips",()=>assert.equal(verifyOwnerSession(createOwnerSession(password,secret,now),password,secret,now),true));
+test("owner session expires",()=>assert.equal(verifyOwnerSession(createOwnerSession(password,secret,now),password,secret,now+OWNER_SESSION_SECONDS*1000),false));
+test("rotating owner password invalidates old sessions",()=>assert.equal(verifyOwnerSession(createOwnerSession(password,secret,now),password+"new",secret,now),false));
+test("rotating session secret invalidates old sessions",()=>assert.equal(verifyOwnerSession(createOwnerSession(password,secret,now),password,secret+"new",now),false));
+test("rejects tampered session",()=>{const t=createOwnerSession(password,secret,now);assert.equal(verifyOwnerSession("x"+t,password,secret,now),false);});
+test("rejects malformed and oversized sessions",()=>{for(const t of ["",".","a.b.c","x".repeat(5000)])assert.equal(verifyOwnerSession(t,password,secret,now),false);});
+test("refuses short secrets",()=>assert.throws(()=>createOwnerSession("short",secret,now)));
+test("constant-length digest comparison handles all string lengths",()=>{assert.equal(secretEqual("a","a"),true);assert.equal(secretEqual("a","aa"),false);});

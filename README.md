@@ -7,9 +7,9 @@ This repository is a strategy, product, content, SEO, operations, and Claude Cod
 ## Current status
 
 - **Phase 1 (Bridal MVP):** built · **Phase 2 (Local SEO):** built · **Phase 3 (Education launch):** built (landing + free Starter Checklist lead magnet + waitlist + welcome email; paid products gated).
-- **Pre-launch**, blocked on Maureen's confirmations (pricing, NAP, image/review permissions) and production deploy/QA.
+- **Release gate:** follow `docs/PRODUCTION_HARDENING.md`. Database migration, runtime secrets, retry-worker setup, owner approval of policy text, and live delivery tests are required before merging the hardening release.
 - Read `docs/BUILD_NOTES.md` for the current implemented state, `docs/ROADMAP.md` + `docs/TASKS.md` for what's next, `docs/DECISIONS.md` for decisions D001–D005.
-- Run: `npm run dev` · `npm run typecheck` · `npm run build` (all routes static/SSG).
+- Run: `npm run dev` · `npm run typecheck` · `npm run build` (public pages mostly static/SSG; private pages and delivery routes are dynamic).
 
 ## Brand direction
 
