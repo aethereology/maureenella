@@ -1,5 +1,5 @@
 import { clsx } from "@/lib/clsx";
-import type { Collection } from "@/content/pricing";
+import type { Collection } from "@/lib/pricing-catalog";
 
 export function CollectionCard({
   collection,

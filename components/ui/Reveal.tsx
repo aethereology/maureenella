@@ -34,7 +34,7 @@ export function Reveal({
     <MotionTag
       data-reveal=""
       className={className}
-      initial={{ opacity: 0, y: 24 }}
+      initial={false}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.14, margin: "0px 0px -6% 0px" }}
       transition={{
