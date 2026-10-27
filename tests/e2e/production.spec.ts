@@ -22,11 +22,11 @@ test("homepage hero remains visible without JavaScript",async({browser})=>{
 });
 test("validation failure keeps completed inquiry fields",async({page})=>{
   await page.goto("/contact");await fillInquiry(page);await page.locator("#email").fill("not-an-email");await page.getByRole("button",{name:"Submit Inquiry"}).click();
-  await expect(page.locator("#email-error")).toContainText("valid email");await expect(page.locator("#firstName")).toHaveValue("Sarah");await expect(page.locator("#gettingReadyLocation")).toHaveValue("Wedding venue");await expect(page.locator("#consentContact")).toBeChecked();
+  await expect(page.locator("#email-error")).toContainText("valid email");await expect(page.locator("#firstName")).toHaveValue("Sarah");await expect(page.locator("#gettingReadyLocation")).toHaveValue("Wedding venue");await expect(page.locator("#consentContact")).toBeChecked();await expect(page.locator("#consentNotReserved")).toBeChecked();
 });
 test("unconfigured production services fail closed without clearing input",async({page})=>{
   await page.goto("/contact");await fillInquiry(page);await page.getByRole("button",{name:"Submit Inquiry"}).click();
-  await expect(page.getByRole("alert")).toContainText("couldn't save");await expect(page.locator("#email")).toHaveValue("sarah@example.com");await expect(page.getByText("Inquiry received",{exact:true})).toHaveCount(0);
+  await expect(page.locator("form [role='alert']")).toContainText("couldn't save");await expect(page.locator("#email")).toHaveValue("sarah@example.com");await expect(page.locator("#consentContact")).toBeChecked();await expect(page.getByText("Inquiry received",{exact:true})).toHaveCount(0);
 });
 test("owner key query parameter never authenticates or echoes a secret",async({page})=>{
   const response=await page.goto("/pricing/new?key=do-not-echo-this-query-secret");
@@ -46,6 +46,10 @@ test("private-to-public link uses a new document",async({page})=>{
 test("waitlist requires consent and preserves the email",async({page})=>{
   await page.goto("/education");await page.locator('input[name="email"]').fill("reader@example.com");await page.locator('form').last().locator('button[type="submit"]').click();
   await expect(page.locator('input[name="email"]')).toHaveValue("reader@example.com");await expect(page.locator('[id^="consent-error-"]')).toBeVisible();
+});
+test("waitlist retains checked consent after an email validation error",async({page})=>{
+  await page.goto("/education");await page.locator('input[name="email"]').fill("not-an-email");await page.locator('input[name="consentContact"]').check();await page.locator('form').last().locator('button[type="submit"]').click();
+  await expect(page.locator('[id^="email-error-"]')).toContainText("valid email");await expect(page.locator('input[name="consentContact"]')).toBeChecked();await expect(page.locator('input[name="email"]')).toHaveValue("not-an-email");
 });
 test("delivery worker rejects unauthenticated callers",async({request})=>{
   const response=await request.post("/api/jobs/deliver");expect(response.status()).toBe(401);

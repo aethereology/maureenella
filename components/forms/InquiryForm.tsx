@@ -12,7 +12,7 @@ const fieldClass="mt-1.5 w-full rounded-none border border-taupe bg-porcelain px
 function SubmitButton(){const {pending}=useFormStatus();return <button type="submit" disabled={pending} className="bg-espresso px-9 py-4 text-porcelain disabled:opacity-50 focus-visible:outline-2 focus-visible:outline-rose">{pending ? "Sending…" : "Submit Inquiry"}</button>;}
 export function InquiryForm(){
   const [state,action]=useActionState(submitInquiry,initial);
-  const [values,setValues]=useState<InquiryValues>({...EMPTY_INQUIRY});
+  const [values,setValues]=useState<InquiryValues>(()=>({...EMPTY_INQUIRY,...state.values}));
   const [submissionId,setSubmissionId]=useState("");
   const started=useRef(false);
   const tracked=useRef<string | undefined>(undefined);
@@ -29,7 +29,10 @@ export function InquiryForm(){
   if(state.status === "success") return <div role="status" className="border border-hairline bg-ivory p-8 text-center"><h2 className="text-2xl text-espresso">Inquiry received</h2><p className="mt-3 text-cocoa">{state.message}</p></div>;
   const errors=state.errors || {};
   const update=(name:keyof InquiryValues,value:string)=>setValues((old)=>({...old,[name]:value}));
-  return <form action={action} noValidate className="space-y-8" onSubmit={()=>trackEvent("inquiry_form_submit")} onFocusCapture={()=>{if(!started.current){started.current=true;trackEvent("inquiry_form_start");}}}>
+  // A resolved server action also requests a native form reset on validation errors.
+  // Prevent it: native reset can clear checkbox DOM state despite controlled props.
+  // On genuine success the whole form unmounts; the bot widget resets per attempt.
+  return <form action={action} noValidate onReset={(event)=>event.preventDefault()} className="space-y-8" onSubmit={()=>trackEvent("inquiry_form_submit")} onFocusCapture={()=>{if(!started.current){started.current=true;trackEvent("inquiry_form_start");}}}>
     <input type="hidden" name="submissionId" value={submissionId}/>
     <div aria-hidden="true" className="absolute left-[-9999px] h-0 w-0 overflow-hidden"><label htmlFor="company">Company</label><input id="company" name="company" tabIndex={-1} autoComplete="off"/></div>
     {state.status === "error" && <p ref={summary} tabIndex={-1} role="alert" className="bg-rose-soft/40 p-4 text-sm text-cocoa">{state.message}</p>}
