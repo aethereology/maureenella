@@ -4,6 +4,7 @@ import { InquiryAutoresponder } from "@/emails/InquiryAutoresponder";
 import { site } from "@/lib/site";
 import { createPricingToken, pricingPath } from "@/lib/pricing-link";
 import { INQUIRY_FIELDS, type InquiryValues, type WaitlistValues } from "@/lib/inquiry-validation";
+import { inquiryCrmFields } from "@/lib/crm-payload";
 import { getPricingCatalog } from "@/content/pricing";
 import { createSubscriberToken } from "@/lib/subscriber-token";
 import { deliveryChannels, required, sender } from "./config";
@@ -23,7 +24,7 @@ export async function inquiryNotifications(values: InquiryValues): Promise<Deliv
     subject:`New wedding inquiry — ${values.firstName} ${values.lastName} (${values.weddingDate})`,
     text:`${summary}\n\nPricing link: ${pricingUrl || "Unavailable; follow up manually."}`,
   }});
-  if (channels.includes("crm")) jobs.push({channel:"crm",body:{source:site.domain,kind:"inquiry",fields:values}});
+  if (channels.includes("crm")) jobs.push({channel:"crm",body:{source:site.domain,fields:inquiryCrmFields(values)}});
   if (channels.includes("autoresponder")) {
     const element=<InquiryAutoresponder firstName={values.firstName} cityState={values.cityState} weddingDate={values.weddingDate} interestedIn={values.interestedIn} pricingUrl={pricingUrl} calendlyUrl={site.booking.calendly.value} />;
     const [html,text]=await Promise.all([render(element),render(element,{plainText:true})]);

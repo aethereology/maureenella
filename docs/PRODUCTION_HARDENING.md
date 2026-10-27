@@ -66,8 +66,10 @@ reconcile provider acceptance first. Absolute exactly-once delivery is not guara
 provider accepts a request but its response is lost. The retry worker reports stale/review items
 with HTTP 503 so scheduler checks fail visibly.
 
-CRM consumers must deduplicate X-Submission-Id or Idempotency-Key. The new payload has
-`source`, `kind` and typed camelCase `fields`; update existing human-label field mappings.
+CRM consumers must deduplicate X-Submission-Id or Idempotency-Key. The webhook preserves
+its existing `source` and human-readable `fields` labels, so existing field mappings need not
+change. The new database uses typed internal field names separately. Verify the receiving
+system's deduplication behavior before enabling retries against a real CRM.
 The code intentionally avoids logging response bodies, message content, tokens and raw IPs.
 Stored submissions and email bodies contain personal information: restrict staff access and
 establish a retention policy. Monitor pending/review jobs, scheduler failures and provider
