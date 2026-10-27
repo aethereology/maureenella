@@ -1,0 +1,37 @@
+name: Delivery retries
+on:
+  schedule:
+    - cron: '*/5 * * * *'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: delivery-retries
+  cancel-in-progress: false
+jobs:
+  deliver:
+    if: vars.DELIVERY_WORKER_ENABLED == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    env:
+      WEBSITE_BASE_URL: ${{ vars.WEBSITE_BASE_URL }}
+      CRON_SECRET: ${{ secrets.WEBSITE_CRON_SECRET }}
+    steps:
+      - name: Resume due notifications; fail visibly on stuck jobs
+        run: |
+          node --input-type=module <<'JS'
+          const base = new URL(process.env.WEBSITE_BASE_URL || '');
+          if (base.protocol !== 'https:' || base.username || base.password || base.pathname !== '/' || base.search || base.hash) throw new Error('Invalid WEBSITE_BASE_URL');
+          if (!process.env.CRON_SECRET || process.env.CRON_SECRET.length < 32) throw new Error('Missing worker credential');
+          for (let batch = 0; batch < 5; batch++) {
+            const response = await fetch(new URL('/api/jobs/deliver', base), {
+              method: 'POST', redirect: 'error',
+              headers: { Authorization: `Bearer ${process.env.CRON_SECRET}` },
+              signal: AbortSignal.timeout(30000)
+            });
+            if (!response.ok) throw new Error(`Worker requires attention (HTTP ${response.status})`);
+            const result = await response.json();
+            console.log(JSON.stringify({processed: result.processed, failed: result.failed, pending: result.pending, needsReview: result.needsReview}));
+            if (!result.processed) break;
+          }
+          JS
