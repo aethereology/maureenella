@@ -1,6 +1,5 @@
 "use client";
-import { useActionState, useEffect, useRef, useState } from "react";
-import { useFormStatus } from "react-dom";
+import { startTransition, useActionState, useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { submitInquiry } from "@/app/actions/inquiry";
 import type { InquiryState } from "@/lib/form-state";
@@ -9,9 +8,9 @@ import { trackEvent } from "@/lib/analytics";
 import { BotChallenge } from "./BotChallenge";
 const initial: InquiryState={status:"idle"};
 const fieldClass="mt-1.5 w-full rounded-none border border-taupe bg-porcelain px-3.5 py-3 text-cocoa focus-visible:outline-2 focus-visible:outline-rose";
-function SubmitButton(){const {pending}=useFormStatus();return <button type="submit" disabled={pending} className="bg-espresso px-9 py-4 text-porcelain disabled:opacity-50 focus-visible:outline-2 focus-visible:outline-rose">{pending ? "Sending…" : "Submit Inquiry"}</button>;}
+function SubmitButton({pending}:{pending:boolean}){return <button type="submit" disabled={pending} className="bg-espresso px-9 py-4 text-porcelain disabled:opacity-50 focus-visible:outline-2 focus-visible:outline-rose">{pending ? "Sending…" : "Submit Inquiry"}</button>;}
 export function InquiryForm(){
-  const [state,action]=useActionState(submitInquiry,initial);
+  const [state,action,pending]=useActionState(submitInquiry,initial);
   const [values,setValues]=useState<InquiryValues>(()=>({...EMPTY_INQUIRY,...state.values}));
   const [submissionId,setSubmissionId]=useState("");
   const started=useRef(false);
@@ -29,10 +28,16 @@ export function InquiryForm(){
   if(state.status === "success") return <div role="status" className="border border-hairline bg-ivory p-8 text-center"><h2 className="text-2xl text-espresso">Inquiry received</h2><p className="mt-3 text-cocoa">{state.message}</p></div>;
   const errors=state.errors || {};
   const update=(name:keyof InquiryValues,value:string)=>setValues((old)=>({...old,[name]:value}));
-  // A resolved server action also requests a native form reset on validation errors.
-  // Prevent it: native reset can clear checkbox DOM state despite controlled props.
-  // On genuine success the whole form unmounts; the bot widget resets per attempt.
-  return <form action={action} noValidate onReset={(event)=>event.preventDefault()} className="space-y-8" onSubmit={()=>trackEvent("inquiry_form_submit")} onFocusCapture={()=>{if(!started.current){started.current=true;trackEvent("inquiry_form_start");}}}>
+  function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    if (pending) return;
+    const data = new FormData(event.currentTarget);
+    trackEvent("inquiry_form_submit");
+    // Dispatch explicitly so a resolved validation error cannot trigger the
+    // form-action automatic reset. The action prop remains a pre-hydration fallback.
+    startTransition(() => action(data));
+  }
+  return <form action={action} noValidate aria-busy={pending} className="space-y-8" onSubmit={handleSubmit} onFocusCapture={()=>{if(!started.current){started.current=true;trackEvent("inquiry_form_start");}}}>
     <input type="hidden" name="submissionId" value={submissionId}/>
     <div aria-hidden="true" className="absolute left-[-9999px] h-0 w-0 overflow-hidden"><label htmlFor="company">Company</label><input id="company" name="company" tabIndex={-1} autoComplete="off"/></div>
     {state.status === "error" && <p ref={summary} tabIndex={-1} role="alert" className="bg-rose-soft/40 p-4 text-sm text-cocoa">{state.message}</p>}
@@ -51,6 +56,6 @@ export function InquiryForm(){
       ["consentContact",CONTACT_CONSENT],
     ] as const).map(([name,label])=><div key={name}><label className="flex items-start gap-3 text-sm text-cocoa" htmlFor={name}><input id={name} type="checkbox" name={name} value="on" checked={values[name]==="on"} onChange={(e)=>update(name,e.target.checked ? "on" : "")} required aria-invalid={Boolean(errors[name])} aria-describedby={errors[name] ? `${name}-error` : undefined}/><span>{label}</span></label>{errors[name] && <p id={`${name}-error`} className="text-sm text-rose">{errors[name]}</p>}</div>)}</fieldset>
     <p className="text-sm text-cocoa/70">Only share allergy details relevant to your requested service. Read our <Link className="underline" href="/privacy">privacy policy</Link>.</p>
-    <BotChallenge attempt={state.attempt}/><SubmitButton/>
+    <BotChallenge attempt={state.attempt}/><SubmitButton pending={pending}/>
   </form>;
 }
