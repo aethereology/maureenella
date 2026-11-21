@@ -66,7 +66,9 @@ If any post in `content/journalAutopilot.ts` already has
    photos"). Never reuse a photo that's already on the site, and never publish a
    post without a hero.
 3. Shortlist the 2 or 3 photos whose `description` best fits the topic. **Look
-   at each one** with the Read tool, then choose the best fit.
+   at each one** with the Read tool (at least 2, even if the first seems right),
+   then choose the best fit. Prefer photos of brides or wedding-morning work
+   over portraits of Maureen when both fit equally well.
 4. Move the chosen photo into place and record it:
 
    ```bash
@@ -84,7 +86,12 @@ If any post in `content/journalAutopilot.ts` already has
 
 ## 4. Research
 
-- Use WebSearch and WebFetch to check facts, current norms, and timelines.
+- **Research is required every run, even when the post will have no numbers.**
+  Run at least 3 WebSearch queries, including the exact bride question, and read
+  at least 2 relevant pages with WebFetch. Use them to check facts, current
+  norms, and timelines, and to see what top results cover so the post answers
+  the question better and more completely. Never copy their wording.
+- Note the queries you ran in the commit message (`Research:` line).
 - **Include a number, statistic, price range, or percentage only if you fetched
   its source page in this run and the figure appears there.**
   - Name the source and year in the sentence, for example: "Zola's 2026 data
@@ -170,7 +177,8 @@ If the checks still fail after 3 rounds, go to 7b.
 git add content/journalAutopilot.ts seed/blog_posts.json journal-autopilot/topics.json journal-autopilot/photos.json public/images/journal/<slug>.jpg journal-autopilot/photos/<id>.jpg
 git commit -m "content(journal): <title> (autopilot)" -m "Topic: <question>
 Photo: <id>
-Sources: <publishers, or 'none'>"
+Sources: <publishers, or 'none'>
+Research: <the search queries you ran>"
 git push origin HEAD:main
 ```
 
