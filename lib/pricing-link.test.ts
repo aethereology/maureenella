@@ -73,7 +73,8 @@ test("rejects an unknown schema version", () => {
     // signature check passes and verification is rejected only because v !== 1.
     assert.deepEqual(verifyPricingToken(`${payloadB64}.${signature}`), { ok: false });
   } finally {
-    process.env.PRICING_LINK_SECRET = original;
+    if (original === undefined) delete process.env.PRICING_LINK_SECRET;
+    else process.env.PRICING_LINK_SECRET = original;
   }
 });
 
@@ -91,7 +92,8 @@ test("rejects a token signed with a different secret", () => {
     process.env.PRICING_LINK_SECRET = "secret-two";
     assert.deepEqual(verifyPricingToken(token), { ok: false });
   } finally {
-    process.env.PRICING_LINK_SECRET = original;
+    if (original === undefined) delete process.env.PRICING_LINK_SECRET;
+    else process.env.PRICING_LINK_SECRET = original;
   }
 });
 

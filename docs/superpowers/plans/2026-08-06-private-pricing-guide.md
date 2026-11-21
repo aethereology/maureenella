@@ -445,7 +445,7 @@ Every figure below is founder-confirmed. Transcribe exactly — do not round, re
 export type Collection = {
   slug: string;
   name: string;
-  /** Display string, e.g. "Starting at $450". Never a bare number. */
+  /** Display string, e.g. "Starting at [private rate]". Never a bare number. */
   price: string;
   positioning: string;
   includes: string[];
@@ -459,7 +459,7 @@ export const collections: Collection[] = [
   {
     slug: "signature-bride",
     name: "Signature Bride Collection",
-    price: "Starting at $450",
+    price: "Starting at [private rate]",
     positioning:
       "For the bride who wants a flawless, stress-free wedding morning.",
     includes: [
@@ -474,7 +474,7 @@ export const collections: Collection[] = [
   {
     slug: "bridal-party",
     name: "Bridal Party Collection",
-    price: "Starting at $1,050",
+    price: "Starting at [private rate]",
     positioning: "For the bride and her closest loved ones.",
     featured: true,
     featuredLabel: "Most Popular",
@@ -491,7 +491,7 @@ export const collections: Collection[] = [
   {
     slug: "luxe-wedding",
     name: "Luxe Wedding Collection",
-    price: "Starting at $1,850",
+    price: "Starting at [private rate]",
     positioning:
       "The complete luxury beauty experience for larger wedding parties.",
     includes: [
@@ -509,11 +509,11 @@ export const collections: Collection[] = [
 ];
 
 export const aLaCarte: ALaCarteItem[] = [
-  { service: "Bridal Hair", price: "Starting at $250" },
-  { service: "Bridal Makeup", price: "Starting at $250" },
-  { service: "Bridal Hair and Makeup", price: "Starting at $450" },
-  { service: "Bridal Party Hair", price: "$125 per person" },
-  { service: "Bridal Party Makeup", price: "$125 per person" },
+  { service: "Bridal Hair", price: "Starting at [private rate]" },
+  { service: "Bridal Makeup", price: "Starting at [private rate]" },
+  { service: "Bridal Hair and Makeup", price: "Starting at [private rate]" },
+  { service: "Bridal Party Hair", price: "[private rate] per person" },
+  { service: "Bridal Party Makeup", price: "[private rate] per person" },
 ];
 
 export const pricingIntro =
@@ -1672,9 +1672,9 @@ privately after inquiry through a signed, expiring link (`/pricing/[token]`,
 noindex + robots-disallowed, 90-day lifetime, HMAC-SHA256, no database).
 
 Confirmed and now published behind that link: Signature Bride Collection from
-$450; Bridal Party Collection from $1,050 (badged "Most Popular"); Luxe Wedding
-Collection from $1,850; bridal hair $250; bridal makeup $250; bridal hair and
-makeup $450; bridal party hair $125/person; bridal party makeup $125/person.
+[private rate]; Bridal Party Collection from [private rate] (badged "Most Popular"); Luxe Wedding
+Collection from [private rate]; bridal hair [private rate]; bridal makeup [private rate]; bridal hair and
+makeup [private rate]; bridal party hair [private rate]/person; bridal party makeup [private rate]/person.
 Consultation booking is https://calendly.com/maureenella/30min.
 
 Still unconfirmed and therefore excluded: travel, retainer, service-minimum,

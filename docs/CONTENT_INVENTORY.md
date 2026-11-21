@@ -40,15 +40,15 @@ Rebuild action:
 
 Key extracted topics:
 
-- Booking deposit: $250.
+- Booking deposit: [private rate].
 - Deposit non-refundable and applied toward wedding-day service total on live FAQ.
 - Minimum: 6 services, not people, during peak wedding seasons.
 - Services take 45-60 minutes per person.
 - Beauty timeline usually 4-6 hours.
-- Additional stylist: $175 flat fee per stylist, subject to availability.
+- Additional stylist: [private rate] flat fee per stylist, subject to availability.
 - Travel: South Florida to Northeast Florida, inquire for travel fees.
-- Touch-up stay: $150/hour per stylist on live FAQ.
-- Location change: $100 per stylist on live FAQ.
+- Touch-up stay: [private rate]/hour per stylist on live FAQ.
+- Location change: [private rate] per stylist on live FAQ.
 - Gratuity: 20% added to all services at contract time.
 - Invoice goes to contract signer; no individual payments.
 - Recommended booking: 6-12 months in advance.

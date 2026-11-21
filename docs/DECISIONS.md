@@ -113,7 +113,7 @@ also carries an AdSense verification TXT. Both record sets must exist in Vercel
 DNS before the nameserver switch, with an email send/receive test immediately
 after.
 
-Rationale: Saves ~$200–400/yr with zero capability loss. Guardrails: never
+Rationale: Saves ~[private rate]–400/yr with zero capability loss. Guardrails: never
 cancel before the nameserver move is verified (the intact Wix zone is the
 rollback path), and never let the domain registration lapse.
 
@@ -208,14 +208,14 @@ privately after inquiry through a signed, expiring link (`/pricing/[token]`,
 noindex + robots-disallowed, 90-day lifetime, HMAC-SHA256, no database).
 
 Confirmed and published behind that link at the time of this decision:
-Signature Bride Collection from $450; Bridal Party Collection from $1,050
-(badged "Most Popular"); Luxe Wedding Collection from $1,850; bridal hair $250;
-bridal makeup $250; bridal hair and makeup $450; bridal party hair $125/person;
-bridal party makeup $125/person. Consultation booking is
+Signature Bride Collection from [private rate]; Bridal Party Collection from [private rate]
+(badged "Most Popular"); Luxe Wedding Collection from [private rate]; bridal hair [private rate];
+bridal makeup [private rate]; bridal hair and makeup [private rate]; bridal party hair [private rate]/person;
+bridal party makeup [private rate]/person. Consultation booking is
 https://calendly.com/maureenella/30min.
 
 > **Superseded in part by D014** (same day): the three collections were renamed
-> and revised, and the entry tier rose to $650. The à la carte figures, the
+> and revised, and the entry tier rose to [private rate]. The à la carte figures, the
 > delivery mechanism, and everything else in this decision still stand.
 
 Still unconfirmed and therefore excluded: travel, retainer, service-minimum,
@@ -251,19 +251,19 @@ Decision (founder, 2026-08-06, superseding the collection block of D013): the
 three bridal collections are renamed and revised. Delivery is unchanged — still
 private, still behind a signed expiring link, still absent from the public site.
 
-- **The Gold Experience — starting at $650** (was Signature Bride, $450).
+- **The Gold Experience — starting at [private rate]** (was Signature Bride, [private rate]).
   Luxury bridal hairstyle; luxury bridal makeup (airbrush); bridal hair and
   makeup preview; custom lashes; hair touch-up kit; makeup touch-up kit; wedding
   day timeline; on-location services.
-- **The Diamond Experience — starting at $1,050**, badged **"Highly Requested"**
+- **The Diamond Experience — starting at [private rate]**, badged **"Highly Requested"**
   (was Bridal Party, badged "Most Popular"). Bridal hairstyle; bridal makeup;
   hair and makeup for 3 bridal party members or guests; custom lashes; hair and
   makeup touch-up kit; wedding morning timeline; on-location services.
-- **The Platinum Experience — starting at $1,850** (was Luxe Wedding). As
+- **The Platinum Experience — starting at [private rate]** (was Luxe Wedding). As
   Diamond but for 6, plus additional artist(s) and optional touch-ups before the
   ceremony.
 
-Substantive changes beyond naming: the entry tier rose **$200** and now includes
+Substantive changes beyond naming: the entry tier rose **[private rate]** and now includes
 a hair and makeup **preview**; airbrush is stated explicitly; Gold carries two
 separate touch-up kits; "luxury lashes" became "custom lashes"; **veil placement
 was dropped** from the entry tier; and every collection now carries
@@ -278,7 +278,7 @@ she can defend if a bride asks, where "Most Popular" would imply booking data we
 do not publish.
 
 **Open item for Maureen:** the à la carte list is deliberately unchanged, so
-"Bridal Hair and Makeup — starting at $450" now sits $200 below the Gold
+"Bridal Hair and Makeup — starting at [private rate]" now sits [private rate] below the Gold
 Experience. That is defensible (Gold adds the preview, lashes and kits), but it
 was not addressed in her revision and may be unintentional. Do not change it
 without her.

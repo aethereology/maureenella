@@ -30,12 +30,12 @@ Purpose: relationships and upsell into wedding day.
 
 Extracted likely current pricing:
 
-- Bridal hair: $175
-- Bridal makeup: $175
-- Hair preview: $100
-- Makeup preview: $100
-- Bridesmaid/guest hair: $95
-- Bridesmaid/guest makeup: $95
+- Bridal hair: [private rate]
+- Bridal makeup: [private rate]
+- Hair preview: [private rate]
+- Makeup preview: [private rate]
+- Bridesmaid/guest hair: [private rate]
+- Bridesmaid/guest makeup: [private rate]
 
 Do not publish until confirmed.
 
@@ -43,18 +43,18 @@ Do not publish until confirmed.
 
 Extracted likely current add-ons:
 
-- Blowout prior to styling: $50
-- Clip-in hair extension application: $50
-- Add-on artist: $175
-- Touch-up stay: current live site indicated $150/hour per stylist; older PDFs indicated $50/hour. Confirm.
+- Blowout prior to styling: [private rate]
+- Clip-in hair extension application: [private rate]
+- Add-on artist: [private rate]
+- Touch-up stay: current live site indicated [private rate]/hour per stylist; older PDFs indicated [private rate]/hour. Confirm.
 - Travel: confirm current formula.
-- Venue/location change: live site indicated $100 per stylist; older PDFs indicated $50. Confirm.
+- Venue/location change: live site indicated [private rate] per stylist; older PDFs indicated [private rate]. Confirm.
 
 ### Premium bridal packages
 
 > **Superseded — historical only.** Maureen chose packaging and confirmed the
-> real tiers: **The Gold Experience** ($650), **The Diamond Experience** ($1,050,
-> "Highly Requested") and **The Platinum Experience** ($1,850). The live
+> real tiers: **The Gold Experience** ([private rate]), **The Diamond Experience** ([private rate]
+> "Highly Requested") and **The Platinum Experience** ([private rate]). The live
 > definitions are `content/pricing.ts`; the decision record is D013 + D014. The
 > sketches below are the pre-decision brainstorm and are kept only as a record
 > of what was considered.
@@ -102,7 +102,7 @@ Recommended package architecture if Maureen wants packaging instead of pure a la
 
 ### Low-ticket digital products
 
-Recommended price range: $17-$97 depending on depth.
+Recommended price range: [private rate]-[private rate] depending on depth.
 
 Examples:
 
@@ -115,7 +115,7 @@ Examples:
 
 ### Mid-ticket workshops
 
-Recommended price range: $97-$297.
+Recommended price range: [private rate]-[private rate].
 
 Examples:
 

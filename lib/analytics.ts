@@ -9,6 +9,10 @@ export type AnalyticsEvent =
   | "inquiry_form_start"
   | "inquiry_form_submit"
   | "inquiry_form_error"
+  | "inquiry_form_success"
+  | "inquiry_validation_error"
+  | "inquiry_delivery_error"
+  | "education_waitlist_success"
   | "prep_guide_download"
   | "lead_magnet_download"
   | "education_cta_click"
@@ -28,7 +32,7 @@ export function trackEvent(
   event: AnalyticsEvent,
   params?: Record<string, unknown>,
 ): void {
-  if (typeof window === "undefined") return;
+  if (typeof window === "undefined" || /^\/(pricing|unsubscribe)(\/|$)/.test(window.location.pathname)) return;
   const gtag = (window as unknown as { gtag?: Gtag }).gtag;
   if (typeof gtag === "function") {
     gtag("event", event, params);

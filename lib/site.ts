@@ -7,13 +7,16 @@
  * to inquiry-only language. Never hard-code an unconfirmed number into copy.
  */
 
+const configuredBaseUrl = new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://maureenella.com");
+if (configuredBaseUrl.username || configuredBaseUrl.password || configuredBaseUrl.search || configuredBaseUrl.hash || configuredBaseUrl.pathname !== "/" || (configuredBaseUrl.protocol !== "https:" && !(process.env.NODE_ENV !== "production" && ["localhost","127.0.0.1"].includes(configuredBaseUrl.hostname)))) throw new Error("NEXT_PUBLIC_SITE_URL must be an HTTPS origin.");
+
 export const CONFIRM = "__CONFIRM__" as const;
 
 export const site = {
   brand: "Maureen Ella",
   brandLong: "Maureen Ella Bridal",
   domain: "maureenella.com",
-  baseUrl: "https://maureenella.com",
+  baseUrl: configuredBaseUrl.origin,
   tagline:
     "Romantic bridal hair and makeup for brides who want to feel calm, confident, and beautifully prepared.",
   description:

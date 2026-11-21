@@ -1,9 +1,9 @@
-import { aLaCarte } from "@/content/pricing";
+import type { ALaCarteItem } from "@/lib/pricing-catalog";
 
-export function ALaCarteTable() {
+export function ALaCarteTable({ items }: { items: ALaCarteItem[] }) {
   return (
     <dl className="border-t border-hairline">
-      {aLaCarte.map((item) => (
+      {items.map((item) => (
         <div
           key={item.service}
           className="flex flex-wrap items-baseline justify-between gap-x-6 gap-y-1 border-b border-hairline py-5"

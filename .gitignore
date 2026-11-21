@@ -22,3 +22,9 @@ next-env.d.ts
 
 .vercel
 .env*
+
+!.env.example
+.private/
+playwright-report/
+test-results/
+audit-artifacts/

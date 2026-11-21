@@ -28,9 +28,9 @@ Founder-confirmed on 2026-08-06 and safe to publish behind the private link:
 
 | Collection | Price | Includes |
 | --- | --- | --- |
-| Signature Bride | Starting at $450 | Bridal hair; bridal makeup; luxury lashes; bridal touch-up kit; veil placement; wedding morning timeline assistance |
-| Bridal Party (**Most Popular**) | Starting at $1,050 | Bridal hair & makeup; hair for 3 bridal party members; makeup for 3 bridal party members; luxury lashes; bridal touch-up kit; wedding morning timeline; on-location service |
-| Luxe Wedding | Starting at $1,850 | Bridal hair & makeup; hair for 6 bridal party members; makeup for 6 bridal party members; luxury lashes; bridal touch-up kit; wedding morning timeline; additional artist(s) as needed; on-location service; touch-ups before ceremony (optional) |
+| Signature Bride | Starting at [private rate] | Bridal hair; bridal makeup; luxury lashes; bridal touch-up kit; veil placement; wedding morning timeline assistance |
+| Bridal Party (**Most Popular**) | Starting at [private rate] | Bridal hair & makeup; hair for 3 bridal party members; makeup for 3 bridal party members; luxury lashes; bridal touch-up kit; wedding morning timeline; on-location service |
+| Luxe Wedding | Starting at [private rate] | Bridal hair & makeup; hair for 6 bridal party members; makeup for 6 bridal party members; luxury lashes; bridal touch-up kit; wedding morning timeline; additional artist(s) as needed; on-location service; touch-ups before ceremony (optional) |
 
 Positioning line for Signature Bride: "Perfect for the bride who wants a
 flawless, stress-free wedding morning." Bridal Party: "For the bride and her
@@ -41,11 +41,11 @@ larger wedding parties."
 
 | Service | Price |
 | --- | --- |
-| Bridal Hair | Starting at $250 |
-| Bridal Makeup | Starting at $250 |
-| Bridal Hair & Makeup | Starting at $450 |
-| Bridal Party Hair | $125 per person |
-| Bridal Party Makeup | $125 per person |
+| Bridal Hair | Starting at [private rate] |
+| Bridal Makeup | Starting at [private rate] |
+| Bridal Hair & Makeup | Starting at [private rate] |
+| Bridal Party Hair | [private rate] per person |
+| Bridal Party Makeup | [private rate] per person |
 
 ### Other confirmed values
 
@@ -70,7 +70,7 @@ page carries generic policy language only, matching the D010 FAQ wording.
 | Manual links | Forwardable link in owner notification **plus** a generator page | Covers phone/DM/email inquiries |
 | Page terms | Generic, no numbers | Consistent with D004/D009/D010 gating |
 | Email rendering | React Email | ~9 more emails are planned in `docs/EMAIL_SEQUENCES.md` |
-| Emoji in collection names | Removed | ✨💍👑 undercut a $1,850 premium tier; `Most Popular` becomes a styled badge |
+| Emoji in collection names | Removed | ✨💍👑 undercut a [private rate] premium tier; `Most Popular` becomes a styled badge |
 
 ## Architecture
 

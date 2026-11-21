@@ -2,7 +2,6 @@ import Image from "next/image";
 import { Container } from "@/components/ui/Container";
 import { CtaButton } from "@/components/ui/CtaButton";
 import { ButtonLink } from "@/components/ui/Button";
-import { Reveal } from "@/components/ui/Reveal";
 import { RecognitionMarquee } from "@/components/sections/RecognitionMarquee";
 import { ParallaxFrame } from "@/components/motion/ParallaxFrame";
 
@@ -36,30 +35,28 @@ export function Hero({
       <Container className="relative grid min-h-[calc(100svh-5.25rem)] items-center gap-12 py-12 sm:py-16 lg:grid-cols-[1.08fr_0.92fr] lg:gap-20 lg:py-20">
         <div className="order-2 lg:order-1">
           {eyebrow && (
-            <Reveal>
-              <p className="eyebrow">{eyebrow}</p>
-            </Reveal>
+            <p className="eyebrow">{eyebrow}</p>
           )}
-          <Reveal delay={90}>
+          <div>
             <h1 className="mt-5 max-w-3xl text-[clamp(2.85rem,4.8vw,5.2rem)] leading-[0.96] tracking-[-0.035em] text-espresso">
               {title}
             </h1>
-          </Reveal>
-          <Reveal delay={180}>
+          </div>
+          <div>
             <p className="mt-8 max-w-xl text-[1.05rem] leading-[1.8] text-cocoa/85 sm:text-lg">
               {subtitle}
             </p>
-          </Reveal>
-          <Reveal delay={260} className="mt-9 flex flex-wrap items-center gap-5">
+          </div>
+          <div className="mt-9 flex flex-wrap items-center gap-5">
             <CtaButton href={primaryCta.href}>{primaryCta.label}</CtaButton>
             {secondaryCta && (
               <ButtonLink href={secondaryCta.href} variant="ghost">
                 {secondaryCta.label}
               </ButtonLink>
             )}
-          </Reveal>
+          </div>
           {reviewCta && (
-            <Reveal delay={330} className="mt-7">
+            <div className="mt-7">
               <a
                 href={reviewCta.href}
                 target="_blank"
@@ -82,11 +79,11 @@ export function Hero({
                   ↗
                 </span>
               </a>
-            </Reveal>
+            </div>
           )}
         </div>
 
-        <Reveal delay={120} className="order-1 lg:order-2">
+        <div className="order-1 lg:order-2">
             <div className="relative mx-auto max-w-[34rem] lg:mr-0">
             <ParallaxFrame className="img-zoom aspect-[4/3] w-full shadow-[0_30px_80px_rgba(70,56,48,0.12)] sm:aspect-[4/5]">
               <Image
@@ -99,7 +96,7 @@ export function Hero({
               />
             </ParallaxFrame>
           </div>
-        </Reveal>
+        </div>
       </Container>
       {showAwards && <RecognitionMarquee />}
     </section>

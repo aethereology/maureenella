@@ -34,9 +34,9 @@ export function Reveal({
     <MotionTag
       data-reveal=""
       className={className}
-      // Deliberately quiet (D016): a short settle, not a slide-up. The page's
-      // one orchestrated motion moment is the wedding-morning timeline.
-      initial={{ opacity: 0, y: 8 }}
+      // Content is visible in the server HTML (audit fix, never hidden behind
+      // hydration). The one orchestrated motion moment is the timeline (D016).
+      initial={false}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.14, margin: "0px 0px -6% 0px" }}
       transition={{
