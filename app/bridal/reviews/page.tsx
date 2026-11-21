@@ -16,7 +16,7 @@ import { site } from "@/lib/site";
 export const metadata = pageMetadata({
   title: "Bridal Hair & Makeup Reviews",
   description:
-    "Read 29 five-star Google reviews about bridal hair, makeup, elopements, photo shoots, and the client experience with Maureen Ella at The Parlor.",
+    "Read five-star Google reviews about bridal hair, makeup, elopements, photo shoots, and the client experience with Maureen Ella at The Parlor.",
   path: "/bridal/reviews",
   noindex: !permissions.testimonialsPublished,
 });
@@ -80,12 +80,11 @@ export default function ReviewsPage() {
                 href={site.reviews.google.value}
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label={`${averageRating.toFixed(1)} on Google from ${reviews.length} client reviews. View Maureen At The Parlor on Google (opens in a new tab)`}
+                aria-label={`${averageRating.toFixed(1)} on Google. View Maureen At The Parlor on Google (opens in a new tab)`}
                 className="group absolute right-0 top-5 bg-espresso px-4 py-5 text-center text-porcelain shadow-xl transition-colors hover:bg-cocoa sm:-right-5 sm:px-5"
               >
                 <span aria-label={`${averageRating.toFixed(1)} out of 5 stars`} className="block text-xs tracking-[0.16em] text-champagne">★★★★★</span>
                 <span className="mt-1 block font-serif text-3xl italic leading-none text-porcelain">{averageRating.toFixed(1)} on Google</span>
-                <span className="mt-2 block text-xs text-porcelain/80">{reviews.length} client reviews</span>
               </a>
             )}
           </Reveal>
@@ -98,7 +97,7 @@ export default function ReviewsPage() {
         <section className="border-b border-hairline bg-porcelain">
           <Container>
             <ul className="grid divide-y divide-hairline sm:grid-cols-3 sm:divide-x sm:divide-y-0">
-              <ProofPoint>{reviews.length} five-star Google reviews</ProofPoint>
+              <ProofPoint>Five-star Google reviews</ProofPoint>
               <ProofPoint>On-location hair + makeup artist</ProofPoint>
               <ProofPoint>Calm, organized care</ProofPoint>
             </ul>
@@ -123,7 +122,7 @@ export default function ReviewsPage() {
         </div>
         {reviews.length > 0 && site.reviews.google.confirmed && (
           <div className="mt-10 flex flex-col gap-4 border-t border-hairline pt-6 text-sm text-cocoa/70 sm:flex-row sm:items-center sm:justify-between">
-            <p>All {reviews.length} five-star reviews shown here were shared publicly on Google for Maureen At The Parlor.</p>
+            <p>Every review shown here was shared publicly on Google for Maureen At The Parlor.</p>
             <ButtonLink
               href={site.reviews.google.value}
               variant="ghost"

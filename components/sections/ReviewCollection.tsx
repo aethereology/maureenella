@@ -51,7 +51,6 @@ export function ReviewCollection({ items }: { items: Testimonial[] }) {
   }, [activeFilter, items]);
 
   const collapsible = visibleItems.length > INITIAL_COUNT;
-  const hiddenCount = collapsible ? visibleItems.length - INITIAL_COUNT : 0;
 
   // After expanding, move focus to the first newly revealed review so keyboard
   // and screen-reader users continue reading where the list grew. After
@@ -99,9 +98,6 @@ export function ReviewCollection({ items }: { items: Testimonial[] }) {
             );
           })}
         </div>
-        <p className="shrink-0 font-serif text-lg italic text-taupe-ink" aria-live="polite">
-          {visibleItems.length} {visibleItems.length === 1 ? "review" : "reviews"}
-        </p>
       </div>
 
       <m.ol
@@ -127,11 +123,6 @@ export function ReviewCollection({ items }: { items: Testimonial[] }) {
 
       {collapsible && (
         <div className="mt-14 flex flex-col items-center gap-3 border-t border-hairline pt-10 text-center">
-          {!expanded && (
-            <p className="text-sm text-cocoa/70">
-              Showing {INITIAL_COUNT} of {visibleItems.length}
-            </p>
-          )}
           <Button
             ref={toggleRef}
             type="button"
@@ -143,7 +134,7 @@ export function ReviewCollection({ items }: { items: Testimonial[] }) {
               setExpanded((value) => !value);
             }}
           >
-            {expanded ? "Show fewer reviews" : `Show more reviews (${hiddenCount})`}
+            {expanded ? "Show fewer reviews" : "Show more reviews"}
           </Button>
         </div>
       )}
