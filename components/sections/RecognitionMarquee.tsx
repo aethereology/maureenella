@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { Container } from "@/components/ui/Container";
 
-const badges = [
+const badges: { src: string; alt: string; optical?: string }[] = [
   {
     src: "/images/badges/maureenbadge1.png",
     alt: "2024 Premier Bride Top 3 Best Wedding Pro in the 904",
@@ -9,6 +9,8 @@ const badges = [
   {
     src: "/images/badges/maureenbadge2.png",
     alt: "Southern Bride recognition",
+    // Artwork carries ~17% transparent padding; scale so it reads the same size.
+    optical: "scale-[1.18]",
   },
   {
     src: "/images/badges/maureenbadge3.png",
@@ -24,18 +26,23 @@ const badges = [
   },
 ];
 
+/**
+ * Recognition ribbon. Motion lives entirely in app/globals.css
+ * (.awards-marquee / -track / -copy) and depends on each cell's width
+ * (w-40 / sm:w-48) — keep those widths if restyling, or the loop speed changes.
+ * Only a top border: the host section already draws the hairline below.
+ */
 export function RecognitionMarquee() {
   return (
-    <div className="border-y border-hairline bg-ivory/80">
-      <Container className="grid items-stretch px-0 sm:px-0 lg:grid-cols-[13rem_minmax(0,1fr)]">
-        <div className="flex items-center justify-between gap-4 border-b border-hairline px-5 py-4 sm:px-8 lg:block lg:border-b-0 lg:border-r lg:py-6">
-          <div>
-            <p className="eyebrow">Award-winning artistry</p>
-            <p className="mt-1 font-serif text-xl italic leading-tight text-espresso">As seen &amp; celebrated</p>
-          </div>
+    <div className="border-t border-hairline bg-ivory/70">
+      <Container className="grid items-stretch lg:grid-cols-[auto_minmax(0,1fr)]">
+        <div className="flex items-center pt-4 lg:border-r lg:border-hairline lg:pr-10 lg:pt-0">
+          <p className="whitespace-nowrap font-serif text-lg italic leading-tight text-taupe-ink">
+            As seen &amp; celebrated
+          </p>
         </div>
 
-        <div className="awards-marquee relative min-h-28 overflow-hidden sm:min-h-32 lg:min-h-0" aria-label="Awards and professional recognition">
+        <div className="awards-marquee relative overflow-hidden" aria-label="Awards and professional recognition">
           <div className="awards-marquee-track flex h-full w-max">
             <BadgeGroup />
             <BadgeGroup duplicate />
@@ -54,24 +61,20 @@ function BadgeGroup({
   return (
     <div
       aria-hidden={duplicate || undefined}
-      className={`awards-marquee-group flex h-full shrink-0 items-stretch ${duplicate ? "awards-marquee-copy" : ""}`}
+      className={`awards-marquee-group flex h-full shrink-0 items-center ${duplicate ? "awards-marquee-copy" : ""}`}
     >
-      {badges.map((badge, index) => (
+      {badges.map((badge) => (
         <figure
           key={badge.src}
-          className="flex h-full min-h-28 w-40 shrink-0 items-center justify-center border-r border-hairline px-5 py-3 sm:min-h-32 sm:w-48 sm:px-7"
+          className="flex h-24 w-40 shrink-0 items-center justify-center sm:h-[6.5rem] sm:w-48"
         >
           <Image
             src={badge.src}
             alt={duplicate ? "" : badge.alt}
             width={160}
             height={160}
-            sizes="(max-width: 640px) 120px, 145px"
-            className={`h-auto w-auto object-contain mix-blend-multiply ${
-              index === 1
-                ? "max-h-24 max-w-36 sm:max-h-28 sm:max-w-40"
-                : "max-h-20 max-w-24 sm:max-h-24 sm:max-w-28"
-            }`}
+            sizes="(max-width: 640px) 68px, 84px"
+            className={`h-[4.25rem] w-[4.25rem] object-contain opacity-90 mix-blend-multiply sm:h-[5.25rem] sm:w-[5.25rem] ${badge.optical ?? ""}`}
           />
         </figure>
       ))}
