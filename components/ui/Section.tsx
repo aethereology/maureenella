@@ -18,6 +18,9 @@ export function Section({
   return (
     <section
       id={id}
+      // Dark bands flip button + label colours through CSS variables
+      // (app/globals.css), so every CTA stays visible on espresso.
+      data-tone={tone === "espresso" ? "dark" : undefined}
       className={clsx(
         "relative py-24 sm:py-32",
         tone === "ivory" && "bg-ivory",
@@ -32,17 +35,19 @@ export function Section({
 }
 
 /**
- * Editorial section heading: numbered index + eyebrow on a hairline rule,
- * then an oversized serif title. `invert` for use on espresso backgrounds.
+ * Section heading: an optional quiet italic label, then the serif title.
+ * `index` is accepted for backwards compatibility but no longer rendered —
+ * numbers are reserved for content that is a real sequence (D016).
+ * `invert` for use on espresso backgrounds.
  */
 export function SectionHeading({
-  index,
   eyebrow,
   title,
   intro,
   align = "left",
   invert = false,
 }: {
+  /** @deprecated Decorative indices were removed in D016; ignored. */
   index?: string;
   eyebrow?: string;
   title: string;
@@ -52,23 +57,13 @@ export function SectionHeading({
 }) {
   return (
     <Reveal className={clsx("max-w-3xl", align === "center" && "mx-auto text-center")}>
-      {(eyebrow || index) && (
-        <div
-          className={clsx(
-            "flex items-center gap-4 border-t pt-4",
-            invert ? "border-porcelain/25" : "border-hairline",
-            align === "center" && "justify-center",
-          )}
-        >
-          {index && <span className="index-mark">{index}</span>}
-          {eyebrow && (
-            <span className={clsx("eyebrow", invert && "text-champagne")}>{eyebrow}</span>
-          )}
-        </div>
+      {eyebrow && (
+        <p className={clsx("eyebrow", invert && "text-champagne")}>{eyebrow}</p>
       )}
       <h2
         className={clsx(
-          "mt-6 text-[clamp(2.8rem,5vw,5.25rem)] leading-[0.95] tracking-[-0.035em]",
+          "text-[clamp(2.6rem,5vw,4.75rem)] leading-[0.98] tracking-[-0.03em]",
+          eyebrow && "mt-3",
           invert ? "text-porcelain" : "text-espresso",
         )}
       >
@@ -79,7 +74,7 @@ export function SectionHeading({
           className={clsx(
             "mt-5 max-w-2xl text-lg leading-relaxed",
             align === "center" && "mx-auto",
-            invert ? "text-porcelain/75" : "text-cocoa/80",
+            invert ? "text-porcelain/80" : "text-cocoa/85",
           )}
         >
           {intro}

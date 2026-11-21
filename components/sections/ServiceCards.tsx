@@ -36,26 +36,25 @@ const CARDS: ServiceCard[] = [
 export function ServiceCards() {
   return (
     <Stagger className="border-t border-hairline">
-      {CARDS.map((card, i) => (
+      {CARDS.map((card) => (
         <StaggerItem
           as="article"
           key={card.title}
-          className="group relative grid grid-cols-1 items-baseline gap-3 overflow-hidden border-b border-hairline py-8 transition-colors sm:grid-cols-[auto_1fr_1.4fr] sm:gap-8 sm:px-3"
+          className="grid grid-cols-1 items-baseline gap-3 border-b border-hairline py-8 sm:grid-cols-[1fr_1.4fr] sm:gap-10"
         >
-          <span aria-hidden className="absolute inset-0 -z-10 origin-left scale-x-0 bg-porcelain/70 transition-transform duration-500 ease-out group-hover:scale-x-100" />
-          <span className="index-mark transition-transform duration-500 group-hover:translate-x-1">{String(i + 1).padStart(2, "0")}</span>
-          <h3 className="font-serif text-2xl text-espresso transition-colors duration-500 group-hover:text-rose sm:text-3xl">
+          <h3 className="font-serif text-2xl text-espresso sm:text-[2rem]">
             {card.title}
           </h3>
-          <p className="text-cocoa/80">{card.description}</p>
+          <p className="max-w-xl text-cocoa/85">{card.description}</p>
         </StaggerItem>
       ))}
 
       {!site.pricing.published && (
-        <Reveal className="grid grid-cols-1 items-baseline gap-3 py-7 sm:grid-cols-[auto_1fr_1.4fr] sm:gap-8">
-          <span className="index-mark">◦</span>
-          <h3 className="font-serif text-2xl text-taupe-deep sm:text-3xl">Pricing</h3>
-          <p className="text-cocoa/80">
+        <Reveal className="grid grid-cols-1 items-baseline gap-3 py-8 sm:grid-cols-[1fr_1.4fr] sm:gap-10">
+          <h3 className="font-serif text-2xl italic text-taupe-ink sm:text-[2rem]">
+            Pricing
+          </h3>
+          <p className="max-w-xl text-cocoa/85">
             Every wedding is different. Share your date and details and we&apos;ll
             send service options and availability tailored to your day.
           </p>

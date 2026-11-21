@@ -82,6 +82,15 @@
 - [x] Add 3 new original (non-migration) bridal-prep posts (2026-07-22): wedding
   hair/makeup timeline, bridal preview what-to-expect, choosing a bridal
   hairstylist. Journal now 27 published articles.
+- [x] Add 15 "People also ask" answer posts (2026-11-21, D015) covering bridal
+  beauty cost, tipping, who pays, wedding budget, hair/makeup order, foundation,
+  night-before, mother-of-the-bride, and 2026 trends. Content lives in
+  `content/journalBrideQuestions.ts`. Each post has one unique hero photo, and
+  none of those photos appear in any other Journal post (checked by perceptual
+  hash). New category: Planning & Etiquette. Journal is now 44 published articles.
+- [ ] Re-check the third-party figures in the D015 cost/etiquette posts each
+  February, when The Knot and Zola publish new studies. Update the copy, the
+  "Sources" list, and `dateModified`. Rename the 2026 trends post for 2027.
 
 ## SEO
 
@@ -116,6 +125,19 @@
 - [x] Live end-to-end send verified through Resend — 4 emails, both the happy and degraded paths — 2026-08-06.
 - [x] Docs recorded (D013 in `DECISIONS.md`; env vars, test plan, launch checklist updated).
 - [ ] **Only remaining production step:** set `PRICING_LINK_SECRET` (production + preview) and `PRICING_OWNER_KEY` (production) in Vercel, then run the post-deploy smoke test in `docs/LAUNCH_CHECKLIST.md`.
+
+## "First Light" UI enhancement (D016)
+
+- [x] Self-hosted fonts as Latin WOFF2 subsets (~142 KB, was ~2 MB TTF); `scripts/subset-fonts.py` regenerates them.
+- [x] Fix invisible CTAs on espresso bands (14 pages) via `--btn-*` variables flipped by `Section tone="espresso"`.
+- [x] Small-text ink tokens `taupe-ink` / `rose-deep` (old label colours failed WCAG AA on ivory/cream).
+- [x] Remove template chrome: decorative indices, tracked all-caps labels, appended arrows, shine sweep, "M" watermark.
+- [x] Signature wedding-morning timeline (`components/sections/ProcessSteps.tsx`), reduced-motion safe.
+- [x] Nav active state as a CSS marker (old `layoutId` pill never animated under `domAnimation`).
+- [x] Branded 404 (`app/not-found.tsx`); calmer error page.
+- [x] Portfolio lightbox; reviews "Show more"; about page layout.
+- [x] Journal category filter + featured story; article, prep-guide (printable) and favorites polish.
+- [ ] Founder review of the new look on a phone before launch.
 
 ## QA
 

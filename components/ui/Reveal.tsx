@@ -34,12 +34,14 @@ export function Reveal({
     <MotionTag
       data-reveal=""
       className={className}
-      initial={{ opacity: 0, y: 24 }}
+      // Deliberately quiet (D016): a short settle, not a slide-up. The page's
+      // one orchestrated motion moment is the wedding-morning timeline.
+      initial={{ opacity: 0, y: 8 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.14, margin: "0px 0px -6% 0px" }}
       transition={{
-        duration: 0.72,
-        delay: delay / 1000,
+        duration: 0.55,
+        delay: Math.min(delay, 160) / 1000,
         ease: [0.22, 1, 0.36, 1],
       }}
     >

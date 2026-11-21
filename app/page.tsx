@@ -71,7 +71,7 @@ export default function HomePage() {
       {/* Services */}
       <Section tone="ivory">
         <SectionHeading
-          index="02"
+         
           eyebrow="What we offer"
           title="Bridal services designed around your day"
           intro="Wedding-day hair and makeup for brides, bridal parties, guests, elopements, and destination celebrations."
@@ -88,7 +88,7 @@ export default function HomePage() {
 
       {portfolio.length > 0 && (
         <Section>
-          <SectionHeading index="03" eyebrow="Portfolio" title="Real brides, real wedding mornings" />
+          <SectionHeading eyebrow="Portfolio" title="Real brides, real wedding mornings" />
           <div className="mt-12 grid grid-cols-2 gap-4 lg:grid-cols-4">
             {portfolio.slice(0, 4).map((item, i) => (
               <Reveal
@@ -119,7 +119,7 @@ export default function HomePage() {
 
       {/* Process */}
       <Section tone="cream">
-        <SectionHeading index="04" eyebrow="How it works" title="A calm, guided process from inquiry to wedding morning" />
+        <SectionHeading eyebrow="How it works" title="A calm, guided process from inquiry to wedding morning" />
         <div className="mt-14">
           <ProcessSteps />
         </div>
@@ -156,7 +156,7 @@ export default function HomePage() {
       {/* Journal preview */}
       {journal.length > 0 && (
         <Section tone="ivory">
-          <SectionHeading index="05" eyebrow="Journal" title="Bridal beauty notes & guides" />
+          <SectionHeading eyebrow="Journal" title="Bridal beauty notes & guides" />
           <div className="mt-12 grid gap-8 md:grid-cols-3">
             {journal.map((post, i) => (
               <Reveal as="article" key={post.slug} delay={i * 90}>
@@ -173,7 +173,7 @@ export default function HomePage() {
                     </div>
                   )}
                   <p className="eyebrow mt-5">{categoryLabel(post.category)}</p>
-                  <h3 className="mt-2.5 font-serif text-2xl leading-snug text-espresso transition-colors group-hover:text-rose">
+                  <h3 className="mt-2.5 font-serif text-2xl leading-snug text-espresso transition-colors group-hover:text-rose-deep">
                     {post.title}
                   </h3>
                 </Link>

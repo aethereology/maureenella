@@ -108,6 +108,7 @@ const CATEGORY_LABELS: Record<string, string> = {
   "bridal-prep": "Bridal Prep",
   "real-weddings": "Real Weddings",
   "beauty-favorites": "Beauty Favorites",
+  "planning-etiquette": "Planning & Etiquette",
   education: "Education",
   "business-mentorship": "Business Mentorship",
 };

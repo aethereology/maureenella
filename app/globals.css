@@ -1,10 +1,12 @@
 @import "tailwindcss";
 
 /*
-  Maureen Ella — "Editorial Atelier" design system.
-  A refined fashion-magazine bridal aesthetic: warm-neutral palette, oversized
-  Cormorant display type, hairline rules, numbered section indices, generous
-  negative space, subtle grain, and orchestrated reveals. See docs/UI_DIRECTION.md.
+  Maureen Ella — "First Light" design system (D016), evolved from the
+  original "Editorial Atelier". Warm-neutral palette and Cormorant + Jost per
+  docs/UI_DIRECTION.md; quiet chrome (italic serif labels, numbers only for real
+  sequences, no decorative arrows); one orchestrated motion moment — the
+  wedding-morning timeline (components/sections/ProcessSteps.tsx).
+  Spec: docs/superpowers/specs/2026-11-21-first-light-ui-design.md
 */
 @theme {
   /* Warm neutral foundation (deepened for editorial contrast) */
@@ -20,6 +22,11 @@
   --color-rose-soft: #e4c4ba;
   --color-champagne: #d8bf9c;
   --color-hairline: #d8c9b3;
+  /* Ink tokens for SMALL text — the base taupe/rose fail WCAG AA at body sizes.
+     taupe-ink: 5.6:1 porcelain, 5.2:1 ivory, 4.7:1 cream.
+     rose-deep: 4.8:1 porcelain, 4.5:1 ivory. */
+  --color-taupe-ink: #75614a;
+  --color-rose-deep: #9a5e52;
 
   --color-background: var(--color-porcelain);
   --color-foreground: var(--color-cocoa);
@@ -37,6 +44,22 @@
 :root {
   --hairline: var(--color-hairline);
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* Button colours resolve through variables so a dark band can flip them.
+     Section tone="espresso" sets data-tone="dark" (components/ui/Section.tsx). */
+  --btn-bg: var(--color-espresso);
+  --btn-bg-hover: var(--color-cocoa);
+  --btn-fg: var(--color-porcelain);
+  --btn-ink: var(--color-espresso);
+  --btn-focus: var(--color-rose);
+}
+
+[data-tone="dark"] {
+  --btn-bg: var(--color-porcelain);
+  --btn-bg-hover: var(--color-champagne);
+  --btn-fg: var(--color-espresso);
+  --btn-ink: var(--color-porcelain);
+  --btn-focus: var(--color-champagne);
 }
 
 /*
@@ -71,6 +94,13 @@
     line-height: 1.05;
     letter-spacing: -0.015em;
     color: var(--color-espresso);
+    text-wrap: balance;
+    /* Cormorant's old-style figures sit with lowercase text. */
+    font-variant-numeric: oldstyle-nums proportional-nums;
+  }
+
+  p, li, blockquote, figcaption {
+    text-wrap: pretty;
   }
 
   /* Default hairline border color for all elements. */
@@ -96,23 +126,34 @@
   }
 }
 
-/* Editorial labels — uppercase, tracked, small. */
+/*
+  Quiet label: an italic serif aside in sentence case, set at reading size —
+  replaces the tracked all-caps eyebrow. Use only where it tells the reader
+  something the heading doesn't. On dark bands it inherits a light colour
+  via [data-tone="dark"].
+*/
 .eyebrow {
-  font-family: var(--font-sans);
-  text-transform: uppercase;
-  letter-spacing: 0.3em;
-  font-size: 0.7rem;
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.125rem;
   font-weight: 500;
-  color: var(--color-taupe-deep);
+  line-height: 1.3;
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--color-taupe-ink);
 }
 
-/* Numbered section index, e.g. "01 — ". */
+[data-tone="dark"] .eyebrow {
+  color: var(--color-champagne);
+}
+
+/* Sequence number — only for content that really is ordered (process steps). */
 .index-mark {
-  font-family: var(--font-sans);
-  font-size: 0.7rem;
-  letter-spacing: 0.25em;
+  font-family: var(--font-serif);
+  font-size: 1.125rem;
   font-weight: 500;
-  color: var(--color-rose);
+  font-variant-numeric: oldstyle-nums;
+  color: var(--color-rose-deep);
 }
 
 /* Magazine drop cap for article bodies. */

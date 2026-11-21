@@ -23,7 +23,7 @@ export function ReviewStrip() {
               <p className="pullquote text-xl leading-snug text-espresso sm:text-2xl">
                 &ldquo;{t.quote}&rdquo;
               </p>
-              <p className="mt-4 text-[0.7rem] uppercase tracking-[0.2em] text-taupe-deep">
+              <p className="mt-4 text-sm text-taupe-ink">— 
                 {t.displayName}
               </p>
             </Reveal>

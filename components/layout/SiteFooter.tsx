@@ -37,7 +37,7 @@ export function SiteFooter() {
         {/* Oversized wordmark + CTA */}
         <div className="flex flex-col gap-8 border-b border-hairline pb-12 lg:flex-row lg:items-end lg:justify-between">
           <div>
-            <p className="index-mark">Maureen Ella Bridal</p>
+            <p className="eyebrow">Maureen Ella Bridal</p>
             <p className="mt-4 font-serif text-4xl leading-[1.05] text-espresso sm:text-5xl">
               Let&apos;s plan your
               <br />
@@ -46,10 +46,9 @@ export function SiteFooter() {
           </div>
           <Link
             href={navigation.cta.href}
-            className="group inline-flex w-fit items-center gap-3 border-b border-espresso pb-1 text-[0.7rem] uppercase tracking-[0.22em] text-espresso"
+            className="w-fit border-b border-espresso pb-1 text-[0.7rem] uppercase tracking-[0.18em] text-espresso transition-colors duration-300 hover:border-rose-deep hover:text-rose-deep focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-rose"
           >
             {navigation.cta.label}
-            <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
           </Link>
         </div>
 
@@ -60,7 +59,7 @@ export function SiteFooter() {
               {site.tagline}
             </p>
             <p className="mt-4 text-sm text-cocoa/70">
-              Serving {site.serviceAreas.slice(0, 4).join(" · ")} &amp;
+              Serving {site.serviceAreas.slice(0, 3).join(", ")}, {site.serviceAreas[3]} &amp;
               destination weddings.
             </p>
             <div className="mt-6 space-y-1.5 text-sm">
@@ -135,9 +134,7 @@ export function SiteFooter() {
             </ul>
 
             <div className="mt-7 border-t border-hairline pt-5">
-              <p className="mb-3 text-[0.6rem] uppercase tracking-[0.18em] text-taupe-deep">
-                Recognition
-              </p>
+              <p className="eyebrow mb-3">Recognition</p>
               <div className="grid grid-cols-5 gap-2" aria-label="Awards and recognition">
                 {footerBadges.map((badge) => (
                   <figure
@@ -159,7 +156,7 @@ export function SiteFooter() {
           </nav>
         </div>
 
-        <div className="mt-14 flex flex-col gap-2 border-t border-hairline pt-6 text-xs uppercase tracking-[0.15em] text-cocoa/60 sm:flex-row sm:items-center sm:justify-between">
+        <div className="mt-14 flex flex-col gap-2 border-t border-hairline pt-6 text-sm text-cocoa/75 sm:flex-row sm:items-center sm:justify-between">
           <p>© {year} {site.brand}</p>
           <div className="flex gap-6">
             <Link href="/privacy" className="hover:text-espresso">Privacy</Link>

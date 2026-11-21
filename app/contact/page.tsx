@@ -31,7 +31,7 @@ export default function ContactPage() {
                 <p>
                   <a
                     href={`mailto:${site.contact.email.value}`}
-                    className="transition-colors hover:text-rose"
+                    className="transition-colors hover:text-rose-deep"
                   >
                     {site.contact.email.value}
                   </a>
@@ -39,7 +39,7 @@ export default function ContactPage() {
               )}
               {site.contact.phone.confirmed && site.contact.phone.value && (
                 <p>
-                  <a href={phoneHref} className="transition-colors hover:text-rose">
+                  <a href={phoneHref} className="transition-colors hover:text-rose-deep">
                     {site.contact.phone.value}
                   </a>
                 </p>

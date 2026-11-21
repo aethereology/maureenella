@@ -50,7 +50,7 @@ export default async function PricingGuidePage({
       </Section>
 
       <Section size="wide" className="pt-0">
-        <SectionHeading index="01" eyebrow="Collections" title="Bridal glam collections" />
+        <SectionHeading eyebrow="Collections" title="Bridal glam collections" />
         <div className="mt-14 grid gap-6 lg:grid-cols-3">
           {collections.map((collection, i) => (
             <CollectionCard key={collection.slug} collection={collection} index={i} />
@@ -59,14 +59,14 @@ export default async function PricingGuidePage({
       </Section>
 
       <Section tone="ivory" size="narrow">
-        <SectionHeading index="02" eyebrow="Individual services" title="À la carte" />
+        <SectionHeading eyebrow="Individual services" title="À la carte" />
         <div className="mt-12">
           <ALaCarteTable />
         </div>
       </Section>
 
       <Section size="narrow">
-        <SectionHeading index="03" eyebrow="Details" title="Good to know" />
+        <SectionHeading eyebrow="Details" title="Good to know" />
         <ul className="mt-12 space-y-5 border-t border-hairline pt-8">
           {goodToKnow.map((note) => (
             <li key={note} className="flex gap-4 text-cocoa/85">
@@ -79,7 +79,7 @@ export default async function PricingGuidePage({
 
       <Section tone="espresso" size="narrow">
         <SectionHeading
-          index="04"
+         
           eyebrow="Next step"
           title="Tell me more about your day"
           intro="Book a 30-minute consultation and we'll walk through your timeline, your party, and the collection that fits."

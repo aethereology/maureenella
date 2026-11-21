@@ -283,6 +283,69 @@ Experience. That is defensible (Gold adds the preview, lashes and kits), but it
 was not addressed in her revision and may be unintentional. Do not change it
 without her.
 
+### D015 - Journal may cite third-party cost data; Maureen's prices stay private
+
+Decision (2026-11-21): we published 15 Journal posts answering the bridal
+questions Google most often shows in "People also ask" (cost, tipping, who
+pays, budget, etiquette, beauty). The cost questions can't be answered clearly
+without numbers. So these posts **may** cite **third-party national figures**,
+on these conditions:
+
+- Name the source and year in the sentence (e.g. "Zola, 2026" or "The Knot 2026
+  Real Weddings Study").
+- End each data post with a "Sources" list.
+- Present the figures as context, never as a quote.
+
+Every cost post states that the figures are not Maureen Ella's pricing, and
+that her pricing is shared privately after an inquiry (D013).
+**Maureen's own prices, collection names, and any travel, retainer, minimum,
+or touch-up amounts still never appear on a public page.** D004/D009/D013
+still apply.
+
+Sources used (all checked 2026-11-21):
+
+| Source | Date | Used for |
+| --- | --- | --- |
+| The Knot 2026 Real Weddings Study (via the theknotww.com press release and WeddingPro) | Feb 2026 | $34,000 average, 117 guests, $292 per guest |
+| Zola First Look Report 2026 | updated Oct 2026 | who contributes, $36,000 average, 145 guests |
+| Zola wedding hair and makeup cost guide | Mar 2026 | per-service ranges, $982 average spend |
+| Zola wedding cost index | Mar 2026 | Florida budget range $25,200–$37,800 |
+| Zola tipping guide | Jun 2026 | 16–20% |
+| WeddingWire hair and makeup cost page | accessed Nov 2026 | couple-reported averages |
+| Emily Post Institute | undated | traditional division of expenses |
+| Pinterest Wedding Trends Report 2026 | Apr 2026 | 2026 hair trends |
+| Who What Wear wedding hair trends | Feb 2026 | 2026 hair trends |
+
+Figures that appeared only in search snippets, such as theknot.com's own pages
+(which blocked automated fetches), were left out.
+
+Rationale: a cost answer without numbers fails both brides and search. National
+data with clear sources builds trust, can be cited by AI answer engines, and
+keeps the inquiry-first pricing funnel intact. Review cadence is in TASKS.md.
+
+### D016 - "First Light" UI direction (site-wide creative enhancement)
+
+Decision (founder, 2026-11-21): evolve the "Editorial Atelier" look rather than
+rebrand. Palette and Cormorant + Jost stay (per UI_DIRECTION.md); the generic
+template chrome goes — decorative "02 / 03" section indices, tracked all-caps
+labels over every heading, arrows appended to links, the button shine sweep,
+the "M" watermark and trailing rose period on page titles. Labels are now a quiet
+Cormorant italic; numbers appear only on real sequences. The one signature
+moment is the **wedding-morning timeline** (ProcessSteps): a line draws through
+the five steps as you scroll, with a champagne "first light" travelling along it.
+
+Also in this pass: CTAs on espresso bands were espresso-on-espresso (invisible)
+on 14 pages — buttons now take colours from CSS variables that a dark Section
+flips; new small-text ink tokens (`taupe-ink`, `rose-deep`) because the old label
+colours failed WCAG AA on ivory/cream; self-hosted fonts are Latin WOFF2 subsets
+(~142 KB, was ~2 MB of TTF; `scripts/subset-fonts.py`); branded 404; portfolio
+lightbox; reviews and Journal made shorter to browse on mobile.
+
+Rationale: the old chrome read as a template rather than as Maureen. Keeping the
+client's palette and type while spending boldness in one subject-grounded place
+makes the site distinctive without risking the brand. Spec:
+`docs/superpowers/specs/2026-11-21-first-light-ui-design.md`.
+
 ## Pending decisions
 
 - Confirm Education product offers + pricing before any are sold (D005).

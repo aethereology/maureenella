@@ -47,7 +47,7 @@ export function SiteHeader() {
         >
           <span>
             <span className="block font-serif text-[1.55rem] leading-none tracking-[-0.025em]">Maureen Ella</span>
-            <span className="mt-1 hidden text-[0.52rem] uppercase tracking-[0.27em] text-taupe-deep sm:block">Bridal artistry</span>
+            <span className="mt-0.5 hidden font-serif text-[0.95rem] italic leading-none text-taupe-ink sm:block">Bridal hair &amp; makeup</span>
           </span>
         </Link>
 
@@ -60,17 +60,15 @@ export function SiteHeader() {
                 href={item.href}
                 aria-current={active ? "page" : undefined}
                 className={clsx(
-                  "relative isolate px-3 py-2.5 text-[0.62rem] uppercase tracking-[0.18em] transition-colors duration-300",
-                  active ? "text-espresso" : "text-cocoa/70 hover:text-espresso",
+                  // Active page: a short rose rule under the label (CSS only —
+                  // the old layoutId pill never animated under domAnimation).
+                  "relative px-3 py-2.5 text-[0.64rem] uppercase tracking-[0.18em] transition-colors duration-300",
+                  "after:absolute after:inset-x-3 after:bottom-1 after:h-px after:origin-left after:bg-rose-deep after:transition-transform after:duration-500",
+                  active
+                    ? "text-espresso after:scale-x-100"
+                    : "text-cocoa/80 after:scale-x-0 hover:text-espresso hover:after:scale-x-100 hover:after:bg-hairline",
                 )}
               >
-                {active && (
-                  <m.span
-                    layoutId="primary-navigation-active"
-                    className="absolute inset-0 -z-10 border border-hairline bg-cream/75"
-                    transition={navSpring}
-                  />
-                )}
                 {item.label}
               </Link>
             );
@@ -136,7 +134,7 @@ export function SiteHeader() {
                 animate="visible"
                 variants={{ visible: { transition: { staggerChildren: 0.045, delayChildren: 0.06 } } }}
               >
-                {navigation.primary.map((item, index) => (
+                {navigation.primary.map((item) => (
                   <m.li
                     key={item.href}
                     className="border-b border-hairline sm:odd:border-r"
@@ -150,7 +148,6 @@ export function SiteHeader() {
                       aria-current={activeHref === item.href ? "page" : undefined}
                       className="group flex items-baseline gap-4 py-3.5 sm:px-4"
                     >
-                      <span className="index-mark">{String(index + 1).padStart(2, "0")}</span>
                       <span className={clsx("font-serif text-2xl transition-colors group-hover:text-rose", activeHref === item.href ? "text-rose" : "text-espresso")}>{item.label}</span>
                     </Link>
                   </m.li>

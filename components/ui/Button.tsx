@@ -6,39 +6,50 @@ import { clsx } from "@/lib/clsx";
 
 type Variant = "primary" | "secondary" | "ghost" | "ghostInverse";
 
+/*
+  Colours resolve through --btn-* variables (app/globals.css). Inside a
+  Section tone="espresso" (data-tone="dark") they flip to light-on-dark, so a
+  primary CTA is never espresso-on-espresso.
+*/
 const base =
-  "group/btn relative inline-flex items-center justify-center gap-2.5 overflow-hidden font-sans text-[0.68rem] uppercase tracking-[0.2em] transition-colors duration-300 focus-visible:outline-2 focus-visible:outline-offset-2 disabled:cursor-not-allowed disabled:opacity-50";
+  "group/btn relative inline-flex items-center justify-center gap-2.5 font-sans text-[0.7rem] uppercase tracking-[0.18em] transition-colors duration-300 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[color:var(--btn-focus)] disabled:cursor-not-allowed disabled:opacity-50";
 
 const variants: Record<Variant, string> = {
   primary:
-    "bg-espresso px-7 py-4 text-porcelain shadow-[0_12px_30px_rgba(37,29,23,0.12)] hover:bg-cocoa focus-visible:outline-rose",
+    "bg-[color:var(--btn-bg)] px-7 py-4 text-[color:var(--btn-fg)] hover:bg-[color:var(--btn-bg-hover)]",
   secondary:
-    "border border-espresso px-7 py-4 text-espresso hover:bg-espresso hover:text-porcelain focus-visible:outline-rose",
-  ghost: "text-espresso focus-visible:outline-rose",
-  ghostInverse: "text-porcelain focus-visible:outline-champagne",
+    "border border-[color:var(--btn-ink)] px-7 py-4 text-[color:var(--btn-ink)] hover:bg-[color:var(--btn-ink)] hover:text-[color:var(--btn-fg)]",
+  ghost: "py-2 text-[color:var(--btn-ink)]",
+  // Explicit light ghost, kept for the private pricing guide (works anywhere).
+  ghostInverse: "py-2 text-porcelain focus-visible:outline-champagne",
 };
 
 function isGhostVariant(variant: Variant) {
   return variant === "ghost" || variant === "ghostInverse";
 }
 
-/** Ghost variant renders text with an animated underline + arrow. */
+/** Ghost link: a hairline underline that thickens toward the hover. */
 function GhostInner({ children }: { children: React.ReactNode }) {
   return (
-    <span className="relative inline-flex items-center gap-2">
-      <span className="relative">
-        {children}
-        <span
-          aria-hidden
-          className="absolute -bottom-1 left-0 h-px w-full origin-left scale-x-100 bg-current transition-transform duration-300 group-hover/btn:scale-x-0"
-        />
-      </span>
-      <span aria-hidden className="transition-transform duration-300 group-hover/btn:translate-x-1">
-        →
-      </span>
+    <span className="relative">
+      {children}
+      <span
+        aria-hidden
+        className="absolute -bottom-1.5 left-0 h-px w-full bg-current opacity-40 transition-opacity duration-300 group-hover/btn:opacity-100"
+      />
+      <span
+        aria-hidden
+        className="absolute -bottom-1.5 left-0 h-px w-full origin-left scale-x-0 bg-current transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover/btn:scale-x-100"
+      />
     </span>
   );
 }
+
+const press = {
+  whileHover: { y: -1 },
+  whileTap: { y: 0, scale: 0.98 },
+  transition: { type: "spring" as const, stiffness: 480, damping: 30, mass: 0.45 },
+};
 
 export function ButtonLink({
   href,
@@ -55,22 +66,9 @@ export function ButtonLink({
   const ghost = isGhostVariant(variant);
 
   return (
-    <m.span
-      className="inline-flex"
-      whileHover={{ y: -2, scale: 1.01 }}
-      whileTap={{ y: 0, scale: 0.965 }}
-      transition={{ type: "spring", stiffness: 480, damping: 28, mass: 0.45 }}
-    >
+    <m.span className="inline-flex" {...press}>
       <Link href={href} className={clsx(base, variants[variant], className)} {...rest}>
-        {!ghost && (
-          <span
-            aria-hidden
-            className="absolute inset-y-0 -left-1/3 w-1/4 -skew-x-12 bg-white/10 opacity-0 blur-sm transition-all duration-700 group-hover/btn:left-[115%] group-hover/btn:opacity-100"
-          />
-        )}
-        <span className="relative">
-          {ghost ? <GhostInner>{children}</GhostInner> : children}
-        </span>
+        {ghost ? <GhostInner>{children}</GhostInner> : children}
       </Link>
     </m.span>
   );
@@ -89,13 +87,7 @@ export function Button({
   const ghost = isGhostVariant(variant);
 
   return (
-    <m.button
-      className={clsx(base, variants[variant], className)}
-      whileHover={{ y: -2, scale: 1.01 }}
-      whileTap={{ y: 0, scale: 0.965 }}
-      transition={{ type: "spring", stiffness: 480, damping: 28, mass: 0.45 }}
-      {...rest}
-    >
+    <m.button className={clsx(base, variants[variant], className)} {...press} {...rest}>
       {ghost ? <GhostInner>{children}</GhostInner> : children}
     </m.button>
   );

@@ -17,7 +17,7 @@ export function Breadcrumbs({
       <Container className="py-3.5">
         <BreadcrumbSchema items={trail} />
         <nav aria-label="Breadcrumb">
-          <ol className="flex flex-wrap items-center gap-2 text-[0.65rem] uppercase tracking-[0.15em] text-cocoa/60">
+          <ol className="flex flex-wrap items-center gap-2 text-sm text-cocoa/75">
             {trail.map((item, i) => {
               const last = i === trail.length - 1;
               return (
