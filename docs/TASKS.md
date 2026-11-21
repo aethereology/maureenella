@@ -82,6 +82,15 @@
 - [x] Add 3 new original (non-migration) bridal-prep posts (2026-07-22): wedding
   hair/makeup timeline, bridal preview what-to-expect, choosing a bridal
   hairstylist. Journal now 27 published articles.
+- [x] Add 15 "People also ask" answer posts (2026-11-21, D015) covering bridal
+  beauty cost, tipping, who pays, wedding budget, hair/makeup order, foundation,
+  night-before, mother-of-the-bride, and 2026 trends. Content lives in
+  `content/journalBrideQuestions.ts`. Each post has one unique hero photo, and
+  none of those photos appear in any other Journal post (checked by perceptual
+  hash). New category: Planning & Etiquette. Journal is now 44 published articles.
+- [ ] Re-check the third-party figures in the D015 cost/etiquette posts each
+  February, when The Knot and Zola publish new studies. Update the copy, the
+  "Sources" list, and `dateModified`. Rename the 2026 trends post for 2027.
 
 ## SEO
 

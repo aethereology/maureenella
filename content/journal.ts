@@ -5,6 +5,7 @@
  * as "coming soon" in the index rather than fabricating private details.
  */
 import { blogPosts, type BlogPostMeta } from "@/lib/content";
+import { BRIDE_QUESTION_BODIES } from "@/content/journalBrideQuestions";
 
 export type Block =
   | { type: "p"; text: string }
@@ -33,21 +34,22 @@ export type Article = BlogPostMeta & {
   relatedLinks?: { href: string; title: string; description: string }[];
 };
 
-const BODIES: Record<
-  string,
-  {
-    excerpt: string;
-    metaTitle?: string;
-    image?: string;
-    imageAlt?: string;
-    imagePosition?: string;
-    body: Block[];
-    datePublished?: string;
-    dateModified?: string;
-    faqs?: { question: string; answer: string }[];
-    relatedLinks?: { href: string; title: string; description: string }[];
-  }
-> = {
+/** The authored half of an article; the seed (`seed/blog_posts.json`) supplies slug/title/category. */
+export type AuthoredArticle = {
+  excerpt: string;
+  metaTitle?: string;
+  image?: string;
+  imageAlt?: string;
+  imagePosition?: string;
+  body: Block[];
+  datePublished?: string;
+  dateModified?: string;
+  faqs?: { question: string; answer: string }[];
+  relatedLinks?: { href: string; title: string; description: string }[];
+};
+
+const BODIES: Record<string, AuthoredArticle> = {
+  ...BRIDE_QUESTION_BODIES,
   "curly-bridal-hair-prep": {
     excerpt:
       "Curly hair can hold beautiful, romantic bridal styles — the secret is preparation, not fighting your texture.",
