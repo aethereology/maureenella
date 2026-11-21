@@ -374,6 +374,30 @@ Guardrails that replace human review:
 - Process lives in `journal-autopilot/RUNBOOK.md`; the routine prompt only says
   to follow it, so the process is versioned with the code.
 
+### D018 - Repricing: Gold from $799, rates set per person (supersedes D014 prices)
+
+Decision (founder, 2026-11-21): Maureen raised the entry collection and rebuilt
+every price from per-person à la carte rates, so each collection is a visible
+saving against booking the same services individually. Prices use 9 endings.
+
+| | Was | Now |
+| --- | --- | --- |
+| The Gold Experience | $650 | starting at $799 |
+| The Diamond Experience | $1,050 | starting at $1,299 |
+| The Platinum Experience | $1,850 | starting at $2,199 |
+| Bridal Hair / Bridal Makeup | $250 each | starting at $299 each |
+| Bridal Hair and Makeup | $450 | starting at $599 |
+| Bridal Party Hair / Makeup | $125 per person | $149 per person |
+
+Collection contents are unchanged from D014. Diamond saves $194 and Platinum
+$188 (plus the additional artist) against à la carte; Gold is $200 above
+bridal hair and makeup for the preview, lashes, and both touch-up kits.
+Still open: whether Diamond/Platinum should include the preview (D014 note),
+and a combined per-person party hair-and-makeup price. Travel, retainer,
+minimum, and touch-up amounts remain unpublished (D004/D009). Prices stay
+private to `/pricing/[token]` (D013); live pricing links show the new figures
+immediately because the page reads them on each visit.
+
 ## Pending decisions
 
 - Confirm Education product offers + pricing before any are sold (D005).

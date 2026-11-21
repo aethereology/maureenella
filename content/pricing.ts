@@ -2,9 +2,10 @@
  * Bridal pricing, delivered privately after inquiry (D013).
  *
  * Collections revised by the founder 2026-08-06 (D014): renamed to the
- * Gold/Diamond/Platinum "Experience" tiers, entry tier raised to $650 with a
- * preview added, and a per-collection travel note. À la carte is unchanged and
- * still awaiting Maureen's review against the new $650 entry tier.
+ * Gold/Diamond/Platinum "Experience" tiers, with a preview in Gold and a
+ * per-collection travel note. Repriced 2026-11-21 (D018): per-person à la carte
+ * rates set first, each collection priced below its à la carte total, priced
+ * on 9 endings (Gold $799).
  *
  * These figures MUST NOT reach any public, indexable page — they render only
  * inside /pricing/[token], which is noindex and robots-disallowed. Travel,
@@ -34,7 +35,7 @@ export const collections: Collection[] = [
   {
     slug: "gold-experience",
     name: "The Gold Experience",
-    price: "Starting at $650",
+    price: "Starting at $799",
     positioning:
       "For the bride who wants a flawless, stress-free wedding morning.",
     includes: [
@@ -52,7 +53,7 @@ export const collections: Collection[] = [
   {
     slug: "diamond-experience",
     name: "The Diamond Experience",
-    price: "Starting at $1,050",
+    price: "Starting at $1,299",
     positioning: "For the bride and her closest loved ones.",
     featured: true,
     featuredLabel: "Highly Requested",
@@ -71,7 +72,7 @@ export const collections: Collection[] = [
   {
     slug: "platinum-experience",
     name: "The Platinum Experience",
-    price: "Starting at $1,850",
+    price: "Starting at $2,199",
     positioning:
       "The complete luxury beauty experience for larger wedding parties.",
     includes: [
@@ -91,11 +92,11 @@ export const collections: Collection[] = [
 ];
 
 export const aLaCarte: ALaCarteItem[] = [
-  { service: "Bridal Hair", price: "Starting at $250" },
-  { service: "Bridal Makeup", price: "Starting at $250" },
-  { service: "Bridal Hair and Makeup", price: "Starting at $450" },
-  { service: "Bridal Party Hair", price: "$125 per person" },
-  { service: "Bridal Party Makeup", price: "$125 per person" },
+  { service: "Bridal Hair", price: "Starting at $299" },
+  { service: "Bridal Makeup", price: "Starting at $299" },
+  { service: "Bridal Hair and Makeup", price: "Starting at $599" },
+  { service: "Bridal Party Hair", price: "$149 per person" },
+  { service: "Bridal Party Makeup", price: "$149 per person" },
 ];
 
 export const pricingIntro =
