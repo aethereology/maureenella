@@ -86,8 +86,8 @@ export function ReviewsShowcase({ items }: { items: ReviewItem[] }) {
                     </AnimatePresence>
 
                     <div className="flex items-center gap-4">
-                      <span className="text-xs tabular-nums text-taupe-deep">
-                        {String(activeIndex + 1).padStart(2, "0")} / {String(items.length).padStart(2, "0")}
+                      <span className="text-sm tabular-nums text-taupe-ink">
+                        {activeIndex + 1} of {items.length}
                       </span>
                       {items.length > 1 && (
                         <span className="flex gap-2">

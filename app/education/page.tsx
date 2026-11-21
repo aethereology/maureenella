@@ -40,7 +40,7 @@ export default function EducationPage() {
       {/* Who it's for */}
       <Section>
         <SectionHeading
-          index="01"
+         
           eyebrow="Who it's for"
           title="Made for working bridal artists"
         />
@@ -62,7 +62,7 @@ export default function EducationPage() {
       {/* Problems solved */}
       <Section tone="cream">
         <SectionHeading
-          index="02"
+         
           eyebrow="What we fix"
           title="Less guesswork. More confidence."
           intro="Most bridal artists aren't short on talent — they're short on systems. These are the gaps the mentorship is built to close."
@@ -73,9 +73,7 @@ export default function EducationPage() {
               key={item}
               className="flex gap-3 rounded-card border border-hairline bg-porcelain p-5 text-cocoa/90"
             >
-              <span aria-hidden className="mt-1 text-rose">
-                →
-              </span>
+              <span aria-hidden className="mt-[0.7rem] h-1.5 w-1.5 shrink-0 rounded-full bg-rose-deep" />
               <span>{item}</span>
             </li>
           ))}
@@ -85,7 +83,7 @@ export default function EducationPage() {
       {/* The CONFIDENT framework */}
       <Section>
         <SectionHeading
-          index="03"
+         
           eyebrow="The method"
           title="The CONFIDENT Bridal Business Method"
           intro="A simple framework for turning scattered effort into a calm, repeatable bridal business."
@@ -111,7 +109,7 @@ export default function EducationPage() {
       {/* Mentor */}
       <Section tone="cream" size="narrow">
         <SectionHeading
-          index="04"
+         
           eyebrow={mentor.eyebrow}
           title={mentor.title}
         />
@@ -139,7 +137,7 @@ export default function EducationPage() {
       {/* What's coming */}
       <Section tone="cream">
         <SectionHeading
-          index="05"
+         
           eyebrow="What's coming"
           title="Templates, workshops & mentorship in development"
           intro="These resources are being built. Pricing and details will be shared with the waitlist first — no hype, no guarantees, just practical tools when they're ready."

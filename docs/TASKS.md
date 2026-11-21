@@ -117,6 +117,19 @@
 - [x] Docs recorded (D013 in `DECISIONS.md`; env vars, test plan, launch checklist updated).
 - [ ] **Only remaining production step:** set `PRICING_LINK_SECRET` (production + preview) and `PRICING_OWNER_KEY` (production) in Vercel, then run the post-deploy smoke test in `docs/LAUNCH_CHECKLIST.md`.
 
+## "First Light" UI enhancement (D016)
+
+- [x] Self-hosted fonts as Latin WOFF2 subsets (~142 KB, was ~2 MB TTF); `scripts/subset-fonts.py` regenerates them.
+- [x] Fix invisible CTAs on espresso bands (14 pages) via `--btn-*` variables flipped by `Section tone="espresso"`.
+- [x] Small-text ink tokens `taupe-ink` / `rose-deep` (old label colours failed WCAG AA on ivory/cream).
+- [x] Remove template chrome: decorative indices, tracked all-caps labels, appended arrows, shine sweep, "M" watermark.
+- [x] Signature wedding-morning timeline (`components/sections/ProcessSteps.tsx`), reduced-motion safe.
+- [x] Nav active state as a CSS marker (old `layoutId` pill never animated under `domAnimation`).
+- [x] Branded 404 (`app/not-found.tsx`); calmer error page.
+- [x] Portfolio lightbox; reviews "Show more"; about page layout.
+- [x] Journal category filter + featured story; article, prep-guide (printable) and favorites polish.
+- [ ] Founder review of the new look on a phone before launch.
+
 ## QA
 
 - [ ] Mobile QA.

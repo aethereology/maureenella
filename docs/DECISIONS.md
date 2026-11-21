@@ -283,6 +283,29 @@ Experience. That is defensible (Gold adds the preview, lashes and kits), but it
 was not addressed in her revision and may be unintentional. Do not change it
 without her.
 
+### D016 - "First Light" UI direction (site-wide creative enhancement)
+
+Decision (founder, 2026-11-21): evolve the "Editorial Atelier" look rather than
+rebrand. Palette and Cormorant + Jost stay (per UI_DIRECTION.md); the generic
+template chrome goes — decorative "02 / 03" section indices, tracked all-caps
+labels over every heading, arrows appended to links, the button shine sweep,
+the "M" watermark and trailing rose period on page titles. Labels are now a quiet
+Cormorant italic; numbers appear only on real sequences. The one signature
+moment is the **wedding-morning timeline** (ProcessSteps): a line draws through
+the five steps as you scroll, with a champagne "first light" travelling along it.
+
+Also in this pass: CTAs on espresso bands were espresso-on-espresso (invisible)
+on 14 pages — buttons now take colours from CSS variables that a dark Section
+flips; new small-text ink tokens (`taupe-ink`, `rose-deep`) because the old label
+colours failed WCAG AA on ivory/cream; self-hosted fonts are Latin WOFF2 subsets
+(~142 KB, was ~2 MB of TTF; `scripts/subset-fonts.py`); branded 404; portfolio
+lightbox; reviews and Journal made shorter to browse on mobile.
+
+Rationale: the old chrome read as a template rather than as Maureen. Keeping the
+client's palette and type while spending boldness in one subject-grounded place
+makes the site distinctive without risking the brand. Spec:
+`docs/superpowers/specs/2026-11-21-first-light-ui-design.md`.
+
 ## Pending decisions
 
 - Confirm Education product offers + pricing before any are sold (D005).

@@ -31,37 +31,50 @@ export default function PrepGuidesPage() {
         intro="Simple, supportive checklists to help you prepare your hair, skin, and wedding-morning timeline — before your preview and the big day."
       />
 
-      <Container className="py-14">
-        <div className="grid gap-8 md:grid-cols-3">
+      <Container className="py-14 sm:py-20">
+        <ul className="divide-y divide-hairline border-b border-hairline">
           {prepGuides.map((guide) => (
-            <Link
-              key={guide.slug}
-              href={`/bridal/prep-guides/${guide.slug}`}
-              className="group block overflow-hidden rounded-card border border-hairline bg-cream"
-            >
-              <div className="relative aspect-[3/2] overflow-hidden">
-                <Image
-                  src={guide.image}
-                  alt={guide.title}
-                  fill
-                  sizes="(max-width: 768px) 100vw, 33vw"
-                  className="object-cover transition-transform duration-300 group-hover:scale-105"
-                />
-              </div>
-              <div className="p-6">
-                <h2 className="font-serif text-xl text-espresso">
-                  {guide.title}
-                </h2>
-                <p className="mt-2 text-sm text-cocoa/80">
-                  {guide.description}
-                </p>
-                <span className="mt-4 inline-block text-sm font-medium text-espresso underline underline-offset-4">
-                  Read the guide →
-                </span>
-              </div>
-            </Link>
+            <li key={guide.slug}>
+              <Link
+                href={`/bridal/prep-guides/${guide.slug}`}
+                className="group grid gap-6 py-8 sm:grid-cols-[minmax(0,15rem)_minmax(0,1fr)] sm:gap-10 sm:py-10 lg:grid-cols-[minmax(0,20rem)_minmax(0,1fr)_minmax(0,16rem)] lg:items-start"
+              >
+                <div className="img-zoom relative aspect-[3/2] overflow-hidden bg-cream">
+                  <Image
+                    src={guide.image}
+                    alt={guide.title}
+                    fill
+                    sizes="(max-width: 640px) 100vw, 320px"
+                    className="object-cover"
+                  />
+                </div>
+                <div>
+                  <h2 className="text-[clamp(1.8rem,3vw,2.4rem)] leading-[1.05] tracking-[-0.02em] transition-colors duration-300 group-hover:text-rose-deep">
+                    {guide.title}
+                  </h2>
+                  <p className="mt-3 max-w-xl leading-relaxed text-cocoa/85">{guide.description}</p>
+                  <span className="mt-5 inline-block border-b border-espresso/35 pb-1 text-[0.95rem] font-normal text-espresso transition-colors duration-300 group-hover:border-espresso">
+                    Open the checklist
+                  </span>
+                </div>
+                <div className="sm:col-start-2 lg:col-start-auto">
+                  <p className="eyebrow">What it covers</p>
+                  <ul className="mt-2 space-y-1.5 text-[0.95rem] text-cocoa/85">
+                    {guide.sections.map((section) => (
+                      <li key={section.heading} className="flex items-baseline gap-3">
+                        <span
+                          aria-hidden
+                          className="inline-block h-2.5 w-2.5 shrink-0 translate-y-[-0.05em] border border-taupe-deep"
+                        />
+                        {section.heading}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </Link>
+            </li>
           ))}
-        </div>
+        </ul>
       </Container>
 
       <Section tone="espresso" className="text-center">

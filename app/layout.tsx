@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond, Jost } from "next/font/google";
+import localFont from "next/font/local";
 import { site } from "@/lib/site";
 import { SiteHeader } from "@/components/layout/SiteHeader";
 import { SiteFooter } from "@/components/layout/SiteFooter";
@@ -13,17 +13,37 @@ import { MotionProvider } from "@/components/motion/MotionProvider";
 import { RouteTransition } from "@/components/motion/RouteTransition";
 import "./globals.css";
 
-const cormorant = Cormorant_Garamond({
-  subsets: ["latin"],
-  weight: ["400", "500", "600"],
-  style: ["normal", "italic"],
+// Self-hosted, Latin-subset variable WOFF2 built from the TTF sources in
+// app/fonts by scripts/subset-fonts.py (~142 KB total vs ~2 MB of TTF).
+// Weight ranges match each font's real variable axis.
+const cormorant = localFont({
+  src: [
+    {
+      path: "./fonts/CormorantGaramond-Latin.woff2",
+      weight: "300 700",
+      style: "normal",
+    },
+    {
+      path: "./fonts/CormorantGaramond-Italic-Latin.woff2",
+      weight: "300 700",
+      style: "italic",
+    },
+  ],
+  fallback: ["Georgia", "serif"],
+  adjustFontFallback: "Times New Roman",
   variable: "--font-cormorant",
   display: "swap",
 });
 
-const jost = Jost({
-  subsets: ["latin"],
-  weight: ["300", "400", "500"],
+const jost = localFont({
+  src: [
+    {
+      path: "./fonts/Jost-Latin.woff2",
+      weight: "100 900",
+      style: "normal",
+    },
+  ],
+  fallback: ["ui-sans-serif", "system-ui", "sans-serif"],
   variable: "--font-jost",
   display: "swap",
 });

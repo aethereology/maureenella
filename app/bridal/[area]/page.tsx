@@ -119,7 +119,7 @@ export default async function AreaPage({
             <ul className="mt-4 space-y-3">
               {loc.highlights.map((h) => (
                 <li key={h} className="flex gap-3 text-cocoa/90">
-                  <span aria-hidden className="mt-1 text-rose">
+                  <span aria-hidden className="mt-1 text-rose-deep">
                     ✓
                   </span>
                   <span>{h}</span>
@@ -157,7 +157,7 @@ export default async function AreaPage({
           </div>
           <div className="mt-8">
             <ButtonLink href="/bridal/portfolio" variant="ghost">
-              View full portfolio →
+              View full portfolio
             </ButtonLink>
           </div>
         </Section>
@@ -190,7 +190,7 @@ export default async function AreaPage({
         </div>
         <div className="mt-8">
           <ButtonLink href="/bridal/faq" variant="ghost">
-            Read all FAQs →
+            Read all FAQs
           </ButtonLink>
         </div>
       </Section>
@@ -207,7 +207,7 @@ export default async function AreaPage({
               >
                 <h3 className="font-serif text-lg text-espresso">{s.city}</h3>
                 <span className="mt-2 inline-block text-sm text-espresso underline underline-offset-4">
-                  View {s.city} bridal beauty →
+                  View {s.city} bridal beauty
                 </span>
               </Link>
             </li>

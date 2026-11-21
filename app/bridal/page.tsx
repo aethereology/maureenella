@@ -97,7 +97,7 @@ export default function BridalPage() {
           </div>
           <div className="mt-8">
             <ButtonLink href="/bridal/portfolio" variant="ghost">
-              View full portfolio →
+              View full portfolio
             </ButtonLink>
           </div>
         </Section>
@@ -125,13 +125,10 @@ export default function BridalPage() {
             <li key={loc.slug}>
               <Link
                 href={`/bridal/${loc.slug}`}
-                className="flex items-center justify-between rounded-card border border-hairline bg-cream px-6 py-5 transition-colors hover:bg-oatmeal/40"
+                className="flex items-center justify-between rounded-card border border-hairline bg-cream px-6 py-5 transition-colors hover:border-taupe hover:bg-oatmeal/40 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-rose"
               >
                 <span className="font-serif text-lg text-espresso">
                   {loc.city}
-                </span>
-                <span aria-hidden className="text-taupe-deep">
-                  →
                 </span>
               </Link>
             </li>
@@ -147,7 +144,7 @@ export default function BridalPage() {
         </div>
         <div className="mt-8">
           <ButtonLink href="/bridal/faq" variant="ghost">
-            Read all FAQs →
+            Read all FAQs
           </ButtonLink>
         </div>
       </Section>
