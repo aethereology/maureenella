@@ -46,7 +46,9 @@ export const site = {
 
   reviews: {
     google: {
-      value: "https://share.google/KeWMapjz8Hra9zcVK",
+      // Opens the Google Business Profile with the review panel (lrd=...,3).
+      value:
+        "https://www.google.com/search?q=Maureen+At+The+Parlor&kgmid=/g/11r_k5kwqr#lrd=0x88e5d32c2ea09bdd:0x852f02dbd67df43b,3,,,,",
       confirmed: true,
     },
   },
