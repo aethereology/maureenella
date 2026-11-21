@@ -91,6 +91,13 @@
 - [ ] Re-check the third-party figures in the D015 cost/etiquette posts each
   February, when The Knot and Zola publish new studies. Update the copy, the
   "Sources" list, and `dateModified`. Rename the 2026 trends post for 2027.
+- [x] Journal Autopilot (D017, 2026-11-21): cloud routine publishes one post
+  Mon/Wed/Fri 9:00 AM ET. Runbook `journal-autopilot/RUNBOOK.md`, validator
+  `npm run validate:journal`, topic queue (26 at launch), photo pool (28 at launch).
+- [ ] Restock the autopilot photo pool before it runs out (~9 weeks at launch;
+  the validator and run report warn when fewer than 6 remain).
+- [ ] Spot-check autopilot posts weekly on the live site (facts vs. sources, photo
+  crop, tone). Pause at <https://claude.ai/code/routines> if anything is off.
 
 ## SEO
 

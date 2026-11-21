@@ -6,3 +6,6 @@
 .env*.local
 .claude
 /prompts
+
+# Journal Autopilot photo pool (source only; posts use public/images/journal)
+/journal-autopilot

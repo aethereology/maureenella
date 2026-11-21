@@ -6,6 +6,7 @@
  */
 import { blogPosts, type BlogPostMeta } from "@/lib/content";
 import { BRIDE_QUESTION_BODIES } from "@/content/journalBrideQuestions";
+import { AUTOPILOT_BODIES } from "@/content/journalAutopilot";
 
 export type Block =
   | { type: "p"; text: string }
@@ -50,6 +51,7 @@ export type AuthoredArticle = {
 
 const BODIES: Record<string, AuthoredArticle> = {
   ...BRIDE_QUESTION_BODIES,
+  ...AUTOPILOT_BODIES,
   "curly-bridal-hair-prep": {
     excerpt:
       "Curly hair can hold beautiful, romantic bridal styles — the secret is preparation, not fighting your texture.",

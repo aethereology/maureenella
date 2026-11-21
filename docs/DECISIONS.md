@@ -346,6 +346,34 @@ client's palette and type while spending boldness in one subject-grounded place
 makes the site distinctive without risking the brand. Spec:
 `docs/superpowers/specs/2026-11-21-first-light-ui-design.md`.
 
+### D017 - Journal Autopilot: 3 posts a week, auto-published
+
+Decision (founder, 2026-11-21): a scheduled Claude Code cloud routine writes
+one Journal post every Monday, Wednesday, and Friday at 9:00 AM ET (cron
+`0 14 * * 1,3,5` UTC, so 10:00 AM ET during daylight time) and pushes it
+straight to `main`, which Vercel deploys. No human review before publish — the
+founder chose speed over a PR gate.
+
+Guardrails that replace human review:
+
+- `npm run validate:journal` (`scripts/validate-journal.ts`) must pass, along
+  with typecheck and build, before any push. It blocks private prices and
+  collection names (read from `content/pricing.ts`), dollar figures without a
+  Sources list (D015), first-party price sentences, guarantee / certification /
+  award / client-count claims, raw URLs, dead internal links, future dates,
+  duplicate heroes, and thin posts. If checks fail, the run pushes to a
+  `claude/journal-autopilot-<date>` branch instead of `main`.
+- Topics come from an ordered queue (`journal-autopilot/topics.json`) of real
+  bride search questions, each with overlap notes against existing posts. The
+  routine refills it by web research when fewer than 6 remain.
+- Hero photos come only from a staged pool (`journal-autopilot/photos/`,
+  28 photos at launch). Each was checked by perceptual hash against every image
+  on the site and is moved, not copied, into `public/images/journal/` when used,
+  so no photo can appear twice. The raw `assets/` folder stays gitignored; the
+  pool is the only client media added to the (public) repo ahead of use.
+- Process lives in `journal-autopilot/RUNBOOK.md`; the routine prompt only says
+  to follow it, so the process is versioned with the code.
+
 ## Pending decisions
 
 - Confirm Education product offers + pricing before any are sold (D005).
