@@ -151,4 +151,130 @@ export const AUTOPILOT_BODIES: Record<string, AuthoredArticle> = {
       },
     ],
   },
+  "wedding-hair-up-or-down": {
+    metaTitle: "Wedding Hair Up or Down? How to Choose",
+    excerpt:
+      "Choose up, down, or half-up based on your dress, your hair type, and the weather. Here is how to decide, with Northeast Florida humidity in mind.",
+    image: "/images/journal/wedding-hair-up-or-down.jpg",
+    imageAlt:
+      "A hair artist styling a bride's long wavy half-up hair from behind while the bride sits in a white robe in a pink getting-ready room",
+    imagePosition: "center 40%",
+    datePublished: "2026-11-25",
+    body: [
+      {
+        type: "p",
+        text: "Wear your hair the way that fits your dress, your hair type, and your weather. Up is the steadier choice for heat, wind, fine hair, and high necklines. Down shows off length and suits open necklines and cooler, calmer days. Half-up sits in the middle and works for many brides. If you are unsure, a hair trial will settle it faster than any list.",
+      },
+      { type: "h2", text: "What should I think about first?" },
+      {
+        type: "p",
+        text: "Start with how you feel. Think about how you wear your hair on a good day and what makes you feel most like yourself in photos. Then look at the practical side: your dress, your veil, your hair type, and where you are getting married. When your gut and the practical side agree, the choice is easy. When they do not, a trial is the place to sort it out.",
+      },
+      { type: "h2", text: "Does my dress decide it?" },
+      {
+        type: "p",
+        text: "Often, yes. The back and neckline of the dress are the biggest clues. Hair that falls over a detailed back can hide the very thing you chose the dress for. A high neckline or a collar can crowd long hair, and an updo lets the shape of the dress show.",
+      },
+      {
+        type: "ul",
+        items: [
+          "High neck, halter, or illusion lace: an updo or half-up keeps the detail visible.",
+          "Open back or low back: an updo or a low style shows it off, and half-up can still work if the hair sits high enough.",
+          "Strapless or sweetheart: almost any style works, so choose by hair type and weather.",
+          "V-neck or off-the-shoulder: down, half-up, and updos all look good, so let the rest of the plan lead.",
+        ],
+      },
+      { type: "h2", text: "How does my hair type change the answer?" },
+      {
+        type: "p",
+        text: "Fine or thin hair often does best up, or half-up with extra support, because loose curls can relax and flatten over a long day. Thick hair is more flexible. It tends to hold a curl well, so it can go down, half-up, or up, although a very full updo may need a skilled hand and plenty of pins. Curly and textured hair can look beautiful in any of these, so the key is choosing a style that works with your natural pattern, not against it.",
+      },
+      {
+        type: "p",
+        text: "Tell your artist what your hair does on its own. If it frizzes, falls flat, or loses curl within hours, say so at your trial. That detail changes the plan more than any photo you bring. For help with timing and prep, see the hair prep guide linked below.",
+      },
+      { type: "h2", text: "What about a veil?" },
+      {
+        type: "p",
+        text: "A veil needs something to hold on to. Half-up styles are a popular choice because the top section gives the comb a secure base while the rest of the hair stays loose. With an updo, the veil usually sits just above or below the bun, depending on whether you want the hair detail to show. With hair fully down, your artist can build a small anchor underneath, but a long, heavy veil needs a firm base.",
+      },
+      {
+        type: "p",
+        text: "Bring your veil, or a photo of it, to your trial. Placement changes how the whole style looks, and it is much easier to adjust before the wedding than on the morning of.",
+      },
+      { type: "h2", text: "How do heat, humidity, and wind affect the choice?" },
+      {
+        type: "p",
+        text: "In Northeast Florida, this matters a lot. Warm, humid days in St. Augustine, Jacksonville, Palm Coast, and Ponte Vedra can soften curls and add frizz. A beach or waterfront ceremony adds wind, and loose hair can end up across your face just as the vows begin. Styles that are pinned off the neck and secured at the nape, like a low updo or a half-up with a firm base, tend to hold best in those conditions.",
+      },
+      {
+        type: "p",
+        text: "That does not mean you cannot wear your hair down. Cooler months, indoor ceremonies, and shaded venues are friendlier to loose waves. Many brides also start with hair down for the ceremony and photos, then pin it up for dancing. Ask your artist what is realistic for your venue and season. For a closer look at wind and salt air, the Journal has a guide to beach elopement hair and makeup in St. Augustine. Whatever you choose, ask your artist to build the style for the hours you will actually be wearing it, not just the first photo.",
+      },
+      { type: "h2", text: "Is half-up the safe middle choice?" },
+      {
+        type: "p",
+        text: "For many brides, yes. Half-up keeps hair off your face, shows length and movement, and gives a veil or accessory a place to sit. It is also easier to wear through a long day than a fully loose style. It is not perfect for every head of hair. Very fine hair may need extra support or added fullness, and very hot, humid days can still wear down the lower section.",
+      },
+      { type: "h2", text: "How do I decide at my trial?" },
+      {
+        type: "ul",
+        items: [
+          "Bring a photo of your dress, especially the back and neckline.",
+          "Bring your veil or accessories, or clear photos of them.",
+          "Save two or three hairstyle photos that you love, in different styles.",
+          "Try your top choice, then ask to see a second option.",
+          "Take photos from the front, side, and back, and check them in natural light.",
+          "Ask how the style will hold through the ceremony, photos, and dancing.",
+        ],
+      },
+      {
+        type: "p",
+        text: "Many brides change their minds at the trial, and that is a good outcome. It means you found out what works before the wedding day.",
+      },
+      {
+        type: "p",
+        text: "Maureen Ella provides bridal hair and makeup in St. Augustine, Jacksonville, Palm Coast, and across Northeast Florida. If you are weighing up, down, or half-up, share your date, venue, and dress details when you request availability, and we can talk through what will work best for you.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Can I wear my hair down and still have it last all day?",
+        answer:
+          "Yes, with the right prep and a realistic plan. Thick or naturally wavy hair holds loose styles best. In heat or wind, your artist may suggest pinning a section back so the style stays put.",
+      },
+      {
+        question: "Can I change from hair down to hair up during the reception?",
+        answer:
+          "Many brides do. Tell your artist ahead of time so the style is built to be pinned up later, and pack a few pins and a clip in your touch-up kit so the change is quick.",
+      },
+      {
+        question: "Should I decide before my hair trial?",
+        answer:
+          "You do not have to. Bring a favorite and a backup, then see them on your own hair. Seeing the style in person, with your veil, tells you more than a photo ever can.",
+      },
+      {
+        question: "Do bridesmaids need to match the bride's hairstyle?",
+        answer:
+          "No. Bridesmaid hair can be a softer version of yours, or any style that suits each person. Agreeing on up, down, or half-up for the group helps the photos look cohesive.",
+      },
+    ],
+    relatedLinks: [
+      {
+        href: "/journal/st-augustine-beach-elopement-hair-makeup",
+        title: "St. Augustine Beach Elopement Hair and Makeup",
+        description: "Planning hair and makeup for wind, sand, and salt air.",
+      },
+      {
+        href: "/bridal/prep-guides/hair-prep",
+        title: "Bridal Hair Prep Guide",
+        description: "How to prepare your hair in the weeks before the wedding.",
+      },
+      {
+        href: "/bridal/services",
+        title: "Bridal Services",
+        description: "Bridal hair and makeup in Northeast Florida.",
+      },
+    ],
+  },
 };
