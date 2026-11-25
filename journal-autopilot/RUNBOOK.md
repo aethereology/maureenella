@@ -88,7 +88,16 @@ If any post in `content/journalAutopilot.ts` already has
 
 - **Research is required every run, even when the post will have no numbers.**
   Run at least 3 WebSearch queries, including the exact bride question, and read
-  at least 2 relevant pages with WebFetch. Use them to check facts, current
+  at least 2 relevant pages with WebFetch.
+- **If WebFetch is blocked** (errors like `ENOTFOUND`, "unable to fetch", or a
+  proxy 403 on several different sites), do not STOP. Try up to 4 different
+  hosts, then switch to **search-only mode**: run at least 5 WebSearch queries
+  (the exact question plus variations) and cross-check that the same guidance
+  appears in several independent results. In search-only mode the post must
+  contain **no numbers, statistics, prices, or percentages and no `Sources`
+  section**, and the commit message must say `Research: search-only (WebFetch
+  blocked)`. Also send a PushNotification telling the owner which hosts need to
+  be added to the environment's network allowlist (Allowed domains). Use them to check facts, current
   norms, and timelines, and to see what top results cover so the post answers
   the question better and more completely. Never copy their wording.
 - Note the queries you ran in the commit message (`Research:` line).
