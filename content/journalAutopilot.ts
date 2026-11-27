@@ -277,4 +277,134 @@ export const AUTOPILOT_BODIES: Record<string, AuthoredArticle> = {
       },
     ],
   },
+  "airbrush-vs-traditional-wedding-makeup": {
+    metaTitle: "Airbrush vs Traditional Wedding Makeup",
+    excerpt:
+      "Neither is better for every bride. Airbrush is a sprayed, lightweight base that is hard to touch up. Traditional is brushed on and easier to adjust on the day.",
+    image: "/images/journal/airbrush-vs-traditional-wedding-makeup.jpg",
+    imageAlt:
+      "Maureen applying makeup with a large brush to a blonde woman in a white camisole, in a bright getting-ready room by a window",
+    imagePosition: "center 40%",
+    datePublished: "2026-11-27",
+    body: [
+      {
+        type: "p",
+        text: "Neither one is better for every bride. Airbrush sprays a fine, light layer of foundation and tends to feel weightless and wear well in heat. Traditional makeup is applied with brushes and sponges, offers more formulas and finishes, and is easier to adjust on the day. The right choice depends on your skin, your venue, and the artist doing it. The best way to decide is to try both at a preview.",
+      },
+      { type: "h2", text: "What is the real difference?" },
+      {
+        type: "p",
+        text: "Airbrush uses a small tool that sprays foundation as a mist. Traditional makeup is applied by hand with brushes, sponges, and fingers. Both can give a polished, natural result. The difference is mostly in how the base goes on, how it feels, and how easily it can be changed once it has set.",
+      },
+      {
+        type: "p",
+        text: "It also helps to know that airbrush is often only the foundation. Blush, brows, eyes, and lips are usually still done by hand. So the question is really about your base, not your whole look.",
+      },
+      { type: "h2", text: "When does airbrush make sense?" },
+      {
+        type: "p",
+        text: "Many brides like airbrush because it feels light on the skin, with none of the heavy coat a thick foundation can leave. Search results and bridal guides often point to it for long days, outdoor weddings, and brides who want a smooth, soft-matte finish. Some brides with oily skin find it holds up well and stays fresh.",
+      },
+      {
+        type: "ul",
+        items: [
+          "You want a very light feel on the skin.",
+          "Your ceremony is outdoors, and heat or humidity is a worry.",
+          "You like a smooth, even, semi-matte finish.",
+          "You are comfortable with a base that is harder to change once it dries.",
+        ],
+      },
+      { type: "h2", text: "When is traditional makeup the better pick?" },
+      {
+        type: "p",
+        text: "Traditional makeup gives your artist a wider range of formulas, textures, and shades to work with. That matters if you have dry or textured skin, want a dewy glow, or want a fuller glam look with more depth. It is also easier to blend, correct, or add to if something needs a tweak. A skilled artist who prepares your skin well and sets the makeup carefully can make traditional makeup wear a long time too.",
+      },
+      {
+        type: "p",
+        text: "Airbrush can look flat if it is applied alone, because the finish is so even. Many artists add contour and highlight by hand to bring dimension back. Traditional makeup builds that dimension in naturally.",
+      },
+      { type: "h2", text: "Does my skin type change the answer?" },
+      {
+        type: "p",
+        text: "Yes, but it is not a simple rule. Dry skin can make airbrush look flat or flaky if it is not well hydrated, so careful skin prep matters, and some formulas suit dry skin better than others. Oily skin is mixed too. Some brides say airbrush kept shine down, while others found it looked shinier or settled into lines. Mature skin does best with a light hand, whichever method you choose. No makeup erases texture completely, and too much product tends to settle into fine lines.",
+      },
+      {
+        type: "p",
+        text: "If you have very sensitive skin, or you are managing a skin condition, check with your dermatologist or a licensed esthetician about what is safe for you. Tell your artist about any allergies before your preview.",
+      },
+      { type: "h2", text: "What about Florida heat, humidity, and photos?" },
+      {
+        type: "p",
+        text: "In St. Augustine, Jacksonville, Palm Coast, and along the beaches, weather is a real factor. Warm, humid air and sea breezes can test any makeup. Airbrush has a reputation for standing up to heat, and many brides choose it for that reason. Still, the products, the prep, and the setting steps matter as much as the tool. A good traditional application, built on the right primer and set well, can last all day.",
+      },
+      {
+        type: "p",
+        text: "In photos, the difference is often subtle. Several brides report that they could barely tell the two apart. Skill and finish matter more than the method. If photos are on your mind, schedule your preview near an engagement session or take your own photos in natural light afterward.",
+      },
+      { type: "h2", text: "What about touch-ups?" },
+      {
+        type: "p",
+        text: "This is where the two differ most. Airbrush dries fast and can be hard to fix once it has set, so a smudge or a worn patch may need more than a quick blot. Traditional makeup is easier to touch up with a little powder, a sponge, or a brush. Whichever you pick, a small kit helps. Blotting paper, translucent powder, lip color, and a few cotton swabs cover most needs.",
+      },
+      { type: "h2", text: "How do I decide at my preview?" },
+      {
+        type: "ul",
+        items: [
+          "Ask which methods your artist offers, and which they would suggest for your skin and venue.",
+          "If both are offered, try each base on the same visit, one on each side of the face, or at two previews.",
+          "Look at the result in natural light, then check it again after a few hours.",
+          "Notice how it feels. A base you forget you are wearing is a good sign.",
+          "Ask how the look will hold through the ceremony, photos, and dancing.",
+          "Tell your artist about your skin, any past reactions, and your touch-up plans.",
+        ],
+      },
+      {
+        type: "p",
+        text: "Not every artist offers both, so it is worth asking early. If you love one method and your artist does not use it, you can talk through what finish you are after and how else to get it.",
+      },
+      {
+        type: "p",
+        text: "Maureen Ella provides bridal hair and makeup in St. Augustine, Jacksonville, Palm Coast, and across Northeast Florida. If you are weighing your options, share your date, venue, and what you want your skin to look and feel like when you request availability, and we can talk it through together.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Is airbrush makeup more expensive than traditional makeup?",
+        answer:
+          "It can be, since it needs extra equipment and time, but it varies by artist. Ask each artist how they price it. Pricing is shared privately after you request availability.",
+      },
+      {
+        question: "Can I do airbrush for my face and traditional for my eyes?",
+        answer:
+          "Yes, and many artists work this way. Airbrush is often just the foundation, so eyes, brows, blush, and lips are usually done by hand anyway. Ask your artist what they recommend.",
+      },
+      {
+        question: "Does airbrush makeup feel heavy or look fake?",
+        answer:
+          "It usually feels light, but results depend on skin prep and technique. Dry skin can look flat if it is not hydrated, so a preview is the best way to see how it looks on you.",
+      },
+      {
+        question: "Should my bridesmaids get the same type of makeup as me?",
+        answer:
+          "Not necessarily. Your party can choose what suits their skin and comfort. What matters most is that the colors and finish look cohesive together in photos, and that your artist plans the timing well.",
+      },
+    ],
+    relatedLinks: [
+      {
+        href: "/journal/best-foundation-for-wedding-day",
+        title: "Best Foundation for Your Wedding Day",
+        description: "How to choose a base that suits your skin and lasts.",
+      },
+      {
+        href: "/bridal/prep-guides/makeup-prep",
+        title: "Bridal Makeup Prep Guide",
+        description: "Skin prep and planning ahead of your wedding day.",
+      },
+      {
+        href: "/bridal/services",
+        title: "Bridal Services",
+        description: "Bridal hair and makeup in Northeast Florida.",
+      },
+    ],
+  },
 };
